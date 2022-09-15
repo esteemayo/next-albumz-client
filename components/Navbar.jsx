@@ -1,13 +1,17 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 // import { SearchIcon } from '@mui/material';
 
 import styles from '@/styles/Navbar.module.scss';
+import { toggleMenu } from '../features/toggle/toggleSlice';
 // #5a6bf6
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
+
   const [isScrolled, setIsScrolled] = useState(false);
-  const [toggleMenu, setToggleMenu] = useState(false);
 
   if (typeof window !== 'undefined') {
     window.onscroll = () => {
@@ -19,7 +23,13 @@ const Navbar = () => {
   return (
     <nav
       className={
-        isScrolled ? `${styles.navbar} ${styles.scrolled}` : `${styles.navbar}`
+        isScrolled
+          ? `${styles.navbar} ${styles.scrolled}`
+          : `${styles.navbar}`
+          ? menuOpen
+            ? `${styles.navbar} ${styles.active}`
+            : `${styles.navbar}`
+          : ''
       }
     >
       <div className={styles.navbar__left}>
@@ -65,11 +75,11 @@ const Navbar = () => {
 
         <div
           className={
-            toggleMenu
+            menuOpen
               ? `${styles.hamburger} ${styles.active}`
               : `${styles.hamburger}`
           }
-          onClick={() => setToggleMenu(!toggleMenu)}
+          onClick={() => dispatch(toggleMenu())}
         >
           <span></span>
           <span></span>

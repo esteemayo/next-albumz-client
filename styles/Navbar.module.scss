@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 2000;
 
   &.scrolled {
     -webkit-backdrop-filter: blur(1rem);
@@ -15,11 +16,26 @@
     background-color: #5a6bf6;
   }
 
+  &.active {
+    .list {
+      display: none;
+    }
+
+    .search {
+      // display: none;
+    }
+  }
+
   &__left {
     flex: 2;
     display: flex;
     align-items: center;
     margin-left: 20rem;
+
+    @media only screen and (max-width: 56.25em) {
+      flex: 1;
+      margin-left: 10rem;
+    }
 
     .logo {
       margin-right: 5rem;
@@ -30,6 +46,10 @@
       list-style: none;
       display: flex;
       align-items: center;
+
+      @media only screen and (max-width: 56.25em) {
+        display: none;
+      }
 
       &__items {
         color: #1a2027;
@@ -62,16 +82,28 @@
     display: flex;
     align-items: center;
 
+    @media only screen and (max-width: 56.25em) {
+      justify-content: flex-end;
+      margin-right: 10rem;
+    }
+
     .search {
       margin-right: auto;
       background-color: #fff;
       border-radius: 1rem;
+
+      @media only screen and (max-width: 56.25em) {
+        display: none;
+      }
 
       &__input {
         border: none;
         outline: none;
         width: 30rem;
         padding: 1rem 2rem;
+        font-family: inherit;
+        font-size: 1.4rem;
+        color: #999;
         border: 1px solid rgb(238, 238, 238);
         border-radius: 1rem;
         caret-color: #1a2027;
@@ -86,13 +118,20 @@
       height: 2.5rem;
       margin-right: 2rem;
       cursor: pointer;
+      opacity: o;
+      visibility: hidden;
+
+      @media only screen and (max-width: 56.25em) {
+        opacity: 1;
+        visibility: visible;
+      }
 
       span {
         width: 100%;
         height: 0.2rem;
         background-color: #1a2027;
         transform-origin: left;
-        transition: all 2s ease-in-out;
+        transition: all 1s ease-in-out;
       }
 
       &.active {
