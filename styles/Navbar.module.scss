@@ -90,7 +90,7 @@
     .search {
       margin-right: auto;
       background-color: #fff;
-      border-radius: 1rem;
+      border-radius: 0.5rem;
 
       @media only screen and (max-width: 56.25em) {
         display: none;
@@ -99,14 +99,19 @@
       &__input {
         border: none;
         outline: none;
-        width: 30rem;
+        width: 20rem;
         padding: 1rem 2rem;
         font-family: inherit;
         font-size: 1.4rem;
         color: #999;
         border: 1px solid rgb(238, 238, 238);
-        border-radius: 1rem;
+        border-radius: 0.5rem;
         caret-color: #1a2027;
+        transition: all 1s ease-in-out;
+
+        &:focus {
+          width: 35rem;
+        }
       }
     }
 
