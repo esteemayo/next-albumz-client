@@ -5,8 +5,18 @@
   padding: 0;
   box-sizing: inherit;
 }
-
+//     box-shadow: 0 2px 15px 1px rgb(64 60 67 / 16%)
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 450;
+  font-size: 1.8rem;
+  line-height: 1.7;
+  color: #666;
+  color: rgb(26, 32, 39);
+  -webkit-font-smoothing: antialiased;
 }
