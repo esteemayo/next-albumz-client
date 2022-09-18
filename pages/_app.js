@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import store from '@/app/store';
 import Layout from '@/components/Layout';
 
+import '@/styles/dark.scss';
 import '@/styles/globals.scss';
 
 function MyApp({ Component, pageProps }) {
