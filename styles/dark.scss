@@ -1,4 +1,9 @@
+.app {
+  transition: all 0.5s ease-in-out;
+}
+
 .app.dark{
   background-color: #141d26;
   color: #fff;
+  transition: all 0.5s ease-in-out;
 }
