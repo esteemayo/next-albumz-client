@@ -1,11 +1,15 @@
-import Image from 'next/image';
-import styles from '../styles/Home.module.scss';
+import Hero from '@/components/Hero';
+import TopReviews from '@/components/TopReviews';
+import FeaturedAlbums from '@/components/FeaturedAlbums';
+import styles from '@/styles/Home.module.scss';
 
 const Home = () => {
   return (
-    <div className={styles.container}>
-      <h1>Albumz</h1>
-    </div>
+    <>
+      <Hero />
+      <FeaturedAlbums />
+      <TopReviews />
+    </>
   );
 };
 
