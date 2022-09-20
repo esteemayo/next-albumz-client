@@ -1,12 +1,16 @@
 import Link from 'next/link';
+import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch, useSelector } from 'react-redux';
+import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 
 import styles from '@/styles/Sidebar.module.scss';
 import { closeMenu } from '@/features/toggle/toggleSlice';
+import { toggle } from '@/features/darkMode/darkModeSlice';
 
 const Sidebar = () => {
   const dispatch = useDispatch();
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
+  const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
   return (
     <div
@@ -72,7 +76,13 @@ const Sidebar = () => {
               placeholder='Search albums...'
               className={styles.search__input}
             />
+            <SearchIcon className={styles.search__icon} />
           </form>
+        </div>
+        <div className={styles.wrapper}>
+          <div className={styles.darkmode} onClick={() => dispatch(toggle())}>
+            {darkMode ? <DarkModeOutlined /> : <LightModeOutlined />}
+          </div>
         </div>
       </>
     </div>
