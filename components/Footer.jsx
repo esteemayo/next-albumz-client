@@ -1,7 +1,43 @@
-import '@/styles/Footer.module.scss';
+import Link from 'next/link';
+import styles from '@/styles/Footer.module.scss';
 
 const Footer = () => {
-  return <div>Footer</div>;
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className={styles.footer}>
+      <div className={styles.footer__navigation}>
+        <div className={styles.footer__logo}>Albumz</div>
+        <ul className={styles.footer__list}>
+          <li className={styles.footer__item}>
+            <Link href='/albums' passHref>Albums</Link>
+          </li>
+          <li className={styles.footer__item}>
+            <Link href='/genres' passHref>Genres</Link>
+          </li>
+          <li className={styles.footer__item}>
+            <Link href='/albums/top' passHref>Top albums</Link>
+          </li>
+          <li className={styles.footer__item}>
+            <Link href='/account' passHref>Account</Link>
+          </li>
+          <li className={styles.footer__item}>
+            <Link href='/cookies' passHref>Cookie warning</Link>
+          </li>
+          <li className={styles.footer__item}>
+            <Link href='/support' passHref>Support</Link>
+          </li>
+          <li className={styles.footer__item}>
+            <Link href='/feedback' passHref>Feedback</Link>
+          </li>
+          <li className={styles.footer__item}>
+            <Link href='/tags' passHref>Tags</Link>
+          </li>
+        </ul>
+      </div>
+      <p className={styles.footer__copyright}>Copyright &copy; {year} <Link href='/' passHref>Albumz Inc.</Link> All rights reserved</p>
+    </footer>
+  );
 };
 
 export default Footer;

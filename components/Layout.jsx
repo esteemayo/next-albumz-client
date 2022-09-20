@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 import DarkMode from './DarkMode';
+import AddButton from './AddButton';
 
 const Layout = ({ children }) => {
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
@@ -15,6 +16,7 @@ const Layout = ({ children }) => {
       <Navbar />
       <Sidebar />
       <DarkMode />
+      <AddButton />
       {children}
       <Footer />
     </div>
