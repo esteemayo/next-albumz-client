@@ -13,7 +13,7 @@ const GenreForm = () => {
         </header>
         <div className={styles.form__container}>
           <form onSubmit={handleSubmit}>
-            <div className={styles.form__wrapper}>
+            <div className={styles.form__wrapper} style={{ height: '25rem' }}>
               <div className={styles.form__headline}>Create New Genre</div>
               <div className={styles.form__group}>
                 <input 

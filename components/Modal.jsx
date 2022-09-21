@@ -4,7 +4,11 @@ import styles from '@/styles/Modal.module.scss';
 const Modal = ({ onClose, children }) => {
   return (
     <div className={styles.overlay}>
-      <div className={styles.modal}>
+      <div className={
+        children.props.type === 'genre' ?
+        `${styles.modal} ${styles.modalGenre}` : 
+        `${styles.modal}`}
+      >
         <header className={styles.modal__header}>
           <div className={styles.modal__iconWrapper}>
             <CloseOutlinedIcon 
@@ -13,7 +17,13 @@ const Modal = ({ onClose, children }) => {
             />
           </div>
         </header>
-        <div className={styles.modal__body}>{children}</div>
+        <div className={
+          children.props.type === 'genre' ? 
+          `${styles.modal__bodyGenre}` : 
+          `${styles.modal__body}`}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );

@@ -20,8 +20,8 @@ const Home = () => {
       <AddButton text='New album' onClick={() => setShowModal(true)} />
       {showModal && (
         <Modal onClose={setShowModal}>
-          {/* <AlbumForm /> */}
-          <GenreForm />
+          <AlbumForm />
+          {/* <GenreForm type='genre' /> */}
         </Modal>
       )}
     </>
