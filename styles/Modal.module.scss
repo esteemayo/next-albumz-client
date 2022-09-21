@@ -12,7 +12,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
- 
 
   .modal {
     width: 60rem;
@@ -21,11 +20,15 @@
     border-radius: 1.5rem;
     padding: 1rem;
 
+    &.modalGenre {
+      position: relative;
+    }
+
     &__header {
       display: flex;
       justify-content: flex-end;
     }
-    
+
     &__iconWrapper {
       width: 3.5rem;
       height: 3.5rem;
@@ -37,14 +40,23 @@
       align-items: center;
       justify-content: center;
     }
-    
+
     &__closeIcon {
       font-size: 2.5rem;
       cursor: pointer;
     }
-  
+
     &__body {
       padding-top: 1rem;
+    }
+    
+    &__bodyGenre {
+      padding-top: 1rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
     }
   }
 }
