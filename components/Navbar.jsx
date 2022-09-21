@@ -50,17 +50,17 @@ const Navbar = () => {
             </Link>
           </li>
           <li className={styles.list__items}>
-            <Link href='/account' passHref className={styles.navbar__link}>
+            <Link href='/auth/account' passHref className={styles.navbar__link}>
               Account
             </Link>
           </li>
           <li className={styles.list__items}>
-            <Link href='/login' passHref className={styles.navbar__link}>
+            <Link href='/auth/login' passHref className={styles.navbar__link}>
               Login
             </Link>
           </li>
           <li className={styles.list__items}>
-            <Link href='/login' passHref className={styles.navbar__link}>
+            <Link href='#' passHref className={styles.navbar__link}>
               Logout
             </Link>
           </li>

@@ -48,7 +48,7 @@ const Sidebar = () => {
             className={styles.list__items}
             onClick={() => dispatch(closeMenu())}
           >
-            <Link href='/account' passHref className={styles.sidebar__link}>
+            <Link href='/auth/account' passHref className={styles.sidebar__link}>
               Account
             </Link>
           </li>
@@ -56,7 +56,7 @@ const Sidebar = () => {
             className={styles.list__items}
             onClick={() => dispatch(closeMenu())}
           >
-            <Link href='/login' passHref className={styles.sidebar__link}>
+            <Link href='/auth/login' passHref className={styles.sidebar__link}>
               Login
             </Link>
           </li>
@@ -64,7 +64,7 @@ const Sidebar = () => {
             className={styles.list__items}
             onClick={() => dispatch(closeMenu())}
           >
-            <Link href='/login' passHref className={styles.sidebar__link}>
+            <Link href='#' passHref className={styles.sidebar__link}>
               Logout
             </Link>
           </li>
@@ -72,7 +72,7 @@ const Sidebar = () => {
         <div>
           <form className={styles.search}>
             <input
-              type='search'
+              type='text'
               placeholder='Search albums...'
               className={styles.search__input}
             />

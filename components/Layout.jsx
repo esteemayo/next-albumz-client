@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
       <Navbar />
       <Sidebar />
       <DarkMode />
-      <AddButton />
+      {/* <AddButton /> */}
       {children}
       <Footer />
     </div>
