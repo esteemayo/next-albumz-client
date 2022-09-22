@@ -23,7 +23,8 @@
     "react-icons": "^4.4.0",
     "react-moment": "^1.1.2",
     "react-redux": "^8.0.2",
-    "react-toastify": "^9.0.8"
+    "react-toastify": "^9.0.8",
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "eslint": "8.23.1",
