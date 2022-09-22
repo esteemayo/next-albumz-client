@@ -1,0 +1,83 @@
+.pagination {
+  padding: 15rem 0 0 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  .left {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 17rem;
+  }
+
+  .prevPage,
+  .nextPage {
+    display: inline-block;
+    font-size: 5rem;
+    margin-right: 2rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
+    &:hover {
+      color: #555;
+    }
+  }
+  
+  .currentPage {
+    margin-right: 2rem;
+    padding: 0.5rem 5rem;
+    color: #aaa;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+  }
+  
+  .nextPage {
+    // margin-right: 2rem;
+  }
+
+  .pageInfo {
+    display: inline-block;
+    margin-left: 2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #aaa;
+    letter-spacing: 0.1rem;
+  }
+
+  .right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 17rem;
+
+    span {
+      color: #aaa;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+
+    input {
+      display: inline-block;
+      border: none;
+      outline: none;
+      font-family: inherit;
+      padding: 2rem 0;
+      padding-left: 1rem;
+      width: 10rem;
+      height: 3rem;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      color: #aaa;
+      transistion: all 0.5s ease-in-out;
+      
+      &:focus {
+        border-color: #999;
+      }
+    }
+  }
+}
