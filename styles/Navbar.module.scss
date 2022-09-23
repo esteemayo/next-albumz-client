@@ -11,8 +11,8 @@
   z-index: 2000;
 
   &.scrolled {
-    -webkit-backdrop-filter: blur(1rem);
-    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(2rem);
+    backdrop-filter: blur(2rem);
     background-color: transparent;
 
     .logo {
