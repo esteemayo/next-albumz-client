@@ -1,0 +1,111 @@
+.header {
+  width: 100%;
+  height: 65vh;
+  position: relative;
+  // height: 38vw;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 9vh), 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 9vh), 0 100%);
+
+  &__hero {
+    height: 100%;
+  }
+
+  &__heroImg {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    object-position: 50% 25%;
+  }
+
+  &__heroOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right bottom,
+      from(rgba(184, 185, 247, 0.85)),
+      to(rgba(60, 4, 113, 0.85))
+    );
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(184, 185, 247, 0.85),
+      rgba(60, 4, 113, 0.85)
+    );
+    opacity: 0.85;
+    z-index: 20;
+  }
+}
+
+.headingBox {
+  position: absolute;
+  bottom: 13vw;
+  left: 50%;
+  top: 35%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  &__group {
+    color: #fff;
+    margin-top: 22rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__detail {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #24299b;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+  }
+
+  &__detail &__icon {
+    margin-right: 0.8rem;
+  }
+
+  &__detail:not(:last-child) {
+    margin-right: 4rem;
+  }
+
+  &__text {
+    color: #fff;
+    margin-left: 0.7rem;
+  }
+
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: #fff;
+    -webkit-filter: drop-shadow(0 0.75rem 0.5rem rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(0 0.75rem 0.5rem rgba(0, 0, 0, 0.25));
+  }
+}
+
+.headingPrimary {
+  width: 70%;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2.8rem;
+  position: absolute;
+  top: 6rem;
+  right: 2rem;
+  text-align: right;
+
+  span {
+    padding: 1rem 1.5rem;
+    line-height: 1;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    background-image: linear-gradient(
+      to bottom right,
+      rgba(90, 107, 246, 0.85),
+      rgba(3, 5, 65, 0.85)
+    );
+  }
+}
