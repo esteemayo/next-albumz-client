@@ -1,8 +1,11 @@
+import SingleAlbumHero from '@/components/SingleAlbumHero';
 import styles from '@/styles/SingleAlbum.module.scss';
 
 const SingleAlbum = () => {
   return (
-    <div>SingleAlbum</div>
+    <section className={styles.container}>
+      <SingleAlbumHero />
+    </section>
   );
 };
 
