@@ -1,9 +1,18 @@
+import ChipInput from 'material-ui-chip-input';
 import styles from '@/styles/Form.module.scss';
 
 const AlbumForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
+  const genres = [
+    { id: 1, name: 'Afro Pop'},
+    { id: 2, name: 'Afro Fusion'},
+    { id: 3, name: 'Pop'},
+    { id: 4, name: 'Blues'},
+    { id: 5, name: 'Rock'},
+  ];
 
   return (
     <div className={styles.container}>
@@ -30,18 +39,22 @@ const AlbumForm = () => {
                 />
               </div>
               <div className={styles.form__group}>
-                <input 
-                  type='text' 
-                  placeholder='Genre' 
-                  className={styles.form__input} 
-                />
+                <select className={styles.form__select}>
+                  <option selected disabled>Genre</option>
+                  {genres.map((option) => {
+                    return (
+                      <option key={option.id} value={option.id}>
+                        {option.name}
+                      </option>
+                    );
+                  })}
+                </select>
               </div>
               <div className={styles.form__group}>
-                <input 
-                  type='text' 
-                  placeholder='Album Info' 
-                  className={styles.form__input} 
-                />
+                <textarea
+                  placeholder='Album Info'
+                  className={styles.form__textarea}
+                ></textarea>
               </div>
               <div className={styles.form__group}>
                 <input 
@@ -65,10 +78,11 @@ const AlbumForm = () => {
                 />
               </div>
               <div className={styles.form__group}>
-                <input 
-                  type='text' 
-                  placeholder='Tags' 
-                  className={styles.form__input} 
+                <ChipInput
+                  name='tags'
+                  variant='outlined'
+                  fullWidth
+                  label='Tags'
                 />
               </div>
               <div className={styles.form__group}>
