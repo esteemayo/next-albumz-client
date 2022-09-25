@@ -43,3 +43,21 @@ body {
   color: rgb(26, 32, 39);
   -webkit-font-smoothing: antialiased;
 }
+
+.MuiFormControl-fullWidth-21:focus {
+  border: 1px solid #999;
+}
+
+.MuiInputLabel-outlined-32.MuiInputLabel-shrink-29 {
+  font-size: 1.5rem !important;
+}
+
+.WAMuiChipInput-outlined-5 input {
+  font-size: 1.5rem !important;
+  color: rgb(105, 113, 122);
+}
+
+.MuiChip-label-91 {
+  font-size: 1.3rem !important;
+  color: rgb(105, 113, 122);
+}
