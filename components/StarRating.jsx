@@ -1,18 +1,16 @@
-import { useState } from 'react';
 import Rating from '@mui/material/Rating';
 
-const StarRating = () => {
-  const [rating, setRating] = useState(null);
-
+const StarRating = ({ value, ...rest }) => {
   return (
     <Rating
-      value={rating}
+      {...rest}
+      readOnly
+      value={value}
       precision={0.5}
-      onChange={(e, newValue) => {
-        setRating(newValue);
-      }}
+      size='large'
+      name='read-only'
     />
-  )
-}
+  );
+};
 
 export default StarRating;
