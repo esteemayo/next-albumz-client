@@ -12,7 +12,6 @@
 
   .left {
     flex: 1;
-    position: relative;
     
     .album {
       &__wrapper {
@@ -22,11 +21,16 @@
       
       &__details {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+
+        .icon {
+          fill: #696cff;
+          font-size: 2rem;
+        }
         
         span {
-          color: #777;
           margin-right: 1.25rem;
+          color: #777;
         }
         
         span:nth-child(2) {
@@ -44,6 +48,42 @@
         &:not(last-of-type) {
           margin-bottom: 2.25rem;
         }
+      }
+    }
+
+    .action {
+      display: flex;
+      align-items: center;
+      margin-top: 2.5rem;
+
+      &__wrapper {
+        margin-right: 1rem;
+
+        .view__container {
+          display: flex;
+          align-items: center;
+        }
+
+        .views {
+          font-size: 1.3rem;
+          color: #777;
+          margin: 0 2rem 0 1rem;
+        }
+      }
+
+      &__icon {
+        fill: #696cff;
+        font-size: 2.5rem;
+      }
+      
+      .bookmark__icon {
+        margin-right: 2rem;
+        cursor: pointer;
+      }
+
+      .like__icon {
+        fill: #555;
+        cursor: pointer;
       }
     }
   }
