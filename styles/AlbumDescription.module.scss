@@ -1,11 +1,13 @@
 .description {
-  margin: 0 6rem 8rem 6rem;
+  position: relative;
+  max-width: 105rem;
+  margin: 0 auto;
   display: flex;
   align-items: flex-start;
 
   & > * {
-    padding: 0 8vw;
     padding-top: 10vw;
+    padding-bottom: 10vw;
   }
 
   .left {
@@ -71,7 +73,7 @@
   }
 
   .right {
-    flex: 2;
+    flex: 1;
     
     .rightWrapper {
       display: flex;
