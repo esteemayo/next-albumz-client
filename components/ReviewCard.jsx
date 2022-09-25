@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import Rating from '@mui/material/Rating';
 
+import StarRating from '@/components/StarRating';
 import styles from '@/styles/ReviewCard.module.scss';
 
 const ReviewCard = () => {
@@ -10,14 +10,7 @@ const ReviewCard = () => {
         <div className={styles.left}>
           <div className={styles.reviewer}>
             <h5 className={styles.reviewer__name}>Aegen magazines</h5>
-            <Rating
-              name='read-only'
-              size='large'
-              precision={0.5}
-              value={3.5}
-              readOnly
-              className={styles.reviewer__rating}
-            />
+            <StarRating value={3.5} className={styles.reviewer__rating} />
           </div>
           <p className={styles.reviewer__review}>
             Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing 
