@@ -2,12 +2,15 @@
   padding: 6rem 0;
   background-color: #f9f9f9;
 
-  &__wrapper {
-    margin: 0 18rem;
+  & > * {
+    position: relative;
+    max-width: 105rem;
+    margin: 0 auto;
   }
 
   &__header {
     display: inline-block;
+    text-align: center;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 2rem;
@@ -25,12 +28,16 @@
       width: 5rem;
       height: 3px;
       background-color: #24299b;
+      margin: 0 auto;
       margin-top: 3rem;
     }
   }
 
   .form {
-    width: 50%;
+    width: 80%;
+    position: relative;
+    max-width: 100rem;
+    margin: 0 auto;
 
     &__group {
       &:not(:last-of-type){
