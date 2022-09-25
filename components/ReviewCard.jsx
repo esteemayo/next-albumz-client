@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Rating from '@mui/material/Rating';
+
 import styles from '@/styles/ReviewCard.module.scss';
 
 const ReviewCard = () => {
@@ -24,7 +25,7 @@ const ReviewCard = () => {
           </p>
           <div className={styles.line}>&nbsp;</div>
           <div className={styles.date}>
-            <span>8:35 - Jan 4, 2022</span>
+            <span>8:35 PM - Jan 4, 2022</span>
           </div>
         </div>
         <div className={styles.right}>
