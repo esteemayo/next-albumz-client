@@ -1,9 +1,20 @@
 import Link from 'next/link';
+import { useState } from 'react';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import Meta from '@/components/Meta';
 import styles from '@/styles/Login.module.scss';
 
 const Login = () => {
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -29,10 +40,21 @@ const Login = () => {
                 </div>
                 <div className={styles.form__group}>
                   <input 
-                    type='password' 
+                    type={showPassword ? 'text': 'password'} 
                     placeholder='Password'
                     className={styles.form__input}
                    />
+                   {showPassword ? (
+                     <VisibilityOff
+                      onClick={handleShowPassword}
+                      className={styles.password__icon}
+                      />
+                   ) : (
+                    <Visibility
+                      onClick={handleShowPassword}
+                      className={styles.password__icon}
+                    />
+                   )}
                 </div>
                 <div className={styles.form__btnWrapper}>
                   <button type='submit' className={styles.form__btn}>Log in</button>
