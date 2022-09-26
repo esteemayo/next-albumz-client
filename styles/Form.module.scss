@@ -147,6 +147,15 @@
       border-radius: 0.6rem;
       box-shadow: 0 0 0 1px #999;
       caret-color: #1b004f;
+
+      option {
+        font-size: 1.45rem;
+        letter-spacing: 0.5rem;
+      }
+      
+      &:focus {
+        border: 1px solid #999;
+      }
     }
 
     &__btnWrapper {
