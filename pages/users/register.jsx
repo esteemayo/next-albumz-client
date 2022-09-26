@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import ChipInput from 'material-ui-chip-input';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import Meta from '@/components/Meta';
 import styles from '@/styles/Login.module.scss';
+import FormChipInput from '@/components/FormChipInput';
 
 const initialState = {
   name: '',
@@ -116,21 +116,17 @@ const Register = () => {
                   />
                 </div>
                 <div className={styles.form__group}>
-                  <ChipInput
-                      fullWidth
-                      name='favGenres'
-                      variant='outlined'
-                      placeholder='Favorite Genres'
-                      value={favGenres}
-                      onAdd={(genre) => handleAddFavGenre(genre)}
-                      onDelete={(genre) => handleDeleteFavGenre(genre)}
-                    />
+                  <FormChipInput
+                    name='favGenres'
+                    placeholder='Favorite Genres'
+                    value={favGenres}
+                    onAdd={(genre) => handleAddFavGenre(genre)}
+                    onDelete={(genre) => handleDeleteFavGenre(genre)}
+                  />
                 </div>
                 <div className={styles.form__group}>
-                  <ChipInput
-                    fullWidth
+                  <FormChipInput
                     name='favArtists'
-                    variant='outlined'
                     placeholder='Favorite Artists'
                     value={favArtists}
                     onAdd={(artist) => handleAddFavArtist(artist)}
