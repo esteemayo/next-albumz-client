@@ -1,9 +1,50 @@
+import { useState } from 'react';
 import ChipInput from 'material-ui-chip-input';
+
 import styles from '@/styles/Form.module.scss';
 
+const initialState = {
+  artist: '',
+  title: '',
+  genre: '',
+  info: '',
+  year: '',
+  label: '',
+  tracks: '',
+  tags: [],
+};
+
 const AlbumForm = () => {
+  const [file, setFile] = useState(null);
+  const [formData, setFormData] = useState(initialState)
+
+  const { tags } = formData;
+
+  const handleChange = ({ target: input }) => {
+    const { name, value } = input;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleAddTag = (tag) => {
+    setFormData((prev) => ({ ...prev, tags: [...prev.tags, tag]}));
+  };
+
+  const handleDeleteTag = (tag) => {
+    setFormData((prev) => ({
+      ...prev,
+      tags: prev.tags.filter((item) => item !== tag)
+    }));
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const newAlbum = {
+      ...formData,
+      tracks: +formData.tracks,
+    };
+    
+    console.log({ ...newAlbum });
   };
 
   const genres = [
@@ -25,22 +66,26 @@ const AlbumForm = () => {
             <div className={styles.form__wrapper}>
               <div className={styles.form__headline}>Create New Album</div>
               <div className={styles.form__group}>
-                <input 
-                  type='text' 
-                  placeholder='Artist' 
-                  className={styles.form__input} 
+                <input
+                  type='text'
+                  name='artist'
+                  placeholder='Artist'
+                  onChange={handleChange}
+                  className={styles.form__input}
                 />
               </div>
               <div className={styles.form__group}>
-                <input 
-                  type='text' 
-                  placeholder='Album Title' 
-                  className={styles.form__input} 
+                <input
+                  type='text'
+                  name='title'
+                  onChange={handleChange}
+                  placeholder='Album Title'
+                  className={styles.form__input}
                 />
               </div>
               <div className={styles.form__group}>
-                <select className={styles.form__select}>
-                  <option selected disabled>Genre</option>
+                <select name='genre' onChange={handleChange} className={styles.form__select}>
+                  <option defaultValue='Genre' disabled>Genre</option>
                   {genres.map((option) => {
                     return (
                       <option key={option.id} value={option.id}>
@@ -52,41 +97,56 @@ const AlbumForm = () => {
               </div>
               <div className={styles.form__group}>
                 <textarea
+                  name='info'
+                  onChange={handleChange}
                   placeholder='Album Info'
                   className={styles.form__textarea}
                 ></textarea>
               </div>
               <div className={styles.form__group}>
-                <input 
-                  type='text' 
-                  placeholder='Release Year' 
-                  className={styles.form__input} 
+                <input
+                  type='text'
+                  name='year'
+                  placeholder='Release Year'
+                  className={styles.form__input}
+                  onChange={handleChange}
                 />
               </div>
               <div className={styles.form__group}>
-                <input 
-                  type='text' 
-                  placeholder='Record Label' 
-                  className={styles.form__input} 
+                <input
+                  type='text'
+                  name='label'
+                  placeholder='Record Label'
+                  className={styles.form__input}
+                  onChange={handleChange}
                 />
               </div>
               <div className={styles.form__group}>
-                <input 
-                  type='text' 
-                  placeholder='Number of Tracks' 
-                  className={styles.form__input} 
+                <input
+                  type='text'
+                  name='tracks'
+                  placeholder='Number of Tracks'
+                  className={styles.form__input}
+                  onChange={handleChange}
                 />
               </div>
               <div className={styles.form__group}>
                 <ChipInput
-                  name='tags'
-                  variant='outlined'
                   fullWidth
-                  label='Tags'
+                  name='tags'
+                  value={tags}
+                  variant='outlined'
+                  placeholder='Tags'
+                  onAdd={(tag) => handleAddTag(tag)}
+                  onDelete={(tag) => handleDeleteTag(tag)}
                 />
               </div>
               <div className={styles.form__group}>
-                <input type='file' className={styles.form__input} />
+                <input
+                  type='file'
+                  className={styles.form__input}
+                  onChange={(e) => setFile(e.target.files[0])}
+                />
               </div>
               <div className={styles.form__btnWrapper}>
                 <button type='submit' className={styles.form__btn}>Submit</button>
