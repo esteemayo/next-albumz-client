@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import ChipInput from 'material-ui-chip-input';
 
 import styles from '@/styles/Form.module.scss';
+import FormChipInput from '@/components/FormChipInput';
 
 const initialState = {
   artist: '',
@@ -26,7 +26,7 @@ const AlbumForm = () => {
   };
 
   const handleAddTag = (tag) => {
-    setFormData((prev) => ({ ...prev, tags: [...prev.tags, tag]}));
+    setFormData((prev) => ({ ...prev, tags: [...prev.tags, tag] }));
   };
 
   const handleDeleteTag = (tag) => {
@@ -131,11 +131,9 @@ const AlbumForm = () => {
                 />
               </div>
               <div className={styles.form__group}>
-                <ChipInput
-                  fullWidth
+                <FormChipInput
                   name='tags'
                   value={tags}
-                  variant='outlined'
                   placeholder='Tags'
                   onAdd={(tag) => handleAddTag(tag)}
                   onDelete={(tag) => handleDeleteTag(tag)}
