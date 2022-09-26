@@ -40,7 +40,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li className={styles.list__items}>
-            <Link href='/tags' passHref className={styles.navbar__link}>
+            <Link href='/albums/tags' passHref className={styles.navbar__link}>
               Tags
             </Link>
           </li>
