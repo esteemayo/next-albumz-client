@@ -32,17 +32,19 @@ const Login = () => {
               <div className={styles.form__wrapper}>
                 <div className={styles.form__headline}>Log in to Your Account</div>
                 <div className={styles.form__group}>
-                  <input 
-                    type='email' 
-                    placeholder='Username or Email' 
-                    className={styles.form__input} 
+                  <input
+                    type='email'
+                    placeholder='Username or Email'
+                    className={styles.form__input}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className={styles.form__group}>
-                  <input 
-                    type={showPassword ? 'text': 'password'} 
+                  <input
+                    type={showPassword ? 'text': 'password'}
                     placeholder='Password'
                     className={styles.form__input}
+                    onChange={(e) => setPassword(e.target.value)}
                    />
                    {showPassword ? (
                      <VisibilityOff
@@ -64,7 +66,7 @@ const Login = () => {
           </div>
           <div className={styles.links}>
             <Link href='/users/register' pasHref>Register</Link> | {' '}
-            <Link href='/auth/forgot' pasHref>Lost your password</Link>
+            <Link href='/auth/forgot' pasHref>Lost your password?</Link>
           </div>
         </div>
       </div>
