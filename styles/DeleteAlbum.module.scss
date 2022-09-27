@@ -1,0 +1,51 @@
+.container {
+  padding: 3rem;
+
+  .wrapper {
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+
+    .header {
+      display: inline-block;
+      font-weight: 400;
+      font-size: 1.8rem;
+      color: #aaa;
+    }
+
+    .btnBox {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 2rem;
+
+      .btn {
+        border: none;
+        display: inline-block;
+        text-transform: uppercase;
+        background-color: transparent;
+        font-weight: 900rem;
+        font-size: 1.7rem;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .btnCancel {
+        color: #008080;
+
+        &:hover {
+          opacity: 0.95;
+        }
+      }
+
+      .btnDelete {
+        color: #ff0000;
+        margin-left: 2rem;
+
+        &:hover {
+          opacity: 0.75;
+        }
+      }
+    }
+  }
+}
