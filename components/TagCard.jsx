@@ -15,14 +15,18 @@ const TagCard = () => {
       <div className={styles.card}>
         <div className={styles.left}>
           <div className={styles.card__image}>
+            <div className={styles.overlay}>&nbsp;</div>
             <Image
               src='/img/banner.jpg'
               width={200}
-              height={100}
+              height={130}
               objectFit='cover'
               alt=''
             />
           </div>
+          <h3 className={styles.card__heading}>
+            <span>Made in lagos</span>
+          </h3>
         </div>
         <div className={styles.right}>
           <p className={styles.card__info}>
