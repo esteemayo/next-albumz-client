@@ -1,0 +1,59 @@
+.wrapper {
+  padding: 1rem;
+  box-shadow: 0 2px 5px 1px rgba(64, 60, 67, 0.16);
+  border-radius: 0.5rem;
+  margin-bottom: 2.5rem;
+
+  .card {
+    display: flex;
+    align-items: flex-start;
+
+    .left {
+      flex: 1;
+    }
+
+    &__image {
+      & > * {
+        display: inline-block;
+        object-fit: cover;
+      }
+    }
+
+    .right {
+      flex: 2.5;
+    }
+
+    &__info {
+      color: #777;
+      font-size: 1.47rem;
+      word-wrap: break-word;
+      hyphens: auto;
+    }
+  }
+
+  .btnWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .btn {
+      border: none;
+      outline: none;
+      display: inline-block;
+      text-transform: capitalize;
+      padding: 1rem 3rem;
+      font-size: 1.5rem;
+      background-color: transparent;
+      color: #5a6bf6;
+      border: 1px dotted #5a6bf6;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        color: #24299b;
+        border-color: #24299b;
+      }
+    }
+  }
+}
