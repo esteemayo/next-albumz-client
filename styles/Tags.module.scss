@@ -31,12 +31,17 @@
     }
     
     &__sub {
-      display: inline-block;
+      display: flex;
+      align-items: center;
       font-weight: 400;
       font-size: 2rem;
       text-transform: lowercase;
       color: #777;
       margin-left: 1rem;
+
+      .tagIcon {
+        font-size: 3rem;
+      }
     }
   }
 }
