@@ -1,0 +1,42 @@
+.container {
+  padding: 10rem 0;
+  max-width: 80rem;
+  position: relative;
+  margin: 0 auto;
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10rem;
+
+    &::after {
+      display: inline-block;
+      content: '';
+      width: 5rem;
+      height: 0.3rem;
+      background-color: #5a6bf6;
+      margin: 0 auto;
+      margin-top: 3rem;
+    }
+
+    &__main {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 2.8rem;
+      text-transform: uppercase;
+      color: #24299b;
+      letter-spacing: 0.1rem;
+    }
+    
+    &__sub {
+      display: inline-block;
+      font-weight: 400;
+      font-size: 2rem;
+      text-transform: lowercase;
+      color: #777;
+      margin-left: 1rem;
+    }
+  }
+}
