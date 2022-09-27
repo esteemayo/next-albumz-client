@@ -1,0 +1,142 @@
+.wrapper {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #f5f8fa;
+  box-shadow: 0 2px 5px 1px rgba(64, 60, 67, 0.16);
+  
+  &:not(last-of-type){
+    margin-bottom: 3rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+
+    &__left {
+      flex: 1;
+      position: relative;
+    }
+
+    &__img {
+      position: relative;
+
+      .overlay {
+        position: absolute;
+        width: 100%;
+        height: 92%;
+        background-image: linear-gradient(
+          to right bottom,
+          rgba(105, 108, 255, 0.85),
+          rgba(155, 81, 224, 0.85)
+        );
+        opacity: 0.7;
+        z-index: 10;
+      }
+
+      img {
+        display: inline-block;
+        border-radius: 0.5rem;
+      }
+    }
+
+    &__heading {
+      width: 50%;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 300;
+      font-size: 1.6rem;
+      position: absolute;
+      top: 3rem;
+      right: 1rem;
+      text-align: right;
+
+      span {
+        padding: 0.7rem 1.3rem;
+        line-height: 1;
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        background-image: linear-gradient(
+          to bottom right,
+          rgba(90, 107, 246, 0.45),
+          rgba(36, 41, 155, 0.85)
+        );
+      }
+    }
+
+    &__right {
+      flex: 3;
+    }
+
+    &__info {
+      color: #777;
+      font-size: 1.6rem;
+      word-wrap: break-word;
+      hyphens: auto;
+    }
+
+    &__line {
+      background-color: #bac4c4;
+      width: 100%;
+      height: 0.1px;
+      margin-top: 2rem;
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 1.5rem;
+      margin-right: 2rem;
+    }
+
+    &__updateBtn {
+      &,
+      &:link,
+      &:visited {
+        display: inline-block;
+        text-decoration: none;
+        text-transfrom: capitalize;
+        font-weight: 500;
+        font-size: 1.5rem;
+        padding: 0.3rem 1.5rem;
+        height: 3.5rem;
+        background-color: #5a6bf6;
+        color: #fff;
+        border: 1px solid #5a6bf6;
+        border-radius: 0.5rem;
+        margin-right: 1rem;
+        transition: all 0.5s ease-in-out;
+      }
+      
+      &:hover,
+      &:active {
+        opacity: 0.85;
+      }
+    }
+    
+    &__delete {
+      border: none;
+      display: inline-block;
+      text-transform: capitalize;
+      font-weight: 500;
+      font-size: 1.5rem;
+      padding: 0.3rem 1.5rem;
+      height: 3.5rem;
+      background-color: #f00;
+      color: #fff;
+      border: 1px solid #f00;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+}
