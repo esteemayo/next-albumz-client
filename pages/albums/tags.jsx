@@ -1,3 +1,5 @@
+import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
+
 import TagCard from '@/components/TagCard';
 import styles from '@/styles/Tags.module.scss';
 
