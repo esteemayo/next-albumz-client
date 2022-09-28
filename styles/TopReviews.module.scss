@@ -1,5 +1,7 @@
 .container {
   width: 100%;
+  position: relative;
+  margin: 0 auto;
   padding: 15rem 0;
   background-color: transparent;
 
@@ -29,9 +31,10 @@
   
   .wrapper {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 7rem;
     padding: 0 7rem;
     text-align: center;
   }
@@ -59,19 +62,23 @@
   }
 
   .reviewer__rating {
-    span:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .ratingIcon {
       font-size: 2.5rem;
-      color: orange;
     }
-
-    span:last-child {
+    
+    .ratingValue {
       color: #999;
+      margin-left: 0.5rem;
     }
   }
 
   .reviewer__name {
     text-transform: capitalize;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.7rem;
     color: #aaa;
   }
