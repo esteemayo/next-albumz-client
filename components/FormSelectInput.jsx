@@ -1,0 +1,20 @@
+import styles from '@/styles/FormSelectInput.module.scss';
+
+const FormSelectInput = ({ name, text, options, ...rest }) => {
+  return (
+    <div className={styles.form__group}>
+      <select {...rest} name={name} className={styles.form__select}>
+        <option disabled>{text}</option>
+        {options.map((option) => {
+          return (
+            <option key={option.id} value={option.id}>
+              {option.name}
+            </option>
+          );
+        })}
+      </select>
+    </div>
+  );
+};
+
+export default FormSelectInput;
