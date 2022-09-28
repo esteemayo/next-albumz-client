@@ -1,6 +1,11 @@
+import { useState } from 'react';
+
+import FormInput from './FormInput';
 import styles from '@/styles/Form.module.scss';
 
 const GenreForm = () => {
+  const [name, setName] = useState(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -15,13 +20,10 @@ const GenreForm = () => {
           <form onSubmit={handleSubmit}>
             <div className={styles.form__wrapper} style={{ height: '25rem' }}>
               <div className={styles.form__headline}>Create New Genre</div>
-              <div className={styles.form__group}>
-                <input 
-                  type='text' 
-                  placeholder='Name' 
-                  className={styles.form__input} 
-                />
-              </div>
+              <FormInput
+                placeholder='Name' 
+                onChange={(e) => setName(e.target.value)}
+              />
               <div className={styles.form__btnWrapper}>
                 <button type='submit' className={styles.form__btn}>Submit</button>
               </div>
