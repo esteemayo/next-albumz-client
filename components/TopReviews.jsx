@@ -1,4 +1,6 @@
 import Image from 'next/image';
+
+import StarRating from './StarRating';
 import styles from '@/styles/TopReviews.module.scss';
 
 const TopReviews = () => {
@@ -23,7 +25,8 @@ const TopReviews = () => {
             </p>
           </div>
           <div className={styles.reviewer__rating}>
-            <span>★★★★☆</span> <span>4.0</span>
+            <StarRating value={4} className={styles.ratingIcon} />
+            <span className={styles.ratingValue}>4.0</span>
           </div>
           <div className={styles.reviewer__name}>John doe</div>
         </div>
@@ -44,7 +47,8 @@ const TopReviews = () => {
             </p>
           </div>
           <div className={styles.reviewer__rating}>
-            <span>★★★★★</span> <span>5.0</span>
+            <StarRating value={5} className={styles.ratingIcon} />
+            <span className={styles.ratingValue}>5.0</span>
           </div>
           <div className={styles.reviewer__name}>Mary doe</div>
         </div>
@@ -65,7 +69,8 @@ const TopReviews = () => {
             </p>
           </div>
           <div className={styles.reviewer__rating}>
-            <span>★★★☆☆</span> <span>3.0</span>
+            <StarRating value={3} className={styles.ratingIcon} />
+            <span className={styles.ratingValue}>3.0</span>
           </div>
           <div className={styles.reviewer__name}>Chris vega</div>
         </div>
