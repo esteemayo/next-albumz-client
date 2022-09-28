@@ -49,12 +49,12 @@ const Login = () => {
                    {showPassword ? (
                      <VisibilityOff
                       onClick={handleShowPassword}
-                      className={styles.password__icon}
+                      className={styles.form__icon}
                       />
                    ) : (
                     <Visibility
                       onClick={handleShowPassword}
-                      className={styles.password__icon}
+                      className={styles.form__icon}
                     />
                    )}
                 </div>
@@ -65,8 +65,8 @@ const Login = () => {
             </form>
           </div>
           <div className={styles.links}>
-            <Link href='/users/register' pasHref>Register</Link> | {' '}
-            <Link href='/auth/forgot' pasHref>Lost your password?</Link>
+            <Link href='/users/register' passHref>Register</Link> | {' '}
+            <Link href='/auth/forgot' passHref>Lost your password?</Link>
           </div>
         </div>
       </div>
