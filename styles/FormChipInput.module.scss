@@ -1,0 +1,13 @@
+.form {
+  &__group {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 6.387%0 0;
+
+    &:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+  }
+}
