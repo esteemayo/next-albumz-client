@@ -62,93 +62,25 @@
       margin-right: 6.387%;
     }
 
-    &__group {
-      position: relative;
-      width: 100%;
-      display: inline-block;
-      vertical-align: top;
-      padding: 0 6.387%0 0;
-
-      &:not(:last-of-type) {
-        margin-bottom: 2rem;
-      }
+    &__icon {
+      position: absolute;
+      font-size: 2rem;
+      color: rgb(105, 113, 122);
+      top: 1rem;
+      right: 4rem;
+      cursor: pointer;
     }
 
-    &__input {
-      display: inline-block;
-      width: 100%;
-      font-family: inherit;
-      font-size: 1.5rem;
-      padding: 1rem 1.5rem;
-      border-color: rgb(155, 155, 155);
-      background-color: transparent;
-      color: rgb(105, 113, 122);
-      border: 0px solid #999;
-      border: 1px solid transparent;
-      outline: none;
-      border-radius: 0.6rem;
-      box-shadow: 0 0 0 1px #999;
-      caret-color: #1b004f;
-      transition: all 0.15s ease-in-out;
+    &__image {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
 
-      &::-webkit-input-placeholder {
-        font-size: 1.3rem;
-      }
-
-      &:focus {
-        border: 1px solid #999;
-      }
-    }
-
-    &__textarea {
-      display: inline-block;
-      font-family: inherit;
-      width: 100%;
-      height: 20rem;
-      padding: 1rem 1.5rem;
-      border-color: rgb(155, 155, 155);
-      background-color: transparent;
-      color: rgb(105, 113, 122);
-      border: 0px solid #999;
-      border: 1px solid transparent;
-      outline: none;
-      border-radius: 0.6rem;
-      box-shadow: 0 0 0 1px #999;
-      caret-color: #1b004f;
-      resize: none;
-      transition: all 0.15s ease-in-out;
-
-      &::placeholder {
-        font-size: 1.3rem;
-      }
-
-      &:focus {
-        border: 1px solid #999;
-      }
-    }
-
-    &__select {
-      display: inline-block;
-      font-family: inherit;
-      width: 100%;
-      padding: 1rem 1.5rem;
-      border-color: rgb(155, 155, 155);
-      background-color: transparent;
-      color: rgb(105, 113, 122);
-      border: 0px solid #999;
-      border: 1px solid transparent;
-      outline: none;
-      border-radius: 0.6rem;
-      box-shadow: 0 0 0 1px #999;
-      caret-color: #1b004f;
-
-      option {
-        font-size: 1.45rem;
-        letter-spacing: 0.5rem;
-      }
-      
-      &:focus {
-        border: 1px solid #999;
+      & > * {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.5rem;
       }
     }
 
@@ -180,40 +112,6 @@
         background-color: #d6d8ff;
         color: #fff;
         border-color: #d6d8ff;
-      }
-    }
-  }
-
-  .password__icon {
-    position: absolute;
-    font-size: 2rem;
-    color: rgb(105, 113, 122);
-    top: 1rem;
-    right: 4rem;
-    cursor: pointer;
-  }
-
-  .links {
-    padding: 1.5rem 0;
-    text-align: center;
-
-    a {
-      &,
-      &:link,
-      &:visited {
-        line-height: 2.2rem;
-        font-weight: 400;
-        font-size: 1.4rem;
-        color: #69717a ;
-        display: inline-block;
-        text-decoration: none;
-        text-align: center;
-        border-bottom: none;
-        transition: all 0.15s ease-in-out;
-
-        &:hover {
-          text-decoration: underline;
-        }
       }
     }
   }
