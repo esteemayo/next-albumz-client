@@ -115,24 +115,20 @@ const Register = () => {
                     className={styles.form__input}
                   />
                 </div>
-                <div className={styles.form__group}>
-                  <FormChipInput
-                    name='favGenres'
-                    placeholder='Favorite Genres'
-                    value={favGenres}
-                    onAdd={(genre) => handleAddFavGenre(genre)}
-                    onDelete={(genre) => handleDeleteFavGenre(genre)}
-                  />
-                </div>
-                <div className={styles.form__group}>
-                  <FormChipInput
-                    name='favArtists'
-                    placeholder='Favorite Artists'
-                    value={favArtists}
-                    onAdd={(artist) => handleAddFavArtist(artist)}
-                    onDelete={(artist) => handleDeleteFavArtist(artist)}
-                  />
-                </div>
+                <FormChipInput
+                  name='favGenres'
+                  placeholder='Favorite Genres'
+                  value={favGenres}
+                  onAdd={(genre) => handleAddFavGenre(genre)}
+                  onDelete={(genre) => handleDeleteFavGenre(genre)}
+                />
+                <FormChipInput
+                  name='favArtists'
+                  placeholder='Favorite Artists'
+                  value={favArtists}
+                  onAdd={(artist) => handleAddFavArtist(artist)}
+                  onDelete={(artist) => handleDeleteFavArtist(artist)}
+                />
                 <div className={styles.form__group}>
                   <input
                     name='password'
@@ -144,12 +140,12 @@ const Register = () => {
                   {showPassword ? (
                      <VisibilityOff
                       onClick={handleShowPassword}
-                      className={styles.password__icon}
+                      className={styles.form__icon}
                       />
                    ) : (
                     <Visibility
                       onClick={handleShowPassword}
-                      className={styles.password__icon}
+                      className={styles.form__icon}
                     />
                    )}
                 </div>
@@ -164,12 +160,12 @@ const Register = () => {
                     {showPassword ? (
                      <VisibilityOff
                       onClick={handleShowPassword}
-                      className={styles.password__icon}
+                      className={styles.form__icon}
                       />
                    ) : (
                     <Visibility
                       onClick={handleShowPassword}
-                      className={styles.password__icon}
+                      className={styles.form__icon}
                     />
                    )}
                 </div>
@@ -187,7 +183,7 @@ const Register = () => {
             </form>
           </div>
           <div className={styles.links}>
-            <Link href='/auth/login' pasHref>Have an account? Login</Link>
+            <Link href='/auth/login' passHref>Have an account? Login</Link>
           </div>
         </div>
       </div>
