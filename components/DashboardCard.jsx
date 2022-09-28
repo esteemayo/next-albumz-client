@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import DialogBox from '@/components/DialogBox';
-import DeleteAlbum from '@/components/DeleteAlbum';
 import styles from '@/styles/DashboardCard.module.scss';
+import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 
-const DashboardCard = ({ openModal }) => {
+const DashboardCard = () => {
   const [showModal, setShowModal] = useState(true);
 
   return (
@@ -50,7 +50,10 @@ const DashboardCard = ({ openModal }) => {
       </div>
       {!showModal && (
         <DialogBox>
-          <DeleteAlbum closeModal={setShowModal} />
+          <DeleteAlbumGenre
+            title='Discard album?'
+            closeModal={setShowModal}
+          />
         </DialogBox>
       )}
     </>
