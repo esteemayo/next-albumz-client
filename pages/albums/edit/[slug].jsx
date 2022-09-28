@@ -1,8 +1,12 @@
+import Image from 'next/image';
 import { useState } from 'react';
 
 import Meta from '@/components/Meta';
-import FormChipInput from '@/components/FormChipInput';
+import FormInput from '@/components/FormInput';
+import FormTextArea from '@/components/FormTextArea';
+import FormSelectInput from '@/components/FormSelectInput';
 import styles from '@/styles/UpdateAlbum.module.scss';
+import FormChipInput from '@/components/FormChipInput';
 
 const UpdateAlbum = () => {
   const [file, setFile] = useState(null);
@@ -59,88 +63,63 @@ const UpdateAlbum = () => {
             <form onSubmit={handleSubmit}>
               <div className={styles.form__wrapper}>
                 <div className={styles.form__headline}>Update Album</div>
-                <div className={styles.form__group}>
-                  <input
-                    type='text'
-                    placeholder='Artist'
-                    className={styles.form__input}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={styles.form__group}>
-                  <input
-                    type='text'
-                    placeholder='Album Title'
-                    className={styles.form__input}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={styles.form__group}>
-                  <select name='genre' onChange={handleChange} className={styles.form__select}>
-                    <option defaultValue='Genre' disabled>Genre</option>
-                    {genres.map((option) => {
-                      return (
-                        <option key={option.id} value={option.id}>
-                          {option.name}
-                        </option>
-                      );
-                    })}
-                  </select>
-                </div>
-                <div className={styles.form__group}>
-                  <textarea
-                    name='info'
-                    onChange={handleChange}
-                    placeholder='Album Info'
-                    className={styles.form__textarea}
-                  ></textarea>
-              </div>
-                <div className={styles.form__group}>
-                  <input
-                    type='text'
-                    name='year'
-                    placeholder='Release Year'
-                    className={styles.form__input}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={styles.form__group}>
-                  <input
-                    type='text'
-                    name='label'
-                    placeholder='Record Label'
-                    className={styles.form__input}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={styles.form__group}>
-                  <input
-                    type='text'
-                    name='tracks'
-                    placeholder='Number of Tracks'
-                    className={styles.form__input}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={styles.form__group}>
-                  <FormChipInput
-                    name='tags'
-                    value={tags}
-                    placeholder='Tags'
-                    onAdd={(tag) => handleAddTag(tag)}
-                    onDelete={(tag) => handleDeleteTag(tag)}
-                  />
-              </div>
-              <div className={styles.form__group}>
-                <input
+                <FormInput
+                  placeholder='Artist'
+                  onChange={handleChange}
+                />
+                <FormInput
+                  placeholder='Album Title'
+                  onChange={handleChange}
+                />
+                <FormSelectInput
+                  name='genre'
+                  onChange={handleChange}
+                  text='Genre'
+                  options={genres}
+                />
+                <FormTextArea
+                  name='info'
+                  onChange={handleChange}
+                  placeholder='Album Info'
+                />
+                <FormInput
+                  name='year'
+                  placeholder='Release Year'
+                  onChange={handleChange}
+                />
+                <FormInput
+                  name='label'
+                  placeholder='Record Label'
+                  onChange={handleChange}
+                />
+                <FormInput
+                  name='tracks'
+                  placeholder='Number of Tracks'
+                  onChange={handleChange}
+                />
+                <FormChipInput
+                  name='tags'
+                  value={tags}
+                  placeholder='Tags'
+                  onAdd={(tag) => handleAddTag(tag)}
+                  onDelete={(tag) => handleDeleteTag(tag)}
+                />
+                <FormInput
                   type='file'
-                  className={styles.form__input}
                   onChange={(e) => setFile(e.target.files[0])}
                 />
-              </div>
-              <div className={styles.form__btnWrapper}>
-                <button type='submit' className={styles.form__btn}>Update</button>
-              </div>
+                <div className={styles.form__image}>
+                  <Image
+                    src='/img/banner.jpg'
+                    width={180}
+                    height={100}
+                    objectFit='cover'
+                    alt=''
+                  />
+                </div>
+                <div className={styles.form__btnWrapper}>
+                  <button type='submit' className={styles.form__btn}>Update</button>
+                </div>
               </div>
             </form>
           </div>
