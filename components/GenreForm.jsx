@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import FormInput from './FormInput';
+import FormButton from './FormButton';
 import styles from '@/styles/Form.module.scss';
 
 const GenreForm = () => {
@@ -24,9 +25,7 @@ const GenreForm = () => {
                 placeholder='Name' 
                 onChange={(e) => setName(e.target.value)}
               />
-              <div className={styles.form__btnWrapper}>
-                <button type='submit' className={styles.form__btn}>Submit</button>
-              </div>
+              <FormButton text='Submit' />
             </div>
           </form>
         </div>
