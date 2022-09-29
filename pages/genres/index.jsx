@@ -3,11 +3,15 @@ import { useState } from 'react';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 
 import Meta from '@/components/Meta';
+import Modal from '@/components/Modal';
+import AddButton from '@/components/AddButton';
 import DialogBox from '@/components/DialogBox';
+import GenreForm from '@/components/GenreForm';
 import styles from '@/styles/Genres.module.scss';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 
 const Genres = () => {
+  const [open, setOpen] = useState(false);
   const [showModal, setShowModal] = useState(true)
   
   return (
@@ -81,6 +85,13 @@ const Genres = () => {
           </tbody>
         </table>
       </section>
+      <AddButton text='New genre' onClick={() => setOpen(true)} />
+      {open && (
+        <Modal onClose={setOpen}>
+          <GenreForm type='genre' />
+        </Modal>
+      )}
+      
       {!showModal && (
         <DialogBox>
           <DeleteAlbumGenre
