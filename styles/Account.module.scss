@@ -1,0 +1,123 @@
+.account {
+  padding: 15rem 0;
+  max-width: 110rem;
+  position: relative;
+  margin: 0 auto;
+
+  &__heading {
+    font-weight: 500;
+    font-size: 4rem;
+    text-transform: capitalize;
+    margin-bottom: 3rem;
+  }
+
+  &__container {
+    display: flex;
+    // align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+
+    .left {
+      flex: 1;
+      border-right: 1px solid lightgray;
+
+      .userContainer {
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .imageContainer {
+          width: 8rem;
+          height: 8rem;
+          border: 0.5rem solid #fff;
+          border-radius: 50%;
+          box-shadow: 0 2px 1rem rgba(0, 0, 0, 0.1);
+
+          & > * {
+            display: inline-block;
+            object-fit: cover;
+            border: 0.5rem solid #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 1rem rgba(0, 0, 0, 0.1);
+          }
+        }
+
+        .userName {
+          font-weight: 500;
+          font-size: 2rem;
+          text-transform: capitalize;
+          margin-top: 1rem;
+        }
+      }
+
+      .list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        
+        &__item {
+          display: flex;
+          align-items: center;
+          padding: 1.5rem 2rem;
+          border-top: 1px solid lightgray;
+          border-bottom: 1px solid lightgray;
+
+          .itemIcon {
+            fill: #777;
+            font-size: 2.5rem;
+            margin-right: 1rem;
+          }
+
+          .itemLink {
+            &:link,
+            &:visited {
+              width: 100%;
+              display: inline-block;
+              text-decoration: none;
+              text-transform: capitalize;
+              font-size: 1.8rem;
+              color: #555;
+            }
+          }
+        }
+      }
+    }
+  
+    .right {
+      flex: 3;
+      padding: 3rem;
+
+      .accountHeader {
+        font-weight: 500;
+        font-size: 3rem;
+        text-transform: capitalize;
+        margin-bottom: 3rem;
+      }
+
+      .formWrapper {
+        width: 60%;
+        position: relative;
+        margin: 0 auto;
+
+        .form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          &__left {
+            flex: 1;
+          }
+
+          &__right {
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+}
