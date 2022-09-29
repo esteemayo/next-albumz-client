@@ -135,6 +135,7 @@ const Account = () => {
                 type='file'
                 onChange={(e) => setFile(e.target.value)}
               />
+              <FormButton text='Save' />
             </form>
           </div>
         </div>
