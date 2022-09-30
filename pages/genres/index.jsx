@@ -12,7 +12,7 @@ import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 
 const Genres = () => {
   const [open, setOpen] = useState(false);
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(true);
   
   return (
     <>
