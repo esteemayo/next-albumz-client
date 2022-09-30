@@ -1,6 +1,6 @@
 import styles from '@/styles/FormInput.module.scss';
 
-const FormInput = ({ name, type='text',  ...rest }) => {
+const FormInput = ({ name, type='text', children,  ...rest }) => {
   return (
     <div className={styles.form__group}>
       <input
@@ -9,6 +9,7 @@ const FormInput = ({ name, type='text',  ...rest }) => {
         type={type}
         className={styles.form__input}
       />
+      {children}
     </div>
   );
 };
