@@ -66,6 +66,37 @@
           border-top: 1px solid lightgray;
           border-bottom: 1px solid lightgray;
 
+          &:hover {
+            background-color: #007bff;
+            opacity: 0.5;
+
+            .itemIcon {
+              fill: #fff;
+            }
+            
+            .itemLink {
+              &:link,
+              &:visited {
+                color: #fff;
+              }
+            }
+          }
+
+          &.active {
+            background-color: #007bff;
+            
+            .itemIcon {
+              fill: #fff;
+            }
+            
+            .itemLink {
+              &:link,
+              &:visited {
+                color: #fff;
+              }
+            }
+          }
+
           .itemIcon {
             fill: #777;
             fill: #696cff;
