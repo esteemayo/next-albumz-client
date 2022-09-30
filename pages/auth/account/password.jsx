@@ -47,7 +47,7 @@ const UpdatePassword = () => {
                   <a className={styles.itemLink}>Account</a>
                 </Link>
               </li>
-              <li className={styles.list__item}>
+              <li className={`${styles.list__item} ${styles.active}`}>
                 <KeyOutlinedIcon className={styles.itemIcon} />
                 <Link href='/auth/account/password' passHref>
                   <a className={styles.itemLink}>Password</a>
