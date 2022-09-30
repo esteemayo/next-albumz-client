@@ -17,7 +17,6 @@ const initialState = {
   location: '',
   favGenres: [],
   favArtists: [],
-  showPassword: false,
 };
 
 const Account = () => {
@@ -57,7 +56,7 @@ const Account = () => {
     }));
   };
 
-  const {favGenres, favArtists, showPassword } = formInputs;
+  const {favGenres, favArtists } = formInputs;
 
   const handleSubmit = (e) => {
     e.preventDefault();
