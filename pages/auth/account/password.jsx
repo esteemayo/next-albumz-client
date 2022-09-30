@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
@@ -13,9 +15,13 @@ import styles from '@/styles/UpdatePassword.module.scss';
 
 const UpdatePassword = () => {
   const [password, setPassword] = useState(null);
-  const [showModal, setShowModal] = useState(true);
   const [confirmPassword, setConfirmPassword] = useState(null);
-  const [currentpassword, setCurrentPassword] = useState(null);
+  const [currentPassword, setCurrentPassword] = useState(null);
+  
+  const [showModal, setShowModal] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showCurrentPassword, setShowCurrentPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -60,20 +66,56 @@ const UpdatePassword = () => {
             <div className={styles.formWrapper}>
               <form onSubmit={handleSubmit} className={styles.form}>
                 <FormInput
-                  type='password'
+                  type={showCurrentPassword ? 'text' : 'password'}
                   placeholder='Current Password'
                   onChange={(e) => setCurrentPassword(e.target.value)}
-                />
+                >
+                  {showCurrentPassword ? (
+                     <VisibilityOff
+                      onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                      className={styles.form__icon}
+                      />
+                   ) : (
+                    <Visibility
+                      onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                      className={styles.form__icon}
+                    />
+                  )}
+                </FormInput>
                 <FormInput
-                  type='password'
+                  type={showPassword ? 'text' : 'password'}
                   placeholder='Password'
                   onChange={(e) => setPassword(e.target.value)}
-                />
+                >
+                  {showPassword ? (
+                     <VisibilityOff
+                      onClick={() => setShowPassword(!showPassword)}
+                      className={styles.form__icon}
+                      />
+                   ) : (
+                    <Visibility
+                      onClick={() => setShowPassword(!showPassword)}
+                      className={styles.form__icon}
+                    />
+                  )}
+                </FormInput>
                 <FormInput
-                  type='password'
+                  type={showConfirmPassword ? 'text' : 'password'}
                   placeholder='Confirm Password'
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                />
+                >
+                  {showConfirmPassword ? (
+                     <VisibilityOff
+                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                      className={styles.form__icon}
+                      />
+                   ) : (
+                    <Visibility
+                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                      className={styles.form__icon}
+                    />
+                  )}
+                </FormInput>
                 <FormButton text='Update password' />
               </form>
             </div>
