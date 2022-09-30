@@ -141,6 +141,15 @@
           align-items: center;
           justify-content: center;
 
+          &__icon {
+            position: absolute;
+            font-size: 2rem;
+            color: rgb(105, 113, 122);
+            top: 1rem;
+            right: 4rem;
+            cursor: pointer;
+          }
+
           &__left {
             flex: 1;
           }
