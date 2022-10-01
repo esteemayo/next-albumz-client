@@ -73,12 +73,12 @@ const UpdatePassword = () => {
                   {showCurrentPassword ? (
                      <VisibilityOff
                       onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                      className={styles.form__icon}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
                       />
                    ) : (
                     <Visibility
                       onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                      className={styles.form__icon}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
                     />
                   )}
                 </FormInput>
@@ -90,12 +90,12 @@ const UpdatePassword = () => {
                   {showPassword ? (
                      <VisibilityOff
                       onClick={() => setShowPassword(!showPassword)}
-                      className={styles.form__icon}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
                       />
                    ) : (
                     <Visibility
                       onClick={() => setShowPassword(!showPassword)}
-                      className={styles.form__icon}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
                     />
                   )}
                 </FormInput>
@@ -107,12 +107,12 @@ const UpdatePassword = () => {
                   {showConfirmPassword ? (
                      <VisibilityOff
                       onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                      className={styles.form__icon}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
                       />
                    ) : (
                     <Visibility
                       onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                      className={styles.form__icon}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
                     />
                   )}
                 </FormInput>
