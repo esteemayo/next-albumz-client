@@ -37,7 +37,7 @@ const Navbar = () => {
           <Link href='/' passHref>
             <a className={styles.logo__link}>
               <Image
-                src='/img/logo.png'
+                src='/img/logo-x1.png'
                 width={120}
                 height={50}
                 objectFit='contain'
