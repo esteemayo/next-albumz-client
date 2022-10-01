@@ -13,10 +13,23 @@
 
   &__logo {
     flex: 1;
-    font-weight: 800;
-    font-size: 5rem;
-    text-transform: uppercase;
-    margin-left: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__link {
+    &,
+    &:link,
+    &:visited {
+      text-decoration: none;
+      transition: all 0.5s ease-in-out;
+    }
+
+    &:hover,
+    &:active {
+      opacity: 0.95;
+    }
   }
 
   &__list {
