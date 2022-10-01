@@ -2,8 +2,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 import Meta from '@/components/Meta';
+import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
 
 const Login = () => {
@@ -31,33 +33,30 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
               <div className={styles.form__wrapper}>
                 <div className={styles.form__headline}>Log in to Your Account</div>
-                <div className={styles.form__group}>
-                  <input
+                  <FormInput
                     type='email'
-                    placeholder='Username or Email'
-                    className={styles.form__input}
+                    placeholder='Email'
                     onChange={(e) => setEmail(e.target.value)}
-                  />
-                </div>
-                <div className={styles.form__group}>
-                  <input
+                  >
+                    <EmailOutlinedIcon className={styles.form__icon} />
+                  </FormInput>
+                  <FormInput
                     type={showPassword ? 'text': 'password'}
                     placeholder='Password'
-                    className={styles.form__input}
                     onChange={(e) => setPassword(e.target.value)}
-                   />
-                   {showPassword ? (
-                     <VisibilityOff
+                  >
+                    {showPassword ? (
+                      <VisibilityOff
                       onClick={handleShowPassword}
                       className={styles.form__icon}
                       />
-                   ) : (
+                    ) : (
                     <Visibility
                       onClick={handleShowPassword}
                       className={styles.form__icon}
                     />
-                   )}
-                </div>
+                    )}
+                  </FormInput>
                 <div className={styles.form__btnWrapper}>
                   <button type='submit' className={styles.form__btn}>Log in</button>
                 </div>
