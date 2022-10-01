@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch, useSelector } from 'react-redux';
@@ -32,7 +33,19 @@ const Navbar = () => {
       }
     >
       <div className={styles.navbar__left}>
-        <div className={styles.logo}>ALBUMZ</div>
+        <div className={styles.logo}>
+          <Link href='/' passHref>
+            <a className={styles.logo__link}>
+              <Image
+                src='/img/logo.png'
+                width={120}
+                height={50}
+                objectFit='contain'
+                alt=''
+              />
+            </a>
+          </Link>
+        </div>
         <ul className={styles.list}>
           <li className={styles.list__items}>
             <Link href='/albums' passHref className={styles.navbar__link}>
