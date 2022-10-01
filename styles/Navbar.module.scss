@@ -16,7 +16,7 @@
     background-color: transparent;
 
     .logo {
-      color: #1b004f;
+      // color: #1b004f;
     }
 
     .list__items {
@@ -53,9 +53,22 @@
     }
 
     .logo {
+      display: flex;
+      align-items: center;
       margin-right: 5rem;
-      text-transform: uppercase;
-      color: #1b004f;
+
+      &__link {
+        &,
+        &:link,
+        &:visited {
+          text-decoration: none;
+        }
+
+        &:hover,
+        &:active {
+          opacity: 0.85;
+        }
+      }
     }
 
     .list {
