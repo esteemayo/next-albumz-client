@@ -102,7 +102,7 @@ const Account = () => {
             </ul>
           </div>
           <div className={styles.right}>
-            <h2 className={styles.accountHeader}>Account settings</h2>
+            <h2 className={styles.accountHeader}>Profile</h2>
             <div className={styles.formWrapper}>
               <form onSubmit={handleSubmit} className={styles.form}>
                 <FormInput
