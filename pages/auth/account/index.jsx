@@ -3,6 +3,11 @@ import Image from 'next/image';
 import { useState } from 'react';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 import Meta from '@/components/Meta';
 import FormInput from '@/components/FormInput';
@@ -104,21 +109,29 @@ const Account = () => {
                   name='name'
                   placeholder='Name'
                   onChange={handleChange}
-                />
+                >
+                  <PersonOutlinedIcon className={styles.form__icon} />
+                </FormInput>
                 <FormInput
                   name='email'
                   placeholder='Email Address'
                   onChange={handleChange}
-                />
+                >
+                  <EmailOutlinedIcon className={styles.form__icon} />
+                </FormInput>
                 <FormInput
                   name='username'
                   placeholder='Username'
-                />
+                >
+                  <FaceOutlinedIcon className={styles.form__icon} />
+                </FormInput>
                 <FormInput
                   name='location'
                   placeholder='Location'
                   onChange={handleChange}
-                />
+                >
+                  <LocationOnOutlinedIcon className={styles.form__icon} />
+                </FormInput>
                 <FormChipInput
                   name='favGenres'
                   placeholder='Favorite Genres'
@@ -136,7 +149,9 @@ const Account = () => {
                 <FormInput
                   type='file'
                   onChange={(e) => setFile(e.target.value)}
-                />
+                >
+                  <FileUploadOutlinedIcon className={styles.form__icon} />
+                </FormInput>
                 <FormButton text='Save' />
               </form>
             </div>
