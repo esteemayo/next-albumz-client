@@ -22,20 +22,20 @@ const initialState = {
   favArtists: [],
   password: '',
   confirmPassword: '',
-  showPassword: false,
-  showConfirmPassword: false,
 };
 
 const Register = () => {
   const [file, setFile] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
   const [formInputs, setFormInputs] = useState(initialState);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleShowPassword = () => {
-    setFormInputs((prev) => ({ ...prev, showPassword: !prev.showPassword }));
+    setShowPassword(!showPassword);
   };
 
   const handleShowConfirmPassword = () => {
-    setFormInputs((prev) => ({ ...prev, showConfirmPassword: !prev.showConfirmPassword }));
+    setShowConfirmPassword(!showConfirmPassword);
   };
 
   const handleChange = ({ target: input }) => {
@@ -71,7 +71,7 @@ const Register = () => {
     }));
   };
 
-  const {favGenres, favArtists, showPassword, showConfirmPassword } = formInputs;
+  const {favGenres, favArtists } = formInputs;
 
   const handleSubmit = (e) => {
     e.preventDefault();
