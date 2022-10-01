@@ -12,7 +12,7 @@ const Footer = () => {
           <Link href='/' passHref>
             <a className={styles.footer__link}>
               <Image
-                src='/img/logo.png'
+                src='/img/logo-x2.png'
                 width={200}
                 height={70}
                 objectFit='center'
