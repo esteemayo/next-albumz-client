@@ -77,7 +77,7 @@ const Account = () => {
             <div className={styles.userContainer}>
               <div className={styles.imageContainer}>
                 <Image
-                  src='/img/admin.JPG'
+                  src={file ? URL.createObjectURL(file) : '/img/admin.JPG'}
                   width={80}
                   height={80}
                   objectFit='cover'
@@ -148,7 +148,7 @@ const Account = () => {
                 />
                 <FormInput
                   type='file'
-                  onChange={(e) => setFile(e.target.value)}
+                  onChange={(e) => setFile(e.target.files[0])}
                 >
                   <FileUploadOutlinedIcon className={styles.form__icon} />
                 </FormInput>
