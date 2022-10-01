@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 import Meta from '@/components/Meta';
@@ -6,6 +7,8 @@ import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
 
 const ForgotPassword = () => {
+  const [email, setEmail] = useState(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -25,6 +28,7 @@ const ForgotPassword = () => {
                 <FormInput
                   type='email'
                   placeholder='Email'
+                  onChange={(e) => setEmail(e.target.value)}
                 >
                   <EmailOutlinedIcon className={styles.form__icon} />
                 </FormInput>
