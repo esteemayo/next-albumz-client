@@ -2,8 +2,14 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 import Meta from '@/components/Meta';
+import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
 import FormChipInput from '@/components/FormChipInput';
 
@@ -84,42 +90,34 @@ const Register = () => {
             <form onSubmit={handleSubmit}>
               <div className={styles.form__wrapper}>
                 <div className={styles.form__headline}>Create an Account</div>
-                <div className={styles.form__group}>
-                  <input
-                    type='text'
-                    name='name'
-                    placeholder='Name'
-                    onChange={handleChange}
-                    className={styles.form__input}
-                  />
-                </div>
-                <div className={styles.form__group}>
-                  <input
-                    type='text'
-                    name='username'
-                    placeholder='Username'
-                    onChange={handleChange}
-                    className={styles.form__input}
-                  />
-                </div>
-                <div className={styles.form__group}>
-                  <input
-                    type='email'
-                    name='email'
-                    placeholder='Email Address'
-                    onChange={handleChange}
-                    className={styles.form__input}
-                  />
-                </div>
-                <div className={styles.form__group}>
-                  <input
-                    type='text'
-                    name='location'
-                    placeholder='Location'
-                    onChange={handleChange}
-                    className={styles.form__input}
-                  />
-                </div>
+                <FormInput
+                  name='name'
+                  placeholder='Name'
+                  onChange={handleChange}
+                >
+                  <PersonOutlinedIcon className={styles.form__icon} />
+                </FormInput>
+                <FormInput
+                  name='username'
+                  placeholder='Username'
+                  onChange={handleChange}
+                >
+                  <PersonOutlinedIcon className={styles.form__icon} />
+                </FormInput>
+                <FormInput
+                  name='email'
+                  placeholder='Email Address'
+                  onChange={handleChange}
+                >
+                  <EmailOutlinedIcon className={styles.form__icon} />
+                </FormInput>
+                <FormInput
+                  name='location'
+                  placeholder='Location'
+                  onChange={handleChange}
+                >
+                  <LocationOnOutlinedIcon className={styles.form__icon} />
+                </FormInput>
                 <FormChipInput
                   name='favGenres'
                   placeholder='Favorite Genres'
@@ -134,14 +132,12 @@ const Register = () => {
                   onAdd={(artist) => handleAddFavArtist(artist)}
                   onDelete={(artist) => handleDeleteFavArtist(artist)}
                 />
-                <div className={styles.form__group}>
-                  <input
-                    name='password'
-                    type={showPassword ? 'text': 'password'}
-                    placeholder='Password'
-                    onChange={handleChange}
-                    className={styles.form__input}
-                  />
+                <FormInput
+                  name='password'
+                  type={showPassword ? 'text': 'password'}
+                  placeholder='Password'
+                  onChange={handleChange}
+                >
                   {showPassword ? (
                      <VisibilityOff
                       onClick={handleShowPassword}
@@ -153,34 +149,31 @@ const Register = () => {
                       className={`${styles.form__icon} ${styles.form__iconPassword}`}
                     />
                    )}
-                </div>
-                <div className={styles.form__group}>
-                  <input
-                    name='confirmPassword'
-                    type={showConfirmPassword ? 'text': 'password'}
-                    placeholder='Confirm Password'
-                    onChange={handleChange}
-                    className={styles.form__input}
+                </FormInput>
+                <FormInput
+                  name='confirmPassword'
+                  type={showConfirmPassword ? 'text': 'password'}
+                  placeholder='Confirm Password'
+                  onChange={handleChange}
+                >
+                  {showConfirmPassword ? (
+                   <VisibilityOff
+                    onClick={handleShowConfirmPassword}
+                    className={`${styles.form__icon} ${styles.form__iconPassword}`}
                     />
-                    {showConfirmPassword ? (
-                     <VisibilityOff
-                      onClick={handleShowConfirmPassword}
-                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                      />
-                   ) : (
-                    <Visibility
-                      onClick={handleShowConfirmPassword}
-                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                    />
-                   )}
-                </div>
-                <div className={styles.form__group}>
-                  <input
-                  type='file'
-                  className={styles.form__input}
-                  onChange={(e) => setFile(e.target.files[0])}
+                 ) : (
+                  <Visibility
+                    onClick={handleShowConfirmPassword}
+                    className={`${styles.form__icon} ${styles.form__iconPassword}`}
                   />
-                </div>
+                 )}
+                </FormInput>
+                <FormInput
+                  type='file'
+                  onChange={(e) => setFile(e.target.files[0])}
+                >
+                  <FileUploadOutlinedIcon className={styles.form__icon} />
+                </FormInput>
                 <div className={styles.form__btnWrapper}>
                   <button type='submit' className={styles.form__btn}>Register</button>
                 </div>
