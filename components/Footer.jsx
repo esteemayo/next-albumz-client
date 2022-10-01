@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '@/styles/Footer.module.scss';
 
 const Footer = () => {
@@ -7,7 +8,19 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__navigation}>
-        <div className={styles.footer__logo}>Albumz</div>
+        <div className={styles.footer__logo}>
+          <Link href='/' passHref>
+            <a className={styles.footer__link}>
+              <Image
+                src='/img/logo.png'
+                width={200}
+                height={70}
+                objectFit='center'
+                alt=''
+              />
+            </a>
+          </Link>
+        </div>
         <ul className={styles.footer__list}>
           <li className={styles.footer__item}>
             <Link href='/albums' passHref>Albums</Link>
