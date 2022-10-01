@@ -48,12 +48,12 @@ const Login = () => {
                     {showPassword ? (
                       <VisibilityOff
                       onClick={handleShowPassword}
-                      className={styles.form__icon}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
                       />
                     ) : (
                     <Visibility
                       onClick={handleShowPassword}
-                      className={styles.form__icon}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
                     />
                     )}
                   </FormInput>
