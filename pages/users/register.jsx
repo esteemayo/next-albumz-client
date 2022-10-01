@@ -17,6 +17,7 @@ const initialState = {
   password: '',
   confirmPassword: '',
   showPassword: false,
+  showConfirmPassword: false,
 };
 
 const Register = () => {
@@ -25,6 +26,10 @@ const Register = () => {
 
   const handleShowPassword = () => {
     setFormInputs((prev) => ({ ...prev, showPassword: !prev.showPassword }));
+  };
+
+  const handleShowConfirmPassword = () => {
+    setFormInputs((prev) => ({ ...prev, showConfirmPassword: !prev.showConfirmPassword }));
   };
 
   const handleChange = ({ target: input }) => {
@@ -60,7 +65,7 @@ const Register = () => {
     }));
   };
 
-  const {favGenres, favArtists, showPassword } = formInputs;
+  const {favGenres, favArtists, showPassword, showConfirmPassword } = formInputs;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -152,19 +157,19 @@ const Register = () => {
                 <div className={styles.form__group}>
                   <input
                     name='confirmPassword'
-                    type={showPassword ? 'text': 'password'}
+                    type={showConfirmPassword ? 'text': 'password'}
                     placeholder='Confirm Password'
                     onChange={handleChange}
                     className={styles.form__input}
                     />
-                    {showPassword ? (
+                    {showConfirmPassword ? (
                      <VisibilityOff
-                      onClick={handleShowPassword}
+                      onClick={handleShowConfirmPassword}
                       className={`${styles.form__icon} ${styles.form__iconPassword}`}
                       />
                    ) : (
                     <Visibility
-                      onClick={handleShowPassword}
+                      onClick={handleShowConfirmPassword}
                       className={`${styles.form__icon} ${styles.form__iconPassword}`}
                     />
                    )}
