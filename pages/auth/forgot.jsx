@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 import Meta from '@/components/Meta';
+import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
 
 const ForgotPassword = () => {
@@ -20,9 +22,12 @@ const ForgotPassword = () => {
             <form onSubmit={handleSubmit}>
               <div className={styles.form__wrapper}>
                 <div className={styles.form__headline}>Reset Your Password</div>
-                <div className={styles.form__group}>
-                  <input type='email' placeholder='Username or Email' className={styles.form__input} />
-                </div>
+                <FormInput
+                  type='email'
+                  placeholder='Email'
+                >
+                  <EmailOutlinedIcon className={styles.form__icon} />
+                </FormInput>
                 <div className={styles.form__btnWrapper}>
                   <button type='submit' className={styles.form__btn}>Reset password</button>
                 </div>
