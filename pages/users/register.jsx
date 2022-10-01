@@ -140,12 +140,12 @@ const Register = () => {
                   {showPassword ? (
                      <VisibilityOff
                       onClick={handleShowPassword}
-                      className={styles.form__icon}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
                       />
                    ) : (
                     <Visibility
                       onClick={handleShowPassword}
-                      className={styles.form__icon}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
                     />
                    )}
                 </div>
@@ -160,12 +160,12 @@ const Register = () => {
                     {showPassword ? (
                      <VisibilityOff
                       onClick={handleShowPassword}
-                      className={styles.form__icon}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
                       />
                    ) : (
                     <Visibility
                       onClick={handleShowPassword}
-                      className={styles.form__icon}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
                     />
                    )}
                 </div>
