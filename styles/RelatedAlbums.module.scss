@@ -1,0 +1,43 @@
+.related {
+  padding: 6rem 0;
+  background-color: #f9f9f9;
+
+  &__wrapper {
+    position: relative;
+    max-width: 105rem;
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #1d256b;
+    letter-spacing: 0.1rem;
+    line-height: 1.2;
+    margin-bottom: 4rem;
+
+    display: flex;
+    flex-direction: column;
+
+    &::after {
+      display: inline-block;
+      content: '';
+      width: 3rem;
+      height: 3px;
+      background-color: #5a6bf6;
+      margin: 0 auto;
+      margin-top: 3rem;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 7rem;
+  }
+}
