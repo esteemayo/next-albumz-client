@@ -104,7 +104,7 @@ const Register = () => {
                   placeholder='Username'
                   onChange={handleChange}
                 >
-                  <PersonOutlinedIcon className={styles.form__icon} />
+                  <FaceOutlinedIcon className={styles.form__icon} />
                 </FormInput>
                 <FormInput
                   name='email'
