@@ -1,0 +1,40 @@
+.scroll {
+  position: fixed;
+  bottom: 1rem;
+  right: 0.5rem;
+  animation: fadeIn 700ms ease-in-out 1s both;
+  
+  .iconContainer {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    background-color: rgb(38, 93, 151);
+    box-shadow: rgb(0, 0, 0, 0.5) 0 0.4rem 2rem;
+    color: rgba(0, 0, 0, 0.87);
+    border-radius: 50%;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: rgb(30, 73, 118);
+    }
+
+    & > * {
+      color: rgb(153, 204, 243);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1
+  }
+}
