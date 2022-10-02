@@ -1,5 +1,6 @@
 import Reviews from '@/components/Reviews';
 import ReviewForm from '@/components/ReviewForm';
+import RelatedAlbums from '@/components/RelatedAlbums';
 import SingleAlbumHero from '@/components/SingleAlbumHero';
 import AlbumDescription from '@/components/AlbumDescription';
 
@@ -12,6 +13,7 @@ const SingleAlbum = () => {
       <AlbumDescription />
       <ReviewForm />
       <Reviews />
+      <RelatedAlbums />
     </section>
   );
 };
