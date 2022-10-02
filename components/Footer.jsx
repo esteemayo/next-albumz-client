@@ -32,19 +32,19 @@ const Footer = () => {
             <Link href='/albums/top' passHref>Top albums</Link>
           </li>
           <li className={styles.footer__item}>
-            <Link href='/account' passHref>Account</Link>
+            <Link href='/auth/account' passHref>Account</Link>
           </li>
           <li className={styles.footer__item}>
-            <Link href='/cookies' passHref>Cookie warning</Link>
+            <Link href='#' passHref>Cookie warning</Link>
           </li>
           <li className={styles.footer__item}>
-            <Link href='/support' passHref>Support</Link>
+            <Link href='#' passHref>Support</Link>
           </li>
           <li className={styles.footer__item}>
-            <Link href='/feedback' passHref>Feedback</Link>
+            <Link href='#' passHref>Feedback</Link>
           </li>
           <li className={styles.footer__item}>
-            <Link href='/tags' passHref>Tags</Link>
+            <Link href='/albums/tags' passHref>Tags</Link>
           </li>
         </ul>
       </div>
