@@ -150,6 +150,15 @@
             cursor: text;
           }
 
+          &__chipIcon {
+            position: absolute;
+            font-size: 2rem;
+            fill: #5a6bf6;
+            top: 1.7rem;
+            right: 5rem;
+            cursor: text
+          }
+
           &__iconPassword {
             cursor: pointer;
           }
