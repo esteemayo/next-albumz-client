@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 import DarkMode from './DarkMode';
-import AddButton from './AddButton';
+import ScrollToTop from './ScrollToTop';
 
 const Layout = ({ children }) => {
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
       <Navbar />
       <Sidebar />
       <DarkMode />
-      {/* <AddButton /> */}
+      <ScrollToTop />
       {children}
       <Footer />
     </div>
