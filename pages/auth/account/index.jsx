@@ -149,7 +149,9 @@ const Account = () => {
                   value={favArtists}
                   onAdd={(artist) => handleAddFavArtist(artist)}
                   onDelete={(artist) => handleDeleteFavArtist(artist)}
-                />
+                >
+                  <PlaylistAddCheckCircleOutlinedIcon className={styles.form__chipIcon} />
+                </FormChipInput>
                 <FormInput
                   type='file'
                   onChange={(e) => setFile(e.target.files[0])}
