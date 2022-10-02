@@ -1,7 +1,7 @@
 import ChipInput from 'material-ui-chip-input';
 import styles from '@/styles/FormChipInput.module.scss';
 
-const FormChipInput = ({ name, value, placeholder, ...rest }) => {
+const FormChipInput = ({ name, value, placeholder, children, ...rest }) => {
   return (
     <div className={styles.form__group}>
       <ChipInput
@@ -12,6 +12,7 @@ const FormChipInput = ({ name, value, placeholder, ...rest }) => {
         variant='outlined'
         placeholder={placeholder}
       />
+      {children}
     </div>
   );
 };
