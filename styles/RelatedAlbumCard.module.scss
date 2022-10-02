@@ -1,0 +1,60 @@
+.related {
+  &__card {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+
+    .left {
+      & > * {
+        display: inline-block;
+        object-fit: cover;
+        border-radius: 0.5rem;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          filter: grayscale(100%);
+        }
+      }
+    }
+
+    .right {
+      display: inline-block;
+
+      .title {
+        font-weight: 500;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        color: #777;
+
+        .link {
+          &:link,
+          &:visited {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.5s ease-in-out;
+          }
+
+          &:active {
+            color: inherit;
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .artist {
+        font-size: 1.4rem;
+        color: #aaa;
+        line-height: 1;
+      }
+      
+      .year {
+        font-size: 1.3rem;
+        color: #bbb;
+        line-height: 1;
+      }
+    }
+  }
+}
