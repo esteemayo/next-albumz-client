@@ -5,10 +5,10 @@ import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import PianoOutlinedIcon from '@mui/icons-material/PianoOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import PianoOutlinedIcon from '@mui/icons-material/PianoOutlined';
 import PlaylistAddCheckCircleOutlinedIcon from '@mui/icons-material/PlaylistAddCheckCircleOutlined';
 
 import Meta from '@/components/Meta';
