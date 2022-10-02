@@ -8,6 +8,8 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import PianoOutlinedIcon from '@mui/icons-material/PianoOutlined';
+import PlaylistAddCheckCircleOutlinedIcon from '@mui/icons-material/PlaylistAddCheckCircleOutlined';
 
 import Meta from '@/components/Meta';
 import FormInput from '@/components/FormInput';
@@ -138,7 +140,9 @@ const Account = () => {
                   value={favGenres}
                   onAdd={(genre) => handleAddFavGenre(genre)}
                   onDelete={(genre) => handleDeleteFavGenre(genre)}
-                />
+                >
+                  <PianoOutlinedIcon className={styles.form__chipIcon} />
+                </FormChipInput>
                 <FormChipInput
                   name='favArtists'
                   placeholder='Favorite Artists'
