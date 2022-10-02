@@ -126,14 +126,18 @@ const Register = () => {
                   value={favGenres}
                   onAdd={(genre) => handleAddFavGenre(genre)}
                   onDelete={(genre) => handleDeleteFavGenre(genre)}
-                />
+                >
+                  <PianoOutlinedIcon className={styles.form__chipIcon} />
+                </FormChipInput>
                 <FormChipInput
                   name='favArtists'
                   placeholder='Favorite Artists'
                   value={favArtists}
                   onAdd={(artist) => handleAddFavArtist(artist)}
                   onDelete={(artist) => handleDeleteFavArtist(artist)}
-                />
+                >
+                  <PlaylistAddCheckCircleOutlinedIcon className={styles.form__chipIcon} />
+                </FormChipInput>
                 <FormInput
                   name='password'
                   type={showPassword ? 'text': 'password'}
