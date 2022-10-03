@@ -7,7 +7,7 @@ const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   if(typeof window !== 'undefined') {
-    window.onscroll = ()=> {
+    window.onscroll = () => {
       setIsVisible(window.pageYOffset > 300 ? true : false);
       return () => (window.onscroll = null);
     };
