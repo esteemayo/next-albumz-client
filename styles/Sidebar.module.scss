@@ -79,11 +79,20 @@
         font-size: 3rem;
       }
 
+      @media only screen and (max-width: 17.5em) {
+        font-size: 2.5rem;
+        line-height: 1.3;
+      }
+
       &:not(:last-of-type) {
         margin-bottom: 2rem;
 
         @media only screen and (max-width: 50em) {
           margin-bottom: 2.3rem;
+        }
+
+        @media only screen and (max-width: 17.5em) {
+          margin-bottom: 1.7rem;
         }
       }
 
@@ -153,6 +162,10 @@
         width: 30rem;
       }
 
+      @media only screen and (max-width: 17.5em) {
+        width: 20rem;
+      }
+
       &::placeholder {
         color: #999;
 
@@ -217,6 +230,11 @@
         width: 5rem;
         height: 5rem;
       }
+
+      @media only screen and (max-width: 17.5em) {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
       
       & > * {
         width: 2.25rem;
@@ -227,6 +245,11 @@
         @media only screen and (max-width: 50em) {
           width: 3rem;
           height: 3rem;
+        }
+
+        @media only screen and (max-width: 17.5em) {
+          width: 2rem;
+          height: 2rem;
         }
       }
     }
