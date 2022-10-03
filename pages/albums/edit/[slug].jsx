@@ -4,9 +4,9 @@ import { useState } from 'react';
 import Meta from '@/components/Meta';
 import FormInput from '@/components/FormInput';
 import FormTextArea from '@/components/FormTextArea';
-import FormSelectInput from '@/components/FormSelectInput';
 import styles from '@/styles/UpdateAlbum.module.scss';
 import FormChipInput from '@/components/FormChipInput';
+import FormSelectInput from '@/components/FormSelectInput';
 
 const UpdateAlbum = () => {
   const [file, setFile] = useState(null);
