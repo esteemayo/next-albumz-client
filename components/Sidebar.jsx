@@ -32,7 +32,7 @@ const Sidebar = () => {
             className={styles.list__items}
             onClick={() => dispatch(closeMenu())}
           >
-            <Link href='/tags' passHref className={styles.sidebar__link}>
+            <Link href='/albums/tags' passHref className={styles.sidebar__link}>
               Tags
             </Link>
           </li>
@@ -72,7 +72,7 @@ const Sidebar = () => {
         <div>
           <form className={styles.search}>
             <input
-              type='text'
+              type='search'
               placeholder='Search albums...'
               className={styles.search__input}
             />
