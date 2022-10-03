@@ -47,9 +47,9 @@
     align-items: center;
     margin-left: 10rem;
 
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (max-width: 64em) {
       flex: 1;
-      margin-left: 10rem;
+      margin-left: 2rem;
     }
 
     .logo {
@@ -77,7 +77,7 @@
       display: flex;
       align-items: center;
 
-      @media only screen and (max-width: 56.25em) {
+      @media only screen and (max-width: 64em) {
         display: none;
       }
 
@@ -119,9 +119,9 @@
     display: flex;
     align-items: center;
 
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (max-width: 64em) {
       justify-content: flex-end;
-      margin-right: 10rem;
+      margin-right: 2rem;
     }
 
     .search {
@@ -132,7 +132,7 @@
       align-items: center;
       position: relative;
 
-      @media only screen and (max-width: 56.25em) {
+      @media only screen and (max-width: 64em) {
         display: none;
       }
 
@@ -176,7 +176,7 @@
       opacity: o;
       visibility: hidden;
 
-      @media only screen and (max-width: 56.25em) {
+      @media only screen and (max-width: 64em) {
         opacity: 1;
         visibility: visible;
       }
