@@ -14,20 +14,77 @@
   transition: all 1s ease-in-out;
   z-index: 1000;
 
+  @media only screen and (max-width: 64em) {
+    top: 6.83rem;
+    height: 50rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  @media only screen and (max-width: 56.25em) {
+    top: 7.1rem;
+    width: 40rem;
+    right: -40rem;
+  }
+
+  @media only screen and (max-width: 50em) {
+    width: 82rem;
+    right: -82rem;
+    height: 100vh;
+  }
+
+  @media only screen and (max-width: 37.5em) {
+    width: 100%;
+    right: -100%;
+  }
+
   &.active {
     right: 3rem;
+
+    @media only screen and (max-width: 56.25em) {
+      right: 0;
+    }
   }
 
   .list {
     width: 50%;
     list-style: none;
 
+    @media only screen and (max-width: 64em) {
+      width: 70%;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      width: 60%;    
+    }
+
+    @media only screen and (max-width: 31.25em) {
+      width: 50%;
+    }
+
     &__items {
       line-height: 1.5;
       font-size: 1.5rem;
 
+      @media only screen and (max-width: 64em) {
+        font-size: 1.7rem; 
+      }
+
+      @media only screen and (max-width: 50em) {
+        font-weight: 300;
+        font-size: 4rem; 
+      }
+
+      @media only screen and (max-width: 31.25em) {
+        font-size: 3rem;
+      }
+
       &:not(:last-of-type) {
         margin-bottom: 2rem;
+
+        @media only screen and (max-width: 50em) {
+          margin-bottom: 2.3rem;
+        }
       }
 
       a:link,
@@ -57,6 +114,10 @@
     align-items: center;
     position: relative;
 
+    @media only screen and (max-width: 50em) {
+      margin-top: 2.3rem;   
+    }
+
     &__input {
       border: none;
       outline: none;
@@ -64,11 +125,41 @@
       padding: 1rem 1.25rem;
       font-family: inherit;
       font-size: 1.4rem;
+      background-color: transparent;
       color: #999;
       border: 1px solid rgb(238, 238, 238);
       border-radius: 0.5rem;
       caret-color: #24299b;
       z-index: 2;
+
+      @media only screen and (max-width: 64em) {
+        width: 23rem;
+        padding: 1rem 1rem 1rem 3rem;
+      }
+
+      @media only screen and (max-width: 50em) {
+        width: 57rem;
+      }
+
+      @media only screen and (max-width: 50em) {
+        padding: 2rem 1rem 2rem 5rem;
+      }
+
+      @media only screen and (max-width: 37.5em) {
+        width: 45rem;
+      }
+
+      @media only screen and (max-width: 31.25em) {
+        width: 30rem;
+      }
+
+      &::placeholder {
+        color: #999;
+
+        @media only screen and (max-width: 50em) {
+          font-size: 2rem;
+        }
+      }
     }
 
     &__icon {
@@ -77,6 +168,14 @@
       color: #999;
       font-size: 2rem;
       z-index: 1;
+
+      @media only screen and (max-width: 64em) {
+        left: 1rem;
+      }
+
+      @media only screen and (max-width: 50em) {
+        font-size: 3rem;
+      }
     }
   }
 
@@ -87,6 +186,18 @@
     justify-content: flex-start;
     margin-top: 2rem;
 
+    @media only screen and (max-width: 64em) {
+      width: 70%;   
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      width: 60%;    
+    }
+
+    @media only screen and (max-width: 31.25em) {
+      width: 50%;
+    }
+
     .darkmode {
       width: 4rem;
       height: 4rem;
@@ -96,12 +207,27 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+
+      @media only screen and (max-width: 64em) {
+        width: 3.5rem;
+        height: 3.5rem;
+      }
+
+      @media only screen and (max-width: 50em) {
+        width: 5rem;
+        height: 5rem;
+      }
       
       & > * {
         width: 2.25rem;
         height: 2.25rem;
         font-size: 2.25rem;
         color: #fff;
+
+        @media only screen and (max-width: 50em) {
+          width: 3rem;
+          height: 3rem;
+        }
       }
     }
   }
