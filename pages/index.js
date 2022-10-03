@@ -21,7 +21,6 @@ const Home = () => {
       {showModal && (
         <Modal onClose={setShowModal}>
           <AlbumForm />
-          {/* <GenreForm type='genre' /> */}
         </Modal>
       )}
     </>
