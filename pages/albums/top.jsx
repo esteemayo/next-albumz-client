@@ -21,7 +21,7 @@ const TopAlbums = () => {
               <th>
                 <TagOutlinedIcon className={styles.tableOrder} />
               </th>
-              <th colspan='2'>Album</th>
+              <th colSpan='2'>Album</th>
               <th>Reviews</th>
               <th>Average Ratings</th>
             </tr>
