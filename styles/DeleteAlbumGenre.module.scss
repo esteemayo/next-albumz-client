@@ -1,16 +1,28 @@
 .container {
   padding: 3rem;
 
+  @media only screen and (max-width: 31.25em) {
+    padding: 2rem;   
+  }
+
   .wrapper {
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
+
+    @media only screen and (max-width: 31.25em) {
+      padding: 1.5rem;
+    }
 
     .header {
       display: inline-block;
       font-weight: 400;
       font-size: 1.8rem;
       color: #aaa;
+
+      @media only screen and (max-width: 31.25em) {
+        font-size: 1.6rem;
+      }
     }
 
     .btnBox {
@@ -28,6 +40,10 @@
         font-size: 1.7rem;
         cursor: pointer;
         transition: all 0.5s ease-in-out;
+
+        @media only screen and (max-width: 31.25em) {
+          font-size: 1.5rem;
+        }
       }
 
       .btnCancel {
