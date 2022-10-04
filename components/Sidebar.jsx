@@ -13,7 +13,7 @@ const Sidebar = () => {
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
   return (
-    <div
+    <aside
       className={
         menuOpen ? `${styles.sidebar} ${styles.active}` : `${styles.sidebar}`
       }
@@ -85,7 +85,7 @@ const Sidebar = () => {
           </div>
         </div>
       </>
-    </div>
+    </aside>
   );
 };
 
