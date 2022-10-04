@@ -13,6 +13,28 @@
     max-width: 70rem;
   }
 
+  @media only screen and (max-width: 37.5em) {
+    max-width: 60rem;
+  }
+
+  @media only screen and (max-width: 31.25em) {
+    max-width: 50rem;
+  }
+
+  @media only screen and (max-width: 26.25em) {
+    max-width: 47rem;
+  }
+
+  @media only screen and (max-width: 25em) {
+    max-width: 40rem;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+  }
+
+  @media only screen and (max-width: 21.25em) {
+    max-width: 30rem;
+  }
+
   .header {
     display: inline-block;
     text-transform: uppercase;
@@ -31,6 +53,16 @@
       margin-bottom: 7rem;
     }
 
+    @media only screen and (max-width: 25em) {
+      font-size: 2.3rem;
+      margin-bottom: 4rem;
+      letter-spacing: 0.5rem;
+    }
+
+    @media only screen and (max-width: 21.25em) {
+      font-size: 1.85rem;
+    }
+
     &::after {
       content: '';
       display: inline-block;
@@ -38,6 +70,11 @@
       height: 3px;
       background-color: #5a6bf6;
       margin-top: 3rem;
+
+      @media only screen and (max-width: 25em) {
+        width: 5rem;
+        margin-top: 2rem;
+      }
     }
   }
 }
