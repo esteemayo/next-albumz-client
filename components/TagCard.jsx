@@ -34,11 +34,11 @@ const TagCard = () => {
             nisi molestias porro, itaque harum quas provident suscipit error doloribus 
             neque nulla. Est quia laudantium quo velit, atque placeat voluptate!
           </p>
+          <div className={styles.btnWrapper}>
+            <button className={styles.btn} onClick={handleClick}>Read more</button>
+          </div>
         </div>
       </div>
-        <div className={styles.btnWrapper}>
-          <button className={styles.btn} onClick={handleClick}>Read more</button>
-        </div>
     </div>
   );
 };
