@@ -73,7 +73,8 @@
       }
 
       @media only screen and (max-width: 26.25em) {
-    
+        font-size: 1.1rem;
+        top: 0.7rem;
       }
 
       span {
@@ -89,6 +90,10 @@
 
         @media only screen and (max-width: 31.25em) {
           padding: 0.4rem 1rem;
+        }
+        
+        @media only screen and (max-width: 26.25em) {
+          padding: 0.2rem 1rem;
         }
       }
     }
