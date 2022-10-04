@@ -24,6 +24,14 @@
     max-width: 45rem;
   }
 
+  @media only screen and (max-width: 25em) {
+    max-width: 40rem;
+  }
+
+  @media only screen and (max-width: 17.5em) {
+    max-width: 33rem;
+  }
+
   .heading {
     display: flex;
     flex-direction: column;
