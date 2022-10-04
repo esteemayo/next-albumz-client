@@ -19,7 +19,7 @@ const DashboardCard = () => {
               <Image
                 src='/img/banner.jpg'
                 width={200}
-                height={130}
+                height={150}
                 alt=''
               />
             </div>
