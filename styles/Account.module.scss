@@ -177,6 +177,10 @@
         flex: 2.5;
       }
 
+      @media only screen and (max-width: 31.25em) {
+        padding: 3rem;     
+      }
+
       .accountHeader {
         font-weight: 500;
         font-size: 3rem;
