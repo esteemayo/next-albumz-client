@@ -118,12 +118,13 @@ const Account = () => {
                   name='email'
                   placeholder='Email Address'
                   onChange={handleChange}
-                >
+                  >
                   <EmailOutlinedIcon className={styles.form__icon} />
                 </FormInput>
                 <FormInput
                   name='username'
                   placeholder='Username'
+                  onChange={handleChange}
                 >
                   <FaceOutlinedIcon className={styles.form__icon} />
                 </FormInput>
