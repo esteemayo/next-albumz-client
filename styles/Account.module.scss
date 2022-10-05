@@ -9,6 +9,10 @@
     max-width: 100rem;
   }
 
+  @media only screen and (max-width: 50em) {
+    max-width: 90rem;     
+  }
+
   &__heading {
     font-weight: 500;
     font-size: 4rem;
@@ -173,6 +177,11 @@
         width: 70%;
         position: relative;
         margin: 0 auto;
+
+        @media only screen and (max-width: 50em) {
+          width: 100%;
+          padding-left: 2rem;
+        }
 
         .form {
           display: flex;
