@@ -17,6 +17,10 @@
     padding: 10rem 3rem;       
   }
 
+  @media only screen and (max-width: 17.5em) {
+    padding: 10rem 1.5rem 5rem 1.5rem;
+  }
+
   &__heading {
     font-weight: 500;
     font-size: 4rem;
@@ -34,6 +38,7 @@
     }
 
     @media only screen and (max-width: 17.5em) {
+      font-weight: 500;
       font-size: 2.8rem;
     }
   }
