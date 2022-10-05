@@ -22,6 +22,11 @@
     cursor: pointer;
     transition: all 0.15s ease-in-out;
 
+    @media only screen and (max-width: 64em) {
+      padding: 1.5rem 1rem;
+      font-size: 1.5rem;         
+    }
+
     &:hover {
       background-color: #0da0ff;
     }
