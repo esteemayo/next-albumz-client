@@ -1,10 +1,22 @@
 .main {
   padding: 15rem 6rem;
 
+  @media only screen and (max-width: 23.13em) {
+    padding: 15rem 0;
+  }
+
   .container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 7rem;
+
+    @media only screen and (max-width: 43.75em) {
+      gap: 5rem;
+    }
+
+    @media only screen and (min-width: 112.5em) {
+      gap: 10rem;
+    }
   }
 }
