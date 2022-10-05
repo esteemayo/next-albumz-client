@@ -22,6 +22,12 @@
     @media only screen and (max-width: 64em) {
       font-size: 3.4rem;
     }
+
+    @media only screen and (max-width: 31.25em) {
+      text-align: center;    
+      font-weight: 700;
+      font-size: 4rem;   
+    }
   }
 
   &__container {
@@ -32,6 +38,7 @@
 
     @media only screen and (max-width: 31.25em) {
       flex-direction: column;
+      box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
     }
 
     .left {
