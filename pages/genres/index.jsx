@@ -31,11 +31,21 @@ const Genres = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Afro pop</td>
-              <td>John doe</td>
-              <td>{new Date().toLocaleString('en-us', { day: 'numeric', month: 'long', year: 'numeric'})}</td>
+            <tr className={styles.tr}>
+              <td>
+                <span className={styles.order}>1</span>
+              </td>
+              <td>
+                <span className={styles.name}>Afro pop</span>
+              </td>
+              <td>
+                <span className={styles.postedBy}>John doe</span>
+              </td>
+              <td>
+                <span className={styles.postedOn}>
+                  {new Date().toLocaleString('en-us', { day: 'numeric', month: 'long', year: 'numeric'})}
+                </span>
+              </td>
               <td className={styles.buttonContainer}>
                 <Link href={`/genres/edit/slug`} passHref>
                   <a className={styles.btnUpdate}>Update</a>
@@ -48,11 +58,21 @@ const Genres = () => {
                 </button>
               </td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>Afro pop</td>
-              <td>John doe</td>
-              <td>{new Date().toLocaleString('en-us', { day: 'numeric', month: 'long', year: 'numeric'})}</td>
+            <tr className={styles.tr}>
+              <td>
+                <span className={styles.order}>2</span>
+              </td>
+              <td>
+                <span className={styles.name}>Afro pop</span>
+                </td>
+              <td>
+                <span className={styles.postedBy}>John doe</span>
+              </td>
+              <td>
+                <span className={styles.postedOn}>
+                  {new Date().toLocaleString('en-us', { day: 'numeric', month: 'long', year: 'numeric'})}
+                </span>
+              </td>
               <td className={styles.buttonContainer}>
                 <Link href={`/genres/edit/slug`} passHref>
                   <a className={styles.btnUpdate}>Update</a>
@@ -65,11 +85,21 @@ const Genres = () => {
                 </button>
               </td>
             </tr>
-            <tr>
-              <td>3</td>
-              <td>Afro pop</td>
-              <td>John doe</td>
-              <td>{new Date().toLocaleString('en-us', { day: 'numeric', month: 'long', year: 'numeric'})}</td>
+            <tr className={styles.tr}>
+              <td>
+                <span className={styles.order}>3</span>
+              </td>
+              <td>
+                <span className={styles.name}>Afro pop</span>
+                </td>
+              <td>
+                <span className={styles.postedBy}>John doe</span>
+              </td>
+              <td>
+                <span className={styles.postedOn}>
+                  {new Date().toLocaleString('en-us', { day: 'numeric', month: 'long', year: 'numeric'})}
+                </span>
+              </td>
               <td className={styles.buttonContainer}>
                 <Link href={`/genres/edit/slug`} passHref>
                   <a className={styles.btnUpdate}>Update</a>
