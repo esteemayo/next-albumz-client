@@ -20,6 +20,11 @@
     border-radius: 1.5rem;
     padding: 1rem;
 
+    @media only screen and (max-width: 50em) {
+      width: 65rem;
+      min-height: 80rem;
+    }
+
     &.modalGenre {
       position: relative;
     }
@@ -39,15 +44,28 @@
       display: flex;
       align-items: center;
       justify-content: center;
+
+      @media only screen and (max-width: 50em) {
+        width: 4.5rem;
+        height: 4.5rem;
+      }
     }
 
     &__closeIcon {
       font-size: 2.5rem;
       cursor: pointer;
+
+      @media only screen and (max-width: 50em) {
+        font-size: 3rem;
+      }
     }
 
     &__body {
       padding-top: 1rem;
+
+      @media only screen and (max-width: 50em) {
+        padding: 5rem 0;
+      }
     }
     
     &__bodyGenre {
@@ -57,6 +75,10 @@
       left: 50%;
       transform: translate(-50%, -50%);
       width: 100%;
+
+      @media only screen and (max-width: 50em) {
+        padding: 5rem 0;
+      }
     }
   }
 }
