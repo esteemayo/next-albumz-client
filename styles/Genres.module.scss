@@ -42,6 +42,14 @@
         padding-left: 50%;
         position: relative;
       }
+
+      @media only screen and (max-width: 40em) {
+        padding-left: 45%;
+      }
+
+      @media only screen and (max-width: 30em) {
+        padding-left: 40%;
+      }
     }
 
     th { 
@@ -91,6 +99,27 @@
         font-size: 1.4rem;
         text-align: left;
       }
+
+      @media only screen and (max-width: 50em) {
+        padding-left: 12rem;
+      }
+      
+      @media only screen and (max-width: 40em) {
+        width: 100%;
+        left: -55rem;
+      }
+
+      @media only screen and (max-width: 35em) {
+        left: -50rem;
+      }
+
+      @media only screen and (max-width: 30em) {
+        left: -43rem;
+      }
+
+      @media only screen and (max-width: 26.25em) {
+        left: -40rem;
+      }
     }
 
     .order {
@@ -102,6 +131,10 @@
           color: #777;
           width: 100%;
         }
+      }
+
+      @media only screen and (max-width: 50em) {
+        font-size: 1.6rem;
       }
     }
     
@@ -115,6 +148,10 @@
           width: 100%;
         }
       }
+
+      @media only screen and (max-width: 50em) {
+        font-size: 1.6rem;
+      }
     }
     
     .postedBy {
@@ -127,6 +164,14 @@
           width: 100%;
         }
       }
+
+      @media only screen and (max-width: 50em) {
+        font-size: 1.6rem;
+      }
+
+      @media only screen and (max-width: 26.25em) {
+        font-size: 1.3rem;
+      }
     }
     
     .postedOn {
@@ -138,6 +183,10 @@
           color: #777;
           width: 100%;
         }
+      }
+
+      @media only screen and (max-width: 50em) {
+        font-size: 1.6rem;
       }
     }
 
