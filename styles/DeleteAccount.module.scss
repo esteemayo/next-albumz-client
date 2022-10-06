@@ -1,6 +1,10 @@
 .container {
   padding: 3rem;
 
+  @media only screen and (max-width: 50em) {
+    padding: 2rem;
+  }
+
   .wrapper {
     border-radius: 0.5rem;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3);
