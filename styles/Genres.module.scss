@@ -11,12 +11,13 @@
     @media only screen and (max-width: 54.38em) {
       display: block;
       width: 100%;
-
+    }
+    
+    @media only screen and (max-width: 54.38em) {
       thead {
         display: none;
       }
     }
-
 
     tr:nth-of-type(odd) { 
       background: #f5f8fa;
