@@ -24,6 +24,11 @@
     clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
   }
 
+  @media only screen and (max-width: 37.5em) {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+
   &__text {
     text-align: center;
 
@@ -43,6 +48,11 @@
 
         @media only screen and (max-width: 50em) {
           font-size: 3.7rem;
+        }
+
+        @media only screen and (max-width: 43.75em) {
+          font-size: 3.2rem;
+          letter-spacing: 0.7rem;
         }
       }
 
@@ -81,6 +91,10 @@
 
       @media only screen and (max-width: 64em) {
         font-size: 1.5rem;   
+      }
+
+      @media only screen and (max-width: 37.5em) {
+        margin-top: 2rem;
       }
     }
 
