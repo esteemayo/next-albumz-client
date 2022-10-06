@@ -9,14 +9,25 @@
     border-collapse: collapse;
     
     @media only screen and (max-width: 54.38em) {
+      display: block;
+
       thead {
         display: none;
+      }
+
+      tbody {
+        display: block;
       }
     }
 
 
     tr:nth-of-type(odd) { 
       background: #f5f8fa;
+
+      @media only screen and (max-width: 54.38em) {
+        display: block;
+      }
+  
     }
 
     th { 
@@ -35,6 +46,10 @@
       font-size: 1.5rem;
       padding: 1rem;
       padding-top: 1.5rem;
+
+      @media only screen and (max-width: 54.38em) {
+        display: block;
+      }
     }
 
     .tableOrder {
