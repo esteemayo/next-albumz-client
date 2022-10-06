@@ -50,6 +50,10 @@
       @media only screen and (max-width: 30em) {
         padding-left: 40%;
       }
+
+      @media only screen and (max-width: 17.5em) {
+        padding-left: 35%;
+      }
     }
 
     th { 
@@ -123,6 +127,10 @@
 
       @media only screen and (max-width: 23.44em) {
         left: -35rem;
+      }
+
+      @media only screen and (max-width: 17.5em) {
+        left: -30rem;
       }
     }
 
