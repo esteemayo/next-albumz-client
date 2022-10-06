@@ -30,6 +30,10 @@
         font-size: 6rem;
         font-weight: 400;
         letter-spacing: 1rem;
+
+        @media only screen and (max-width: 64em) {
+          font-size: 4.5rem;
+        }
       }
 
       .heading__sub {
@@ -37,6 +41,10 @@
         font-size: 2rem;
         font-weight: 700;
         letter-spacing: 1.75rem;
+
+        @media only screen and (max-width: 64em) {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -56,6 +64,10 @@
       border-radius: 0.5rem;
       margin-top: 3rem;
       transition: all 0.5s ease-in-out;
+
+      @media only screen and (max-width: 64em) {
+        font-size: 1.5rem;   
+      }
     }
 
     &:hover {
