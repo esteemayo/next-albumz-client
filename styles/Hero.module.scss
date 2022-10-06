@@ -34,6 +34,10 @@
         @media only screen and (max-width: 64em) {
           font-size: 4.5rem;
         }
+
+        @media only screen and (max-width: 50em) {
+          font-size: 3.7rem;
+        }
       }
 
       .heading__sub {
@@ -44,6 +48,10 @@
 
         @media only screen and (max-width: 64em) {
           font-size: 1.5rem;
+        }
+
+        @media only screen and (max-width: 50em) {
+          letter-spacing: 1rem;
         }
       }
     }
