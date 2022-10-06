@@ -5,11 +5,15 @@
   margin-top: -20vh;
 
   @media only screen and (max-width: 64em) {
-    padding: 20rem 6rem;
+    padding: 30rem 6rem 20rem 6rem;
   }
 
   @media only screen and (max-width: 50em) {
     padding: 20rem 0 15rem 0;
+  }
+
+  @media only screen and (max-width: 48em) {
+    padding: 30rem 0 15rem 0;
   }
 
   @media only screen and (max-width: 37.5em) {
