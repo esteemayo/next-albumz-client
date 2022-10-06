@@ -62,6 +62,11 @@
         border: 1px solid #de0a0a;
         border-radius: 0.5rem;
 
+        @media only screen and (max-width: 50em) {
+          font-size: 1.4rem;
+          padding: 0.5rem 1.3rem;
+        }
+
         &:hover {
           background-color: rgba(222,10,10,.1);
           color: #de0a0a;
