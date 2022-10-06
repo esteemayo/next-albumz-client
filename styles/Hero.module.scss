@@ -2,7 +2,7 @@
   width: 100%;
   height: calc(90vh - 5.6rem);
   background-image: linear-gradient(
-      to right bottom,
+    to right bottom,
       rgba(105, 108, 255, 0.85),
       rgba(155, 81, 224, 0.85)
     ),
@@ -13,10 +13,16 @@
   background-attachment: fixed;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-
+  
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  @media only screen and (max-width: 50em) {
+    height: calc(80vh - 5.6rem);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+  }
 
   &__text {
     text-align: center;
