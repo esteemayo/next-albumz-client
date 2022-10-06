@@ -2,7 +2,7 @@
   width: 100%;
   position: relative;
   margin: 0 auto;
-  padding: 15rem 0;
+  padding: 15rem 6rem;
   background-color: transparent;
 
   h3 {
@@ -17,6 +17,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @media only screen and (max-width: 64em) {
+      font-size: 2.2rem;
+    }
     
 
     &::after {
@@ -26,6 +30,10 @@
       height: 3px;
       background-color: #5a6bf6;
       margin-top: 3rem;
+
+      @media only screen and (max-width: 64em) {
+        width: 3rem;   
+      }
     }
   }
   
@@ -58,6 +66,10 @@
       color: #aaa;
       word-wrap: break-word;
       hyphens: auto;
+
+      @media only screen and (max-width: 64em) {
+        font-size: 1.45rem;
+      }
     }
   }
 
@@ -68,6 +80,10 @@
     
     .ratingIcon {
       font-size: 2.5rem;
+
+      @media only screen and (max-width: 64em) {
+        font-size: 2.3rem;
+      }
     }
     
     .ratingValue {
@@ -81,5 +97,10 @@
     font-weight: 700;
     font-size: 1.7rem;
     color: #aaa;
+
+    @media only screen and (max-width: 64em) {
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
   }
 }
