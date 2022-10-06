@@ -14,25 +14,28 @@
       thead {
         display: none;
       }
-
-      tbody {
-        display: block;
-        text-align: right;
-        padding-left: 50%;
-      }
     }
 
 
     tr:nth-of-type(odd) { 
       background: #f5f8fa;
+    }
 
+    tr {
+      @media only screen and (max-width: 54.38em) {
+        margin-bottom: 2rem;
+      }
+    }
+    
+    tbody,
+    tr,
+    td {
       @media only screen and (max-width: 54.38em) {
         display: block;
-        margin-bottom: 2rem;
         text-align: right;
         padding-left: 50%;
+        position: relative;
       }
-  
     }
 
     th { 
@@ -51,13 +54,6 @@
       font-size: 1.5rem;
       padding: 1rem;
       padding-top: 1.5rem;
-
-      @media only screen and (max-width: 54.38em) {
-        display: block;
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-      }
     }
 
     .tableOrder {
