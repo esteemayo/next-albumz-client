@@ -5,6 +5,10 @@
   padding: 15rem 6rem;
   background-color: transparent;
 
+  @media only screen and (max-width: 50em) {
+    padding: 8rem 6rem;
+  }
+
   h3 {
     text-transform: capitalize;
     text-align: center;
