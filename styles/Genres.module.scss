@@ -17,6 +17,8 @@
 
       tbody {
         display: block;
+        text-align: right;
+        padding-left: 50%;
       }
     }
 
@@ -27,6 +29,8 @@
       @media only screen and (max-width: 54.38em) {
         display: block;
         margin-bottom: 2rem;
+        text-align: right;
+        padding-left: 50%;
       }
   
     }
@@ -50,6 +54,9 @@
 
       @media only screen and (max-width: 54.38em) {
         display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
       }
     }
 
