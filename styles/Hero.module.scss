@@ -17,16 +17,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  @media only screen and (max-width: 50em) {
-    height: calc(80vh - 5.6rem);
+
+  @media only screen and (max-width: 64em) {
+    margin-top: 5.6rem;
+    height: 80vh;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
   }
-
+  
+  @media only screen and (max-width: 50em) {
+    height: 70vh;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 65vh, 0 100%);
+  }
+  
   @media only screen and (max-width: 37.5em) {
     -webkit-clip-path: none;
     clip-path: none;
+  }
+  
+  @media only screen and (max-width: 26.25em) {
+    height: 60vh;
+    align-items: flex-start;
+    padding-top: 10rem;
   }
 
   &__text {
@@ -81,6 +94,10 @@
         @media only screen and (max-width: 37.5em) {
           font-size: 1.4rem;
           letter-spacing: 0.85rem;
+        }
+
+        @media only screen and (max-width: 26.25em) {
+          font-size: 1.32rem;
         }
       }
     }
