@@ -119,6 +119,12 @@
     font-size: 2.5rem;
   }
 
+  @media only screen and (max-width: 26.25em) {
+    font-size: 2.3rem;
+    top: 7rem;
+    right: 5rem;
+  }
+
   span {
     padding: 1rem 1.5rem;
     line-height: 1;
