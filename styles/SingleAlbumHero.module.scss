@@ -80,8 +80,16 @@
     top: 50%;
   }
 
+  @media only screen and (max-width: 56.25em) {
+    top: 45%;
+  }
+
   @media only screen and (max-width: 51.25em) {
     top: 45%;
+  }
+
+  @media only screen and (max-width: 41.69em) {
+    top: 30%;
   }
 
   @media only screen and (max-width: 37.5em) {
