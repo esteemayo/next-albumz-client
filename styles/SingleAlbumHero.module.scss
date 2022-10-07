@@ -10,6 +10,10 @@
     height: 100vh;
   }
 
+  @media only screen and (max-width: 51.25em) {
+    height: 50vh;
+  }
+
   @media only screen and (max-width: 37.5em) {
     height: 30vh;
     -webkit-clip-path: none;
@@ -66,6 +70,10 @@
 
   @media only screen and (max-width: 59.38em) {
     top: 35%;
+  }
+
+  @media only screen and (max-width: 51.25em) {
+    
   }
 
   @media only screen and (max-width: 37.5em) {
