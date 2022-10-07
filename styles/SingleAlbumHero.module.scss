@@ -46,6 +46,10 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 
+  @media only screen and (max-width: 64em) {
+    top: 45%;
+  }
+
   &__group {
     color: #fff;
     margin-top: 22rem;
