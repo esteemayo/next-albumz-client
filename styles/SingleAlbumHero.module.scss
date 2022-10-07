@@ -10,6 +10,10 @@
     height: 100vh;
   }
 
+  @media only screen and (max-width: 57.5em) {
+    height: 60vh;
+  }
+
   @media only screen and (max-width: 51.25em) {
     height: 50vh;
   }
