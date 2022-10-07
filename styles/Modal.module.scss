@@ -64,6 +64,11 @@
         width: 4.5rem;
         height: 4.5rem;
       }
+
+      @media only screen and (max-width: 29.38em) {
+        width: 6rem;
+        height: 6rem;
+      }
     }
 
     &__closeIcon {
@@ -72,6 +77,10 @@
 
       @media only screen and (max-width: 50em) {
         font-size: 3rem;
+      }
+
+      @media only screen and (max-width: 29.38em) {
+        font-size: 4rem;
       }
     }
 
