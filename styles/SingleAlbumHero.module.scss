@@ -6,6 +6,11 @@
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 9vh), 0 100%);
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 9vh), 0 100%);
 
+  @media only screen and (max-width: 37.5em) {
+    -webkit-clip-path: none;
+    clip-path: none;
+  }
+
   &__hero {
     height: 100%;
   }
