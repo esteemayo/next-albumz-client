@@ -144,6 +144,10 @@
       height: 3px;
       background-color: #5a6bf6;
       margin-top: 3rem;
+
+      @media only screen and (max-width: 43.75em) {
+        width: 5rem;
+      }
     }
   }
 
