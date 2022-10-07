@@ -18,6 +18,10 @@
     height: 50vh;
   }
 
+  @media only screen and (max-width: 46.25em) {
+    height: 65vh;
+  }
+
   @media only screen and (max-width: 37.5em) {
     height: 30vh;
     -webkit-clip-path: none;
