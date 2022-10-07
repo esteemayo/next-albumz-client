@@ -9,6 +9,10 @@
     margin: 0 3rem;
     border-radius: 0 0 0 0.6rem;
     box-shadow: 0 2px 5px 1px rgba(64, 60, 67, 0.16);
+
+    @media only screen and (max-width: 17.5em) {
+      padding: 1rem;
+    }
   }
 
   .header {
