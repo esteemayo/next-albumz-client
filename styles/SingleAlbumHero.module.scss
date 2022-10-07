@@ -138,5 +138,9 @@
       rgba(90, 107, 246, 0.85),
       rgba(3, 5, 65, 0.85)
     );
+
+    @media only screen and (max-width: 26.25em) {
+      padding: 0.8rem 1.3rem;
+    }
   }
 }
