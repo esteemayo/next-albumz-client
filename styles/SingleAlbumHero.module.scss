@@ -56,6 +56,10 @@
     top: 45%;
   }
 
+  @media only screen and (max-width: 37.5em) {
+    top: 28%;
+  }
+
   &__group {
     color: #fff;
     margin-top: 22rem;
