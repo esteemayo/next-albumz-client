@@ -6,6 +6,10 @@
   display: flex;
   align-items: flex-start;
 
+  @media only screen and (max-width: 64em) {
+    padding: 0 8rem;
+  }
+
   & > * {
     padding-top: 10vw;
     padding-bottom: 10vw;
