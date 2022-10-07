@@ -30,6 +30,11 @@
       padding: 0.5rem;
     }
 
+    @media only screen and (max-width: 31.25em) {
+      width: 50rem;
+      min-height: 50rem;
+    }
+
     &.modalGenre {
       position: relative;
     }
