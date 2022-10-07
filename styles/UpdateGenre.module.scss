@@ -73,6 +73,10 @@
       margin-top: 0;
       text-align: center;
       margin-right: 6.387%;
+
+      @media only screen and (max-width: 31.25em) {
+        font-size: 1.8rem;
+      }
     }
   }
 }
