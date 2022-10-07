@@ -66,6 +66,10 @@
       scrollbar-color: rgba(0, 0, 0, 0.5);
       scrollbar-width: thin;
       transition: all 0.5s ease-in-out;
+
+      @media only screen and (max-width: 29.38em) {
+        height: 100%;
+      }
       
       &:hover {
         scrollbar-color: rgba(0, 0, 0, 0.9);
