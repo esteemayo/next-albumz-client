@@ -12,6 +12,10 @@
     clip-path: none;
   }
 
+  @media only screen and (max-width: 26.25em) {
+    height: 25vh;
+  }
+
   &__hero {
     height: 100%;
   }
@@ -120,8 +124,7 @@
   }
 
   @media only screen and (max-width: 26.25em) {
-    font-size: 2.3rem;
-    top: 7rem;
+    font-size: 2rem;
     right: 5rem;
   }
 
