@@ -23,7 +23,7 @@ const TopAlbums = () => {
               </th>
               <th colSpan='2'>Album</th>
               <th>Reviews</th>
-              <th>Average Ratings</th>
+              <th>Avg Ratings</th>
             </tr>
           </thead>
           <tbody>
