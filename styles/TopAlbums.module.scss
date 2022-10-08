@@ -52,6 +52,18 @@
       font-size: 1.5rem;
       padding: 1rem;
       padding-top: 1.5rem;
+
+      @media only screen and (max-width: 37.5em) {
+        font-size: 1.35rem;
+      }
+
+      img {
+        border-radius: 0.5rem;
+        
+        @media only screen and (max-width: 37.5em) {
+          min-height: 8rem !important;
+        }
+      }
     }
     
     th, td {
