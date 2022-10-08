@@ -109,12 +109,17 @@
     .image__wrapper {
       margin-left: 5rem;
       
-      & > * {
+      img {
         display: inline-block;
         object-fit: cover;
         border-radius: 50%;
         transform: scale(0.9);
         transition: all 0.5s ease-in-out;
+        
+        @media only screen and (max-width: 48em) {
+          min-width: 6rem !important;
+          min-height: 6rem !important;
+        }
 
         &:hover {
           filter: blur(1px);
