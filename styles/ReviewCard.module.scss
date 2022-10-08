@@ -60,11 +60,19 @@
         font-weight: 500;
         font-size: 1.6rem;
       }
+
+      @media only screen and (max-width: 17.5em) {
+        font-size: 1.35rem;
+      }
     }
 
     &__rating {
       font-size: 2rem;
       margin-left: 1rem;
+
+      @media only screen and (max-width: 17.5em) {
+        font-size: 1.7rem;
+      }
     }
     
     &__review {
