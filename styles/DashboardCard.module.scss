@@ -71,6 +71,10 @@
         border-radius: 0.5rem;
         display: inline-block;
         border-radius: 0.5rem;
+
+        @media only screen and (max-width: 31.25em) {
+          min-height: 12rem !important;
+        }
       }
     }
 
