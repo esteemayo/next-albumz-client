@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -13,12 +13,14 @@ const Navbar = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
-  if (typeof window !== 'undefined') {
-    window.onscroll = () => {
-      setIsScrolled(window.pageYOffset === 0 ? false : true);
-      return () => (window.onscroll = null);
-    };
-  }
+  const toggleScroll = () => {
+    setIsScrolled(window.pageYOffset === 0 ? false : true);
+  };
+
+  useEffect(() => {
+    document.addEventListener('scroll', toggleScroll);
+    return () => document.removeEventListener('scroll', toggleScroll);
+  }, []);
 
   return (
     <nav

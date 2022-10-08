@@ -15,17 +15,13 @@
     backdrop-filter: blur(2rem);
     background-color: transparent;
 
-    .logo {
-      // color: #1b004f;
-    }
-
     .list__items {
       a {
         &,
         &:link,
         &:visited {
           color: #fff;
-          color: #1b004f;
+          color: #29003f;
         }
       }
     }
@@ -34,10 +30,6 @@
   &.active {
     .list {
       display: none;
-    }
-
-    .search {
-      // display: none;
     }
   }
 
@@ -82,9 +74,8 @@
       }
 
       &__items {
-        color: #24299b;
-        font-size: 0.875rem;
-        font-size: 1.7rem;
+        color: #29003f;
+        font-size: 1.6rem;
         line-height: 1.5;
         letter-spacing: 0;
         font-weight: 700;
@@ -103,11 +94,11 @@
           &,
           &:link,
           &:visited {
-            color: #24299b;
+            color: #29003f;
           }
 
           &:active {
-            color: #24299b;
+            color: #29003f;
           }
         }
       }
