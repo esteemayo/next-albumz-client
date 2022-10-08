@@ -35,6 +35,10 @@
       background-color: #5a6bf6;
       margin: 0 auto;
       margin-top: 3rem;
+
+      @media only screen and (max-width: 48em) {
+        width: 2.5rem;
+      }
     }
   }
 
