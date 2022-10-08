@@ -55,6 +55,7 @@
 
       @media only screen and (max-width: 37.5em) {
         font-size: 1.35rem;
+        padding: 0;
       }
 
       img {
@@ -75,6 +76,10 @@
       font-size: 2.5rem;
       display: flex;
       align-items: center;
+
+      @media only screen and (max-width: 37.5em) {
+        font-size: 1.35rem;
+      }
     }
 
     .albumInfo {
