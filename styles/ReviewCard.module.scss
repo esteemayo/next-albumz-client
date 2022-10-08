@@ -7,6 +7,10 @@
   max-width: 100rem;
   margin: 0 auto;
 
+  @media only screen and (max-width: 64em) {
+    width: 70%;
+  }
+
   &:not(:last-of-type) {
     margin-bottom: 2rem;
   }
