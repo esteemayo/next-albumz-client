@@ -118,6 +118,10 @@
       cursor: pointer;
       transition: all 0.5s ease-in-out;
 
+      @media only screen and (max-width: 48em) {
+        font-weight: 400;
+      }
+
       &:hover {
         background-color: #696cff;
       }
