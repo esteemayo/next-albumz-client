@@ -22,6 +22,11 @@
     display: flex;
     flex-direction: column;
 
+    @media only screen and (max-width: 48em) {
+      font-size: 1.8rem;
+      margin-bottom: 4rem;
+    }
+
     &:after {
       display: inline-block;
       content: '';
@@ -30,6 +35,10 @@
       background-color: #5a6bf6;
       margin: 0 auto;
       margin-top: 3rem;
+
+      @media only screen and (max-width: 48em) {
+        width: 3rem;
+      }
     }
   }
 
