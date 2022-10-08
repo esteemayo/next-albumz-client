@@ -18,6 +18,10 @@
       font-weight: 500;
       font-size: 4rem;
       color: #333;
+
+      @media only screen and (max-width: 37.5em) {
+        font-size: 3rem;
+      }
     }
 
     .headingText {
