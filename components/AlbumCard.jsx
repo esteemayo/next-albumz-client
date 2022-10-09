@@ -3,9 +3,10 @@ import Image from 'next/image';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
+import { excerpts } from '@/utils/index';
 import styles from '@/styles/AlbumCard.module.scss';
 
-const AlbumCard = () => {
+const AlbumCard = ({ tags, info, slug, image, title, ratingsAverage, ratingsQuantity }) => {
   return (
     <div className={styles.card}>
       <div className={styles.card__header}>
@@ -20,7 +21,7 @@ const AlbumCard = () => {
           />
         </div>
         <h3 className={styles.heading__tertiary}>
-          <span>Made in lagos</span>
+          <span>{title}</span>
         </h3>
         <div className={styles.icon__wrapper}>
           <FavoriteBorderOutlinedIcon className={styles.like__btn} />
@@ -28,18 +29,15 @@ const AlbumCard = () => {
         </div>
       </div>
       <div className={styles.card__details}>
-        <span className={styles.card__tag}>#latest</span>
-        <p className={styles.card__text}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-          perferendis molestiae non nemo doloribus.
-        </p>
+        <span className={styles.card__tag}>{tags.map((tag) => `#${tag}, `)}</span>
+        <p className={styles.card__text}>{info && excerpts(info, 100)}</p>
       </div>
       <div className={styles.card__footer}>
         <p className={styles.card__ratings}>
-          <span className={styles.card__footerValue}>4.8</span> {' | '}
-          <span className={styles.card__footerText}>rating (6)</span>
+          <span className={styles.card__footerValue}>{ratingsAverage}</span> {' | '}
+          <span className={styles.card__footerText}>rating ({ratingsQuantity})</span>
         </p>
-        <Link href={`/albums/slug`}>
+        <Link href={`/albums/${slug}`}>
           <a className={styles.card__footerBtn}>Details</a>
         </Link>
       </div>
