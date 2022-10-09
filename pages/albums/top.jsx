@@ -5,8 +5,10 @@ import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 import Meta from '@/components/Meta';
 import StarRating from '@/components/StarRating';
 import styles from '@/styles/TopAlbums.module.scss';
+import { getTopAlbums } from '@/services/albumService';
 
-const TopAlbums = () => {
+const TopAlbums = ({ albums }) => {
+  console.log(albums)
   return (
     <>
       <Meta title='Top 10 Albums - Albumz Music Entertainment' />
@@ -27,83 +29,51 @@ const TopAlbums = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>
-                <Image
-                  src='/img/banner.jpg'
-                  width={100}
-                  height={100}
-                  objectFit='cover'
-                  alt=''
-                />
-              </td>
-              <td>
-                <div className={styles.albumInfo}>
-                  <Link href={`/albums/slug`} passHref>
-                    <a className={styles.albumLink}>Made in lagos</a>
-                  </Link>
-                  <div className={styles.artist}>Wizkid</div>
-                </div>
-              </td>
-              <td>5</td>
-              <td className={styles.ratingContainer}>
-                <StarRating value={5} className={styles.rating} />
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>
-                <Image
-                  src='/img/banner.jpg'
-                  width={100}
-                  height={100}
-                  objectFit='cover'
-                  alt=''
-                />
-              </td>
-              <td>
-                <div className={styles.albumInfo}>
-                  <Link href={`/albums/slug`} passHref>
-                    <a className={styles.albumLink}>Mr money with the vibe</a>
-                  </Link>
-                  <div className={styles.artist}>Asake</div>
-                </div>
-              </td>
-              <td>4</td>
-              <td className={styles.ratingContainer}>
-                <StarRating value={4.5} className={styles.rating} />
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>
-                <Image
-                  src='/img/banner.jpg'
-                  width={100}
-                  height={100}
-                  objectFit='cover'
-                  alt=''
-                />
-              </td>
-              <td>
-                <div className={styles.albumInfo}>
-                  <Link href={`/albums/slug`} passHref>
-                    <a className={styles.albumLink}>Love damini</a>
-                  </Link>
-                  <div className={styles.artist}>Burna boy</div>
-                </div>
-              </td>
-              <td>3</td>
-              <td className={styles.ratingContainer}>
-                <StarRating value={4} className={styles.rating} />
-              </td>
-            </tr>
+            {albums?.map((item) => {
+              console.log(item);
+              const {id: _id, slug, image, } = item;
+              return (
+                <tr>
+                  <td>1</td>
+                  <td>
+                    <Image
+                      src='/img/banner.jpg'
+                      width={100}
+                      height={100}
+                      objectFit='cover'
+                      alt=''
+                    />
+                  </td>
+                  <td>
+                    <div className={styles.albumInfo}>
+                      <Link href={`/albums/slug`} passHref>
+                        <a className={styles.albumLink}>Made in lagos</a>
+                      </Link>
+                      <div className={styles.artist}>Wizkid</div>
+                    </div>
+                  </td>
+                  <td>5</td>
+                  <td className={styles.ratingContainer}>
+                    <StarRating value={5} className={styles.rating} />
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </section>
     </>
   );
+};
+
+export const getServerSideProps = async () => {
+  const { data } = await getTopAlbums();
+
+  return {
+    props: {
+      albums: data.albums,
+    },
+  };
 };
 
 export default TopAlbums;
