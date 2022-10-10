@@ -99,7 +99,7 @@ const Login = () => {
   );
 };
 
-export const getStaticProps = ({ req }) => {
+export const getServerSideProps = ({ req }) => {
   const { token } = parseCookie(req);
 
   if (token) {
