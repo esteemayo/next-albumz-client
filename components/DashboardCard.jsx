@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
+import { excerpts } from '@/utils/index';
 import DialogBox from '@/components/DialogBox';
 import styles from '@/styles/DashboardCard.module.scss';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 
-const DashboardCard = () => {
+const DashboardCard = ({ _id: id, slug, info, title, image }) => {
   const [showModal, setShowModal] = useState(true);
 
   return (
@@ -24,18 +26,14 @@ const DashboardCard = () => {
               />
             </div>
             <h3 className={styles.card__heading}>
-              <span>Made in lagos</span>
+              <span>{title}</span>
             </h3>
           </div>
           <div className={styles.card__right}>
-            <p className={styles.card__info}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita 
-              nisi molestias porro, itaque harum quas provident suscipit error doloribus 
-              neque nulla. Est quia laudantium quo velit, atque placeat voluptate!
-            </p>
+            <p className={styles.card__info}>{info && excerpts(info, 200)}</p>
             <div className={styles.card__line}>&nbsp;</div>
             <div className={styles.card__button}>
-              <Link href={`/albums/edit/slug`} passHref>
+              <Link href={`/albums/edit/${slug}`} passHref>
                 <a className={styles.card__updateBtn}>Update</a>
               </Link>
               <button
@@ -58,6 +56,14 @@ const DashboardCard = () => {
       )}
     </>
   );
+};
+
+DashboardCard.propTypes = {
+  id: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  info: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default DashboardCard;
