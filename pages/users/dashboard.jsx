@@ -21,6 +21,16 @@ const Dashboard = ({ albums }) => {
 
 export const getServerSideProps = async ({ req }) => {
   const { token } = parseCookie(req);
+  
+  if (!token || token === '') {
+    return {
+      redirect: {
+        destination: '/auth/login',
+        permanent: false,
+      },
+    };
+  }
+  
   const { data } = await getUserAlbums(token);
 
   return {
