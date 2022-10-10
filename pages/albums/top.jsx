@@ -9,7 +9,6 @@ import styles from '@/styles/TopAlbums.module.scss';
 import { getTopAlbums } from '@/services/albumService';
 
 const TopAlbums = ({ albums }) => {
-  console.log(albums)
   return (
     <>
       <Meta title='Top 10 Albums - Albumz Music Entertainment' />
@@ -30,15 +29,15 @@ const TopAlbums = ({ albums }) => {
             </tr>
           </thead>
           <tbody>
-            {albums?.map((item) => {
-              console.log(item);
-              const {id: _id, slug, image, } = item;
+            {albums?.map((item, index) => {
+              const {_id: id, slug, image, title, artist, reviews, avgRating} = item;
+
               return (
-                <tr>
-                  <td>1</td>
+                <tr key={id}>
+                  <td>{index + 1}</td>
                   <td>
                     <Image
-                      src='/img/banner.jpg'
+                      src={image ?? '/img/banner.jpg'}
                       width={100}
                       height={100}
                       objectFit='cover'
@@ -47,15 +46,15 @@ const TopAlbums = ({ albums }) => {
                   </td>
                   <td>
                     <div className={styles.albumInfo}>
-                      <Link href={`/albums/slug`} passHref>
-                        <a className={styles.albumLink}>Made in lagos</a>
+                      <Link href={`/albums/${slug}`} passHref>
+                        <a className={styles.albumLink}>{title}</a>
                       </Link>
-                      <div className={styles.artist}>Wizkid</div>
+                      <div className={styles.artist}>{artist}</div>
                     </div>
                   </td>
-                  <td>5</td>
+                  <td>{reviews?.length}</td>
                   <td className={styles.ratingContainer}>
-                    <StarRating value={5} className={styles.rating} />
+                    <StarRating value={avgRating} className={styles.rating} />
                   </td>
                 </tr>
               );
@@ -78,7 +77,7 @@ export const getServerSideProps = async ({ req }) => {
       },
     };
   }
-  
+
   const { data } = await getTopAlbums(token);
 
   return {
