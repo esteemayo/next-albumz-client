@@ -8,6 +8,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 import Meta from '@/components/Meta';
+import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
 import { loginUser, reset } from '@/features/auth/authSlice';
@@ -94,6 +95,23 @@ const Login = () => {
       </div>
     </>
   );
+};
+
+export const getStaticProps = ({ req }) => {
+  const { token } = parseCookie(req);
+
+  if (token || token !== '') {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
 };
 
 export default Login;
