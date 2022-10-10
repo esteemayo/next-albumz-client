@@ -9,6 +9,7 @@ import { toggleMenu } from '@/features/toggle/toggleSlice';
 
 const Navbar = () => {
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => ({ ...state.auth }));
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -59,26 +60,31 @@ const Navbar = () => {
               Tags
             </Link>
           </li>
-          <li className={styles.list__items}>
-            <Link href='/albums/top' passHref className={styles.navbar__link}>
-              Top Albums
-            </Link>
-          </li>
-          <li className={styles.list__items}>
-            <Link href='/auth/account' passHref className={styles.navbar__link}>
-              Account
-            </Link>
-          </li>
-          <li className={styles.list__items}>
-            <Link href='/auth/login' passHref className={styles.navbar__link}>
-              Login
-            </Link>
-          </li>
-          <li className={styles.list__items}>
-            <Link href='#' passHref className={styles.navbar__link}>
-              Logout
-            </Link>
-          </li>
+          {user ? (
+            <>
+              <li className={styles.list__items}>
+                <Link href='/albums/top' passHref className={styles.navbar__link}>
+                  Top Albums
+                </Link>
+              </li>
+              <li className={styles.list__items}>
+                <Link href='/auth/account' passHref className={styles.navbar__link}>
+                  Account
+                </Link>
+              </li>
+              <li className={styles.list__items}>
+                <Link href='#' passHref className={styles.navbar__link}>
+                  Logout
+                </Link>
+              </li>
+            </>
+          ) : (
+            <li className={styles.list__items}>
+              <Link href='/auth/login' passHref className={styles.navbar__link}>
+                Login
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
       <div className={styles.navbar__right}>
