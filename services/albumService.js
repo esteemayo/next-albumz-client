@@ -8,9 +8,19 @@ export const getAlbums = () => http.get(apiEndpoint);
 
 export const getFeaturedAlbums = () => http.get(`${apiEndpoint}/featured`);
 
-export const getUserAlbums = () => http.get(`${apiEndpoint}/user-albums`);
+export const getUserAlbums = (token) =>
+  http.get(`${apiEndpoint}/user-albums`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
-export const getTopAlbums = () => http.get(`${apiEndpoint}/top`);
+export const getTopAlbums = (token) => 
+  http.get(`${apiEndpoint}/top`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
 export const getAlbumsByTag = (tag) => http.get(`${apiEndpoint}/tags/${tag}`);
 
