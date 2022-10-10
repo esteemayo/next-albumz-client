@@ -2,6 +2,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import logger from './logService';
+import { getJwt } from './authService';
 
 const devEnv = process.env.NODE_ENV !== 'production';
 const NEXT_PUBLIC_DEV_API_URL = process.env.NEXT_PUBLIC_DEV_API_URL;
@@ -17,7 +18,7 @@ const authFetch = axios.create({
 
 authFetch.interceptors.request.use(
   (req) => {
-    req.headers.common['Authorization'] = `Bearer`;
+    req.headers.common['Authorization'] = `Bearer ${getJwt()}`;
     return req;
   },
   (error) => {
