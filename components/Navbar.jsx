@@ -1,18 +1,26 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from '@/styles/Navbar.module.scss';
+import { logoutUser } from '@/features/auth/authSlice';
 import { toggleMenu } from '@/features/toggle/toggleSlice';
 
 const Navbar = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => ({ ...state.auth }));
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
 
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    router.push('/');
+  };
 
   const toggleScroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
@@ -72,7 +80,7 @@ const Navbar = () => {
                   Account
                 </Link>
               </li>
-              <li className={styles.list__items}>
+              <li className={styles.list__items} onClick={handleLogout}>
                 <Link href='#' passHref className={styles.navbar__link}>
                   Logout
                 </Link>
