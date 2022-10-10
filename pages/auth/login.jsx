@@ -59,12 +59,14 @@ const Login = () => {
                 <div className={styles.form__headline}>Log in to Your Account</div>
                   <FormInput
                     type='email'
+                    name='email'
                     placeholder='Email'
                     onChange={(e) => setEmail(e.target.value)}
                   >
                     <EmailOutlinedIcon className={styles.form__icon} />
                   </FormInput>
                   <FormInput
+                    name='password'
                     type={showPassword ? 'text': 'password'}
                     placeholder='Password'
                     onChange={(e) => setPassword(e.target.value)}
