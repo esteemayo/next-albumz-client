@@ -1,22 +1,131 @@
+import jwtDecode from 'jwt-decode';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { getFromStorage, removeFromStorage, setToStorage } from '@/utils/index';
 
-import { login } from '@/services/authService';
-import { register } from '@/services/userService';
+import * as authAPI from '@/services/authService';
+import { nextRegister } from '@/services/userService';
+import {
+  getFromStorage,
+  removeFromStorage,
+  setToStorage,
+  tokenKey
+} from '@/utils/index';
+
+export const registerUser = createAsyncThunk(
+  'auth/register',
+  async ({userData, toast}, { rejectWithValue}) => {
+    try {
+      const { data } = await nextRegister({ ...userData });
+      toast.success('Account created successfully');
+      console.log(data)
+      return data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
+export const loginUser = createAsyncThunk(
+  'auth/login',
+  async ({ userData, toast }, { rejectWithValue }) => {
+    try {
+      const { data } = await authAPI.nextLogin({ ...userData });
+      toast.success('Logged in successfully');
+      return data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
+export const logoutUser = createAsyncThunk(
+  'auth/logout',
+  async (_, { rejectWithValue }) => {
+    try {
+      await authAPI.nextLogout();
+      return;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
+const token = authAPI.getJwt();
+const user = getFromStorage(tokenKey);
 
 const initialState = {
-  user: null,
+  user: user ?? null,
+  isLoading: false,
+  isError: false,
+  isSuccess: false,
+  message: '',
 };
+
+if (token) {
+  const decodedToken = jwtDecode(token);
+  const expiryDate = new Date().getTime;
+
+  if (decodedToken.exp * 1000 < expiryDate) {
+    removeFromStorage(tokenKey);
+    initialState.user = null;
+  }
+}
 
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    setLogout: (state) => {},
+    reset: (state) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.isSuccess = false;
+      state.message = '';
+    },
+    setLogout: (state) => {
+      removeFromStorage(tokenKey);
+      state.user = null;
+    },
   },
-  extraReducers: (builder) => {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(registerUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(registerUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        setToStorage(tokenKey, payload);
+        state.user = payload;
+      })
+      .addCase(registerUser.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = false;
+        state.isError = true;
+        state.message = payload.message;
+        state.user = null;
+      })
+      .addCase(loginUser.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(loginUser.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        setToStorage(tokenKey, payload);
+        state.user = payload;
+      })
+      .addCase(loginUser.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = false;
+        state.isError = true;
+        state.message = payload.message;
+        state.user = null;
+      })
+      .addCase(logoutUser.fulfilled, (state) => {
+        removeFromStorage(tokenKey);
+        state.user = null;
+      })
+  },
 });
 
-export const { setLogout } = authSlice.actions;
+export const { reset, setLogout } = authSlice.actions;
 
 export default authSlice.reducer;
