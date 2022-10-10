@@ -3,6 +3,7 @@ import Image from 'next/image';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 
 import Meta from '@/components/Meta';
+import { parseCookie } from '@/utils/index';
 import StarRating from '@/components/StarRating';
 import styles from '@/styles/TopAlbums.module.scss';
 import { getTopAlbums } from '@/services/albumService';
@@ -66,8 +67,19 @@ const TopAlbums = ({ albums }) => {
   );
 };
 
-export const getServerSideProps = async () => {
-  const { data } = await getTopAlbums();
+export const getServerSideProps = async ({ req }) => {
+  const { token } = parseCookie(req);
+
+  if (!token || token === '') {
+    return {
+      redirect: {
+        destination: '/auth/login',
+        permanent: false,
+      },
+    };
+  }
+  
+  const { data } = await getTopAlbums(token);
 
   return {
     props: {
