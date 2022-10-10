@@ -1,5 +1,8 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
@@ -7,8 +10,15 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import Meta from '@/components/Meta';
 import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
+import { loginUser, reset } from '@/features/auth/authSlice';
 
 const Login = () => {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const { user, isError, isSuccess, isLoading, message } = useSelector(
+    (state) => ({ ...state.auth })
+  );
+
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
@@ -19,7 +29,20 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const userData = {
+      email,
+      password,
+    };
+
+    dispatch(loginUser({ userData, toast }));
   };
+
+  useEffect(() => {
+    isError && toast.error(message);
+    user && isSuccess && router.push('/users/dashboard');
+    dispatch(reset());
+  }, [user, isSuccess, isError, message, router, dispatch]);
 
   return (
     <>
