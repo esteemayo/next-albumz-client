@@ -100,7 +100,7 @@ const Login = () => {
 export const getStaticProps = ({ req }) => {
   const { token } = parseCookie(req);
 
-  if (token || token !== '') {
+  if (token) {
     return {
       redirect: {
         destination: '/',
