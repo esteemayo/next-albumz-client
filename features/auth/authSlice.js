@@ -2,7 +2,7 @@ import jwtDecode from 'jwt-decode';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import * as authAPI from '@/services/authService';
-import { nextRegister } from '@/services/userService';
+import * as userAPI from '@/services/userService';
 import {
   getFromStorage,
   removeFromStorage,
@@ -14,7 +14,7 @@ export const registerUser = createAsyncThunk(
   'auth/register',
   async ({ userData, toast }, { rejectWithValue }) => {
     try {
-      const { data } = await nextRegister({ ...userData });
+      const { data } = await userAPI.nextRegister({ ...userData });
       toast.success('Account created successfully');
       return data;
     } catch (err) {
@@ -29,6 +29,19 @@ export const loginUser = createAsyncThunk(
     try {
       const { data } = await authAPI.nextLogin({ ...userData });
       toast.success('Logged in successfully');
+      return data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
+export const updateUserData = createAsyncThunk(
+  'auth/updateMe',
+  async ({ userData, toast }, { rejectWithValue }) => {
+    try {
+      const { data } = await userAPI.updateMe({ ...userData });
+      toast.success('Account updated successfully');
       return data;
     } catch (err) {
       return rejectWithValue(err.response.data);
@@ -112,6 +125,22 @@ export const authSlice = createSlice({
         state.user = payload;
       })
       .addCase(loginUser.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = false;
+        state.isError = true;
+        state.message = payload.message;
+        state.user = null;
+      })
+      .addCase(updateUserData.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateUserData.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        setToStorage(tokenKey, payload);
+        state.user = payload;
+      })
+      .addCase(updateUserData.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.isSuccess = false;
         state.isError = true;
