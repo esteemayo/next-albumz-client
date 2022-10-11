@@ -8,3 +8,7 @@ export const register = (credentials) =>
 
 export const nextRegister = (credentials) =>
   http.post(`${apiUrl}/users/register`, credentials);
+
+export const updateMe = (credentials) =>
+  http.patch(`${apiEndpoint}/update-me`, credentials);
+  
