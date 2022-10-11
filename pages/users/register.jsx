@@ -1,5 +1,8 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
@@ -14,6 +17,7 @@ import Meta from '@/components/Meta';
 import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
 import FormChipInput from '@/components/FormChipInput';
+import { registerUser, reset } from '@/features/auth/authSlice';
 
 const initialState = {
   name: '',
@@ -27,6 +31,10 @@ const initialState = {
 };
 
 const Register = () => {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const { user, isSuccess, isError, message } = useSelector((state) => ({ ...state.auth }));
+
   const [file, setFile] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
   const [formInputs, setFormInputs] = useState(initialState);
@@ -77,8 +85,19 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log({ ...formInputs });
+
+    const userData = {
+      ...formInputs,
+    }
+    
+    dispatch(registerUser({ userData, toast }));
   };
+
+  useEffect(() => {
+    isError && toast.error(message);
+    user && isSuccess && router.push('/users/dashboard');
+    dispatch(reset());
+  }, [user, isSuccess, isError, message, router, dispatch]);
 
   return (
     <>
