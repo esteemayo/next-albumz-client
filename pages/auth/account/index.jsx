@@ -101,6 +101,12 @@ const Account = () => {
                   <a className={styles.itemLink}>Password</a>
                 </Link>
               </li>
+              <li className={styles.list__item}>
+                <KeyOutlinedIcon className={styles.itemIcon} />
+                <Link href='/users/dashboard' passHref>
+                  <a className={styles.itemLink}>Dashboard</a>
+                </Link>
+              </li>
             </ul>
           </div>
           <div className={styles.right}>
