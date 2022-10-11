@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { toast } from 'react-toastify';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
@@ -18,18 +19,20 @@ import FormInput from '@/components/FormInput';
 import FormButton from '@/components/FormButton';
 import styles from '@/styles/Account.module.scss';
 import FormChipInput from '@/components/FormChipInput';
+import { reset, updateUserData } from '@/features/auth/authSlice';
 
 const Account = () => {
-  const { user } = useSelector((state) => ({ ...state.auth }));
+  const dispatch = useDispatch();
+  const { user, isError, message } = useSelector((state) => ({ ...state.auth }));
 
   const [file, setFile] = useState(null);
   const [formInputs, setFormInputs] = useState({
-    name: user.name,
-    username: user.username,
-    email: user.email,
-    location: user.location,
-    favGenres: user.favGenres,
-    favArtists: user.favArtists,
+    name: user?.name,
+    username: user?.username,
+    email: user?.email,
+    location: user?.location,
+    favGenres: user?.favGenres,
+    favArtists: user?.favArtists,
   });
 
   const handleChange = ({ target: input }) => {
@@ -69,7 +72,18 @@ const Account = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const userData = {
+      ...formInputs,
+    };
+
+    dispatch(updateUserData({ userData, toast }));
   };
+
+  useEffect(() => {
+    isError && toast.error(message);
+    dispatch(reset());
+  }, [isError, message, dispatch]);
 
   return (
     <>
@@ -81,14 +95,14 @@ const Account = () => {
             <div className={styles.userContainer}>
               <div className={styles.imageContainer}>
                 <Image
-                  src={file ? URL.createObjectURL(file) : user.avatar ? !user.avatar : '/img/user-default.jpg'}
+                  src={file ? URL.createObjectURL(file) : user?.avatar ? !user?.avatar : '/img/user-default.jpg'}
                   width={80}
                   height={80}
                   objectFit='cover'
-                  alt={user.username}
+                  alt={user?.username}
                 />
               </div>
-              <h2 className={styles.userName}>Emmanuel adebayo</h2>
+              <h2 className={styles.userName}>{user?.name}</h2>
             </div>
             <ul className={styles.list}>
               <li className={`${styles.list__item} ${styles.active}`}>
