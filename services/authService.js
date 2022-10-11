@@ -14,4 +14,7 @@ export const nextLogin = (credentials) =>
 
 export const nextLogout = () => http.post(`${apiUrl}/auth/logout`);
 
+export const updatePassword = (credentials) =>
+  http.patch(`${apiEndpoint}/update-my-password`, credentials);
+
 export const getJwt = () => getFromStorage(tokenKey)?.token;
