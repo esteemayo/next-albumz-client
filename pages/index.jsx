@@ -4,8 +4,6 @@ import Hero from '@/components/Hero';
 import Modal from '@/components/Modal';
 import AddButton from '@/components/AddButton';
 import AlbumForm from '@/components/AlbumForm';
-import GenreForm from '@/components/GenreForm';
-import styles from '@/styles/Home.module.scss';
 import TopReviews from '@/components/TopReviews';
 import FeaturedAlbums from '@/components/FeaturedAlbums';
 import { getTopReviews } from '@/services/reviewService';
