@@ -12,11 +12,10 @@ import {
 
 export const registerUser = createAsyncThunk(
   'auth/register',
-  async ({userData, toast}, { rejectWithValue}) => {
+  async ({ userData, toast }, { rejectWithValue }) => {
     try {
       const { data } = await nextRegister({ ...userData });
       toast.success('Account created successfully');
-      console.log(data)
       return data;
     } catch (err) {
       return rejectWithValue(err.response.data);
