@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Visibility from '@mui/icons-material/Visibility';
@@ -14,14 +15,15 @@ import DialogBox from '@/components/DialogBox';
 import FormButton from '@/components/FormButton';
 import DeleteAccount from '@/components/DeleteAccount';
 import styles from '@/styles/UpdatePassword.module.scss';
+import { reset, updateUserPassword } from '@/features/auth/authSlice';
 
 const UpdatePassword = () => {
   const dispatch = useDispatch();
   const { user, isError, message } = useSelector((state) => ({ ...state.auth }));
 
-  const [password, setPassword] = useState(null);
-  const [confirmPassword, setConfirmPassword] = useState(null);
-  const [currentPassword, setCurrentPassword] = useState(null);
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [currentPassword, setCurrentPassword] = useState('');
   
   const [showModal, setShowModal] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
@@ -30,7 +32,27 @@ const UpdatePassword = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const userData = {
+      password,
+      confirmPassword,
+      currentPassword,
+    };
+
+    dispatch(updateUserPassword({ userData, toast }));
+    handleClear();
   };
+
+  const handleclear = () => {
+    setPassword('');
+    setConfirmPassword('');
+    setCurrentPassword('');
+  };
+
+  useEffect(() => {
+    isError && toast.error(message);
+    dispatch(reset());
+  }, [isError, message, dispatch]);
 
   return (
     <>
@@ -153,6 +175,23 @@ const UpdatePassword = () => {
       )}
     </>
   );
+};
+
+export const getServerSideProps = ({ req }) => {
+  const { token } = parseCookie(req);
+
+  if (!token || token === '') {
+    return {
+      redirect: {
+        destination: '/auth/login',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
 };
 
 export default UpdatePassword;
