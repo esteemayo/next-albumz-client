@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
@@ -12,23 +13,24 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import PlaylistAddCheckCircleOutlinedIcon from '@mui/icons-material/PlaylistAddCheckCircleOutlined';
 
 import Meta from '@/components/Meta';
+import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
 import FormButton from '@/components/FormButton';
 import styles from '@/styles/Account.module.scss';
 import FormChipInput from '@/components/FormChipInput';
 
-const initialState = {
-  name: '',
-  username: '',
-  email: '',
-  location: '',
-  favGenres: [],
-  favArtists: [],
-};
-
 const Account = () => {
+  const { user } = useSelector((state) => ({ ...state.auth }));
+
   const [file, setFile] = useState(null);
-  const [formInputs, setFormInputs] = useState(initialState);
+  const [formInputs, setFormInputs] = useState({
+    name: user.name,
+    username: user.username,
+    email: user.email,
+    location: user.location,
+    favGenres: user.favGenres,
+    favArtists: user.favArtists,
+  });
 
   const handleChange = ({ target: input }) => {
     const { name, value } = input;
@@ -63,7 +65,7 @@ const Account = () => {
     }));
   };
 
-  const {favGenres, favArtists } = formInputs;
+  const { name, username, email, location, favGenres, favArtists } = formInputs;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -79,11 +81,11 @@ const Account = () => {
             <div className={styles.userContainer}>
               <div className={styles.imageContainer}>
                 <Image
-                  src={file ? URL.createObjectURL(file) : '/img/admin.JPG'}
+                  src={file ? URL.createObjectURL(file) : user.avatar ? !user.avatar : '/img/user-default.jpg'}
                   width={80}
                   height={80}
                   objectFit='cover'
-                  alt=''
+                  alt={user.username}
                 />
               </div>
               <h2 className={styles.userName}>Emmanuel adebayo</h2>
@@ -116,6 +118,7 @@ const Account = () => {
                 <FormInput
                   name='name'
                   placeholder='Name'
+                  value={name || ''}
                   onChange={handleChange}
                 >
                   <PersonOutlinedIcon className={styles.form__icon} />
@@ -123,6 +126,7 @@ const Account = () => {
                 <FormInput
                   name='email'
                   placeholder='Email Address'
+                  value={email || ''}
                   onChange={handleChange}
                   >
                   <EmailOutlinedIcon className={styles.form__icon} />
@@ -130,6 +134,7 @@ const Account = () => {
                 <FormInput
                   name='username'
                   placeholder='Username'
+                  value={username}
                   onChange={handleChange}
                 >
                   <FaceOutlinedIcon className={styles.form__icon} />
@@ -137,6 +142,7 @@ const Account = () => {
                 <FormInput
                   name='location'
                   placeholder='Location'
+                  value={location}
                   onChange={handleChange}
                 >
                   <LocationOnOutlinedIcon className={styles.form__icon} />
@@ -173,6 +179,23 @@ const Account = () => {
       </section>
     </>
   );
+};
+
+export const getServerSideProps = ({ req }) => {
+  const { token } = parseCookie(req);
+  
+  if (!token || token === '') {
+    return {
+      redirect: {
+        destination: '/auth/login',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
 };
 
 export default Account;
