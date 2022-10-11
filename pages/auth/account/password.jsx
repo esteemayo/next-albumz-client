@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
 import Meta from '@/components/Meta';
+import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
 import DialogBox from '@/components/DialogBox';
 import FormButton from '@/components/FormButton';
@@ -14,6 +16,9 @@ import DeleteAccount from '@/components/DeleteAccount';
 import styles from '@/styles/UpdatePassword.module.scss';
 
 const UpdatePassword = () => {
+  const dispatch = useDispatch();
+  const { user, isError, message } = useSelector((state) => ({ ...state.auth }));
+
   const [password, setPassword] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState(null);
   const [currentPassword, setCurrentPassword] = useState(null);
@@ -37,14 +42,14 @@ const UpdatePassword = () => {
             <div className={styles.userContainer}>
               <div className={styles.imageContainer}>
                 <Image
-                  src='/img/admin.JPG'
+                  src={user?.avatar ? user?.avatar : '/img/user-default.jpg'}
                   width={80}
                   height={80}
                   objectFit='cover'
-                  alt=''
+                  alt={user?.username}
                 />
               </div>
-              <h2 className={styles.userName}>Emmanuel adebayo</h2>
+              <h2 className={styles.userName}>{user?.name}</h2>
             </div>
             <ul className={styles.list}>
               <li className={styles.list__item}>
@@ -59,7 +64,7 @@ const UpdatePassword = () => {
                   <a className={styles.itemLink}>Password</a>
                 </Link>
               </li>
-              <li className={`${styles.list__item} ${styles.active}`}>
+              <li className={styles.list__item}>
                 <KeyOutlinedIcon className={styles.itemIcon} />
                 <Link href='/users/dashboard' passHref>
                   <a className={styles.itemLink}>Dashboard</a>
