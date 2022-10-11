@@ -5,7 +5,6 @@ import DashboardCard from '@/components/DashboardCard';
 import { getUserAlbums } from '@/services/albumService';
 
 const Dashboard = ({ albums }) => {
-  console.log(albums)
   return (
     <>
       <Meta title='User Dashboard - Albumz Music Entertainment' />
