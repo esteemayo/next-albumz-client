@@ -60,6 +60,7 @@ const Login = () => {
                   <FormInput
                     type='email'
                     name='email'
+                    autoFocus
                     placeholder='Email'
                     onChange={(e) => setEmail(e.target.value)}
                   >
