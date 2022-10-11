@@ -49,6 +49,19 @@ export const updateUserData = createAsyncThunk(
   }
 );
 
+export const updateUserPassword = createAsyncThunk(
+  'auth/updatePassword',
+  async ({ userData, toast }, { rejectWithValue }) => {
+    try {
+      const { data } = await authAPI.updatePassword({ ...userData });
+      toast.success('Pasword changed successfully');
+      return data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
 export const logoutUser = createAsyncThunk(
   'auth/logout',
   async (_, { rejectWithValue }) => {
@@ -145,7 +158,21 @@ export const authSlice = createSlice({
         state.isSuccess = false;
         state.isError = true;
         state.message = payload.message;
-        state.user = null;
+      })
+      .addCase(updateUserPassword.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateUserPassword.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        setToStorage(tokenKey, payload);
+        state.user = payload;
+      })
+      .addCase(updateUserPassword.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = false;
+        state.isError = true;
+        state.message = payload.message;
       })
       .addCase(logoutUser.fulfilled, (state) => {
         removeFromStorage(tokenKey);
