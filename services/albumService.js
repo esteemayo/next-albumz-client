@@ -34,6 +34,9 @@ export const getAlbumBySlug = (slug, token) =>
     },
   });
 
+export const getRelatedAlbums = (tags) =>
+  http.post(`${apiEndpoint}/related-albums`, tags);
+
 export const createAlbum = (album) => http.post(apiEndpoint, album);
 
 export const createReview = (albumId, review) =>
