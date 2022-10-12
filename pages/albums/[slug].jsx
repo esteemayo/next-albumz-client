@@ -21,41 +21,6 @@ const SingleAlbum = ({ album }) => {
   );
 };
 
-// export const getStaticPaths = async () => {
-//   const { data } = await albumAPI.getAlbums();
-
-//   const paths = data.albums.map((item) => ({
-//     params: { slug: item.slug },
-//   }));
-
-//   return {
-//     paths,
-//     fallback: true,
-//   };
-// };
-
-// export const getStaticProps = async ({ req, params: { slug } }) => {
-//   const { token } = parseCookie(req);
-
-//   if (!token || token === '') {
-//     return {
-//       redirect: {
-//         destination: '/auth/login',
-//         permanent: false,
-//       }
-//     };
-//   }
-
-//   const { data } = await albumAPI.getAlbumBySlug(slug, token);
-
-//   return {
-//     props: {
-//       album: data.album,
-//     },
-//     revalidate: 1,
-//   };
-// };
-
 export const getServerSideProps = async ({ req, params: { slug } }) => {
   const { token } = parseCookie(req);
 
