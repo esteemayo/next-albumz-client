@@ -2,15 +2,26 @@ import { useState } from 'react';
 import Rating from '@mui/material/Rating';
 
 import styles from '@/styles/ReviewForm.module.scss';
+import { createReview } from '@/services/albumService';
 
-const ReviewForm = () => {
+const ReviewForm = ({ albumId, setReviews }) => {
   const [rating, setRating] = useState(null);
   const [review, setReview] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log({ review, rating });
+    try {
+      const newReview = {
+        rating,
+        review,
+      };
+
+      const { data } = await createReview(albumId, { ...newReview });
+      setReviews((prev) => [...prev, data.review]);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
