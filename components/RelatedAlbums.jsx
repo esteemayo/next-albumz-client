@@ -1,15 +1,35 @@
+import { useEffect, useState } from 'react';
+
 import RelatedAlbumCard from './RelatedAlbumCard';
 import styles from '@/styles/RelatedAlbums.module.scss';
+import { getRelatedAlbums } from '@/services/albumService';
 
-const RelatedAlbums = () => {
+const RelatedAlbums = ({ albumId, tags }) => {
+  const [relatedAlbums, setRelatedAlbums] = useState([]);
+  
+  useEffect(() => {
+    tags && (async () => {
+      try {
+        const { data } = await getRelatedAlbums(tags);
+        setRelatedAlbums(data.albums);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  });
+
   return (
     <section className={styles.related}>
       <div className={styles.related__wrapper}>
         <h6 className={styles.related__header}>Related Albums</h6>
         <div className={styles.related__container}>
-          <RelatedAlbumCard />
-          <RelatedAlbumCard />
-          <RelatedAlbumCard />
+          {relatedAlbums
+            .filter((item) => item._id !== albumId)
+            .slice(0, 3)
+            .map((item) => {
+              return <RelatedAlbumCard key={item._id} {...item} />;
+            })
+          }
         </div>
       </div>
     </section>
