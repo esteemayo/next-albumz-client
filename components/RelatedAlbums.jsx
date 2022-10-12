@@ -19,20 +19,24 @@ const RelatedAlbums = ({ albumId, tags }) => {
   }, [tags]);
 
   return (
-    <section className={styles.related}>
-      <div className={styles.related__wrapper}>
-        <h6 className={styles.related__header}>Related Albums</h6>
-        <div className={styles.related__container}>
-          {relatedAlbums
-            .filter((item) => item._id !== albumId)
-            .slice(0, 3)
-            .map((item) => {
-              return <RelatedAlbumCard key={item._id} {...item} />;
-            })
-          }
-        </div>
-      </div>
-    </section>
+    <>
+      {relatedAlbums && relatedAlbums.length && (
+        <section className={styles.related}>
+          <div className={styles.related__wrapper}>
+            <h6 className={styles.related__header}>{relatedAlbums.length > 1 ? 'Related Albums' : 'Related Album'}</h6>
+            <div className={styles.related__container}>
+              {relatedAlbums
+                .filter((item) => item._id !== albumId)
+                .slice(0, 3)
+                .map((item) => {
+                  return <RelatedAlbumCard key={item._id} {...item} />;
+                })
+              }
+            </div>
+          </div>
+        </section>
+      )}
+    </>
   );
 };
 
