@@ -16,7 +16,7 @@ import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumber
 import StarRating from '@/components/StarRating';
 import styles from '@/styles/AlbumDescription.module.scss';
 
-const AlbumDescription = () => {
+const AlbumDescription = ({ album }) => {
   return (
     <section className={styles.description}>
       <div className={styles.left}>
@@ -27,51 +27,51 @@ const AlbumDescription = () => {
               <MusicNoteOutlinedIcon className={styles.icon} />
             </span>
             <span>Artist</span>
-            <span>Wizkid</span>
+            <span>{album.artist}</span>
           </div>
           <div className={styles.album__details}>
             <span>
               <TitleOutlinedIcon className={styles.icon} />
             </span>
             <span>Title</span>
-            <span>Made in lagos</span>
+            <span>{album.title}</span>
             </div>
           <div className={styles.album__details}>
             <span>
               <CategoryOutlinedIcon className={styles.icon} />
             </span>
             <span>Genre</span>
-            <span>Afro pop</span>
+            <span>{album.genre}</span>
           </div>
           <div className={styles.album__details}>
             <span>
               <DateRangeOutlinedIcon className={styles.icon} />
             </span>
             <span>Year of Release</span>
-            <span>2020</span>
+            <span>{album.year}</span>
           </div>
           <div className={styles.album__details}>
             <span>
               <AlbumOutlinedIcon className={styles.icon} />
             </span>
             <span>Record Label</span>
-            <span>Star boy</span>
+            <span>{album.label}</span>
           </div>
           <div className={styles.album__details}>
             <span>
               <FormatListNumberedOutlinedIcon className={styles.icon} />
             </span>
             <span>Number of Tracks</span>
-            <span>18</span>
+            <span>{album.tracks}</span>
           </div>
           <div className={styles.album__details}>
             <span>
               <StarOutlineOutlinedIcon className={styles.icon} />
             </span>
             <span>Ratings</span>
-            <span>5 / 5</span>
+            <span>{album.ratingsAverage} / 5</span>
           </div>
-          <StarRating value={5} className={styles.rating} />
+          <StarRating value={album.ratingsAverage} className={styles.rating} />
           <div className={styles.action}>
             <span className={styles.action__wrapper}>
               <div className={styles.view__container}>
@@ -99,11 +99,7 @@ const AlbumDescription = () => {
       <div className={styles.right}>
         <div className={styles.rightWrapper}>
           <h2 className={styles.album__heading}>About made in lagos album</h2>
-          <p className={styles.album__info}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse porttitor leo eu enim ultricies, id maximus quam elementum. Morbi sit amet malesuada quam. 
-            Nam molestie mauris eget tristique bibendum. Morbi euismod mi non dolor efficitur congue. Proin eu risus nibh. Fusce nulla nisi, feugiat nec arcu blandit, pretium condimentum ex. Donec rutrum est sed vehicula sagittis. 
-            Nulla eu enim non arcu tempus tempor nec id eros. In fermentum, dolor quis euismod dignissim, ipsum risus dignissim elit, sit amet luctus mauris massa ac erat. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-          </p>
+          <p className={styles.album__info}>{album.info}</p>
         </div>
       </div>
     </section>
