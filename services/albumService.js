@@ -22,18 +22,27 @@ export const getTopAlbums = (token) =>
     },
   });
 
-export const getAlbumsByTag = (tag) => http.get(`${apiEndpoint}/tags/${tag}`);
+export const getAlbumsByTag = (tag) =>
+  http.get(`${apiEndpoint}/tags/${tag}`);
 
 export const getAlbumById = (albumId) => http.get(albumUrl(albumId));
 
-export const getAlbumBySlug = (slug) => http.get(`${apiEndpoint}/details/${slug}`);
+export const getAlbumBySlug = (slug, token) =>
+  http.get(`${apiEndpoint}/details/${slug}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
 export const createAlbum = (album) => http.post(apiEndpoint, album);
 
-export const createReview = (albumId, review) => http.post(`${apiEndpoint}/${albumId}/reviews`);
+export const createReview = (albumId, review) =>
+  http.post(`${apiEndpoint}/${albumId}/reviews`, review);
 
-export const updateAlbum = (albumId, album) => http.patch(albumUrl(albumId), album);
+export const updateAlbum = (albumId, album) =>
+  http.patch(albumUrl(albumId), album);
 
-export const likeAlbum = (albumId) => http.patch(`${apiEndpoint}/like-album/${albumId}`);
+export const likeAlbum = (albumId) =>
+  http.patch(`${apiEndpoint}/like-album/${albumId}`);
 
 export const deleteAlbum = (albumId) => http.delete(albumUrl(albumId));
