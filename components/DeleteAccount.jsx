@@ -1,6 +1,12 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { deleteUser } from '@/features/auth/authSlice';
 import styles from '@/styles/DeleteAccount.module.scss';
 
 const DeleteAccount = ({ onClose }) => {
+  const dispatch = useDispatch();
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -19,11 +25,11 @@ const DeleteAccount = ({ onClose }) => {
             Cancel
           </button>
           <button
-          onClick={() => {
-            console.log('Account closed');
-            onClose(true);
-          }}
-          className={styles.deleteBtn}
+            onClick={() => {
+              dispatch(deleteUser());
+              onClose(true);
+            }}
+            className={styles.deleteBtn}
           >
             Delete
           </button>
