@@ -98,7 +98,7 @@ const AlbumDescription = ({ album }) => {
       </div>
       <div className={styles.right}>
         <div className={styles.rightWrapper}>
-          <h2 className={styles.album__heading}>About made in lagos album</h2>
+          <h2 className={styles.album__heading}>About {album.title} album</h2>
           <p className={styles.album__info}>{album.info}</p>
         </div>
       </div>
