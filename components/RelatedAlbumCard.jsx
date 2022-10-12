@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import PropTypes from 'prop-types';
 
 import styles from '@/styles/RelatedAlbumCard.module.scss';
 
-const RelatedAlbumCard = ({ image, title, artist, createdAt }) => {
+const RelatedAlbumCard = ({ slug, image, title, artist, createdAt }) => {
   return (
     <div className={styles.related__card}>
       <div className={styles.left}>
@@ -17,7 +18,7 @@ const RelatedAlbumCard = ({ image, title, artist, createdAt }) => {
       </div>
       <div className={styles.right}>
         <h6 className={styles.title}>
-          <Link href={`albums/slug`} passHref>
+          <Link href={`/albums/${slug}`} passHref>
             <a className={styles.link}>{title}</a>
           </Link>
         </h6>
@@ -32,6 +33,14 @@ const RelatedAlbumCard = ({ image, title, artist, createdAt }) => {
       </div>
     </div>
   );
+};
+
+RelatedAlbumCard.propTypes = {
+  slug: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  artist: PropTypes.string.isRequired,
+  createdAt: PropTypes.string.isRequired,
 };
 
 export default RelatedAlbumCard;
