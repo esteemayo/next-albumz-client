@@ -1,21 +1,23 @@
+import { useState } from 'react';
+
 import Reviews from '@/components/Reviews';
+import { parseCookie } from '@/utils/index';
 import ReviewForm from '@/components/ReviewForm';
+import * as albumAPI from '@/services/albumservice';
+import styles from '@/styles/SingleAlbum.module.scss';
 import RelatedAlbums from '@/components/RelatedAlbums';
 import SingleAlbumHero from '@/components/SingleAlbumHero';
 import AlbumDescription from '@/components/AlbumDescription';
 
-import { parseCookie } from '@/utils/index';
-import * as albumAPI from '@/services/albumservice';
-import styles from '@/styles/SingleAlbum.module.scss';
-
 const SingleAlbum = ({ album }) => {
-  console.log(album)
+  const [reviews, setReviews] = useState(album.reviews);
+
   return (
     <section className={styles.container}>
       <SingleAlbumHero album={album} />
       <AlbumDescription album={album} />
-      <ReviewForm />
-      <Reviews album={album} />
+      <ReviewForm albumId={album.id} setReviews={setReviews} />
+      <Reviews reviews={reviews} />
       <RelatedAlbums />
     </section>
   );
