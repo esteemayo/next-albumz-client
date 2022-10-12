@@ -11,4 +11,5 @@ export const nextRegister = (credentials) =>
 
 export const updateMe = (credentials) =>
   http.patch(`${apiEndpoint}/update-me`, credentials);
-  
+
+export const deleteMe = () => http.delete(`${apiEndpoint}/delete-me`);
