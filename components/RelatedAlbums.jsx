@@ -16,7 +16,7 @@ const RelatedAlbums = ({ albumId, tags }) => {
         console.log(err);
       }
     })();
-  });
+  }, [tags]);
 
   return (
     <section className={styles.related}>
