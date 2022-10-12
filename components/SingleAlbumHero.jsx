@@ -4,7 +4,7 @@ import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined
 
 import styles from '@/styles/SingleAlbumHero.module.scss';
 
-const SingleAlbumHero = () => {
+const SingleAlbumHero = ({ album }) => {
   return (
     <header className={styles.header}>
       <div className={styles.header__hero}>
@@ -21,16 +21,16 @@ const SingleAlbumHero = () => {
       </div>
       <div className={styles.headingBox}>
         <h1 className={styles.headingPrimary}>
-          <span>Made in lagos</span>
+          <span>{album.title}</span>
         </h1>
         <div className={styles.headingBox__group}>
           <div className={styles.headingBox__detail}>
             <ArtTrackIcon className={styles.headingBox__icon} />
-            <div className={styles.headingBox__text}>tracks</div>
+            <div className={styles.headingBox__text}>{album.tracks}</div>
           </div>
           <div className={styles.headingBox__detail}>
             <CalendarTodayOutlinedIcon className={styles.headingBox__icon} />
-            <div className={styles.headingBox__text}>year</div>
+            <div className={styles.headingBox__text}>{ album.year}</div>
           </div>
         </div>
       </div>
