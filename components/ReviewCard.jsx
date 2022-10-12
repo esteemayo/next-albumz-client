@@ -15,7 +15,10 @@ const ReviewCard = ({ rating, review, user, createdAt }) => {
           <p className={styles.reviewer__review}>{review}</p>
           <div className={styles.line}>&nbsp;</div>
           <div className={styles.date}>
-            <span>{new Date(createdAt).toLocaleTimeString()} - {new Date(createdAt).toDateString()}</span>
+            <span>
+              {new Date(createdAt).toLocaleTimeString().slice(0, 4)} {new Date(createdAt).toLocaleTimeString().slice(8, 10)} 
+              {' - '} 
+              {new Date(createdAt).toDateString().slice(4, 15)}</span>
           </div>
         </div>
         <div className={styles.right}>
