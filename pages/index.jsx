@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import Hero from '@/components/Hero';
 import Modal from '@/components/Modal';
@@ -11,13 +12,14 @@ import { getFeaturedAlbums } from '@/services/albumService';
 
 const Home = ({ reviews, featuredAlbums }) => {
   const [showModal, setShowModal] = useState(false);
+  const { user } = useSelector((state) => ({ ...state.auth }));
 
   return (
     <>
       <Hero />
       <FeaturedAlbums albums={featuredAlbums} />
       <TopReviews reviews={reviews} />
-      <AddButton text='New album' onClick={() => setShowModal(true)} />
+      {user && <AddButton text='New album' onClick={() => setShowModal(true)} />}
       {showModal && (
         <Modal onClose={setShowModal}>
           <AlbumForm onClose={setShowModal} />
