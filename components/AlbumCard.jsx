@@ -29,7 +29,7 @@ const AlbumCard = ({ tags, info, slug, image, title, ratingsAverage, ratingsQuan
         </div>
       </div>
       <div className={styles.card__details}>
-        <span className={styles.card__tag}>{tags.map((tag) => `#${tag}, `)}</span>
+        <span className={styles.card__tag}>{tags?.map((tag) => `#${tag}, `)}</span>
         <p className={styles.card__text}>{info && excerpts(info, 100)}</p>
       </div>
       <div className={styles.card__footer}>
