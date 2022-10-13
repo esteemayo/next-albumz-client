@@ -58,7 +58,7 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
     
     try {
       const { data } = await createAlbum({ ...newAlbum });
-      setAlbumList((prev) => [data.genre, ...prev]);
+      setAlbumList && setAlbumList((prev) => [data.genre, ...prev]);
       onClose(false);
     } catch (err) {
       console.log(err);
