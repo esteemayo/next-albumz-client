@@ -45,6 +45,19 @@ const Albums = ({ albums, genres }) => {
   );
 };
 
+export const getStaticProps = async () => {
+  const { data } = await getAlbums();
+  const { data: { genres } } = await getAllGenres();
+
+  return {
+    props: {
+      genres,
+      albums: data.albums,
+    },
+    revalidate: 1,
+  };
+};
+
 Albums.propTypes = {
   albums: PropTypes.arrayOf(
     PropTypes.shape({
@@ -57,19 +70,6 @@ Albums.propTypes = {
       ratingsQuantity: PropTypes.number.isRequired,
     }),
   ),
-};
-
-export const getStaticProps = async () => {
-  const { data } = await getAlbums();
-  const { data: { genres } } = await getAllGenres();
-
-  return {
-    props: {
-      genres,
-      albums: data.albums,
-    },
-    revalidate: 1,
-  };
 };
 
 export default Albums;
