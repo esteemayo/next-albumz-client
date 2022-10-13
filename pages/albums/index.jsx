@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 
 import Modal from '@/components/Modal';
 import AddButton from '@/components/AddButton';
@@ -11,6 +12,7 @@ import { getAlbums } from '@/services/albumService';
 
 const Albums = ({ albums }) => {
   const [showModal, setShowModal] = useState(false);
+  const { user } = useSelector((state) => ({ ...state.auth }));
 
   return (
     <main className={styles.main}>
@@ -21,10 +23,10 @@ const Albums = ({ albums }) => {
       </div>
       <Pagination />
       
-      <AddButton text='New album' onClick={() => setShowModal(true)} />
+      {user && <AddButton text='New album' onClick={() => setShowModal(true)} />}
       {showModal && (
         <Modal onClose={setShowModal}>
-          <AlbumForm />
+          <AlbumForm onClose={setShowModal} />
         </Modal>
       )}
     </main>
