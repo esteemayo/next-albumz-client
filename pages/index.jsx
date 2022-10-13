@@ -9,7 +9,7 @@ import FeaturedAlbums from '@/components/FeaturedAlbums';
 import { getTopReviews } from '@/services/reviewService';
 import { getFeaturedAlbums } from '@/services/albumService';
 
-const Home = ({ reviews, featuredAlbums, }) => {
+const Home = ({ reviews, featuredAlbums }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -20,7 +20,7 @@ const Home = ({ reviews, featuredAlbums, }) => {
       <AddButton text='New album' onClick={() => setShowModal(true)} />
       {showModal && (
         <Modal onClose={setShowModal}>
-          <AlbumForm />
+          <AlbumForm onClose={setShowModal} />
         </Modal>
       )}
     </>
@@ -29,7 +29,9 @@ const Home = ({ reviews, featuredAlbums, }) => {
 
 export const getStaticProps = async () => {
   const { data } = await getFeaturedAlbums();
-  const { data : { reviews } } = await getTopReviews();
+  const {
+    data: { reviews },
+  } = await getTopReviews();
 
   return {
     props: {
