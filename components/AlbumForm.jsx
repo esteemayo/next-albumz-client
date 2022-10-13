@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 import FormInput from './FormInput';
 import FormButton from './FormButton';
@@ -6,6 +7,7 @@ import FormTextArea from './FormTextArea';
 import FormChipInput from './FormChipInput';
 import styles from '@/styles/Form.module.scss';
 import FormSelectInput from './FormSelectInput';
+import { createAlbum } from '@/services/albumService';
 
 const initialState = {
   artist: '',
@@ -18,9 +20,9 @@ const initialState = {
   tags: [],
 };
 
-const AlbumForm = () => {
+const AlbumForm = ({ onClose }) => {
   const [file, setFile] = useState(null);
-  const [formData, setFormData] = useState(initialState)
+  const [formData, setFormData] = useState(initialState);
 
   const { tags } = formData;
 
@@ -38,17 +40,28 @@ const AlbumForm = () => {
       ...prev,
       tags: prev.tags.filter((item) => item !== tag)
     }));
-  }
+  };
 
-  const handleSubmit = (e) => {
+  const emptyFieldCheck = Object.values(formData).some((item) => item === '');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (emptyFieldCheck) {
+      return toast.error('Please fill all input field');
+    }
 
     const newAlbum = {
       ...formData,
       tracks: +formData.tracks,
     };
     
-    console.log({ ...newAlbum });
+    try {
+      await createAlbum({ ...newAlbum });
+      onClose(false);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const genres = [
