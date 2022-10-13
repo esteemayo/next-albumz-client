@@ -63,13 +63,13 @@ const Navbar = () => {
               Albums
             </Link>
           </li>
-          <li className={styles.list__items}>
-            <Link href='/albums/tags' passHref className={styles.navbar__link}>
-              Tags
-            </Link>
-          </li>
           {user ? (
             <>
+              <li className={styles.list__items}>
+                <Link href='/genres' passHref className={styles.navbar__link}>
+                  Genres
+                </Link>
+              </li>
               <li className={styles.list__items}>
                 <Link href='/albums/top' passHref className={styles.navbar__link}>
                   Top Albums
