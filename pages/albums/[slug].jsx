@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import Reviews from '@/components/Reviews';
 import { parseCookie } from '@/utils/index';
@@ -42,6 +43,27 @@ export const getServerSideProps = async ({ req, params: { slug } }) => {
       album: data.album,
     },
   };
+};
+
+SingleAlbum.propTypes = {
+  album: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    artist: PropTypes.string.isRequired,
+    info: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    tracks: PropTypes.number.isRequired,
+    ratingsAverage: PropTypes.number.isRequired,
+    ratingsQuantity: PropTypes.number.isRequired,
+    tags: PropTypes.array.isRequired,
+    featured: PropTypes.bool.isRequired,
+    user: PropTypes.string.isRequired,
+    likes: PropTypes.array.isRequired,
+    image: PropTypes.string.isRequired,
+    createdAt: PropTypes.string.isRequired,
+  }),
 };
 
 export default SingleAlbum;
