@@ -9,24 +9,36 @@ import AlbumForm from '@/components/AlbumForm';
 import Pagination from '@/components/Pagination';
 import styles from '@/styles/Albums.module.scss';
 import { getAlbums } from '@/services/albumService';
+import { getAllGenres } from '@/services/genreService';
 
-const Albums = ({ albums }) => {
-  const [showModal, setShowModal] = useState(false);
+const Albums = ({ albums, genres }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
+
+  const [showModal, setShowModal] = useState(false);
+  const [albumList, setAlbumList] = useState(albums)
 
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        {albums?.map((item => {
-          return <AlbumCard key={item._id} {...item} />;
+        {albumList?.map((item => {
+          return <AlbumCard key={item?._id} {...item} />;
         }))}
       </div>
       <Pagination />
       
-      {user && <AddButton text='New album' onClick={() => setShowModal(true)} />}
+      {user && (
+        <AddButton
+          text='New album'
+          onClick={() => setShowModal(true)}
+        />
+      )}
       {showModal && (
         <Modal onClose={setShowModal}>
-          <AlbumForm onClose={setShowModal} />
+          <AlbumForm
+            genres={genres}
+            onClose={setShowModal}
+            setAlbumList={setAlbumList}
+          />
         </Modal>
       )}
     </main>
@@ -49,9 +61,11 @@ Albums.propTypes = {
 
 export const getStaticProps = async () => {
   const { data } = await getAlbums();
+  const { data: { genres } } = await getAllGenres();
 
   return {
     props: {
+      genres,
       albums: data.albums,
     },
     revalidate: 1,
