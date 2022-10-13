@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import Meta from '@/components/Meta';
 import Reviews from '@/components/Reviews';
 import { parseCookie } from '@/utils/index';
 import ReviewForm from '@/components/ReviewForm';
@@ -14,13 +15,16 @@ const SingleAlbum = ({ album }) => {
   const [reviews, setReviews] = useState(album.reviews);
 
   return (
-    <section className={styles.container}>
-      <SingleAlbumHero album={album} />
-      <AlbumDescription album={album} />
-      <ReviewForm albumId={album.id} setReviews={setReviews} />
-      <Reviews reviews={reviews} />
-      <RelatedAlbums albumId={album.id} tags={album.tags} />
-    </section>
+    <>
+      <Meta title={`${album.title} - Albumz Music Entertainment`} />
+      <section className={styles.container}>
+        <SingleAlbumHero album={album} />
+        <AlbumDescription album={album} />
+        <ReviewForm albumId={album.id} setReviews={setReviews} />
+        <Reviews reviews={reviews} />
+        <RelatedAlbums albumId={album.id} tags={album.tags} />
+      </section>
+    </>
   );
 };
 
@@ -59,7 +63,7 @@ SingleAlbum.propTypes = {
     ratingsQuantity: PropTypes.number.isRequired,
     tags: PropTypes.array.isRequired,
     featured: PropTypes.bool.isRequired,
-    user: PropTypes.string.isRequired,
+    user: PropTypes.object.isRequired,
     likes: PropTypes.array.isRequired,
     image: PropTypes.string.isRequired,
     createdAt: PropTypes.string.isRequired,
