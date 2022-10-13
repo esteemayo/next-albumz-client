@@ -20,7 +20,7 @@ const initialState = {
   tags: [],
 };
 
-const AlbumForm = ({ onClose }) => {
+const AlbumForm = ({ genres, onClose, setAlbumList }) => {
   const [file, setFile] = useState(null);
   const [formData, setFormData] = useState(initialState);
 
@@ -57,20 +57,13 @@ const AlbumForm = ({ onClose }) => {
     };
     
     try {
-      await createAlbum({ ...newAlbum });
+      const { data } = await createAlbum({ ...newAlbum });
+      setAlbumList((prev) => [data.genre, ...prev]);
       onClose(false);
     } catch (err) {
       console.log(err);
     }
   };
-
-  const genres = [
-    { id: 1, name: 'Afro Pop'},
-    { id: 2, name: 'Afro Fusion'},
-    { id: 3, name: 'Pop'},
-    { id: 4, name: 'Blues'},
-    { id: 5, name: 'Rock'},
-  ];
 
   return (
     <div className={styles.container}>
