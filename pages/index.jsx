@@ -20,7 +20,12 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
       <Hero />
       <FeaturedAlbums albums={featuredAlbums} />
       <TopReviews reviews={reviews} />
-      {user && <AddButton text='New album' onClick={() => setShowModal(true)} />}
+      {user && (
+        <AddButton
+        text='New album'
+        onClick={() => setShowModal(true)}
+        />
+      )}
       {showModal && (
         <Modal onClose={setShowModal}>
           <AlbumForm genres={genres} onClose={setShowModal} />
