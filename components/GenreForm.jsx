@@ -3,12 +3,20 @@ import { useState } from 'react';
 import FormInput from './FormInput';
 import FormButton from './FormButton';
 import styles from '@/styles/Form.module.scss';
+import { createGenre } from '@/services/genreService';
 
-const GenreForm = () => {
+const GenreForm = ({ onClose }) => {
   const [name, setName] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      await createGenre({ name });
+      onClose(false);
+    } catch(err) {
+      console.log(err);
+    }
   };
 
   return (
