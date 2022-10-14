@@ -79,6 +79,10 @@
       padding-top: 1.5rem;
     }
 
+    .postedOn {
+      text-transform: lowercase;
+    }
+
     .tr {
       @media only screen and (max-width: 54.38em) {
         position: relative;
