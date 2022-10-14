@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 import FormInput from './FormInput';
 import FormButton from './FormButton';
@@ -10,6 +11,10 @@ const GenreForm = ({ onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!name) {
+      return toast.error('Please provide a name');
+    }
 
     try {
       await createGenre({ name });
