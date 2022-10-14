@@ -6,7 +6,7 @@ import FormButton from './FormButton';
 import styles from '@/styles/Form.module.scss';
 import { createGenre } from '@/services/genreService';
 
-const GenreForm = ({ onClose }) => {
+const GenreForm = ({ onClose, setGenreList }) => {
   const [name, setName] = useState(null);
 
   const handleSubmit = async (e) => {
@@ -17,7 +17,8 @@ const GenreForm = ({ onClose }) => {
     }
 
     try {
-      await createGenre({ name });
+      const { data } = await createGenre({ name });
+      setGenreList((prev) => [data.genre, ...prev]);
       onClose(false);
     } catch(err) {
       console.log(err);
