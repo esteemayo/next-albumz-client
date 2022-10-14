@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Moment from 'react-moment';
+import PropTypes from 'prop-types';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 
 import Meta from '@/components/Meta';
@@ -107,6 +108,18 @@ export const getServerSideProps = async ({ req }) => {
       genres: data.genres,
     },
   };
+};
+
+Genres.propTypes = {
+  genres: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+      user: PropTypes.object.isRequired,
+      createdAt: PropTypes.string.isRequired,
+    }),
+  ),
 };
 
 export default Genres;
