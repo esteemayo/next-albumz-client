@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Moment from 'react-moment';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 
 import Meta from '@/components/Meta';
@@ -15,6 +16,8 @@ import { getGenres } from '@/services/genreService';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 
 const Genres = ({ genres }) => {
+  const { user } = useSelector((state) => ({ ...state.auth }));
+
   const [open, setOpen] = useState(false);
   const [showModal, setShowModal] = useState(true);
   
@@ -70,7 +73,7 @@ const Genres = ({ genres }) => {
           </tbody>
         </table>
       </section>
-      <AddButton text='New genre' onClick={() => setOpen(true)} />
+      {user && <AddButton text='New genre' onClick={() => setOpen(true)} />}
       {open && (
         <Modal onClose={setOpen}>
           <GenreForm type='genre' />
