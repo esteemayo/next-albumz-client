@@ -10,9 +10,7 @@ const Dashboard = ({ albums }) => {
       <Meta title='User Dashboard - Albumz Music Entertainment' />
       <section className={styles.container}>
         <h1 className={styles.header}>Dashboard</h1>
-        {albums.map((item) => {
-          return <DashboardCard key={item._id} {...item} />;
-        })}
+        <DashboardCard albums={albums} />
       </section>
     </>
   );
