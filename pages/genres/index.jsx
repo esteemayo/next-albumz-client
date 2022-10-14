@@ -19,6 +19,7 @@ const Genres = ({ genres }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const [open, setOpen] = useState(false);
+  const [genreId, setGenreId] = useState(null);
   const [showModal, setShowModal] = useState(true);
   const [genreList, setGenreList] = useState(genres);
   
@@ -63,7 +64,10 @@ const Genres = ({ genres }) => {
                     </Link>
                     <button
                       className={styles.btnDelete}
-                      onClick={() => setShowModal(false)}
+                      onClick={() => {
+                        setShowModal(false);
+                        setGenreId(id);
+                      }}
                     >
                       Delete
                     </button>
@@ -88,8 +92,11 @@ const Genres = ({ genres }) => {
       {!showModal && (
         <DialogBox>
           <DeleteAlbumGenre
+            type='genre'
+            genreId={genreId}
             title='Discard genre?'
             closeModal={setShowModal}
+            setGenreList={setGenreList}
           />
         </DialogBox>
       )}
