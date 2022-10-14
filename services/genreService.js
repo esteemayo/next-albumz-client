@@ -10,11 +10,16 @@ export const getGenres = (token) => http.get(apiEndpoint, {
   },
 });
 
-export const getAllGenres = (token) => http.get(`${apiEndpoint}/all`);
+export const getAllGenres = () => http.get(`${apiEndpoint}/all`);
 
 export const getGenreById = (genreId) => http.get(genreUrl(genreId));
 
-export const getGenreBySlug = (slug) => http.get(`${apiEndpoint}/show/${slug}`);
+export const getGenreBySlug = (slug, token) =>
+  http.get(`${apiEndpoint}/show/${slug}`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
 export const createGenre = (genre) => http.post(apiEndpoint, genre);
 
