@@ -22,8 +22,8 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
       <TopReviews reviews={reviews} />
       {user && (
         <AddButton
-        text='New album'
-        onClick={() => setShowModal(true)}
+          text='New album'
+          onClick={() => setShowModal(true)}
         />
       )}
       {showModal && (
