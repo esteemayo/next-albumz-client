@@ -20,6 +20,7 @@ const Genres = ({ genres }) => {
 
   const [open, setOpen] = useState(false);
   const [showModal, setShowModal] = useState(true);
+  const [genreList, setGenreList] = useState(genres);
   
   return (
     <>
@@ -38,7 +39,7 @@ const Genres = ({ genres }) => {
             </tr>
           </thead>
           <tbody>
-            {genres?.map((item, index) => {
+            {genreList?.map((item, index) => {
               const { _id: id, name, user, slug, createdAt } = item;
               return (
                 <tr key={id} className={styles.tr}>
@@ -79,6 +80,7 @@ const Genres = ({ genres }) => {
           <GenreForm
             type='genre'
             onClose={setOpen}
+            setGenreList={setGenreList}
           />
         </Modal>
       )}
