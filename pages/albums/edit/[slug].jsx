@@ -43,21 +43,17 @@ const UpdateAlbum = ({ album, genres }) => {
       tags: prev.tags.filter((item) => item !== tag),
     }));
   };
-
-  const validateForm = () => {
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
     if (!artist || !title || !genre || !info || !year || !label || !tracks) {
       return toast.error('Please fill all input field');
     }
-
+  
     if (!tags.length) {
       return toast.error('Please provide some tags');
     }
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!validateForm()) return;
 
     const form = new FormData();
     form.append('file', file);
@@ -65,7 +61,7 @@ const UpdateAlbum = ({ album, genres }) => {
 
     try {
       const albumId = album?._id;
-      const updatedAlbum = {
+      const updAlbum = {
         artist,
         title,
         genre,
@@ -82,7 +78,8 @@ const UpdateAlbum = ({ album, genres }) => {
         updatedAlbum.image = url;
       }
 
-      const { data } = await updateAlbum(albumId, { ...updatedAlbum });
+      const { data } = await updateAlbum(albumId, updAlbum);
+      console.log(data)
     } catch(err) {
       console.log(err);
     }
