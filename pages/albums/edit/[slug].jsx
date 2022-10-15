@@ -2,23 +2,26 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import Meta from '@/components/Meta';
+import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
 import FormTextArea from '@/components/FormTextArea';
 import styles from '@/styles/UpdateAlbum.module.scss';
 import FormChipInput from '@/components/FormChipInput';
+import { getAllGenres } from '@/services/genreService';
 import FormSelectInput from '@/components/FormSelectInput';
+import { getAlbumBySlug, updateAlbum } from '@/services/albumService';
 
-const UpdateAlbum = () => {
+const UpdateAlbum = ({ album, genres }) => {
   const [file, setFile] = useState(null);
+  const [artist, setArtist] = useState(album?.artist);
+  const [title, setTitle] = useState(album?.title);
+  const [genre, setGenre] = useState(album?.genre);
+  const [info, setInfo] = useState(album?.info);
+  const [year, setYear] = useState(album?.year);
+  const [label, setLabel] = useState(album?.label);
+  const [tracks, setTracks] = useState(album?.tracks);
   const [formData, setFormData] = useState({
-    artist: '',
-    title: '',
-    genre: '',
-    info: '',
-    year: '',
-    label: '',
-    tracks: '',
-    tags: [],
+    tags: album?.tags,
   });
 
   const handleChange = ({ target: input }) => {
@@ -39,14 +42,6 @@ const UpdateAlbum = () => {
     }));
   };
 
-  const genres = [
-    { id: 1, name: 'Afro Pop'},
-    { id: 2, name: 'Afro Fusion'},
-    { id: 3, name: 'Pop'},
-    { id: 4, name: 'Blues'},
-    { id: 5, name: 'Rock'},
-  ];
-
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -65,41 +60,47 @@ const UpdateAlbum = () => {
                 <div className={styles.form__headline}>Update Album</div>
                 <FormInput
                   placeholder='Artist'
-                  onChange={handleChange}
+                  value={artist || ''}
+                  onChange={(e) => setArtist(e.target.value)}
                 />
                 <FormInput
                   placeholder='Album Title'
-                  onChange={handleChange}
+                  value={title || ''}
+                  onChange={(e) => setTitle(e.target.value)}
                 />
                 <FormSelectInput
                   name='genre'
-                  onChange={handleChange}
                   text='Genre'
+                  value={genre}
                   options={genres}
+                  onChange={(e) => setGenre(e.target.value)}
                 />
                 <FormTextArea
                   name='info'
-                  onChange={handleChange}
+                  value={info || ''}
                   placeholder='Album Info'
+                  onChange={(e) => setInfo(e.target.value)}
                 />
                 <FormInput
                   name='year'
+                  value={year || ''}
                   placeholder='Release Year'
-                  onChange={handleChange}
+                  onChange={(e) => setYear(e.target.value)}
                 />
                 <FormInput
                   name='label'
                   placeholder='Record Label'
-                  onChange={handleChange}
+                  onChange={(e) => setLabel(e.target.value)}
                 />
                 <FormInput
                   name='tracks'
+                  value={tracks || ''}
                   placeholder='Number of Tracks'
-                  onChange={handleChange}
+                  onChange={(e) => setTracks(e.target.value)}
                 />
                 <FormChipInput
                   name='tags'
-                  value={tags}
+                  value={tags || []}
                   placeholder='Tags'
                   onAdd={(tag) => handleAddTag(tag)}
                   onDelete={(tag) => handleDeleteTag(tag)}
@@ -127,6 +128,29 @@ const UpdateAlbum = () => {
       </section>
     </>
   );
+};
+
+export const getServerSideProps = async ({ req, params: { slug } }) => {
+  const { token } = parseCookie(req);
+
+  if (!token || token === '') {
+    return {
+      redirect: {
+        destination: '/auth/login',
+        permanent: false,
+      },
+    };
+  }
+
+  const { data } = await getAllGenres();
+  const { data: { album } } = await getAlbumBySlug(slug, token);
+
+  return {
+    props: {
+      album,
+      genres: data.genres,
+    },
+  };
 };
 
 export default UpdateAlbum;
