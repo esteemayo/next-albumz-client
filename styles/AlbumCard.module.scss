@@ -128,8 +128,26 @@
     margin-right: 0.5rem;
     border-radius: 2rem;
     font-size: 1.3rem;
-    background: #5a6bf6;
-    color: #fafafa;
+    // background: #5a6bf6;
+    // color: #fafafa;
+
+    .tag__link,
+    .tag__link:link,
+    .tag__link:visited {
+      display: inline-block;
+      text-decoration: none;
+      color: #aaa;
+      margin-right: 0.1rem;
+      transition: all 0.5s ease-in-out;
+
+      &:active {
+        color: inherit;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   &__info {
