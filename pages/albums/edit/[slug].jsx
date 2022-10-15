@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 
 import Meta from '@/components/Meta';
 import { parseCookie } from '@/utils/index';
@@ -14,6 +15,8 @@ import FormSelectInput from '@/components/FormSelectInput';
 import { getAlbumBySlug, updateAlbum } from '@/services/albumService';
 
 const UpdateAlbum = ({ album, genres }) => {
+  const router = useRouter();
+
   const [file, setFile] = useState(null);
   const [artist, setArtist] = useState(album?.artist);
   const [title, setTitle] = useState(album?.title);
@@ -22,6 +25,7 @@ const UpdateAlbum = ({ album, genres }) => {
   const [year, setYear] = useState(album?.year);
   const [label, setLabel] = useState(album?.label);
   const [tracks, setTracks] = useState(album?.tracks);
+  const [imagePreview, setImagePreview] = useState(album?.image ?? null);
   const [formData, setFormData] = useState({
     tags: album?.tags,
   });
@@ -79,7 +83,9 @@ const UpdateAlbum = ({ album, genres }) => {
       }
 
       const { data } = await updateAlbum(albumId, updAlbum);
-      console.log(data)
+      setImagePreview(data.album.image);
+      router.push(`/albums/${data.album.slug}`);
+      return toast.success('Update successful');
     } catch(err) {
       console.log(err);
     }
@@ -87,7 +93,7 @@ const UpdateAlbum = ({ album, genres }) => {
 
   return (
     <>
-      <Meta title='Update album - Albumz Music Entertainment' />
+      <Meta title={`Update ${album?.title} - Albumz Music Entertainment`} />
       <section className={styles.container}>
         <div className={styles.wrapper}>
           <header className={styles.header}>
@@ -149,13 +155,17 @@ const UpdateAlbum = ({ album, genres }) => {
                   onChange={(e) => setFile(e.target.files[0])}
                 />
                 <div className={styles.form__image}>
-                  <Image
-                    src='/img/banner.jpg'
-                    width={180}
-                    height={100}
-                    objectFit='cover'
-                    alt=''
-                  />
+                  {imagePreview ? (
+                    <Image
+                      src='/img/banner.jpg'
+                      width={180}
+                      height={100}
+                      objectFit='cover'
+                      alt=''
+                    />
+                  ) : (
+                    <p>No image available</p>
+                  )}
                 </div>
                 <div className={styles.form__btnWrapper}>
                   <button type='submit' className={styles.form__btn}>Update</button>
