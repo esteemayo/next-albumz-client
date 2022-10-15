@@ -3,7 +3,7 @@ import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 
 import TagCard from '@/components/TagCard';
 import styles from '@/styles/Tags.module.scss';
-import { getAlbums, getAlbumsByTag } from '@/services/albumService';
+import { getAlbumsByTag } from '@/services/albumService';
 
 const AlbumTags = ({ albums }) => {
   const { query } = useRouter();
