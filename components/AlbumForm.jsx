@@ -47,6 +47,10 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (!tags.length) {
+      return toast.error('Please provide some tags');
+    }
+
     if (emptyFieldCheck) {
       return toast.error('Please fill all input field');
     }
