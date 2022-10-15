@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 import Meta from '@/components/Meta';
 import { parseCookie } from '@/utils/index';
@@ -43,8 +44,20 @@ const UpdateAlbum = ({ album, genres }) => {
     }));
   };
 
+  const validateForm = () => {
+    if (!artist || !title || !genre || !info || !year || !label || !tracks) {
+      return toast.error('Please fill all input field');
+    }
+
+    if (!tags.length) {
+      return toast.error('Please provide some tags');
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) return;
 
     const form = new FormData();
     form.append('file', file);
