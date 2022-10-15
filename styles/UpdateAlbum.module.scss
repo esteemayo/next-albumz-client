@@ -98,6 +98,12 @@
           min-height: 10rem !important;
         }
       }
+
+      p {
+        font-size: 1.2rem;
+        font-style: italic;
+        text-transform: capitalize;
+      }
     }
 
     &__btnWrapper {
