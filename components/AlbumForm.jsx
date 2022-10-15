@@ -8,6 +8,7 @@ import FormChipInput from './FormChipInput';
 import styles from '@/styles/Form.module.scss';
 import FormSelectInput from './FormSelectInput';
 import { createAlbum } from '@/services/albumService';
+import { uploadImage } from '@/services/imageService';
 
 const initialState = {
   artist: '',
@@ -59,8 +60,18 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
       ...formData,
       tracks: +formData.tracks,
     };
+
+    const form = new FormData();
+    form.append('file', file);
+    form.append('upload_preset', 'albumz/album');
     
     try {
+      if (file) {
+        const res = await uploadImage(form);
+        const { url } = res.data;
+        newAlbum.image = url;
+      }
+      
       const { data } = await createAlbum({ ...newAlbum });
       setAlbumList && setAlbumList((prev) => [data.genre, ...prev]);
       onClose(false);
