@@ -33,7 +33,7 @@ const AlbumCard = ({ tags, info, slug, image, title, ratingsAverage, ratingsQuan
           {tags?.map((tag, index) => {
             return (
               <Link key={index} href={`/albums/tags/${tag}`} passHref>
-                <a className={styles.tag__link}>{tag}{', '}</a>
+                <a className={styles.tag__link}>#{tag}{', '}</a>
               </Link>
             );
           })}
