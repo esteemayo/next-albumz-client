@@ -5,6 +5,7 @@ import Meta from '@/components/Meta';
 import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
 import FormTextArea from '@/components/FormTextArea';
+import { uploadImage } from '@/services/imageService';
 import styles from '@/styles/UpdateAlbum.module.scss';
 import FormChipInput from '@/components/FormChipInput';
 import { getAllGenres } from '@/services/genreService';
@@ -42,8 +43,36 @@ const UpdateAlbum = ({ album, genres }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const form = new FormData();
+    form.append('file', file);
+    form.append('upload_preset', 'albumz/album');
+
+    try {
+      const albumId = album?._id;
+      const updatedAlbum = {
+        artist,
+        title,
+        genre,
+        info,
+        year,
+        label,
+        tracks,
+        tags,
+      };
+
+      if (file) {
+        const res = await uploadImage(form);
+        const { url } = res.data;
+        updatedAlbum.image = url;
+      }
+
+      const { data } = await updateAlbum(albumId, { ...updatedAlbum });
+    } catch(err) {
+      console.log(err);
+    }
   };
 
   return (
