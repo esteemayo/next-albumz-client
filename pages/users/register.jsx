@@ -81,10 +81,20 @@ const Register = () => {
     }));
   };
 
-  const {favGenres, favArtists } = formInputs;
+  const {favGenres, favArtists, password, confirmPassword } = formInputs;
+
+  const emptyFieldCheck = Object.values(formInputs).some((item) => item === '');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (password !== confirmPassword) {
+      return toast.error('Passwords do not match');
+    }
+
+    if (emptyFieldCheck) {
+      return toast.error('Please fill all input field');
+    }
 
     const userData = {
       ...formInputs,
