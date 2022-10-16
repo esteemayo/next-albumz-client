@@ -18,6 +18,20 @@ const SearchPage = ({ albums }) => {
   );
 };
 
+Albums.propTypes = {
+  albums: PropTypes.arrayOf(
+    PropTypes.shape({
+      tags: PropTypes.array.isRequired,
+      info: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      ratingsAverage: PropTypes.number.isRequired,
+      ratingsQuantity: PropTypes.number.isRequired,
+    }),
+  ),
+};
+
 export const getServerSideProps = async ({ query: { q } }) => {
   const { data } = await searchAlbums(q);
 
