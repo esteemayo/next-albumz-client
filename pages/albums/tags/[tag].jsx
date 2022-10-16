@@ -16,9 +16,9 @@ const AlbumTags = ({ albums }) => {
           <TagOutlinedIcon className={styles.tagIcon}/>{query.tag}
         </span>
       </h1>
-      <TagCard />
-      <TagCard />
-      <TagCard />
+      {albums?.map((item) => {
+        return <TagCard key={item._id} album={item} />;
+      })}
     </section>
   );
 };
