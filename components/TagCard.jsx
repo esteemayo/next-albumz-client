@@ -1,13 +1,15 @@
 import Image from 'next/image';
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
+import { excerpts } from '@/utils/index';
 import styles from '@/styles/TagCard.module.scss';
 
-const TagCard = () => {
+const TagCard = ({ album }) => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/albums/slug`);
+    router.push(`/albums/${album.slug}`);
   };
 
   return (
@@ -25,15 +27,11 @@ const TagCard = () => {
             />
           </div>
           <h3 className={styles.card__heading}>
-            <span>Made in lagos</span>
+            <span>{album.title}</span>
           </h3>
         </div>
         <div className={styles.right}>
-          <p className={styles.card__info}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita 
-            nisi molestias porro, itaque harum quas provident suscipit error doloribus 
-            neque nulla. Est quia laudantium quo velit, atque placeat voluptate!
-          </p>
+          <p className={styles.card__info}>{album.info && excerpts(album.info, 250)}</p>
           <div className={styles.btnWrapper}>
             <button className={styles.btn} onClick={handleClick}>Read more</button>
           </div>
