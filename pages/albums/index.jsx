@@ -32,7 +32,7 @@ const Albums = ({ albums, genres }) => {
           onClick={() => setShowModal(true)}
         />
       )}
-      
+
       {showModal && (
         <Modal onClose={setShowModal}>
           <AlbumForm
@@ -44,19 +44,6 @@ const Albums = ({ albums, genres }) => {
       )}
     </main>
   );
-};
-
-export const getStaticProps = async () => {
-  const { data } = await getAlbums();
-  const { data: { genres } } = await getAllGenres();
-
-  return {
-    props: {
-      genres,
-      albums: data.albums,
-    },
-    revalidate: 1,
-  };
 };
 
 Albums.propTypes = {
@@ -71,6 +58,19 @@ Albums.propTypes = {
       ratingsQuantity: PropTypes.number.isRequired,
     }),
   ),
+};
+
+export const getStaticProps = async () => {
+  const { data } = await getAlbums();
+  const { data: { genres } } = await getAllGenres();
+
+  return {
+    props: {
+      genres,
+      albums: data.albums,
+    },
+    revalidate: 1,
+  };
 };
 
 export default Albums;
