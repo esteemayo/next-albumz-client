@@ -5,11 +5,11 @@ import { useRouter } from 'next/router';
 import { excerpts } from '@/utils/index';
 import styles from '@/styles/TagCard.module.scss';
 
-const TagCard = ({ album }) => {
+const TagCard = ({ album: { info, slug, image, title } }) => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/albums/${album.slug}`);
+    router.push(`/albums/${slug}`);
   };
 
   return (
@@ -27,11 +27,11 @@ const TagCard = ({ album }) => {
             />
           </div>
           <h3 className={styles.card__heading}>
-            <span>{album.title}</span>
+            <span>{title}</span>
           </h3>
         </div>
         <div className={styles.right}>
-          <p className={styles.card__info}>{album.info && excerpts(album.info, 250)}</p>
+          <p className={styles.card__info}>{info && excerpts(info, 250)}</p>
           <div className={styles.btnWrapper}>
             <button className={styles.btn} onClick={handleClick}>Read more</button>
           </div>
