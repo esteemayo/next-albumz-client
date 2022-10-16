@@ -115,47 +115,6 @@
       margin-right: 2rem;
     }
 
-    .search {
-      margin-right: auto;
-      background-color: #fff;
-      border-radius: 0.5rem;
-      display: flex;
-      align-items: center;
-      position: relative;
-
-      @media only screen and (max-width: 64em) {
-        display: none;
-      }
-
-      &__input {
-        border: none;
-        outline: none;
-        width: 35rem;
-        padding: 1rem 2rem 1rem 4rem;
-        font-family: inherit;
-        font-size: 1.4rem;
-        background-color: transparent;
-        color: #999;
-        border: 1px solid rgb(238, 238, 238);
-        border-radius: 0.5rem;
-        caret-color: #24299b;
-        transition: all 1s ease-in-out;
-        z-index: 2;
-
-        &:focus {
-          border: 1px solid #999;
-        }
-      }
-
-      &__icon {
-        position: absolute;
-        left: 1rem;
-        color: #999;
-        font-size: 2rem;
-        z-index: 1;
-      }
-    }
-
     .hamburger {
       display: flex;
       flex-direction: column;
