@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Search from '@/components/Search';
 import styles from '@/styles/Navbar.module.scss';
 import { logoutUser } from '@/features/auth/authSlice';
 import { toggleMenu } from '@/features/toggle/toggleSlice';
@@ -96,10 +97,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className={styles.navbar__right}>
-        <form className={styles.search}>
-          <input type='search' className={styles.search__input} />
-          <SearchIcon className={styles.search__icon} />
-        </form>
+        <Search />
 
         <div
           className={
