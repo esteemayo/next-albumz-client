@@ -32,6 +32,7 @@ const Albums = ({ albums, genres }) => {
           onClick={() => setShowModal(true)}
         />
       )}
+      
       {showModal && (
         <Modal onClose={setShowModal}>
           <AlbumForm
