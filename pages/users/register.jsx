@@ -92,6 +92,14 @@ const Register = () => {
       return toast.error('Passwords do not match');
     }
 
+    if (!favGenres.length) {
+      return toast.error('Please enter your favorite genres');
+    }
+
+    if (!favArtists.length) {
+      return toast.error('Please enter your favorite artistes');
+    }
+
     if (emptyFieldCheck) {
       return toast.error('Please fill all input field');
     }
