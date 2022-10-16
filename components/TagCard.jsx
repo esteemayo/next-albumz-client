@@ -41,4 +41,13 @@ const TagCard = ({ album: { info, slug, image, title } }) => {
   );
 };
 
+TagCard.propTypes = {
+  album: PropTypes.shape({
+    info: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
+};
+
 export default TagCard;
