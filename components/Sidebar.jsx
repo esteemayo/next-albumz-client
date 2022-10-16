@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch, useSelector } from 'react-redux';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
@@ -8,9 +10,22 @@ import { closeMenu } from '@/features/toggle/toggleSlice';
 import { toggle } from '@/features/darkMode/darkModeSlice';
 
 const Sidebar = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
+
+  const [query, setQuery] = useState('');
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    if (query) {
+      router.push(`/albums/search?q=${query}`);
+      setQuery('');
+      dispatch(closeMenu());
+    }
+  };
 
   return (
     <aside
@@ -70,11 +85,13 @@ const Sidebar = () => {
           </li>
         </ul>
         <div>
-          <form className={styles.search}>
+          <form onSubmit={handleSearch} className={styles.search}>
             <input
               type='search'
+              value={query}
               placeholder='Search albums...'
               className={styles.search__input}
+              onChange={(e) => setQuery(e.target.value)}
             />
             <SearchIcon className={styles.search__icon} />
           </form>
