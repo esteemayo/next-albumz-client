@@ -81,7 +81,7 @@ const Register = () => {
     }));
   };
 
-  const {favGenres, favArtists, password, confirmPassword } = formInputs;
+  const { favGenres, favArtists, password, confirmPassword } = formInputs;
 
   const emptyFieldCheck = Object.values(formInputs).some((item) => item === '');
 
