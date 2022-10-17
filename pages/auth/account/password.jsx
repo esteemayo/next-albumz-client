@@ -7,6 +7,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 
 import Meta from '@/components/Meta';
 import { parseCookie } from '@/utils/index';
@@ -87,7 +88,7 @@ const UpdatePassword = () => {
                 </Link>
               </li>
               <li className={styles.list__item}>
-                <KeyOutlinedIcon className={styles.itemIcon} />
+                <DashboardOutlinedIcon className={styles.itemIcon} />
                 <Link href='/users/dashboard' passHref>
                   <a className={styles.itemLink}>Dashboard</a>
                 </Link>
