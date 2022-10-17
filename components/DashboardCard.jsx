@@ -18,7 +18,7 @@ const DashboardCard = ({ albums }) => {
       {albumList?.map((item) => {
         const { _id: id, info, slug, image, title } = item;
         return (
-          <div className={styles.wrapper}>
+          <div key={id} className={styles.wrapper}>
             <div className={styles.card}>
               <div className={styles.card__left}>
                 <div className={styles.card__img}>
@@ -72,11 +72,15 @@ const DashboardCard = ({ albums }) => {
 };
 
 DashboardCard.propTypes = {
-  id: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
-  info: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  albums: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+      info: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    }),
+  ),
 };
 
 export default DashboardCard;
