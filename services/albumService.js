@@ -4,8 +4,7 @@ const apiEndpoint = '/albums';
 
 const albumUrl = (albumId) => `${apiEndpoint}/${albumId}`;
 
-export const getAlbums = (page) =>
-  http.get(page ? `${apiEndpoint}?page=${page}` : apiEndpoint);
+export const getAlbums = (page) => http.get(`${apiEndpoint}?page=${page}`);
 
 export const getFeaturedAlbums = () => http.get(`${apiEndpoint}/featured`);
 
