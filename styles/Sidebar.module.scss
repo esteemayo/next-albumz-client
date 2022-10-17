@@ -95,6 +95,11 @@
       @media only screen and (max-width: 45em) {
         font-size: 3.3rem;
         line-height: 1.2;
+        
+        & > .btn__logout {
+        font-size: 3.3rem;
+        line-height: 1.2;
+        }
       }
 
       @media only screen and (max-width: 40.813em) {
@@ -125,20 +130,39 @@
         }
       }
 
-      a:link,
-      a:visited {
-        text-decoration: none;
+      .sidebar__link {
+        &,
+        &:link,
+        &:visited {
+          text-decoration: none;
+          color: #fff;
+          transition: all 0.5s ease-in-out;
+        }
+        
+        &:active {
+          color: inherit;
+        }
+  
+        &:hover {
+          font-weight: 700;
+          letter-spacing: 2px;
+        }
+      }
+
+      .btn__logout {
+        border: none;
+        display: inline-block;
+        text-transform: capitalize;
+        font-size: 1.5rem;
+        background-color: transparent;
         color: #fff;
+        cursor: pointer;
         transition: all 0.5s ease-in-out;
-      }
 
-      a:active {
-        color: inherit;
-      }
-
-      a:hover {
-        font-weight: 700;
-        letter-spacing: 2px;
+        &:hover {
+          font-weight: 700;
+          letter-spacing: 2px;
+        }
       }
     }
   }
