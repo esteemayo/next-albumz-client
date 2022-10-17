@@ -13,6 +13,7 @@ import { toggle } from '@/features/darkMode/darkModeSlice';
 const Sidebar = () => {
   const router = useRouter();
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => ({ ...state.auth }));
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
@@ -51,57 +52,62 @@ const Sidebar = () => {
               </a>
             </Link>
           </li>
-          <li
-            className={styles.list__items}
-            onClick={() => dispatch(closeMenu())}
-          >
-            <Link href='/albums/tags' passHref>
-              <a className={styles.sidebar__link}>
-                Tags
-              </a>
-            </Link>
-          </li>
-          <li
-            className={styles.list__items}
-            onClick={() => dispatch(closeMenu())}
-          >
-            <Link href='/albums/top' passHref>
-              <a className={styles.sidebar__link}>
-                Top Albums
-              </a>
-            </Link>
-          </li>
-          <li
-            className={styles.list__items}
-            onClick={() => dispatch(closeMenu())}
-          >
-            <Link href='/auth/account' passHref>
-              <a className={styles.sidebar__link}>
-                Account
-              </a>
-            </Link>
-          </li>
-          <li
-            className={styles.list__items}
-            onClick={() => dispatch(closeMenu())}
-          >
-            <Link href='/auth/login' passHref>
-              <a className={styles.sidebar__link}>
-                Login
-              </a>
-            </Link>
-          </li>
-          <li className={styles.list__items}>
-            <button
-              onClick={() => {
-                handleLogout();
-                dispatch(closeMenu());
-              }}
-              className={styles.btn__logout}
+          {user ? (
+            <>
+              <li
+                className={styles.list__items}
+                onClick={() => dispatch(closeMenu())}
+              >
+                <Link href='/genres' passHref>
+                  <a className={styles.sidebar__link}>
+                    Genres
+                  </a>
+                </Link>
+              </li>
+              <li
+                className={styles.list__items}
+                onClick={() => dispatch(closeMenu())}
+              >
+                <Link href='/albums/top' passHref>
+                  <a className={styles.sidebar__link}>
+                    Top Albums
+                  </a>
+                </Link>
+              </li>
+              <li
+                className={styles.list__items}
+                onClick={() => dispatch(closeMenu())}
+              >
+                <Link href='/auth/account' passHref>
+                  <a className={styles.sidebar__link}>
+                    Account
+                  </a>
+                </Link>
+              </li>
+              <li className={styles.list__items}>
+                <button
+                  onClick={() => {
+                    handleLogout();
+                    dispatch(closeMenu());
+                  }}
+                  className={styles.btn__logout}
+                >
+                  Logout
+                </button>
+              </li>
+            </>
+          ) : (
+            <li
+              className={styles.list__items}
+              onClick={() => dispatch(closeMenu())}
             >
-              Logout
-            </button>
-          </li>
+              <Link href='/auth/login' passHref>
+                <a className={styles.sidebar__link}>
+                  Login
+                </a>
+              </Link>
+            </li>
+          )}
         </ul>
         <div>
           <form onSubmit={handleSearch} className={styles.search}>
