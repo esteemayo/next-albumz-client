@@ -59,25 +59,33 @@ const Navbar = () => {
         </div>
         <ul className={styles.list}>
           <li className={styles.list__items}>
-            <Link href='/albums' passHref className={styles.navbar__link}>
-              Albums
+            <Link href='/albums' passHref>
+              <a className={styles.navbar__link}>
+                Albums
+              </a>
             </Link>
           </li>
           {user ? (
             <>
               <li className={styles.list__items}>
-                <Link href='/genres' passHref className={styles.navbar__link}>
-                  Genres
+                <Link href='/genres' passHref>
+                  <a className={styles.navbar__link}>
+                    Genres
+                  </a>
                 </Link>
               </li>
               <li className={styles.list__items}>
-                <Link href='/albums/top' passHref className={styles.navbar__link}>
-                  Top Albums
+                <Link href='/albums/top' passHref>
+                  <a className={styles.navbar__link}>
+                    Top Albums
+                  </a>
                 </Link>
               </li>
               <li className={styles.list__items}>
-                <Link href='/auth/account' passHref className={styles.navbar__link}>
-                  Account
+                <Link href='/auth/account' passHref>
+                  <a className={styles.navbar__link}>
+                    Account
+                  </a>
                 </Link>
               </li>
               <li className={styles.list__items}>
@@ -91,8 +99,10 @@ const Navbar = () => {
             </>
           ) : (
             <li className={styles.list__items}>
-              <Link href='/auth/login' passHref className={styles.navbar__link}>
-                Login
+              <Link href='/auth/login' passHref>
+                <a className={styles.navbar__link}>
+                  Login
+                </a>
               </Link>
             </li>
           )}
