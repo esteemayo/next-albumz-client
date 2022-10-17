@@ -11,7 +11,7 @@ import styles from '@/styles/Albums.module.scss';
 import { getAlbums } from '@/services/albumService';
 import { getAllGenres } from '@/services/genreService';
 
-const Albums = ({ albums, genres }) => {
+const Albums = ({ albums, genres, page, total, numberOfPages }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const [showModal, setShowModal] = useState(false);
@@ -24,7 +24,12 @@ const Albums = ({ albums, genres }) => {
           return <AlbumCard key={item?._id} {...item} />;
         }))}
       </div>
-      <Pagination />
+
+      <Pagination
+        page={page}
+        total={total}
+        numberOfPages={numberOfPages}
+      />
       
       {user && (
         <AddButton
@@ -60,16 +65,18 @@ Albums.propTypes = {
   ),
 };
 
-export const getStaticProps = async () => {
-  const { data } = await getAlbums();
+export const getServerSideProps = async ({ query: { page } }) => {
+  const { data } = await getAlbums(page);
   const { data: { genres } } = await getAllGenres();
 
   return {
     props: {
       genres,
       albums: data.albums,
+      page: data.currentPage,
+      total: data.totalAlbums,
+      numberOfPages: data.numberOfPages,
     },
-    revalidate: 1,
   };
 };
 
