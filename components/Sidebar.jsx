@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 
 import styles from '@/styles/Sidebar.module.scss';
+import { logoutUser } from '@/features/auth/authSlice';
 import { closeMenu } from '@/features/toggle/toggleSlice';
 import { toggle } from '@/features/darkMode/darkModeSlice';
 
@@ -16,6 +17,11 @@ const Sidebar = () => {
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
   const [query, setQuery] = useState('');
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    router.push('/');
+  };
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -85,11 +91,14 @@ const Sidebar = () => {
               </a>
             </Link>
           </li>
-          <li
-            className={styles.list__items}
-            onClick={() => dispatch(closeMenu())}
-          >
-            <button className={styles.btn__logout}>
+          <li className={styles.list__items}>
+            <button
+              onClick={() => {
+                handleLogout();
+                dispatch(closeMenu());
+              }}
+              className={styles.btn__logout}
+            >
               Logout
             </button>
           </li>
