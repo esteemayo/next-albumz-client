@@ -9,6 +9,7 @@ import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PianoOutlinedIcon from '@mui/icons-material/PianoOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import PlaylistAddCheckCircleOutlinedIcon from '@mui/icons-material/PlaylistAddCheckCircleOutlined';
@@ -118,7 +119,7 @@ const Account = () => {
                 </Link>
               </li>
               <li className={styles.list__item}>
-                <KeyOutlinedIcon className={styles.itemIcon} />
+                <DashboardOutlinedIcon className={styles.itemIcon} />
                 <Link href='/users/dashboard' passHref>
                   <a className={styles.itemLink}>Dashboard</a>
                 </Link>
