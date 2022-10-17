@@ -80,10 +80,13 @@ const Navbar = () => {
                   Account
                 </Link>
               </li>
-              <li className={styles.list__items} onClick={handleLogout}>
-                <Link href='#' passHref className={styles.navbar__link}>
+              <li className={styles.list__items}>
+                <button
+                  onClick={handleLogout}
+                  className={styles.btn__logout}
+                >
                   Logout
-                </Link>
+                </button>
               </li>
             </>
           ) : (
