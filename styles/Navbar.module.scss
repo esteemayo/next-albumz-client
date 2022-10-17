@@ -101,6 +101,17 @@
             color: #29003f;
           }
         }
+
+        .btn__logout {
+          border: none;
+          display: inline-block;
+          text-transform: capitalize;
+          font-weight: 700;
+          font-size: 1.6rem;
+          background-color: transparent;
+          color: #29003f;
+          cursor: pointer;
+        }
       }
     }
   }
