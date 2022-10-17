@@ -39,49 +39,59 @@ const Sidebar = () => {
             className={styles.list__items}
             onClick={() => dispatch(closeMenu())}
           >
-            <Link href='/albums' passHref className={styles.sidebar__link}>
-              Albums
+            <Link href='/albums' passHref>
+              <a className={styles.sidebar__link}>
+                Albums
+              </a>
             </Link>
           </li>
           <li
             className={styles.list__items}
             onClick={() => dispatch(closeMenu())}
           >
-            <Link href='/albums/tags' passHref className={styles.sidebar__link}>
-              Tags
+            <Link href='/albums/tags' passHref>
+              <a className={styles.sidebar__link}>
+                Tags
+              </a>
             </Link>
           </li>
           <li
             className={styles.list__items}
             onClick={() => dispatch(closeMenu())}
           >
-            <Link href='/albums/top' passHref className={styles.sidebar__link}>
-              Top Albums
+            <Link href='/albums/top' passHref>
+              <a className={styles.sidebar__link}>
+                Top Albums
+              </a>
             </Link>
           </li>
           <li
             className={styles.list__items}
             onClick={() => dispatch(closeMenu())}
           >
-            <Link href='/auth/account' passHref className={styles.sidebar__link}>
-              Account
+            <Link href='/auth/account' passHref>
+              <a className={styles.sidebar__link}>
+                Account
+              </a>
             </Link>
           </li>
           <li
             className={styles.list__items}
             onClick={() => dispatch(closeMenu())}
           >
-            <Link href='/auth/login' passHref className={styles.sidebar__link}>
-              Login
+            <Link href='/auth/login' passHref>
+              <a className={styles.sidebar__link}>
+                Login
+              </a>
             </Link>
           </li>
           <li
             className={styles.list__items}
             onClick={() => dispatch(closeMenu())}
           >
-            <Link href='#' passHref className={styles.sidebar__link}>
+            <button className={styles.btn__logout}>
               Logout
-            </Link>
+            </button>
           </li>
         </ul>
         <div>
