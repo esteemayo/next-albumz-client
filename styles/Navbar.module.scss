@@ -16,7 +16,7 @@
     background-color: transparent;
 
     .list__items {
-      a {
+      .navbar__link {
         &,
         &:link,
         &:visited {
@@ -90,7 +90,7 @@
           color: currentColor;
         }
 
-        a {
+        .navbar__link {
           &,
           &:link,
           &:visited {
