@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Zoom from '@mui/material/Zoom';
+import { toast } from 'react-toastify';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,13 +18,23 @@ import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumber
 
 import StarRating from '@/components/StarRating';
 import styles from '@/styles/AlbumDescription.module.scss';
-import { fetchBookmark } from '@/features/bookmark/bookmarkSlice';
+import { createNewBookmark, fetchBookmark, removeBookmark } from '@/features/bookmark/bookmarkSlice';
 
 const AlbumDescription = ({ album }) => {
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => ({ ...state.auth }));
   const { bookmark } = useSelector((state) => ({ ...state.bookmark }));
   console.log(bookmark)
   const albumId = album?._id;
+
+  const handleSetAsBookmark = (album) => {
+    user && dispatch(createNewBookmark({ album, toast }));
+  };
+
+  const handleUnSetAsBookmark = () => {
+    const bookmarkId = bookmark?._id;
+    user && dispatch(removeBookmark({ bookmarkId, toast }));
+  };
 
   useEffect(() => {
     albumId && dispatch(fetchBookmark(albumId));
@@ -96,6 +107,7 @@ const AlbumDescription = ({ album }) => {
                 <Tooltip TransitionComponent={Zoom} title='Bookmark' arrow>
                   <IconButton>
                     <BookmarkAddOutlinedIcon
+                      onClick={() => handleSetAsBookmark(album?._id)}
                       className={`${styles.action__icon} ${styles.bookmark__icon}`}
                     />
                   </IconButton>
@@ -104,6 +116,7 @@ const AlbumDescription = ({ album }) => {
                 <Tooltip TransitionComponent={Zoom} title='Unbookmark' arrow>
                   <IconButton>
                     <BookmarkAddedOutlinedIcon
+                      onClick={handleUnSetAsBookmark}
                       className={`${styles.action__icon} ${styles.bookmark__icon}`}
                     />
                   </IconButton>
