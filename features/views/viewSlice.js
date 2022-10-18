@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { createView, getViewsOnAlbum } from '@/services/viewService';
 
-const getViews =  createAsyncThunk(
+export const getViews =  createAsyncThunk(
   'views/getViews',
   async (albumId, { rejectWithValue }) => {
     try {
@@ -13,7 +13,7 @@ const getViews =  createAsyncThunk(
   }
 );
 
-const createViews =  createAsyncThunk(
+export const createViews =  createAsyncThunk(
   'views/createViews',
   async (album, { rejectWithValue }) => {
     try {
