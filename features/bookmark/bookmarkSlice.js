@@ -43,6 +43,7 @@ const initialState = {
   bookmark: null,
   isError: false,
   isSuccess: false,
+  isLoading: false,
   message: '',
 };
 
@@ -53,6 +54,7 @@ export const bookmarkSlice = createSlice({
     reset: (state) => {
       state.isError = false;
       state.isSuccess = false;
+      state.isLoading = false;
       state.message = '';
     },
   },
