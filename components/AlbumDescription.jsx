@@ -20,7 +20,7 @@ import StarRating from '@/components/StarRating';
 import styles from '@/styles/AlbumDescription.module.scss';
 import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
 
-const AlbumDescription = ({ album }) => {
+const AlbumDescription = ({ album, views }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => ({ ...state.auth }));
   const { bookmark } = useSelector((state) => ({ ...state.bookmark }));
