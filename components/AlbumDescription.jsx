@@ -18,11 +18,13 @@ import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumber
 
 import StarRating from '@/components/StarRating';
 import styles from '@/styles/AlbumDescription.module.scss';
+import { createViews, getViews } from '@/features/views/viewSlice';
 import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
 
-const AlbumDescription = ({ album, views }) => {
+const AlbumDescription = ({ album }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => ({ ...state.auth }));
+  const { views } = useSelector((state) => ({ ...state.views }));
   const { bookmark } = useSelector((state) => ({ ...state.bookmark }));
 
   const albumId = album?._id;
@@ -40,6 +42,11 @@ const AlbumDescription = ({ album, views }) => {
     albumId && dispatch(bookmarkReducer.fetchBookmark(albumId));
     return () => dispatch(bookmarkReducer.reset());
   }, [albumId, dispatch]);
+
+  useEffect(() => {
+    dispatch(getViews(albumId));
+    user && dispatch(createViews({ album: albumId }));
+  }, [user, albumId, dispatch]);
 
   return (
     <section className={styles.description}>
