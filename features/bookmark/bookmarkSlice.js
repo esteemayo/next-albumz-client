@@ -49,6 +49,13 @@ const initialState = {
 export const bookmarkSlice = createSlice({
   name: 'bookmark',
   initialState,
+  reducers: {
+    reset: (state) => {
+      state.isError = false;
+      state.isSuccess = false;
+      state.message = '';
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchBookmark.pending, (state) => {
@@ -56,10 +63,12 @@ export const bookmarkSlice = createSlice({
       })
       .addCase(fetchBookmark.fulfilled, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = true;
         state.bookmark = payload;
       })
       .addCase(fetchBookmark.rejected, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = false;
         state.isError = true;
         state.message = payload.message;
       })
@@ -68,10 +77,12 @@ export const bookmarkSlice = createSlice({
       })
       .addCase(createNewBookmark.fulfilled, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = true;
         state.bookmark = payload;
       })
       .addCase(createNewBookmark.rejected, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = false;
         state.isError = true;
         state.message = payload.message;
       })
@@ -80,14 +91,18 @@ export const bookmarkSlice = createSlice({
       })
       .addCase(removeBookmark.fulfilled, (state) => {
         state.isLoading = false;
+        state.isSuccess = true;
         state.bookmark = null;
       })
       .addCase(removeBookmark.rejected, (state, { payload }) => {
         state.isLoading = false;
+        state.isSuccess = false;
         state.isError = true;
         state.message = payload.message;
       });
   },
 });
+
+export const { reset } = bookmarkSlice.actions;
 
 export default bookmarkSlice.reducer;
