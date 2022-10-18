@@ -38,6 +38,7 @@ const AlbumDescription = ({ album }) => {
 
   useEffect(() => {
     albumId && dispatch(bookmarkReducer.fetchBookmark(albumId));
+    return () => dispatch(bookmarkReducer.reset());
   }, [albumId, dispatch]);
 
   return (
