@@ -18,26 +18,26 @@ import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumber
 
 import StarRating from '@/components/StarRating';
 import styles from '@/styles/AlbumDescription.module.scss';
-import { createNewBookmark, fetchBookmark, removeBookmark } from '@/features/bookmark/bookmarkSlice';
+import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
 
 const AlbumDescription = ({ album }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => ({ ...state.auth }));
   const { bookmark } = useSelector((state) => ({ ...state.bookmark }));
-  console.log(bookmark)
+
   const albumId = album?._id;
 
   const handleSetAsBookmark = (album) => {
-    user && dispatch(createNewBookmark({ album, toast }));
+    user && dispatch(bookmarkReducer.createNewBookmark({ album, toast }));
   };
 
   const handleUnSetAsBookmark = () => {
     const bookmarkId = bookmark?._id;
-    user && dispatch(removeBookmark({ bookmarkId, toast }));
+    user && dispatch(bookmarkReducer.removeBookmark({ bookmarkId, toast }));
   };
 
   useEffect(() => {
-    albumId && dispatch(fetchBookmark(albumId));
+    albumId && dispatch(bookmarkReducer.fetchBookmark(albumId));
   }, [albumId, dispatch]);
 
   return (
