@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Meta from '@/components/Meta';
 import Reviews from '@/components/Reviews';
@@ -10,16 +11,26 @@ import styles from '@/styles/SingleAlbum.module.scss';
 import RelatedAlbums from '@/components/RelatedAlbums';
 import SingleAlbumHero from '@/components/SingleAlbumHero';
 import AlbumDescription from '@/components/AlbumDescription';
+import { getViews } from '@/features/views/viewSlice';
 
 const SingleAlbum = ({ album }) => {
+  const dispatch = useDispatch();
+  const { views } = useSelector((state) => ({ ...state.views }));
+
   const [reviews, setReviews] = useState(album.reviews);
+
+  const albumId = album?._id;
+  
+  useEffect(() => {
+    dispatch(getViews(albumId));
+  }, [albumId, dispatch]);
 
   return (
     <>
       <Meta title={`${album.title} - Albumz Music Entertainment`} />
       <section className={styles.container}>
         <SingleAlbumHero album={album} />
-        <AlbumDescription album={album} />
+        <AlbumDescription album={album} views={views} />
         <ReviewForm albumId={album.id} setReviews={setReviews} />
         <Reviews reviews={reviews} />
         <RelatedAlbums albumId={album.id} tags={album.tags} />
