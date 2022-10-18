@@ -5,7 +5,7 @@ export const getViews =  createAsyncThunk(
   'views/getViews',
   async (albumId, { rejectWithValue }) => {
     try {
-      const { data } = await getViewsOnAlbum({ album: albumId });
+      const { data } = await getViewsOnAlbum(albumId);
       return data.histories;
     } catch (err) {
       rejectWithValue(err.response.data);
