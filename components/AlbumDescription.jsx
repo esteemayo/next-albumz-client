@@ -1,6 +1,8 @@
+import { useEffect } from 'react';
 import Zoom from '@mui/material/Zoom';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
+import { useDispatch, useSelector } from 'react-redux';
 import AlbumOutlinedIcon from '@mui/icons-material/AlbumOutlined';
 import TitleOutlinedIcon from '@mui/icons-material/TitleOutlined';
 import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
@@ -15,8 +17,18 @@ import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumber
 
 import StarRating from '@/components/StarRating';
 import styles from '@/styles/AlbumDescription.module.scss';
+import { fetchBookmark } from '@/features/bookmark/bookmarkSlice';
 
 const AlbumDescription = ({ album }) => {
+  const dispatch = useDispatch();
+  const { bookmark } = useSelector((state) => ({ ...state.bookmark }));
+  console.log(bookmark)
+  const albumId = album?._id;
+
+  useEffect(() => {
+    albumId && dispatch(fetchBookmark(albumId));
+  }, [albumId, dispatch]);
+
   return (
     <section className={styles.description}>
       <div className={styles.left}>
@@ -80,13 +92,23 @@ const AlbumDescription = ({ album }) => {
               </div>
             </span>
             <span className={styles.action__wrapper}>
-            <Tooltip TransitionComponent={Zoom} title='Bookmark' arrow>
-              <IconButton>
-                <BookmarkAddOutlinedIcon
-                  className={`${styles.action__icon} ${styles.bookmark__icon}`}
-                />
-              </IconButton>
-            </Tooltip>
+              {!bookmark ? (
+                <Tooltip TransitionComponent={Zoom} title='Bookmark' arrow>
+                  <IconButton>
+                    <BookmarkAddOutlinedIcon
+                      className={`${styles.action__icon} ${styles.bookmark__icon}`}
+                    />
+                  </IconButton>
+                </Tooltip>
+              ) : (
+                <Tooltip TransitionComponent={Zoom} title='Unbookmark' arrow>
+                  <IconButton>
+                    <BookmarkAddedOutlinedIcon
+                      className={`${styles.action__icon} ${styles.bookmark__icon}`}
+                    />
+                  </IconButton>
+                </Tooltip>
+              )}
             </span>
             <span className={styles.action__wrapper}>
               <FavoriteBorderOutlinedIcon
