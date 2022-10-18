@@ -107,7 +107,7 @@ const AlbumDescription = ({ album }) => {
             <span className={styles.action__wrapper}>
               <div className={styles.view__container}>
                 <VisibilityOutlinedIcon className={styles.action__icon} />
-                <span className={styles.views}>700 views</span>
+                <span className={styles.views}>{views?.length} {views?.length > 1 ? 'views': 'view'}</span>
               </div>
             </span>
             <span className={styles.action__wrapper}>
