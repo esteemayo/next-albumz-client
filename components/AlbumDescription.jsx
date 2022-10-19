@@ -16,10 +16,11 @@ import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumberedOutlined';
 
+import LikeButton from '@/components/LikeButton';
 import StarRating from '@/components/StarRating';
 import styles from '@/styles/AlbumDescription.module.scss';
-import { createViews, getViews } from '@/features/views/viewSlice';
 import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
+import { createViews, getViews, reset } from '@/features/views/viewSlice';
 
 const AlbumDescription = ({ album }) => {
   const dispatch = useDispatch();
@@ -46,6 +47,7 @@ const AlbumDescription = ({ album }) => {
   useEffect(() => {
     dispatch(getViews(albumId));
     user && dispatch(createViews({ album: albumId }));
+    return () => dispatch(reset());
   }, [user, albumId, dispatch]);
 
   return (
@@ -132,9 +134,10 @@ const AlbumDescription = ({ album }) => {
               )}
             </span>
             <span className={styles.action__wrapper}>
-              <FavoriteBorderOutlinedIcon
+              <LikeButton type='single' likes={album.likes} />
+              {/* <FavoriteBorderOutlinedIcon
                 className={`${styles.action__icon} ${styles.like__icon}`}
-              />
+              /> */}
             </span>
           </div>
         </div>
