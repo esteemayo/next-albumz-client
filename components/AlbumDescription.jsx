@@ -134,7 +134,11 @@ const AlbumDescription = ({ album }) => {
               )}
             </span>
             <span className={styles.action__wrapper}>
-              <LikeButton type='single' likes={album.likes} />
+              <LikeButton
+                type='single'
+                likes={album.likes}
+                albumId={albumId}
+              />
               {/* <FavoriteBorderOutlinedIcon
                 className={`${styles.action__icon} ${styles.like__icon}`}
               /> */}
