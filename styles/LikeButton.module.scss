@@ -1,0 +1,30 @@
+.icon__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  margin-left: 1rem;
+
+  .action__icon {
+    display: flex;
+    align-items: center;
+    margin-top: -1.2rem;
+  }
+
+  .like__icon {
+    fill: #555;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+
+  span {
+    display: inline-block;
+    font-size: 1.3rem;
+    margin-left: 1rem;
+    color: #aaa;
+
+    @media only screen and (max-width: 37.5em) {
+      font-size: 1.5rem;
+    }
+  }
+}
