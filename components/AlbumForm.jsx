@@ -32,12 +32,6 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSelect = ({ target: input }) => {
-    const { name } = input;
-    const value = Array.from(input.selectedOptions, (option) => option.value);
-    setFormData((prev) => ({ ...prev, [name]: value}));
-  };
-
   const handleAddTag = (tag) => {
     setFormData((prev) => ({ ...prev, tags: [...prev.tags, tag] }));
   };
@@ -110,7 +104,7 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
                 name='genre'
                 text='Genre'
                 options={genres}
-                onChange={handleSelect}
+                onChange={handleChange}
               />
               <FormTextArea
                 name='info'
