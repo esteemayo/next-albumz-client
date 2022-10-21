@@ -59,44 +59,6 @@ const LikeButton = ({ type, likes, albumId }) => {
     }
   };
 
-  // const Likes = () => {
-  //   if (likes.length > 0) {
-  //     return likes.find(like => like === user?._id) ? (
-  //       likes.length > 2 ? (
-  //         <Tooltip TransitionComponent={Zoom} title={`You and ${likes.length - 1} other peoples like`} arrow>
-  //           <IconButton>
-  //             <FavoriteOutlinedIcon
-  //               onClick={!user ? null : handleLike}
-  //               className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-  //             />
-  //           </IconButton>
-  //         </Tooltip>
-  //       ) : (
-  //         <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
-  //           <IconButton>
-  //             <FavoriteBorderOutlinedIcon
-  //               onClick={!user ? null : handleLike}
-  //               className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-  //             />
-  //           </IconButton>
-  //         </Tooltip>
-  //       )
-  //     ) : (
-  //       <FavoriteBorderOutlinedIcon
-  //         onClick={!user ? null : handleLike}
-  //         className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-  //       />
-  //     );
-  //   }
-
-  //   return (
-  //     <FavoriteBorderOutlinedIcon
-  //       onClick={!user ? null : handleLike}
-  //       className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-  //     />
-  //   );
-  // };
-
   return (
     <div className={styles.icon__wrapper}>
       <button onClick={!user ? null : handleLike}>
