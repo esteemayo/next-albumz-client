@@ -23,13 +23,23 @@ const LikeButton = ({ type, likes, albumId }) => {
 
   const likeButton = user ? (
     liked ? (
-      <Tooltip TransitionComponent={Zoom} title={`You and ${likes.length - 1} other peoples like`} arrow>
-        <IconButton>
-          <FavoriteOutlinedIcon
-            className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-          />
-        </IconButton>
-      </Tooltip>
+      likes.length > 2 (
+        <Tooltip TransitionComponent={Zoom} title={`You and ${likes.length - 1} other peoples like`} arrow>
+          <IconButton>
+            <FavoriteOutlinedIcon
+              className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+            />
+          </IconButton>
+        </Tooltip>
+      ) : (
+        <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
+          <IconButton>
+            <FavoriteBorderOutlinedIcon
+              className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+            />
+          </IconButton>
+        </Tooltip>
+      )
     ) : (
       <FavoriteBorderOutlinedIcon
         className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
