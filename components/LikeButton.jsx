@@ -34,7 +34,7 @@ const LikeButton = ({ type, likes, albumId }) => {
       ) : (
         <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
           <IconButton>
-            <FavoriteBorderOutlinedIcon
+            <FavoriteOutlinedIcon
               className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
             />
           </IconButton>
