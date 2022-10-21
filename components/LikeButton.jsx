@@ -46,9 +46,13 @@ const LikeButton = ({ type, likes, albumId }) => {
       />
     )
   ) : (
-    <FavoriteBorderOutlinedIcon
-      className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-    />
+    <Tooltip TransitionComponent={Zoom} title={`Like${likes.length > 1 ? 's' : ''}`} arrow>
+      <IconButton>
+        <FavoriteBorderOutlinedIcon
+          className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+        />
+      </IconButton>
+    </Tooltip>
   );
 
   const handleLike = async () => {
@@ -62,7 +66,7 @@ const LikeButton = ({ type, likes, albumId }) => {
 
   return (
     <div className={styles.icon__wrapper}>
-      <button onClick={!user ? null : handleLike}>
+      <button onClick={!user ? null : handleLike} className={liked ? 'btnLiked' : 'btnUnlike'}>
         {likeButton}
       </button>
     </div>
