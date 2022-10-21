@@ -19,7 +19,7 @@ const LikeButton = ({ type, likes, albumId }) => {
     } else {
       setLiked(false);
     }
-  }, [user, likes]);
+  }, [likes, user]);
 
   const likeButton = user ? (
     liked ? (
