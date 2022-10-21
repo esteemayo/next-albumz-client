@@ -1,5 +1,6 @@
 import Zoom from '@mui/material/Zoom';
 import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
@@ -9,7 +10,39 @@ import { likeAlbum } from '@/services/albumService';
 import styles from '@/styles/LikeButton.module.scss';
 
 const LikeButton = ({ type, likes, albumId }) => {
+  const [liked, setLiked] = useState(false);
   const { user } = useSelector((state) => ({ ...state.auth }));
+
+  useEffect(() => {
+    if (user && likes.find((like) => user?._id)) {
+      setLiked(true);
+    } else {
+      setLiked(false);
+    }
+  }, [user, likes]);
+
+  const likeButton = user ? (
+    liked ? (
+      <Tooltip TransitionComponent={Zoom} title={`You and ${likes.length - 1} other peoples like`} arrow>
+        <IconButton>
+          <FavoriteOutlinedIcon
+            onClick={!user ? null : handleLike}
+            className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+          />
+        </IconButton>
+      </Tooltip>
+    ) : (
+      <FavoriteBorderOutlinedIcon
+        onClick={!user ? null : handleLike}
+        className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+      />
+    )
+  ) : (
+    <FavoriteBorderOutlinedIcon
+      onClick={!user ? null : handleLike}
+      className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+    />
+  );
 
   const handleLike = async () => {
     try {
@@ -59,7 +92,7 @@ const LikeButton = ({ type, likes, albumId }) => {
 
   return (
     <div className={styles.icon__wrapper}>
-      {Likes()}
+      {likeButton}
     </div>
   );
 };
