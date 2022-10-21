@@ -23,7 +23,7 @@ const LikeButton = ({ type, likes, albumId }) => {
 
   const likeButton = user ? (
     liked ? (
-      likes.length > 2 (
+      likes.length > 2 ? (
         <Tooltip TransitionComponent={Zoom} title={`You and ${likes.length - 1} other peoples like`} arrow>
           <IconButton>
             <FavoriteOutlinedIcon
