@@ -5,6 +5,13 @@
   margin-top: 1rem;
   margin-left: 1rem;
 
+  button {
+    border: none;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
   .action__icon {
     display: flex;
     align-items: center;
