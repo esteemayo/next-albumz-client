@@ -12,14 +12,15 @@ import SingleAlbumHero from '@/components/SingleAlbumHero';
 import AlbumDescription from '@/components/AlbumDescription';
 
 const SingleAlbum = ({ album }) => {
+  const [singleAlbum, setSingleAlum] = useState(album);
   const [reviews, setReviews] = useState(album.reviews);
 
   return (
     <>
       <Meta title={`${album.title} - Albumz Music Entertainment`} />
       <section className={styles.container}>
-        <SingleAlbumHero album={album} />
-        <AlbumDescription album={album} />
+        <SingleAlbumHero album={singleAlbum} />
+        <AlbumDescription album={singleAlbum} />
         <ReviewForm albumId={album.id} setReviews={setReviews} />
         <Reviews reviews={reviews} />
         <RelatedAlbums albumId={album.id} tags={album.tags} />
