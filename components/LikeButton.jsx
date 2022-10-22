@@ -41,12 +41,16 @@ const LikeButton = ({ type, likes, albumId }) => {
         </Tooltip>
       )
     ) : (
-      <FavoriteBorderOutlinedIcon
-        className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-      />
+      <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
+        <IconButton>
+          <FavoriteBorderOutlinedIcon
+            className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+          />
+        </IconButton>
+      </Tooltip>
     )
   ) : (
-    <Tooltip TransitionComponent={Zoom} title={`Like${likes.length > 1 ? 's' : ''}`} arrow>
+    <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
       <IconButton>
         <FavoriteBorderOutlinedIcon
           className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
