@@ -21,7 +21,7 @@ import styles from '@/styles/AlbumDescription.module.scss';
 import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
 import { createViews, getViews, reset } from '@/features/views/viewSlice';
 
-const AlbumDescription = ({ album }) => {
+const AlbumDescription = ({ album, setSingleAlbum }) => {
   const dispatch = useDispatch();
   const { user } = useSelector((state) => ({ ...state.auth }));
   const { views } = useSelector((state) => ({ ...state.views }));
