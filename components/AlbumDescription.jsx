@@ -137,6 +137,7 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
                 type='single'
                 likes={album.likes}
                 albumId={albumId}
+                setSingleAlbum={setSingleAlbum}
               />
               {/* <FavoriteBorderOutlinedIcon
                 className={`${styles.action__icon} ${styles.like__icon}`}
