@@ -9,7 +9,7 @@ import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlin
 import { likeAlbum } from '@/services/albumService';
 import styles from '@/styles/LikeButton.module.scss';
 
-const LikeButton = ({ type, likes, albumId }) => {
+const LikeButton = ({ type, likes, albumId, setSingleAlbum }) => {
   const [liked, setLiked] = useState(false);
   const { user } = useSelector((state) => ({ ...state.auth }));
 
@@ -23,46 +23,64 @@ const LikeButton = ({ type, likes, albumId }) => {
 
   const likeButton = user ? (
     liked ? (
-      likes.length > 2 ? (
-        <Tooltip TransitionComponent={Zoom} title={`You and ${likes.length - 1} other peoples like`} arrow>
-          <IconButton>
-            <FavoriteOutlinedIcon
-              className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-            />
-          </IconButton>
-        </Tooltip>
-      ) : (
-        <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
-          <IconButton>
-            <FavoriteOutlinedIcon
-              className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-            />
-          </IconButton>
-        </Tooltip>
-      )
+      <FavoriteOutlinedIcon
+        className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+      />
     ) : (
-      <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
-        <IconButton>
-          <FavoriteBorderOutlinedIcon
-            className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-          />
-        </IconButton>
-      </Tooltip>
+      <FavoriteBorderOutlinedIcon
+        className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+      />
     )
   ) : (
-    <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
-      <IconButton>
-        <FavoriteBorderOutlinedIcon
-          className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-        />
-      </IconButton>
-    </Tooltip>
+    <FavoriteBorderOutlinedIcon
+      className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+    />
   );
+
+  // const likeButton = user ? (
+  //   liked ? (
+  //     likes.length > 2 ? (
+  //       <Tooltip TransitionComponent={Zoom} title={`You and ${likes.length - 1} other peoples like`} arrow>
+  //         <IconButton>
+  //           <FavoriteOutlinedIcon
+  //             className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+  //           />
+  //         </IconButton>
+  //       </Tooltip>
+  //     ) : (
+  //       <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
+  //         <IconButton>
+  //           <FavoriteOutlinedIcon
+  //             className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+  //           />
+  //         </IconButton>
+  //       </Tooltip>
+  //     )
+  //   ) : (
+  //     <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
+  //       <IconButton>
+  //         <FavoriteBorderOutlinedIcon
+  //           className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+  //         />
+  //       </IconButton>
+  //     </Tooltip>
+  //   )
+  // ) : (
+  //   <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
+  //     <IconButton>
+  //       <FavoriteBorderOutlinedIcon
+  //         className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+  //       />
+  //     </IconButton>
+  //   </Tooltip>
+  // );
 
   const handleLike = async () => {
     try {
-      await likeAlbum(albumId);
-      setLiked((prev) => !prev);
+      const { data } = await likeAlbum(albumId);
+      setSingleAlbum(data.album);
+      console.log(data)
+      // setLiked((prev) => !prev);
     } catch (err) {
       console.log(err);
     }
