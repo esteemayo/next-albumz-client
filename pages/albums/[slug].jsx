@@ -20,7 +20,7 @@ const SingleAlbum = ({ album }) => {
       <Meta title={`${album.title} - Albumz Music Entertainment`} />
       <section className={styles.container}>
         <SingleAlbumHero album={singleAlbum} />
-        <AlbumDescription album={singleAlbum} />
+        <AlbumDescription album={singleAlbum} setSingleAlum={setSingleAlum} />
         <ReviewForm albumId={album.id} setReviews={setReviews} />
         <Reviews reviews={reviews} />
         <RelatedAlbums albumId={album.id} tags={album.tags} />
