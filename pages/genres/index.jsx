@@ -26,58 +26,64 @@ const Genres = ({ genres }) => {
   return (
     <>
       <Meta title='Genres - Albumz Music Entertainment' />
-      <section className={styles.genres}>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>
-                <TagOutlinedIcon className={styles.tableOrder} />
-              </th>
-              <th>Name</th>
-              <th>Posted by</th>
-              <th>Posted on</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {genreList?.map((item, index) => {
-              const { _id: id, name, user, slug, createdAt } = item;
-              return (
-                <tr key={id} className={styles.tr}>
-                  <td>
-                    <span className={styles.order}>{index + 1}</span>
-                  </td>
-                  <td>
-                    <span className={styles.name}>{name}</span>
-                  </td>
-                  <td>
-                    <span className={styles.postedBy}>{user?.name}</span>
-                  </td>
-                  <td>
-                    <span className={styles.postedOn}>
-                      <Moment fromNow>{createdAt}</Moment>
-                    </span>
-                  </td>
-                  <td className={styles.buttonContainer}>
-                    <Link href={`/genres/edit/${slug}`} passHref>
-                      <a className={styles.btnUpdate}>Update</a>
-                    </Link>
-                    <button
-                      className={styles.btnDelete}
-                      onClick={() => {
-                        setShowModal(false);
-                        setGenreId(id);
-                      }}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </section>
+      {genres.length > 0 ? (
+        <section className={styles.genres}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                <th>
+                  <TagOutlinedIcon className={styles.tableOrder} />
+                </th>
+                <th>Name</th>
+                <th>Posted by</th>
+                <th>Posted on</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {genreList?.map((item, index) => {
+                const { _id: id, name, user, slug, createdAt } = item;
+                return (
+                  <tr key={id} className={styles.tr}>
+                    <td>
+                      <span className={styles.order}>{index + 1}</span>
+                    </td>
+                    <td>
+                      <span className={styles.name}>{name}</span>
+                    </td>
+                    <td>
+                      <span className={styles.postedBy}>{user?.name}</span>
+                    </td>
+                    <td>
+                      <span className={styles.postedOn}>
+                        <Moment fromNow>{createdAt}</Moment>
+                      </span>
+                    </td>
+                    <td className={styles.buttonContainer}>
+                      <Link href={`/genres/edit/${slug}`} passHref>
+                        <a className={styles.btnUpdate}>Update</a>
+                      </Link>
+                      <button
+                        className={styles.btnDelete}
+                        onClick={() => {
+                          setShowModal(false);
+                          setGenreId(id);
+                        }}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </section>
+      ) : (
+        <section className={styles.genres}>
+          <h3 className={styles.notFound}>There are no genres available</h3>
+        </section>
+      )}
       {user && <AddButton text='New genre' onClick={() => setOpen(true)} />}
       {open && (
         <Modal onClose={setOpen}>
