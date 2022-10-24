@@ -23,7 +23,7 @@ const SingleAlbum = ({ album }) => {
         <AlbumDescription album={singleAlbum} setSingleAlbum={setSingleAlbum} />
         <ReviewForm albumId={album.id} setReviews={setReviews} />
         <Reviews reviews={reviews} />
-        <RelatedAlbums albumId={album.id} tags={album.tags} />
+        <RelatedAlbums albumId={album.id} tags={singleAlbum.tags} />
       </section>
     </>
   );
