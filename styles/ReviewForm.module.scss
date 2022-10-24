@@ -146,6 +146,11 @@
       &:focus {
         outline: #696cff;
       }
+
+      &:disabled {
+        background-color: #bac4c4;
+        cursor: not-allowed;
+      }
     }
   }
 }
