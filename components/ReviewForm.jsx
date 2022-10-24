@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import Rating from '@mui/material/Rating';
 
 import styles from '@/styles/ReviewForm.module.scss';
@@ -21,6 +22,7 @@ const ReviewForm = ({ albumId, setReviews }) => {
       setReviews((prev) => [...prev, data.review]);
     } catch (err) {
       console.log(err);
+      return toast.error(err.response.data.message);
     }
   };
 
