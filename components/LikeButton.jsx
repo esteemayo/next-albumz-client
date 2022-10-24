@@ -24,7 +24,7 @@ const LikeButton = ({ type, likes, albumId, setSingleAlbum }) => {
   const likeButton = user ? (
     liked ? (
       likes.length > 2 ? (
-        <Tooltip TransitionComponent={Zoom} title={`You and ${likes.length - 1} other peoples like`} arrow>
+        <Tooltip TransitionComponent={Zoom} title={`You and ${likes.length - 1} others`} arrow>
           <IconButton>
             <FavoriteOutlinedIcon
               className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
