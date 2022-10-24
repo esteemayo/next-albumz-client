@@ -50,7 +50,13 @@ const ReviewForm = ({ albumId, setReviews }) => {
               />
             </div>
             <div className={styles.right}>
-              <button type='submit' className={styles.form__btn}>Submit review</button>
+              <button
+                type='submit'
+                disabled={!rating || !review}
+                className={styles.form__btn}
+              >
+                Submit review
+              </button>
             </div>
           </div>
         </form>
