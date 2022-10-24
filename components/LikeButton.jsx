@@ -14,7 +14,7 @@ const LikeButton = ({ type, likes, albumId, setSingleAlbum }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   useEffect(() => {
-    if (user && likes.find((like) => user?._id)) {
+    if (user && likes.find((like) => like === user?._id)) {
       setLiked(true);
     } else {
       setLiked(false);
