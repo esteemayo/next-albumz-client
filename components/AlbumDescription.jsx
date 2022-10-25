@@ -139,9 +139,6 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
                 albumId={albumId}
                 setSingleAlbum={setSingleAlbum}
               />
-              {/* <FavoriteBorderOutlinedIcon
-                className={`${styles.action__icon} ${styles.like__icon}`}
-              /> */}
             </span>
           </div>
         </div>
