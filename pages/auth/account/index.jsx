@@ -19,6 +19,7 @@ import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
 import FormButton from '@/components/FormButton';
 import styles from '@/styles/Account.module.scss';
+import { uploadImage } from '@/services/imageService';
 import FormChipInput from '@/components/FormChipInput';
 import { reset, updateUserData } from '@/features/auth/authSlice';
 
@@ -71,14 +72,28 @@ const Account = () => {
 
   const { name, username, email, location, favGenres, favArtists } = formInputs;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const userData = {
       ...formInputs,
     };
 
-    dispatch(updateUserData({ userData, toast }));
+    const form = new FormData();
+    form.append('file', file);
+    form.append('upload_preset', 'albumz/users');
+    
+    try {
+      if (file) {
+        const { data } = await uploadImage(form);
+        const { url } = data;
+        userData.avatar = url;
+
+        dispatch(updateUserData({ userData, toast }));
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
