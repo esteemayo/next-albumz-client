@@ -187,20 +187,20 @@ export const authSlice = createSlice({
         state.isError = true;
         state.message = payload.message;
       })
-      .addCase(deleteUser.pending, (state) => {
-        state.isLoading = true;
-      })
+      // .addCase(deleteUser.pending, (state) => {
+      //   state.isLoading = true;
+      // })
       .addCase(deleteUser.fulfilled, (state) => {
         state.isLoading = false;
         state.isSuccess = true;
         removeFromStorage(tokenKey);
         state.user = null;
       })
-      .addCase(deleteUser.rejected, (state) => {
-        state.isLoading = false;
-        state.isSuccess = false;
-        state.isError = true;
-      })
+      // .addCase(deleteUser.rejected, (state) => {
+      //   state.isLoading = false;
+      //   state.isSuccess = false;
+      //   state.isError = true;
+      // })
       .addCase(logoutUser.fulfilled, (state) => {
         removeFromStorage(tokenKey);
         state.user = null;
