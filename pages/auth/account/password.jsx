@@ -100,6 +100,7 @@ const UpdatePassword = () => {
             <div className={styles.formWrapper}>
               <form onSubmit={handleSubmit} className={styles.form}>
                 <FormInput
+                  value={currentPassword}
                   type={showCurrentPassword ? 'text' : 'password'}
                   placeholder='Current Password'
                   onChange={(e) => setCurrentPassword(e.target.value)}
@@ -117,6 +118,7 @@ const UpdatePassword = () => {
                   )}
                 </FormInput>
                 <FormInput
+                  value={password}
                   type={showPassword ? 'text' : 'password'}
                   placeholder='Password'
                   onChange={(e) => setPassword(e.target.value)}
@@ -134,6 +136,7 @@ const UpdatePassword = () => {
                   )}
                 </FormInput>
                 <FormInput
+                  value={confirmPassword}
                   type={showConfirmPassword ? 'text' : 'password'}
                   placeholder='Confirm Password'
                   onChange={(e) => setConfirmPassword(e.target.value)}
