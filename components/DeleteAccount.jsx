@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 
 import { deleteMe } from '@/services/userService';
@@ -12,6 +13,7 @@ const DeleteAccount = ({ onClose }) => {
     try {
       await deleteMe();
       dispatch(logoutUser());
+      toast.success('Account closed successfully');
       router.push('/');
     } catch (err) {
       console.log(err);
