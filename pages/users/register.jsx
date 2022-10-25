@@ -16,6 +16,7 @@ import PlaylistAddCheckCircleOutlinedIcon from '@mui/icons-material/PlaylistAddC
 import Meta from '@/components/Meta';
 import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
+import { uploadImage } from '@/services/imageService';
 import FormChipInput from '@/components/FormChipInput';
 import { registerUser, reset } from '@/features/auth/authSlice';
 
@@ -85,7 +86,7 @@ const Register = () => {
 
   const emptyFieldCheck = Object.values(formInputs).some((item) => item === '');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -106,9 +107,21 @@ const Register = () => {
 
     const userData = {
       ...formInputs,
-    }
+    };
+
+    const form = new FormData();
+    form.append('file', file);
+    form.append('upload_preset', 'albumz/users');
     
-    dispatch(registerUser({ userData, toast }));
+    try {
+      const { data } = await uploadImage(form);
+      const { url } = data;
+      userData.avatar = url;
+
+      dispatch(registerUser({ userData, toast }));
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   useEffect(() => {
