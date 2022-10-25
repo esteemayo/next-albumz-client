@@ -24,7 +24,7 @@ const DeleteAccount = ({ onClose }) => {
       <div className={styles.wrapper}>
         <div className={styles.warning}>
           <h4>You are about to delete your account</h4>
-          <p>All your albums will be permanently removed and you won't be
+          <p>All your albums will be permanently removed and you won&apos;t be
             able to see them again, including the ones you have shared with
             your friends.
           </p>
