@@ -44,7 +44,7 @@ const UpdatePassword = () => {
     handleClear();
   };
 
-  const handleclear = () => {
+  const handleClear = () => {
     setPassword('');
     setConfirmPassword('');
     setCurrentPassword('');
