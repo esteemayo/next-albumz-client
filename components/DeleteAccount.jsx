@@ -1,11 +1,22 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { deleteUser } from '@/features/auth/authSlice';
+import { deleteMe } from '@/services/userService';
+import { logoutUser } from '@/features/auth/authSlice';
 import styles from '@/styles/DeleteAccount.module.scss';
 
 const DeleteAccount = ({ onClose }) => {
   const dispatch = useDispatch();
+
+  const handleDeleteUserAccount = async () => {
+    try {
+      await deleteMe();
+      dispatch(logoutUser());
+      router.push('/');
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -26,7 +37,7 @@ const DeleteAccount = ({ onClose }) => {
           </button>
           <button
             onClick={() => {
-              dispatch(deleteUser());
+              handleDeleteUserAccount();
               onClose(true);
             }}
             className={styles.deleteBtn}
