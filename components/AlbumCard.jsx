@@ -1,12 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 import { excerpts } from '@/utils/index';
+import LikeButton from '@/components/LikeButton';
 import styles from '@/styles/AlbumCard.module.scss';
 
-const AlbumCard = ({ tags, info, slug, image, title, ratingsAverage, ratingsQuantity }) => {
+const AlbumCard = ({ album }) => {
+  const [singleAlbum, setSingleAlbum] = useState(album);
+
+  const { _id: id, tags, info, slug, image, likes, title, ratingsAverage, ratingsQuantity } = singleAlbum;
+
   return (
     <div className={styles.card}>
       <div className={styles.card__header}>
@@ -24,8 +30,9 @@ const AlbumCard = ({ tags, info, slug, image, title, ratingsAverage, ratingsQuan
           <span>{title}</span>
         </h3>
         <div className={styles.icon__wrapper}>
-          <FavoriteBorderOutlinedIcon className={styles.like__btn} />
-          <span>Liked by jdoe and 2 others</span>
+          <LikeButton likes={likes} albumId={id} setSingleAlbum={setSingleAlbum} />
+          {/* <FavoriteBorderOutlinedIcon className={styles.like__btn} />
+          <span>Liked by jdoe and 2 others</span> */}
         </div>
       </div>
       <div className={styles.card__details}>
