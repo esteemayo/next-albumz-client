@@ -169,12 +169,12 @@
 
   .right {
     flex: 1;
-    
+
     .rightWrapper {
       display: flex;
       flex-direction: column;
     }
-    
+
     .album__info {
       font-size: 1.7rem;
       color: #777;
@@ -182,6 +182,15 @@
       @media only screen and (max-width: 43.75em) {
         font-size: 1.5rem;
       }
+    }
+
+    .btn__info {
+      border: none;
+      display: inline-block;
+      text-align: right;
+      background-color: transparent;
+      color: #5a6bf6;
+      cursor: pointer;
     }
   }
 }
