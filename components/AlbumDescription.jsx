@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import Zoom from '@mui/material/Zoom';
 import { toast } from 'react-toastify';
+import { useEffect, useState } from 'react';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,6 +15,7 @@ import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined';
 import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumberedOutlined';
 
+import { excerpts } from '@/utils/index';
 import LikeButton from '@/components/LikeButton';
 import StarRating from '@/components/StarRating';
 import styles from '@/styles/AlbumDescription.module.scss';
@@ -26,6 +27,8 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
   const { views } = useSelector((state) => ({ ...state.views }));
   const { bookmark } = useSelector((state) => ({ ...state.bookmark }));
+
+  const [readMore, setReadMore] = useState(false);
 
   const albumId = album?._id;
 
@@ -146,9 +149,19 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
       <div className={styles.right}>
         <div className={styles.rightWrapper}>
           <h2 className={styles.album__heading}>About {album.title} album</h2>
-          {album.info.split('\n').map((item, index) => {
-            return <p key={index} className={styles.album__info}>{item}</p>
-          })}
+          {readMore ? (
+            <>
+              {album.info.split('\n').map((item, index) => {
+                return <p key={index} className={styles.album__info}>{item}</p>
+              })}
+            </>   
+          ) : (
+            <>
+              {excerpts(album.info, 350).split('\n').map((item, index) => {
+                return <p key={index} className={styles.album__info}>{item}</p>
+              })}
+            </>
+          )}
         </div>
       </div>
     </section>
