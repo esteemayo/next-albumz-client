@@ -70,7 +70,7 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
             </span>
             <span>Title</span>
             <span>{album.title}</span>
-            </div>
+          </div>
           <div className={styles.album__details}>
             <span>
               <CategoryOutlinedIcon className={styles.icon} />
@@ -111,7 +111,7 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
             <span className={styles.action__wrapper}>
               <div className={styles.view__container}>
                 <VisibilityOutlinedIcon className={styles.action__icon} />
-                <span className={styles.views}>{views?.length} {views?.length > 1 ? 'views': 'view'}</span>
+                <span className={styles.views}>{views?.length} {views?.length > 1 ? 'views' : 'view'}</span>
               </div>
             </span>
             <span className={styles.action__wrapper}>
@@ -160,10 +160,10 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
               >
                 Show less
               </button>
-            </>   
+            </>
           ) : (
             <>
-              {excerpts(album.info, 350).split('\n').map((item, index) => {
+              {excerpts(album?.info, 350).split('\n').map((item, index) => {
                 return <p key={index} className={styles.album__info}>{item}</p>
               })}
               {album.info.length > 350 && (
@@ -176,7 +176,7 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
               )}
             </>
           )}
-          
+
         </div>
       </div>
     </section>
