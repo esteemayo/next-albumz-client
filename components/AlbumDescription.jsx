@@ -166,12 +166,14 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
               {excerpts(album.info, 350).split('\n').map((item, index) => {
                 return <p key={index} className={styles.album__info}>{item}</p>
               })}
-              <button
-                onClick={() => setReadMore(true)}
-                className={styles.btn__info}
-              >
-                Read more
-              </button>
+              {album.info.length > 350 && (
+                <button
+                  onClick={() => setReadMore(true)}
+                  className={styles.btn__info}
+                >
+                  Read more
+                </button>
+              )}
             </>
           )}
           
