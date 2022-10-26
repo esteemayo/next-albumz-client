@@ -21,7 +21,7 @@ const Albums = ({ albums, genres, page, total, numberOfPages }) => {
     <main className={styles.main}>
       <div className={styles.container}>
         {albumList?.map((item => {
-          return <AlbumCard key={item?._id} {...item} />;
+          return <AlbumCard key={item?._id} album={item} />;
         }))}
       </div>
 
