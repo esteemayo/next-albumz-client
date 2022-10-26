@@ -27,7 +27,7 @@ const ScrollToTop = () => {
     <div className={styles.scroll}>
       {isVisible && (
         <div onClick={handleScroll} className={styles.iconContainer}>
-          <Tooltip TransitionComponent={Zoom} title='Scroll to top'>
+          <Tooltip TransitionComponent={Zoom} title='Scroll to top' arrow>
             <IconButton>
               <KeyboardArrowUpOutlinedIcon className={styles.scrollIcon} />
             </IconButton>
