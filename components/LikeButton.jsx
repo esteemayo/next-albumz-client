@@ -62,7 +62,7 @@ const LikeButton = ({ type, likes, albumId, setSingleAlbum }) => {
   const handleLike = async () => {
     try {
       const { data } = await likeAlbum(albumId);
-      setSingleAlbum(data.album);
+      setSingleAlbum && setSingleAlbum(data.album);
     } catch (err) {
       console.log(err);
     }
