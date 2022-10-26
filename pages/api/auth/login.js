@@ -23,7 +23,8 @@ const handler = async (req, res) => {
         return res.status(200).json({ ...data });
       }
     } catch (err) {
-      return res.json(err);
+      console.log(err);
+      return res.status(401).json({ message: 'Incorrect email or password' });
     }
   } else {
     res.setHeader('Allow', ['POST']);
