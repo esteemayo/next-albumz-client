@@ -1,8 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 import { excerpts } from '@/utils/index';
 import LikeButton from '@/components/LikeButton';
