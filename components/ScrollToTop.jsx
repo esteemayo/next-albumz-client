@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import Zoom from '@mui/material/Zoom';
+import Tooltip from '@mui/material/Tooltip';
+import IconButton from '@mui/material/IconButton';
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
 
 import styles from '@/styles/ScrollToTop.module.scss';
@@ -24,7 +27,11 @@ const ScrollToTop = () => {
     <div className={styles.scroll}>
       {isVisible && (
         <div onClick={handleScroll} className={styles.iconContainer}>
-          <KeyboardArrowUpOutlinedIcon />
+          <Tooltip TransitionComponent={Zoom} title='Scroll to top'>
+            <IconButton>
+              <KeyboardArrowUpOutlinedIcon className={styles.scrollIcon} />
+            </IconButton>
+          </Tooltip>
         </div>
       )}
     </div>
