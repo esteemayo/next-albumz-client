@@ -146,7 +146,9 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
       <div className={styles.right}>
         <div className={styles.rightWrapper}>
           <h2 className={styles.album__heading}>About {album.title} album</h2>
-          <p className={styles.album__info}>{album.info}</p>
+          {album.info.split('\n').map((item, index) => {
+            return <p key={index} className={styles.album__info}>{item}</p>
+          })}
         </div>
       </div>
     </section>
