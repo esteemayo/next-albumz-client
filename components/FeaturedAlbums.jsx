@@ -14,7 +14,7 @@ const FeaturedAlbums = ({ albums }) => {
       <div className={styles.wrapper}>
         <Suspense fallback={<h1>Loading</h1>}>
           {albums?.map((item) => {
-            return <AlbumCard key={item._id} {...item} />;
+            return <AlbumCard key={item._id} album={item} />;
           })}
         </Suspense>
       </div>
