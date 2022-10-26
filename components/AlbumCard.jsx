@@ -29,8 +29,6 @@ const AlbumCard = ({ album }) => {
         </h3>
         <div className={styles.icon__wrapper}>
           <LikeButton likes={likes} albumId={id} setSingleAlbum={setSingleAlbum} />
-          {/* <FavoriteBorderOutlinedIcon className={styles.like__btn} />
-          <span>Liked by jdoe and 2 others</span> */}
         </div>
       </div>
       <div className={styles.card__details}>
