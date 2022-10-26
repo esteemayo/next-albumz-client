@@ -8,8 +8,8 @@
     width: 4rem;
     height: 4rem;
     font-size: 1.5rem;
-    background-color: rgb(38, 93, 151);
-    box-shadow: rgb(0, 0, 0, 0.5) 0 0.4rem 2rem;
+    background-color: #696cff;
+    box-shadow: rgb(0, 0, 0, 0.25) 0 0.4rem 2rem;
     color: rgba(0, 0, 0, 0.87);
     border-radius: 50%;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -20,12 +20,20 @@
     justify-content: center;
 
     &:hover {
-      background-color: rgb(30, 73, 118);
+      background-color: rgb(153, 204, 243);
     }
-
+    
     & > * {
       color: rgb(153, 204, 243);
+      
+      &:hover {
+        color: #24299b;
+      }
     }
+  }
+  
+  .scrollIcon {
+    font-size: 2rem;
   }
 }
 
