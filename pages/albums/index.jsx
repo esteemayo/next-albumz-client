@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 
 import Modal from '@/components/Modal';
+import http from '@/services/httpService';
 import AddButton from '@/components/AddButton';
 import AlbumCard from '@/components/AlbumCard';
 import AlbumForm from '@/components/AlbumForm';
@@ -12,6 +14,10 @@ import { getAlbums } from '@/services/albumService';
 import { getAllGenres } from '@/services/genreService';
 
 const Albums = ({ albums, genres, page, total, numberOfPages }) => {
+  const router = useRouter();
+  // console.log(router)
+  // console.log(typeof router.query.page)
+  // console.log(typeof page)
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const [showModal, setShowModal] = useState(false);
@@ -66,7 +72,8 @@ Albums.propTypes = {
 };
 
 export const getServerSideProps = async ({ query: { page } }) => {
-  const { data } = await getAlbums(page);
+  // const { data } = await getAlbums(page);
+  const { data } = await http.get(`http://localhost:9797/api/v1/albums?page=${page}&limit=6`);
   const { data: { genres } } = await getAllGenres();
 
   return {
