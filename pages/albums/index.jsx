@@ -14,9 +14,6 @@ import { getAllGenres } from '@/services/genreService';
 
 const Albums = ({ albums, genres, page, total, numberOfPages }) => {
   const router = useRouter();
-  // console.log(router)
-  // console.log(typeof router.query.page)
-  // console.log(typeof page)
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const [showModal, setShowModal] = useState(false);
@@ -46,7 +43,7 @@ const Albums = ({ albums, genres, page, total, numberOfPages }) => {
         total={total}
         numberOfPages={numberOfPages}
       />
-      
+
       {user && (
         <AddButton
           text='New album'
