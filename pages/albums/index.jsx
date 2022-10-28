@@ -11,7 +11,7 @@ import styles from '@/styles/Albums.module.scss';
 import { getAlbums } from '@/services/albumService';
 import { getAllGenres } from '@/services/genreService';
 
-const Albums = ({ albums, genres, page, total, numberOfPages }) => {
+const Albums = ({ albums, genres, page, limit, total, numberOfPages }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const [showModal, setShowModal] = useState(false);
@@ -20,7 +20,7 @@ const Albums = ({ albums, genres, page, total, numberOfPages }) => {
   useEffect(() => {
     (async () => {
       try {
-        const { data } = await getAlbums(page);
+        const { data } = await getAlbums(page, limit);
         setAlbumList(data.albums);
       } catch (err) {
         console.log(err);
@@ -77,13 +77,14 @@ Albums.propTypes = {
   ),
 };
 
-export const getServerSideProps = async ({ query: { page } }) => {
-  const { data } = await getAlbums(page);
+export const getServerSideProps = async ({ query: { page, limit } }) => {
+  const { data } = await getAlbums(page, limit);
   const { data: { genres } } = await getAllGenres();
 
   return {
     props: {
       genres,
+      limit: data.limit,
       albums: data.albums,
       page: data.currentPage,
       total: data.totalAlbums,
