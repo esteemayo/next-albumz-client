@@ -37,10 +37,23 @@ export const loginUser = createAsyncThunk(
 );
 
 export const forgotPassword = createAsyncThunk(
-  'auth/login',
+  'auth/forgotPassword',
   async ({ email, toast }, { rejectWithValue }) => {
     try {
       const { data } = await authAPI.forgot({ email });
+      toast.success('Token sent to email successfully');
+      return;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
+export const resetPassword = createAsyncThunk(
+  'auth/resetPassword',
+  async ({ token, credentials, toast }, { rejectWithValue }) => {
+    try {
+      const { data } = await authAPI.reset(token, credentials);
       toast.success('Token sent to email successfully');
       return;
     } catch (err) {
