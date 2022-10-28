@@ -22,6 +22,17 @@ const Albums = ({ albums, genres, page, total, numberOfPages }) => {
   const [showModal, setShowModal] = useState(false);
   const [albumList, setAlbumList] = useState(albums)
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await getAlbums(page);
+        setAlbumList(data.albums);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, [page]);
+
   return (
     <main className={styles.main}>
       <div className={styles.container}>
