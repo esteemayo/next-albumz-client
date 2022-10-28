@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
@@ -13,7 +12,6 @@ import { getAlbums } from '@/services/albumService';
 import { getAllGenres } from '@/services/genreService';
 
 const Albums = ({ albums, genres, page, total, numberOfPages }) => {
-  const router = useRouter();
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const [showModal, setShowModal] = useState(false);
