@@ -72,8 +72,7 @@ Albums.propTypes = {
 };
 
 export const getServerSideProps = async ({ query: { page } }) => {
-  // const { data } = await getAlbums(page);
-  const { data } = await http.get(`http://localhost:9797/api/v1/albums?page=${page}&limit=6`);
+  const { data } = await getAlbums(page);
   const { data: { genres } } = await getAllGenres();
 
   return {
