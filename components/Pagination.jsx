@@ -14,7 +14,7 @@ const Pagination = ({ page, total, numberOfPages, setAlbumList }) => {
 
     try {
       const { data } = await getAlbums(page, limit);
-      setAlbumList(data.albums);
+      limit > 0 && setAlbumList(data.albums);
     } catch (err) {
       console.log(err);
     }
@@ -73,7 +73,7 @@ const Pagination = ({ page, total, numberOfPages, setAlbumList }) => {
         <span>Items</span>
         <form onSubmit={handleSubmit}>
           <input
-            type='number'
+            type='text'
             value={limit}
             onChange={(e) => setLimit(+e.target.value)}
           />
