@@ -1,10 +1,25 @@
 import Link from 'next/link';
+import { useState } from 'react';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 
+import { getAlbums } from '@/services/albumService';
 import styles from '@/styles/Pagination.module.scss';
 
-const Pagination = ({ page, total, numberOfPages }) => {
+const Pagination = ({ page, total, numberOfPages, setAlbumList }) => {
+  const [limit, setLimit] = useState(6);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const { data } = await getAlbums(page, limit);
+      setAlbumList(data.albums);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const renderPagination = () => {
     if (page === 1 && page === numberOfPages) return null;
     if (page === 1) {
@@ -56,7 +71,13 @@ const Pagination = ({ page, total, numberOfPages }) => {
       {renderPagination()}
       <div className={styles.right}>
         <span>Items</span>
-        <input type='number' defaultValue={1} />
+        <form onSubmit={handleSubmit}>
+          <input
+            type='number'
+            value={limit}
+            onChange={(e) => setLimit(+e.target.value)}
+          />
+        </form>
       </div>
     </div>
   );
