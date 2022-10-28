@@ -36,6 +36,19 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+export const forgotPassword = createAsyncThunk(
+  'auth/login',
+  async ({ email, toast }, { rejectWithValue }) => {
+    try {
+      const { data } = await authAPI.forgot({ email });
+      toast.success('Token sent to email successfully');
+      return;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
 export const updateUserData = createAsyncThunk(
   'auth/updateMe',
   async ({ userData, toast }, { rejectWithValue }) => {
