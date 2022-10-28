@@ -39,6 +39,7 @@ const Albums = ({ albums, genres, page, total, numberOfPages }) => {
       <Pagination
         page={page}
         total={total}
+        setAlbumList={setAlbumList}
         numberOfPages={numberOfPages}
       />
 
