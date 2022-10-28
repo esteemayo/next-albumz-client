@@ -26,7 +26,7 @@ const Pagination = ({ page, total, numberOfPages, setAlbumList }) => {
       return (
         <div className={styles.left}>
           <span className={styles.currentPage}>{page}</span>
-          <Link href={`/albums?page=${page + 1}`} passHref>
+          <Link href={`/albums?page=${page + 1}&limit=${limit}`} passHref>
             <a>
               <ArrowForwardIosOutlinedIcon className={styles.nextPage} />
             </a>
@@ -37,13 +37,13 @@ const Pagination = ({ page, total, numberOfPages, setAlbumList }) => {
     } else if (page !== numberOfPages) {
       return (
         <div className={styles.left}>
-          <Link href={`/albums?page=${page - 1}`} passHref>
+          <Link href={`/albums?page=${page - 1}&limit=${limit}`} passHref>
             <a>
               <ArrowBackIosNewOutlinedIcon className={styles.prevPage} />
             </a>
           </Link>
           <span className={styles.currentPage}>{page}</span>
-          <Link href={`/albums?page=${page + 1}`} passHref>
+          <Link href={`/albums?page=${page + 1}&limit=${limit}`} passHref>
             <a>
               <ArrowForwardIosOutlinedIcon className={styles.nextPage} />
             </a>
@@ -54,7 +54,7 @@ const Pagination = ({ page, total, numberOfPages, setAlbumList }) => {
     } else {
       return (
         <div className={styles.left}>
-          <Link href={`/albums?page=${page - 1}`} passHref>
+          <Link href={`/albums?page=${page - 1}&limit=${limit}`} passHref>
             <a>
               <ArrowBackIosNewOutlinedIcon className={styles.prevPage} />
             </a>
