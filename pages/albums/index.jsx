@@ -15,7 +15,7 @@ const Albums = ({ albums, genres, page, total, numberOfPages }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const [showModal, setShowModal] = useState(false);
-  const [albumList, setAlbumList] = useState(albums)
+  const [albumList, setAlbumList] = useState(albums);
 
   useEffect(() => {
     (async () => {
