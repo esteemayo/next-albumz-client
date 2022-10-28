@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 
 import Modal from '@/components/Modal';
-import http from '@/services/httpService';
 import AddButton from '@/components/AddButton';
 import AlbumCard from '@/components/AlbumCard';
 import AlbumForm from '@/components/AlbumForm';
