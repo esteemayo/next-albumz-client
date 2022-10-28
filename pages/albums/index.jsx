@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 
 import Modal from '@/components/Modal';
 import AddButton from '@/components/AddButton';
