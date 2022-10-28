@@ -14,6 +14,12 @@ export const nextLogin = (credentials) =>
 
 export const nextLogout = () => http.post(`${apiUrl}/auth/logout`);
 
+export const forgot = (email) =>
+  http.post(`${apiEndpoint}/forgot-password`, email);
+
+export const reset = (token, credentials) =>
+  http.post(`${apiEndpoint}/reset-password/${token}`, credentials);
+
 export const updatePassword = (credentials) =>
   http.patch(`${apiEndpoint}/update-my-password`, credentials);
 
