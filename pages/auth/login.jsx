@@ -74,8 +74,8 @@ const Login = () => {
                   >
                     {showPassword ? (
                       <VisibilityOff
-                      onClick={handleShowPassword}
-                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
+                        onClick={handleShowPassword}
+                        className={`${styles.form__icon} ${styles.form__iconPassword}`}
                       />
                     ) : (
                     <Visibility
