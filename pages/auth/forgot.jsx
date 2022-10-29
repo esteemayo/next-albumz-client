@@ -27,7 +27,7 @@ const ForgotPassword = () => {
   useEffect(() => {
     isError && toast.error(message);
     dispatch(reset());
-  }, [isError, dispatch]);
+  }, [isError, message, dispatch]);
 
   return (
     <>
