@@ -18,6 +18,9 @@ const initialState = {
 };
 
 const ResetPassword = () => {
+  const dispatch = useDispatch();
+  const { isError, message } = useSelector((state) => ({ ...state.auth }));
+  
   const [inputs, setInputs] = useState(initialState);
 
   const handleChange = ({ target: input }) => {
