@@ -57,7 +57,7 @@ const ForgotPassword = () => {
             </form>
           </div>
           <div className={styles.links}>
-            <Link href='/auth/login' pasHref>Return to Login</Link>
+            <Link href='/auth/login' passHref>Return to Login</Link>
           </div>
         </div>
       </div>
