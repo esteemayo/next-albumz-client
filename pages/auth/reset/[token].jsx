@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Visibility from '@mui/icons-material/Visibility';
@@ -18,9 +19,10 @@ const initialState = {
 };
 
 const ResetPassword = () => {
+  const { query } = useRouter();
   const dispatch = useDispatch();
   const { isError, message } = useSelector((state) => ({ ...state.auth }));
-  
+
   const [inputs, setInputs] = useState(initialState);
 
   const handleChange = ({ target: input }) => {
@@ -40,6 +42,14 @@ const ResetPassword = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const token = query.token;
+    const credentials = {
+      password,
+      confirmPassword,
+    };
+
+    dispatch(resetPassword({token, credentials, toast}));
   };
 
   return (
