@@ -42,6 +42,7 @@ const ForgotPassword = () => {
                 <div className={styles.form__headline}>Reset Your Password</div>
                 <FormInput
                   type='email'
+                  name='email'
                   placeholder='Email'
                   onChange={(e) => setEmail(e.target.value)}
                 >
