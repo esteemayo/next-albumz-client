@@ -1,17 +1,32 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { toast } from 'react-toastify';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 import Meta from '@/components/Meta';
 import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
+import { forgotPassword, reset } from '@/features/auth/authSlice';
 
 const ForgotPassword = () => {
+  const dispatch = useDispatch();
+  const { isError, message } = useSelector((state) => ({ ...state.auth }));
+
   const [email, setEmail] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!email) return toast.error('Please enter your email address');
+
+    dispatch(forgotPassword({ email, toast }));
   };
+
+  useEffect(() => {
+    isError && toast.error(message);
+    dispatch(reset());
+  }, [isError, dispatch]);
 
   return (
     <>
