@@ -52,6 +52,11 @@ const ResetPassword = () => {
     dispatch(resetPassword({token, credentials, toast}));
   };
 
+  useEffect(() => {
+    isError && toast.error(message);
+    dispatch(reset());
+  }, [isError, message, dispatch]);
+
   return (
     <>
       <Meta title='Reset Password - Albumz Music Entertainment' />
