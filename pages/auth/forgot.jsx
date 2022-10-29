@@ -13,7 +13,7 @@ const ForgotPassword = () => {
   const dispatch = useDispatch();
   const { isError, message } = useSelector((state) => ({ ...state.auth }));
 
-  const [email, setEmail] = useState(null);
+  const [email, setEmail] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +21,7 @@ const ForgotPassword = () => {
     if (!email) return toast.error('Please enter your email address');
 
     dispatch(forgotPassword({ email, toast }));
+    setEmail('');
   };
 
   useEffect(() => {
@@ -43,6 +44,7 @@ const ForgotPassword = () => {
                 <FormInput
                   type='email'
                   name='email'
+                  value={email}
                   placeholder='Email'
                   onChange={(e) => setEmail(e.target.value)}
                 >
