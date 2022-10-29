@@ -54,7 +54,7 @@ export const resetPassword = createAsyncThunk(
   async ({ token, credentials, toast }, { rejectWithValue }) => {
     try {
       await authAPI.reset(token, credentials);
-      toast.success('Token sent to email successfully');
+      toast.success('Password changed successfully');
       return;
     } catch (err) {
       return rejectWithValue(err.response.data);
@@ -80,7 +80,7 @@ export const updateUserPassword = createAsyncThunk(
   async ({ userData, toast }, { rejectWithValue }) => {
     try {
       const { data } = await authAPI.updatePassword({ ...userData });
-      toast.success('Pasword changed successfully');
+      toast.success('Password changed successfully');
       return data;
     } catch (err) {
       return rejectWithValue(err.response.data);
