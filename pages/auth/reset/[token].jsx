@@ -43,6 +43,10 @@ const ResetPassword = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (password !== confirmPassword) {
+      return toast.error('Passwords do not match');
+    }
+
     const token = query.token;
     const credentials = {
       password,
