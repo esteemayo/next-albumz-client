@@ -26,7 +26,7 @@ const Albums = ({ albums, genres, page, limit, total, numberOfPages }) => {
         console.log(err);
       }
     })();
-  }, [page]);
+  }, [page, limit]);
 
   return (
     <main className={styles.main}>
