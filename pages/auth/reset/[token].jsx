@@ -116,7 +116,7 @@ const ResetPassword = () => {
             </form>
           </div>
           <div className={styles.links}>
-            <Link href='/auth/login' passHref>Return to Lost Password</Link>
+            <Link href='/auth/forgot' passHref>Return to Lost Password</Link>
           </div>
         </div>
       </div>
