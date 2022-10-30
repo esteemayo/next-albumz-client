@@ -8,6 +8,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 import Meta from '@/components/Meta';
+import Spinner from '@/components/Spinner';
 import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
@@ -45,10 +46,18 @@ const Login = () => {
     dispatch(reset());
   }, [user, isSuccess, isError, message, router, dispatch]);
 
+  if (isLoading) {
+    return (
+      <section className={styles.container}>
+        <Spinner />
+      </section>
+    );
+  }
+
   return (
     <>
       <Meta title='Log in to Your Account - Albumz Music Entertainment' />
-      <div className={styles.container}>
+      <section className={styles.container}>
         <div className={styles.wrapper}>
           <header className={styles.header}>
             <h1>Login</h1>
@@ -95,7 +104,7 @@ const Login = () => {
             <Link href='/auth/forgot' passHref>Lost your password?</Link>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
