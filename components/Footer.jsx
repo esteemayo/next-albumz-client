@@ -36,6 +36,9 @@ const Footer = () => {
             <Link href='/auth/account' passHref>Account</Link>
           </li>
           <li className={styles.footer__item}>
+            <Link href='/users/dashboard' passHref>Dashboard</Link>
+          </li>
+          <li className={styles.footer__item}>
             <Link href='#' passHref>Cookie warning</Link>
           </li>
           <li className={styles.footer__item}>
@@ -44,12 +47,11 @@ const Footer = () => {
           <li className={styles.footer__item}>
             <Link href='#' passHref>Feedback</Link>
           </li>
-          <li className={styles.footer__item}>
-            <Link href='/albums/tags' passHref>Tags</Link>
-          </li>
         </ul>
       </div>
-      <p className={styles.footer__copyright}>Copyright &copy; {year} <Link href='/' passHref>Albumz Inc.</Link> All rights reserved</p>
+      <p className={styles.footer__copyright}>
+        Copyright &copy; {year} <Link href='/' passHref>Albumz Inc.</Link> All rights reserved
+      </p>
     </footer>
   );
 };
