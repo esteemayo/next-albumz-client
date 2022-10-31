@@ -1,0 +1,56 @@
+.reviews {
+  width: 34rem;
+  
+  .reviewer__img {
+    & > * {
+      border-radius: 50%;
+      display: inline-block;
+      object-fit: cover;
+    }
+  }
+
+  .reviewer__review {
+    p {
+      font-weight: 300;
+      font-size: 1.58rem;
+      color: #aaa;
+      word-wrap: break-word;
+      hyphens: auto;
+
+      @media only screen and (max-width: 64em) {
+        font-size: 1.45rem;
+      }
+    }
+  }
+
+  .reviewer__rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .ratingIcon {
+      font-size: 2.5rem;
+
+      @media only screen and (max-width: 64em) {
+        font-size: 2.3rem;
+      }
+    }
+    
+    .ratingValue {
+      color: #999;
+      margin-left: 0.5rem;
+    }
+  }
+
+.reviewer__name {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 1.7rem;
+    color: #aaa;
+
+    @media only screen and (max-width: 64em) {
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+  }
+}
