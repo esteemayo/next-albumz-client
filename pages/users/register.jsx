@@ -14,6 +14,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import PlaylistAddCheckCircleOutlinedIcon from '@mui/icons-material/PlaylistAddCheckCircleOutlined';
 
 import Meta from '@/components/Meta';
+import Spinner from '@/components/Spinner';
 import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
 import { uploadImage } from '@/services/imageService';
@@ -34,7 +35,9 @@ const initialState = {
 const Register = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const { user, isSuccess, isError, message } = useSelector((state) => ({ ...state.auth }));
+  const { user, isLoading, isSuccess, isError, message } = useSelector(
+    (state) => ({ ...state.auth })
+  );
 
   const [file, setFile] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
@@ -130,10 +133,18 @@ const Register = () => {
     dispatch(reset());
   }, [user, isSuccess, isError, message, router, dispatch]);
 
+  if (isLoading) {
+    return (
+      <section className={`${styles.container} ${styles.registerContainer}`}>
+        <Spinner />
+      </section>
+    );
+  }
+
   return (
     <>
       <Meta title='Create an Account - Albumz Music Entertainment' />
-      <div className={`${styles.container} ${styles.registerContainer}`}>
+      <section className={`${styles.container} ${styles.registerContainer}`}>
         <div className={styles.wrapper}>
           <header className={styles.header}>
             <h1>User Registration</h1>
@@ -240,7 +251,7 @@ const Register = () => {
             <Link href='/auth/login' passHref>Have an account? Login</Link>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
