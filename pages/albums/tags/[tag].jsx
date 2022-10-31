@@ -1,9 +1,12 @@
+import { lazy, Suspense } from 'react';
 import { useRouter } from 'next/router';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 
-import TagCard from '@/components/TagCard';
+import Spinner from '@/components/Spinner';
 import styles from '@/styles/Tags.module.scss';
 import { getAlbumsByTag } from '@/services/albumService';
+
+const TagCard = lazy(() => import('@/components/TagCard'));
 
 const AlbumTags = ({ albums }) => {
   const { query } = useRouter();
@@ -16,9 +19,11 @@ const AlbumTags = ({ albums }) => {
           <TagOutlinedIcon className={styles.tagIcon}/>{query.tag}
         </span>
       </h1>
-      {albums?.map((item) => {
-        return <TagCard key={item._id} album={item} />;
-      })}
+      <Suspense fallback={<Spinner />}>
+        {albums?.map((item) => {
+          return <TagCard key={item._id} album={item} />;
+        })}
+      </Suspense>
     </section>
   );
 };
