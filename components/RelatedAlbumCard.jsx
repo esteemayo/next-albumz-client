@@ -9,7 +9,7 @@ const RelatedAlbumCard = ({ slug, image, title, artist, createdAt }) => {
     <div className={styles.related__card}>
       <div className={styles.left}>
         <Image
-          src={image ?? '/img/banner.jpg'}
+          src={image ? image : '/img/default-related-album.webp'}
           width='70'
           height='70'
           objectFit='cover'
