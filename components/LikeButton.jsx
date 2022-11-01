@@ -1,8 +1,5 @@
-import Zoom from '@mui/material/Zoom';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
@@ -63,7 +60,10 @@ const LikeButton = ({ type, likes, albumId, setSingleAlbum }) => {
 
   return (
     <div className={styles.icon__wrapper}>
-      <button onClick={!user ? null : handleLike} className={liked ? 'btnLiked' : 'btnUnlike'}>
+      <button
+        onClick={!user ? null : handleLike}
+        className={liked ? 'btnLiked' : 'btnUnlike'}
+      >
         {likeButton}
       </button>
     </div>
