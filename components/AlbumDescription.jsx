@@ -15,9 +15,9 @@ import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined';
 import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumberedOutlined';
 
+import LikeButton from './LikeButton';
+import StarRating from './StarRating';
 import { excerpts } from '@/utils/index';
-import LikeButton from '@/components/LikeButton';
-import StarRating from '@/components/StarRating';
 import styles from '@/styles/AlbumDescription.module.scss';
 import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
 import { createViews, getViews, reset } from '@/features/views/viewSlice';
