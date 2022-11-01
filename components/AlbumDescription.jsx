@@ -15,6 +15,7 @@ import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined';
 import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumberedOutlined';
 
+import Popup from './Popup';
 import LikeButton from './LikeButton';
 import StarRating from './StarRating';
 import { excerpts } from '@/utils/index';
@@ -116,23 +117,19 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
             </span>
             <span className={styles.action__wrapper}>
               {!bookmark ? (
-                <Tooltip TransitionComponent={Zoom} title='Bookmark' arrow>
-                  <IconButton>
-                    <BookmarkAddOutlinedIcon
-                      onClick={() => handleSetAsBookmark(album?._id)}
-                      className={`${styles.action__icon} ${styles.bookmark__icon}`}
-                    />
-                  </IconButton>
-                </Tooltip>
+                <Popup title='Bookmark'>
+                  <BookmarkAddOutlinedIcon
+                    onClick={() => handleSetAsBookmark(album?._id)}
+                    className={`${styles.action__icon} ${styles.bookmark__icon}`}
+                  />
+                </Popup>
               ) : (
-                <Tooltip TransitionComponent={Zoom} title='Unbookmark' arrow>
-                  <IconButton>
-                    <BookmarkAddedOutlinedIcon
-                      onClick={handleUnSetAsBookmark}
-                      className={`${styles.action__icon} ${styles.bookmark__icon}`}
-                    />
-                  </IconButton>
-                </Tooltip>
+                <Popup title='Unbookmark'>
+                  <BookmarkAddedOutlinedIcon
+                    onClick={handleUnSetAsBookmark}
+                    className={`${styles.action__icon} ${styles.bookmark__icon}`}
+                  />
+                </Popup>
               )}
             </span>
             <span className={styles.action__wrapper}>
