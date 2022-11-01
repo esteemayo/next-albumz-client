@@ -19,11 +19,11 @@ const TagCard = ({ album: { info, slug, image, title } }) => {
           <div className={styles.card__image}>
             <div className={styles.overlay}>&nbsp;</div>
             <Image
-              src='/img/banner.jpg'
+              src={image ?? '/img/banner.jpg'}
               width={200}
               height={130}
               objectFit='cover'
-              alt=''
+              alt={title}
             />
           </div>
           <h3 className={styles.card__heading}>
