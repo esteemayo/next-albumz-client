@@ -75,12 +75,8 @@
       font-size: 1.6rem;
       position: absolute;
       top: 3rem;
-      right: 1rem;
+      right: 2rem;
       text-align: right;
-
-      @media only screen and (max-width: 43.75em) {
-        right: 2rem;
-      }
 
       @media only screen and (max-width: 37.5em) {
         font-size: 1.4rem;
