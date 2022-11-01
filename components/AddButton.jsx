@@ -6,9 +6,9 @@ const AddButton = ({text, onClick }) => {
       <button 
         className={styles.btn__new} 
         onClick={onClick}
-        >
-          {text}
-        </button>
+      >
+        {text}
+      </button>
     </div>
   );
 };
