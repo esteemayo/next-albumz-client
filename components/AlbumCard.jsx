@@ -16,11 +16,11 @@ const AlbumCard = ({ album }) => {
         <div className={styles.card__picture}>
           <div className={styles.card__pictureOverlay}>&nbsp;</div>
           <Image 
-            src='/img/banner.jpg'
+            src={image ?? '/img/banner.jpg'}
             width={345}
             height={230}
             objectFit='cover'
-            alt='album'
+            alt={title}
           />
         </div>
         <h3 className={styles.heading__tertiary}>
