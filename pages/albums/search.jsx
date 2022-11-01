@@ -16,7 +16,7 @@ const SearchPage = ({ albums }) => {
       </div>
       <div className={styles.container}>
         {albums?.map((item) => {
-          return <AlbumCard key={item._id} {...item} />;
+          return <AlbumCard key={item._id} album={item} />;
         })}
       </div>
     </main>
