@@ -1,9 +1,12 @@
 import PropTypes from 'prop-types';
+import { lazy, Suspense } from 'react';
 import { useRouter } from 'next/router';
 
-import AlbumCard from '@/components/AlbumCard';
+import Spinner from '@/components/Spinner';
 import styles from '@/styles/Albums.module.scss';
 import { searchAlbums } from '@/services/albumService';
+
+const AlbumCard = lazy(() => import('@/components/AlbumCard'));
 
 const SearchPage = ({ albums }) => {
   const { query } = useRouter();
@@ -15,9 +18,11 @@ const SearchPage = ({ albums }) => {
         {albums.length === 0 && <h3>No search result for "<span>{query.q}</span> "</h3>}
       </div>
       <div className={styles.container}>
-        {albums?.map((item) => {
-          return <AlbumCard key={item._id} album={item} />;
-        })}
+        <Suspense fallback={<Spinner />}>
+          {albums?.map((item) => {
+            return <AlbumCard key={item._id} album={item} />;
+          })}
+        </Suspense>
       </div>
     </main>
   );
