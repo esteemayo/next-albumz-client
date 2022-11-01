@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
+import Popup from './Popup';
 import { likeAlbum } from '@/services/albumService';
 import styles from '@/styles/LikeButton.module.scss';
 
@@ -24,39 +25,31 @@ const LikeButton = ({ type, likes, albumId, setSingleAlbum }) => {
   const likeButton = user ? (
     liked ? (
       likes.length > 2 ? (
-        <Tooltip TransitionComponent={Zoom} title={`You and ${likes.length - 1} others`} arrow>
-          <IconButton>
-            <FavoriteOutlinedIcon
-              className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-            />
-          </IconButton>
-        </Tooltip>
-      ) : (
-        <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
-          <IconButton>
-            <FavoriteOutlinedIcon
-              className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-            />
-          </IconButton>
-        </Tooltip>
-      )
-    ) : (
-      <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
-        <IconButton>
-          <FavoriteBorderOutlinedIcon
+        <Popup title={`You and ${likes.length - 1} others`}>
+          <FavoriteOutlinedIcon
             className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
           />
-        </IconButton>
-      </Tooltip>
-    )
-  ) : (
-    <Tooltip TransitionComponent={Zoom} title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`} arrow>
-      <IconButton>
+        </Popup>
+      ) : (
+        <Popup title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`}>
+          <FavoriteOutlinedIcon
+            className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+          />
+        </Popup>
+      )
+    ) : (
+      <Popup title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`}>
         <FavoriteBorderOutlinedIcon
           className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
         />
-      </IconButton>
-    </Tooltip>
+      </Popup>
+    )
+  ) : (
+    <Popup title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`}>
+      <FavoriteBorderOutlinedIcon
+        className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
+      />
+    </Popup>
   );
 
   const handleLike = async () => {
