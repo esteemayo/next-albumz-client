@@ -10,12 +10,12 @@ const SingleAlbumHero = ({ album }) => {
       <div className={styles.header__hero}>
         <div className={styles.header__heroOverlay}>&nbsp;</div>
         <Image
-          src='/img/hero.jpeg'
+          src={album.image ?? '/img/hero.jpeg'}
           width='1600'
           height='693'
           objectFit='cover'
           layout='fill'
-          alt='' 
+          alt={album.title}
           className={styles.__heroImg}
         />
       </div>
