@@ -24,10 +24,10 @@ const DashboardCard = ({ albums }) => {
                 <div className={styles.card__img}>
                   <div className={styles.overlay}>&nbsp;</div>
                   <Image
-                    src='/img/banner.jpg'
+                    src={image ?? '/img/banner.jpg'}
                     width={200}
                     height={130}
-                    alt=''
+                    alt={title}
                   />
                 </div>
                 <h3 className={styles.card__heading}>
