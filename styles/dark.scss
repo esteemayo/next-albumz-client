@@ -72,6 +72,8 @@
   // login
   .Login_container__ZQGAt {
     .Login_wrapper___3QoR {
+      box-shadow: 0 2px 5px 3px rgba(7, 7, 7, 0.3);
+
       .Login_header__qsCNs {
         h1 {
           color: #aaa;
@@ -79,13 +81,50 @@
         }
       }
 
+      .Login_form__container__FPL {
+        box-shadow: rgba(7, 7, 7, 0.3) 0px 0px 0px 3px,
+          rgba(7, 7, 7, 0.3) 0px 2px 8px 3px;
+      }
+      
       .Login_form__wrapper__DSRdU {
         background-color: #333;
 
         .Login_form__headline___4cBh {
           color: #d4d8db;
         }
+
+        .Login_form__icon__G_c2U {
+          fill: #d4d8db;
+        }
       }
+    }
+
+    .Login_form__btn__2YV_H {
+      background-color: #1f6feb;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+
+    .Login_links__JBuKI {
+      a {
+        &,
+        &:link,
+        &:visited {
+          color: #d4d8db;
+        }
+      }
+    }
+  }
+
+  // form input
+  .FormInput_form__input__9QKdz {
+    color: #d4d8db;
+    caret-color: #d4d8db;
+
+    &::-webkit-input-placeholder {
+      color: #d4d8db;
     }
   }
 }
