@@ -10,4 +10,46 @@
   color: #d4d8db;
   color: rgb(156, 156, 156);
   transition: all 0.5s ease-in-out;
+
+  .Tags_container__xXYYk {
+    .Tags_heading__rh2VJ {
+      .Tags_heading__main__BOtxb{
+        color: #aaa;
+      }
+
+      &::after {
+        background-color: #aaa;
+      }
+
+      .Tags_heading__sub__WF4Fy {
+        color: #d4d8db;
+      }
+    }
+
+    .TagCard_wrapper__ChVQ8 {
+      background-color: #333;
+      box-shadow: 0 2px 5px 1px rgba(5, 5, 5, 0.3);
+
+      .TagCard_card__c03Wv {
+      }
+
+      .TagCard_right__Xzg_o {
+        .TagCard_card__info__a64l_ {
+          color: #d4d8db;
+        }
+      }
+
+      .TagCard_btnWrapper__9YdZo {
+        .TagCard_btn__zB7zN {
+          color: #d4d8db;
+          border: 1px solid #d4d8db;
+          
+          &.TagCard_btn__zB7zN:hover {
+            color: #aaa;
+            border-color: #aaa;
+          }
+        }
+      }
+    }
+  }
 }
