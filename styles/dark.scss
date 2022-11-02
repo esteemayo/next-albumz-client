@@ -1,5 +1,5 @@
 .app {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .app.dark{
@@ -9,7 +9,58 @@
   color: #fff;
   color: #d4d8db;
   color: rgb(156, 156, 156);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.1s ease-in-out;
+
+  // dashboard
+  .Dashboard_container__VeyLJ {
+    .Dashboard_header__gUeIh {
+      color: #aaa;
+    }
+
+    .Dashboard_header__gUeIh::after {
+      color: #aaa;
+    }
+
+    .DashboardCard_wrapper__NxUE0 {
+      background-color: #aaa;
+
+      .DashboardCard_card__66EP6 {
+        background-color: #333;
+      }
+
+      .DashboardCard_card__right__Kt1FP {
+        .DashboardCard_card__info__g4SRp {
+          color: #d4d8db;
+        }
+
+        .DashboardCard_card__button__Zs9CU {
+          .DashboardCard_card__updateBtn__AOf99 {
+            &,
+            &:link,
+            &:visited {
+              font-weight: 300;
+              background-color: transparent;
+              color: #d4d8db;
+            }
+            
+            &:hover {
+              background-color: rgba(90, 107, 246, 0.3);
+            }
+          }
+          
+          .DashboardCard_card__delete__wJruq {
+            font-weight: 300;
+            background-color: transparent;
+            color: #d4d8db;
+
+            &:hover {
+              background-color: rgba(255, 0, 0, 0.3);
+            }
+          }
+        }
+      }
+    }
+  }
 
   // top reviews
   .TopReviews_container__oSyLg {
