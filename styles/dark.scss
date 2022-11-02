@@ -96,6 +96,10 @@
         .Login_form__icon__G_c2U {
           fill: #d4d8db;
         }
+        
+        .Login_form__chipIcon__Ya6ct {
+          fill: #d4d8db;
+        }
       }
     }
 
@@ -120,11 +124,28 @@
 
   // form input
   .FormInput_form__input__9QKdz {
+    background-color: #333 !important;
     color: #d4d8db;
     caret-color: #d4d8db;
 
     &::-webkit-input-placeholder {
       color: #d4d8db;
     }
+  }
+
+  // chip input
+  .WAMuiChipInput-inputRoot-2.WAMuiChipInput-outlined-5 {
+    outline: none;
+    border: 1px solid #999;
+    border-radius: 0.6rem;
+    
+    &:focus {
+      border: 1px solid #d4d8db;
+    }
+  }
+  
+  .WAMuiChipInput-outlined-5 input {
+    background-color: transparent;
+    color: #d4d8db;
   }
 }
