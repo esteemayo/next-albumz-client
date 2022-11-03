@@ -2,7 +2,7 @@
   transition: all 0.1s ease-in-out;
 }
 
-.app.dark{
+.app.dark {
   background-color: #141d26;
   background-color: #2d2d2d;
   background-color: #222;
@@ -46,12 +46,12 @@
               background-color: transparent;
               color: #999;
             }
-            
+
             &:hover {
               background-color: rgba(90, 107, 246, 0.3);
             }
           }
-          
+
           .DashboardCard_card__delete__wJruq {
             font-weight: 300;
             background-color: transparent;
@@ -69,6 +69,11 @@
   // genres
   .Genres_genres__7spPE {
     .Genres_table__CRZjj {
+      th,
+      td {
+        border-bottom: 1px solid #444;
+      }
+
       th {
         background-color: transparent;
         color: #d4d8db;
@@ -76,6 +81,33 @@
 
       tr:nth-of-type(odd) {
         background-color: transparent;
+      }
+
+      .Genres_buttonContainer__Mip9k {
+        .Genres_btnUpdate__yJhvT {
+          &,
+          &:link,
+          &:visited {
+            background-color: transparent;
+            color: #008080;
+            border: 1px solid #008080;
+          }
+
+          &:hover,
+          &:active {
+            background-color: rgba(0, 128, 128, 0.3);
+          }
+        }
+
+        .Genres_btnDelete__98uWt {
+          background-color: transparent;
+          color: #f00;
+          border: 1px solid #f00;
+
+          &:hover {
+            background-color: rgba(255, 0, 0, 0.3);
+          }
+        }
       }
     }
   }
@@ -134,7 +166,7 @@
   // tags
   .Tags_container__xXYYk {
     .Tags_heading__rh2VJ {
-      .Tags_heading__main__BOtxb{
+      .Tags_heading__main__BOtxb {
         color: #aaa;
       }
 
@@ -164,7 +196,7 @@
         .TagCard_btn__zB7zN {
           color: #d4d8db;
           border: 1px solid #d4d8db;
-          
+
           &.TagCard_btn__zB7zN:hover {
             color: #aaa;
             border-color: #aaa;
@@ -227,7 +259,7 @@
         box-shadow: rgba(7, 7, 7, 0.3) 0px 0px 0px 3px,
           rgba(7, 7, 7, 0.3) 0px 2px 8px 3px;
       }
-      
+
       .Login_form__wrapper__DSRdU {
         background-color: transparent;
 
@@ -238,7 +270,7 @@
         .Login_form__icon__G_c2U {
           fill: #d4d8db;
         }
-        
+
         .Login_form__chipIcon__Ya6ct {
           fill: #d4d8db;
         }
@@ -298,12 +330,12 @@
     outline: none;
     border: 1px solid #999;
     border-radius: 0.6rem;
-    
+
     &:focus {
       border: 1px solid #d4d8db;
     }
   }
-  
+
   .WAMuiChipInput-outlined-5 input {
     background-color: transparent;
     color: #d4d8db;
