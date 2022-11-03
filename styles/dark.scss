@@ -244,6 +244,20 @@
     }
   }
 
+  // form (album/genre)
+  .Form_container__Ze_eG {
+    .Form_wrapper__JmfLl {
+      box-shadow: 0 2px 5px 3px rgba(7, 7, 7, 0.3);
+    }
+    
+    .Form_header__sVNd6 {
+      h1 {
+        color: #aaa;
+        box-shadow: 0 2px 5px 3px rgba(7, 7, 7, 0.3);
+      }
+    }
+  }
+
   // update genre
   .UpdateGenre_container__W77El {
     .UpdateGenre_wrapper__whQ_g {
@@ -378,6 +392,13 @@
   .WAMuiChipInput-outlined-5 input {
     background-color: transparent;
     color: #d4d8db;
+  }
+
+  // modal
+  .Modal_overlay__Ca5IT {
+    .Modal_modal__fbvPB {
+      background-color: #333;
+    }
   }
 
   // dialog box
