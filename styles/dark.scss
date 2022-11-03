@@ -208,13 +208,20 @@
 
   // form input
   .FormInput_form__input__9QKdz {
-    background-color: #333 !important;
+    background-color: transparent;
     color: #d4d8db;
     caret-color: #d4d8db;
 
     &::-webkit-input-placeholder {
       color: #d4d8db;
     }
+  }
+
+  // form select
+  .FormSelectInput_form__select__LUnJo {
+    background-color: transparent;
+    color: #d4d8db;
+    caret-color: #d4d8db;
   }
 
   // chip input
