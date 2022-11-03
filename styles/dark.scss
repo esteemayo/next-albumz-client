@@ -224,6 +224,17 @@
     caret-color: #d4d8db;
   }
 
+  // form textarea
+  .FormTextArea_form__textarea__eYVUW {
+    background-color: transparent;
+    color: #d4d8db;
+    caret-color: #d4d8db;
+
+    &::placeholder {
+      color: #d4d8db;
+    }
+  }
+
   // chip input
   .WAMuiChipInput-inputRoot-2.WAMuiChipInput-outlined-5 {
     outline: none;
