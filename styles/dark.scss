@@ -71,6 +71,11 @@
     .Genres_table__CRZjj {
       th {
         background-color: transparent;
+        color: #d4d8db;
+      }
+
+      tr:nth-of-type(odd) {
+        background-color: transparent;
       }
     }
   }
