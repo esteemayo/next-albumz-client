@@ -233,7 +233,8 @@
 
       .UpdateAlbum_form__btnWrapper__R_sUe {
         .UpdateAlbum_form__btn__3c7tK {
-          background-color: #1f6feb;
+          background-color: #333;
+          color: #d4d8db;
 
           &:hover {
             opacity: 0.75;
@@ -305,7 +306,8 @@
     }
 
     .Login_form__btn__2YV_H {
-      background-color: #1f6feb;
+      background-color: #333;
+      color: #d4d8db;
 
       &:hover {
         opacity: 0.75;
@@ -349,6 +351,16 @@
 
     &::placeholder {
       color: #d4d8db;
+    }
+  }
+
+  // form button
+  .FormButton_form__btn__32HnZ {
+    background-color: #333;
+    color: #d4d8db;
+
+    &:hover {
+      opacity: 0.75;
     }
   }
 
