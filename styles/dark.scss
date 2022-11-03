@@ -120,6 +120,39 @@
     }
   }
 
+  // update album
+  .UpdateAlbum_container__hZV_Y {
+    .UpdateAlbum_wrapper__nzfGh {
+      box-shadow: 0 2px 5px 3px rgba(7, 7, 7, 0.3);
+
+      .UpdateAlbum_header__pSCsX {
+        h1 {
+          color: #aaa;
+          box-shadow: 0 2px 5px 3px rgba(7, 7, 7, 0.3);
+        }
+      }
+
+      .UpdateAlbum_form__container__41r69 {
+        box-shadow: rgba(7, 7, 7, 0.3) 0px 0px 0px 3px,
+          rgba(7, 7, 7, 0.3) 0px 2px 8px 3px;
+      }
+
+      .UpdateAlbum_form__wrapper__m4cCv {
+        background-color: transparent;
+      }
+
+      .UpdateAlbum_form__btnWrapper__R_sUe {
+        .UpdateAlbum_form__btn__3c7tK {
+          background-color: #1f6feb;
+
+          &:hover {
+            opacity: 0.75;
+          }
+        }
+      }
+    }
+  }
+
   // login
   .Login_container__ZQGAt {
     .Login_wrapper___3QoR {
