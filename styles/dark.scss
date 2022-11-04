@@ -232,6 +232,22 @@
             background-color: #333;
           }
         }
+
+        .Account_list__item__WsrY7 {
+          border-color: #444;
+
+          .Account_itemIcon__kSwIh {
+            fill: #d4d8db;
+          }
+
+          .Account_itemLink__9eHS {
+            &,
+            &:link,
+            &:visited {
+              color: #d4d8db;
+            }
+          }
+        }
       }
     }
   }
