@@ -284,6 +284,10 @@
         .DeleteAccount_deleteBtn__SocaI {
           background-color: rgba(255, 0, 0, 0.1);
           color: #f00;
+
+          &:hover {
+            opacity: 0.7;
+          }
         }
       }
     }
