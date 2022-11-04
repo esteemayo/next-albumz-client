@@ -233,7 +233,7 @@
           .UpdatePassword_active__OP1nu {
             background-color: #333;
           }
-          
+
           .UpdatePassword_list__item__SYPmO {
             border-color: #444;
 
@@ -241,7 +241,25 @@
               background-color: #333;
               opacity: 0.75;
             }
+
+            .UpdatePassword_itemIcon__keqve {
+              fill: #d4d8db;
+            }
+
+            .UpdatePassword_itemLink__IWUYP {
+              &,
+              &:link,
+              &:visited {
+                color: #d4d8db;
+              }
+            }
           }
+        }
+      }
+
+      .UpdatePassword_right__q34Q7 {
+        .UpdatePassword_accountHeader__Gy9o1 {
+          color: #d4d8db;
         }
       }
     }
