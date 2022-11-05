@@ -10,22 +10,22 @@
   color: #d4d8db;
   color: rgb(156, 156, 156);
   transition: all 0.1s ease-in-out;
-  
+
   // albums
   .Albums_main__CKNqF {
     .Albums_container__veVFN {
     }
   }
 
-   // album card
-   .AlbumCard_card___jywH  {
+  // album card
+  .AlbumCard_card___jywH {
     background-color: #333;
 
     .AlbumCard_card__pictureOverlay__V6rbb {
       background-image: linear-gradient(
         to right bottom,
         rgba(11, 11, 11, 0.95),
-        rgba(00, 00, 00, 0.95),
+        rgba(00, 00, 00, 0.95)
       );
     }
 
@@ -51,7 +51,7 @@
       }
     }
 
-    .AlbumCard_card__text__QN_eX  {
+    .AlbumCard_card__text__QN_eX {
       color: rgb(156, 156, 156);
     }
 
@@ -60,6 +60,15 @@
 
       .AlbumCard_card__ratings__FmHbG {
         & > * {
+          color: #d4d8db;
+        }
+      }
+
+      .AlbumCard_card__footerBtn__MQz9j {
+        &,
+        &:link,
+        &:visited {
+          background-color: #222;
           color: #d4d8db;
         }
       }
@@ -367,7 +376,7 @@
             color: #d4d8db;
           }
         }
-        
+
         .Account_list__XbaQb {
           .Account_active__97QGN {
             background-color: #333;
@@ -400,12 +409,12 @@
         .Account_accountHeader__zFg_t {
           color: #d4d8db;
         }
-        
+
         .Account_formWrapper__O7XDh {
           .Account_form__icon__mM7mk {
             fill: #d4d8db;
           }
-          
+
           .Account_form__chipIcon__FTYEh {
             fill: #d4d8db;
           }
@@ -463,7 +472,7 @@
     .Form_wrapper__JmfLl {
       box-shadow: 0 2px 5px 3px rgba(7, 7, 7, 0.3);
     }
-    
+
     .Form_header__sVNd6 {
       h1 {
         color: #aaa;
@@ -474,14 +483,14 @@
     .Form_form__container__ZGPzI {
       box-shadow: rgba(7, 7, 7, 0.3) 0px 0px 0px 1.5px,
         rgba(7, 7, 7, 0.3) 0px 2px 8px 1.5px;
-        
-        .Form_form__wrapper__kEfEz {
-          background-color: transparent;
 
-          .Form_form__headline__rjmqm {
-            color: #d4d8db;
-          }
+      .Form_form__wrapper__kEfEz {
+        background-color: transparent;
+
+        .Form_form__headline__rjmqm {
+          color: #d4d8db;
         }
+      }
     }
   }
 
