@@ -27,11 +27,13 @@
     }
 
     .Hero_header__2nsXG {
-      &,
-      &:link,
-      &:visited {
-        background-color: #444;
-        color: #d4d8db;
+      a {
+        &,
+        &:link,
+        &:visited {
+          background-color: #444;
+          color: #d4d8db;
+        }
       }
     }
   }
