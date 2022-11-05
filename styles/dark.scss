@@ -20,6 +20,14 @@
    // album card
    .AlbumCard_card___jywH  {
     background-color: #333;
+
+    .AlbumCard_card__pictureOverlay__V6rbb {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(105, 108, 255, 0.85),
+        rgba(155, 81, 224, 0.85)
+      );
+    }
   }
 
   // dashboard
