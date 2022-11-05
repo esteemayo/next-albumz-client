@@ -10,14 +10,16 @@
   color: #d4d8db;
   color: rgb(156, 156, 156);
   transition: all 0.1s ease-in-out;
-
-  // album card
+  
+  // albums
   .Albums_main__CKNqF {
     .Albums_container__veVFN {
-      .AlbumCard_card___jywH  {
-        background-color: #333;
-      }
     }
+  }
+
+   // album card
+   .AlbumCard_card___jywH  {
+    background-color: #333;
   }
 
   // dashboard
