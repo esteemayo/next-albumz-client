@@ -46,6 +46,10 @@
 
     .FeaturedAlbums_heading__secondary__wZh_I {
       color: #aaa;
+
+      &::after {
+        color: #aaa;
+      }
     }
   }
 
