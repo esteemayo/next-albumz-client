@@ -71,6 +71,11 @@
           background-color: rgba(2, 2, 2, 0.15);
           color: #d4d8db;
         }
+
+        &:hover,
+        &:active {
+          background-color: rgba(2, 2, 2, 0.2);
+        }
       }
     }
   }
