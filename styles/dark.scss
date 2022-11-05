@@ -11,6 +11,16 @@
   color: rgb(156, 156, 156);
   transition: all 0.1s ease-in-out;
 
+  // hero
+  .Hero_header__2nsXG {
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(11, 11, 11, 0.95),
+      rgba(00, 00, 00, 0.95)
+      ),
+      url('/img/hero.jpeg');
+  }
+
   // album card
   .AlbumCard_card___jywH {
     background-color: #333;
