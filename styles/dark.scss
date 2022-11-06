@@ -179,8 +179,8 @@
               &:disabled {
                 background-color: #444;
               }
-            }
           }
+        }
         }
       }
     }
@@ -192,6 +192,10 @@
         &::after {
           background-color: #aaa;
         }
+      }
+
+      .Reviews_header__urxzu {
+        background-color: #444;
       }
     }
   }
