@@ -64,7 +64,15 @@
     }
     
     .SingleAlbumHero_headingPrimary__npPr7 {
-      // 
+      color: rgb(156, 156, 156);
+
+      span {
+        background-image: linear-gradient(
+          to bottom right,
+          rgba(22, 22, 22, 0.45),
+          rgba(33, 33, 33, 0.85)
+        );
+      }
     }
   }
 
