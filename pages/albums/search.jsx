@@ -14,8 +14,8 @@ const SearchPage = ({ albums }) => {
   return (
     <main className={styles.main}>
       <div className={styles.searchWrapper}>
-        {albums.length > 0 && <h1>Search results for "<span>{query.q}</span> "</h1>}
-        {albums.length === 0 && <h3>No search result for "<span>{query.q}</span> "</h3>}
+        {albums.length > 0 && <h1>Search results for &quot;<span>{query.q}</span> &quot;</h1>}
+        {albums.length === 0 && <h3>No search result for &quot;<span>{query.q}</span> &quot;</h3>}
       </div>
       <div className={styles.container}>
         <Suspense fallback={<Spinner />}>
