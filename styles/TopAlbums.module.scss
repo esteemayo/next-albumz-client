@@ -52,7 +52,7 @@
         font-size: 1.35rem;
       }
     }
-    
+
     td {
       color: #777;
       text-align: left;
@@ -67,16 +67,16 @@
       }
 
       @media only screen and (max-width: 26.25em) {
-        font-size: 1.3rem;   
+        font-size: 1.3rem;
       }
 
       img {
         border-radius: 0.5rem;
-        
+
         @media only screen and (max-width: 37.5em) {
           min-height: 8rem !important;
         }
-        
+
         @media only screen and (max-width: 26.25em) {
           min-width: 6rem !important;
           min-height: 6rem !important;
@@ -88,8 +88,9 @@
         }
       }
     }
-    
-    th, td {
+
+    th,
+    td {
       border-bottom: 1px solid lightgray;
     }
 
@@ -139,7 +140,6 @@
     }
 
     .ratingContainer {
-
       .rating {
         font-size: 2rem;
       }
