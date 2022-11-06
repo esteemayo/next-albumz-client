@@ -178,6 +178,14 @@
               &:hover {
                 opacity: 0.75;
               }
+
+              &:focus {
+                outine: #333;
+              }
+
+              &:disabled {
+                background-color: #444;
+              }
             }
           }
         }
