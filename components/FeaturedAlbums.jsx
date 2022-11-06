@@ -1,8 +1,5 @@
-import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { lazy, Suspense } from 'react';
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 import Spinner from '@/components/Spinner';
 import styles from '@/styles/FeaturedAlbums.module.scss';
