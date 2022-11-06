@@ -139,6 +139,16 @@
 
     .ReviewForm_review__43b_6 {
       background-color: rgba(2, 2, 2, 0.015);
+
+      .ReviewForm_form__Nl2wU {
+        .ReviewForm_review__header__wNPip {
+          color: #aaa;
+
+          &::after {
+            background-color: #aaa;
+          }
+        }
+      }
     }
   }
 
