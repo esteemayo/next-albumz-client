@@ -233,6 +233,16 @@
 
     .RelatedAlbums_related__O3M5D {
       background-color: rgb(32, 32, 32);
+
+      .RelatedAlbums_related__wrapper__sTKct {
+        .RelatedAlbums_related__header__Habrg {
+          color: #aaa;
+
+          &::after {
+            background-color: #aaa;
+          }
+        }
+      }
     }
   }
 
