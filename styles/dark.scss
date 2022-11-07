@@ -1050,6 +1050,11 @@
           &:visited {
             color: #d4d8db;
           }
+
+          &:hover,
+          &:active {
+            color: #555;
+          }
         }
       }
     }
