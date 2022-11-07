@@ -56,7 +56,15 @@
     color: rgb(156, 156, 156);
 
     .Sidebar_list__xj82V {
-      // 
+      .Sidebar_list__items__mQKeU {
+        .Sidebar_sidebar__link__yt1B6 {
+          &,
+          &:link,
+          &:visited {
+            color: #d4d8db;
+          }
+        }
+      }
     }
   }
 
