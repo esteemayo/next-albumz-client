@@ -1045,15 +1045,17 @@
     .Footer_footer__navigation__dkypK {
       .Footer_footer__list__RgvgV {
         .Footer_footer__item__uMjf5 {
-          &,
-          &:link,
-          &:visited {
-            color: #d4d8db;
-          }
+          a {
+            &,
+            &:link,
+            &:visited {
+              color: #d4d8db;
+            }
 
-          &:hover,
-          &:active {
-            color: #555;
+            &:hover,
+            &:active {
+              color: #555;
+            }
           }
         }
       }
