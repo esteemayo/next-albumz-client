@@ -114,7 +114,7 @@ const Register = () => {
 
     const form = new FormData();
     form.append('file', file);
-    form.append('upload_preset', 'albumz/users');
+    form.append('upload_preset', 'albumz');
     
     try {
       const { data } = await uploadImage(form);
