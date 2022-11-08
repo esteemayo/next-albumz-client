@@ -3,7 +3,7 @@ import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 
 import Popup from './Popup';
 import styles from '@/styles/DarkMode.module.scss';
-import { dark, light, toggle } from '@/features/darkMode/darkModeSlice';
+import { dark, light } from '@/features/darkMode/darkModeSlice';
 
 const DarkMode = () => {
   const dispatch = useDispatch();
