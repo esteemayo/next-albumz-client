@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getFromStorage, setToStorage } from '@/utils/index';
 
-const darkMode = getFromStorage('darkMode');
+const tokeyKey = 'darkMode';
+const darkMode = getFromStorage(tokeyKey);
 
 const initialState = {
   darkMode: darkMode ?? null,
@@ -16,11 +17,11 @@ export const darkModeSlice = createSlice({
     },
     light: (state, { payload }) => {
       state.darkMode = payload;
-      setToStorage('darkMode', payload);
+      setToStorage(tokeyKey, payload);
     },
     dark: (state, { payload }) => {
       state.darkMode = payload;
-      setToStorage('darkMode', payload);
+      setToStorage(tokeyKey, payload);
     },
   },
 });
