@@ -9,15 +9,19 @@ const DarkMode = () => {
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
+  const toggleDarkmode = () => {
+    darkMode === 'dark' ? dispatch(light('light')) : dispatch(dark('dark'));
+  };
+
   return (
-    <div className={styles.darkmode}>
+    <div className={styles.darkmode} onClick={toggleDarkmode}>
       {darkMode === 'dark' ? (
         <Popup title='Dark mode'>
-          <DarkModeOutlined onClick={() => dispatch(light('light'))} />
+          <DarkModeOutlined />
         </Popup>
       ) : (
         <Popup title='Light mode'>
-          <LightModeOutlined onClick={() => dispatch(dark('dark'))} />
+          <LightModeOutlined />
         </Popup>
       )}
     </div>
