@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { toast } from 'react-toastify';
-import { useEffect, useState } from 'react';
+import { useEffect, useState  } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
@@ -87,7 +87,7 @@ const Account = () => {
 
     const form = new FormData();
     form.append('file', file);
-    form.append('upload_preset', 'albumz/users');
+    form.append('upload_preset', 'albumz');
     
     try {
       if (file) {
@@ -117,7 +117,7 @@ const Account = () => {
             <div className={styles.userContainer}>
               <div className={styles.imageContainer}>
                 <Image
-                  src={file ? URL.createObjectURL(file) : user?.avatar ? !user?.avatar : '/img/user-default.jpg'}
+                  src={file ? URL.createObjectURL(file) : user?.avatar ? user?.avatar : !user?.avatar ? '/img/user-default.jpg' : ''}
                   width={80}
                   height={80}
                   objectFit='cover'
