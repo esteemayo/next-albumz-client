@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
   return (
-    <div className={darkMode ? 'app dark' : 'app'}>
+    <div className={darkMode === 'dark' ? 'app dark' : 'app'}>
       <Meta />
       <Navbar />
       <ToastContainer />
