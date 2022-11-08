@@ -56,6 +56,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.MuiFormControl-fullWidth-672 {
+  border: 1px solid #999;
+  border-radius: 0.6rem;
+}
+
 .MuiFormControl-fullWidth-21:focus {
   border: 1px solid #999;
 }
