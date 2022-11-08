@@ -61,7 +61,7 @@ const UpdateAlbum = ({ album, genres }) => {
 
     const form = new FormData();
     form.append('file', file);
-    form.append('upload_preset', 'albumz/album');
+    form.append('upload_preset', 'albumz');
 
     try {
       const albumId = album?._id;
