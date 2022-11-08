@@ -63,7 +63,7 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
 
     const form = new FormData();
     form.append('file', file);
-    form.append('upload_preset', 'albumz/album');
+    form.append('upload_preset', 'albumz');
     
     try {
       if (file) {
