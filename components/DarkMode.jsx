@@ -3,21 +3,21 @@ import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 
 import Popup from './Popup';
 import styles from '@/styles/DarkMode.module.scss';
-import { toggle } from '@/features/darkMode/darkModeSlice';
+import { dark, light, toggle } from '@/features/darkMode/darkModeSlice';
 
 const DarkMode = () => {
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
   return (
-    <div className={styles.darkmode} onClick={() => dispatch(toggle())}>
-      {darkMode ? (
+    <div className={styles.darkmode}>
+      {darkMode === 'dark' ? (
         <Popup title='Dark mode'>
-          <DarkModeOutlined />
+          <DarkModeOutlined onClick={() => dispatch(light('light'))} />
         </Popup>
       ) : (
         <Popup title='Light mode'>
-          <LightModeOutlined />
+          <LightModeOutlined onClick={() => dispatch(dark('dark'))} />
         </Popup>
       )}
     </div>
