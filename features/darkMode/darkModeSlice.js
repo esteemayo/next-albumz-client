@@ -5,7 +5,7 @@ const tokeyKey = 'darkMode';
 const darkMode = getFromStorage(tokeyKey);
 
 const initialState = {
-  darkMode: darkMode ?? null,
+  darkMode: darkMode ?? 'dark',
 };
 
 export const darkModeSlice = createSlice({
