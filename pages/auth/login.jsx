@@ -37,14 +37,14 @@ const Login = () => {
       password,
     };
 
-    dispatch(loginUser({ userData, toast }));
+    dispatch(loginUser({ userData, router, toast }));
   };
 
   useEffect(() => {
     isError && toast.error(message);
-    user && isSuccess && router.push('/users/dashboard');
+    // user && isSuccess && router.push('/users/dashboard');
     dispatch(reset());
-  }, [user, isSuccess, isError, message, router, dispatch]);
+  }, [user, isSuccess, isError, message, dispatch]);
 
   if (isLoading) {
     return (
