@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { GoogleLogin } from 'react-google-login';
 import { useDispatch, useSelector } from 'react-redux';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
@@ -40,6 +41,14 @@ const Login = () => {
     dispatch(loginUser({ userData, toast }));
   };
 
+  const handleSuccess = (response) => {
+    console.log(response);
+  };
+
+  const handleFailure = (error) => {
+    return toast.error(error);
+  };
+
   useEffect(() => {
     isError && toast.error(message);
     user && isSuccess && router.push('/users/dashboard');
@@ -66,38 +75,54 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
               <div className={styles.form__wrapper}>
                 <div className={styles.form__headline}>Log in to Your Account</div>
-                  <FormInput
-                    type='email'
-                    name='email'
-                    autoFocus
-                    placeholder='Email'
-                    onChange={(e) => setEmail(e.target.value)}
-                  >
-                    <EmailOutlinedIcon className={styles.form__icon} />
-                  </FormInput>
-                  <FormInput
-                    name='password'
-                    type={showPassword ? 'text': 'password'}
-                    placeholder='Password'
-                    onChange={(e) => setPassword(e.target.value)}
-                  >
-                    {showPassword ? (
-                      <VisibilityOff
-                        onClick={handleShowPassword}
-                        className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                      />
-                    ) : (
+                <FormInput
+                  type='email'
+                  name='email'
+                  autoFocus
+                  placeholder='Email'
+                  onChange={(e) => setEmail(e.target.value)}
+                >
+                  <EmailOutlinedIcon className={styles.form__icon} />
+                </FormInput>
+                <FormInput
+                  name='password'
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder='Password'
+                  onChange={(e) => setPassword(e.target.value)}
+                >
+                  {showPassword ? (
+                    <VisibilityOff
+                      onClick={handleShowPassword}
+                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
+                    />
+                  ) : (
                     <Visibility
                       onClick={handleShowPassword}
                       className={`${styles.form__icon} ${styles.form__iconPassword}`}
                     />
-                    )}
-                  </FormInput>
+                  )}
+                </FormInput>
                 <div className={styles.form__btnWrapper}>
                   <button type='submit' className={styles.form__btn}>Log in</button>
                 </div>
               </div>
             </form>
+            <GoogleLogin
+              clientId='658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
+              render={renderProps => (
+                <button
+                  onClick={renderProps.onClick}
+                  disabled={renderProps.disabled}
+                  className={styles.form__btn}
+                >
+                  Google log in
+                </button>
+              )}
+              buttonText='Login'
+              onSuccess={handleSuccess}
+              onFailure={handleFailure}
+              cookiePolicy={'single_host_origin'}
+            />
           </div>
           <div className={styles.links}>
             <Link href='/users/register' passHref>Register</Link> | {' '}
