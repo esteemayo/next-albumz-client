@@ -105,6 +105,7 @@ const Login = () => {
                 <div className={styles.form__btnWrapper}>
                   <button type='submit' className={styles.form__btn}>Log in</button>
                 </div>
+                <br />
                 <GoogleLogin
                   clientId='658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
                   render={renderProps => (
