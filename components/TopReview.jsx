@@ -22,7 +22,7 @@ const TopReview = ({ user, rating, review }) => {
         <StarRating value={rating} className={styles.ratingIcon} />
         <span className={styles.ratingValue}>{rating.toFixed(1)}</span>
       </div>
-      <div className={styles.reviewer__name}>John doe</div>
+      <div className={styles.reviewer__name}>{user.name}</div>
     </div>
   );
 };
