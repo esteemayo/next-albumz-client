@@ -34,7 +34,9 @@ const Sidebar = () => {
     }
   };
 
-  
+  const toggleDarkmode = () => {
+    darkMode === 'dark' ? dispatch(light('light')) : dispatch(dark('dark'));
+  };
 
   return (
     <aside
@@ -124,7 +126,7 @@ const Sidebar = () => {
           </form>
         </div>
         <div className={styles.wrapper}>
-          <div className={styles.darkmode} onClick={() => dispatch(toggle())}>
+          <div className={styles.darkmode} onClick={toggleDarkmode}>
             {darkMode === 'dark' ? <DarkModeOutlined /> : <LightModeOutlined />}
           </div>
         </div>
