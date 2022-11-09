@@ -1031,6 +1031,11 @@
     background-color: transparent;
     color: #d4d8db;
     caret-color: #d4d8db;
+    
+    option {
+      background-color: #222;
+      color: #d4d8db;
+    }
   }
 
   // form textarea
