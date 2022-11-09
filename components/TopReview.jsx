@@ -8,11 +8,11 @@ const TopReview = ({ user, rating, review }) => {
     <div className={styles.reviews}>
       <div className={styles.reviewer__img}>
         <Image
-          src='/img/user-1.jpg'
+          src={user.avatar ?? '/img/user-default.jpg'}
           width={80}
           height={80}
           objectFit='cover'
-          alt=''
+          alt={user.name}
         />
       </div>
       <div className={styles.reviewer__review}>
