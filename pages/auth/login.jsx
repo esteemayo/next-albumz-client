@@ -108,13 +108,15 @@ const Login = () => {
                 <GoogleLogin
                   clientId='658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
                   render={renderProps => (
-                    <button
-                      onClick={renderProps.onClick}
-                      disabled={renderProps.disabled}
-                      className={styles.form__btn}
-                    >
-                      Google log in
-                    </button>
+                    <div className={styles.form__btnWrapper}>
+                      <button
+                        onClick={renderProps.onClick}
+                        disabled={renderProps.disabled}
+                        className={styles.form__btn}
+                      >
+                        Google log in
+                      </button>
+                    </div>
                   )}
                   buttonText='Login'
                   onSuccess={handleSuccess}
