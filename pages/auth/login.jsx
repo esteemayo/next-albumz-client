@@ -105,24 +105,24 @@ const Login = () => {
                 <div className={styles.form__btnWrapper}>
                   <button type='submit' className={styles.form__btn}>Log in</button>
                 </div>
+                <GoogleLogin
+                  clientId='658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
+                  render={renderProps => (
+                    <button
+                      onClick={renderProps.onClick}
+                      disabled={renderProps.disabled}
+                      className={styles.form__btn}
+                    >
+                      Google log in
+                    </button>
+                  )}
+                  buttonText='Login'
+                  onSuccess={handleSuccess}
+                  onFailure={handleFailure}
+                  cookiePolicy={'single_host_origin'}
+                />
               </div>
             </form>
-            <GoogleLogin
-              clientId='658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com'
-              render={renderProps => (
-                <button
-                  onClick={renderProps.onClick}
-                  disabled={renderProps.disabled}
-                  className={styles.form__btn}
-                >
-                  Google log in
-                </button>
-              )}
-              buttonText='Login'
-              onSuccess={handleSuccess}
-              onFailure={handleFailure}
-              cookiePolicy={'single_host_origin'}
-            />
           </div>
           <div className={styles.links}>
             <Link href='/users/register' passHref>Register</Link> | {' '}
