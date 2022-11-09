@@ -8,7 +8,7 @@ import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import styles from '@/styles/Sidebar.module.scss';
 import { logoutUser } from '@/features/auth/authSlice';
 import { closeMenu } from '@/features/toggle/toggleSlice';
-import { toggle } from '@/features/darkMode/darkModeSlice';
+import { dark, light } from '@/features/darkMode/darkModeSlice';
 
 const Sidebar = () => {
   const router = useRouter();
@@ -33,6 +33,8 @@ const Sidebar = () => {
       dispatch(closeMenu());
     }
   };
+
+  
 
   return (
     <aside
@@ -123,7 +125,7 @@ const Sidebar = () => {
         </div>
         <div className={styles.wrapper}>
           <div className={styles.darkmode} onClick={() => dispatch(toggle())}>
-            {darkMode ? <DarkModeOutlined /> : <LightModeOutlined />}
+            {darkMode === 'dark' ? <DarkModeOutlined /> : <LightModeOutlined />}
           </div>
         </div>
       </>
