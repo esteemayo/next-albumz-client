@@ -25,10 +25,11 @@ export const registerUser = createAsyncThunk(
 
 export const loginUser = createAsyncThunk(
   'auth/login',
-  async ({ userData, toast }, { rejectWithValue }) => {
+  async ({ userData, router, toast }, { rejectWithValue }) => {
     try {
       const { data } = await authAPI.nextLogin({ ...userData });
       toast.success('Logged in successfully');
+      router.push('/users/dashboard');
       return data;
     } catch (err) {
       return rejectWithValue(err.response.data);
