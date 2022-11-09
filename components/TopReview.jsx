@@ -3,7 +3,7 @@ import Image from 'next/image';
 import StarRating from './StarRating';
 import styles from '@/styles/TopReview.module.scss';
 
-const TopReview = ({ rating, review }) => {
+const TopReview = ({ user, rating, review }) => {
   return (
     <div className={styles.reviews}>
       <div className={styles.reviewer__img}>
