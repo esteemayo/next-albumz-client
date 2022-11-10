@@ -56,6 +56,10 @@
       display: inline-block;
       font-weight: 300;
       color: #777;
+
+      @media only screen and (max-width: 64em) {
+        font-size: 3rem;
+      }
     }
   }
 }
