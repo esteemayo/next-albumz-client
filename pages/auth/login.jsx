@@ -109,21 +109,21 @@ const Login = () => {
                 <br />
                 <GoogleLogin
                   clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}
-                  render={renderProps => (
+                  render={(renderProps) => (
                     <div className={styles.form__btnWrapper}>
                       <button
                         onClick={renderProps.onClick}
                         disabled={renderProps.disabled}
                         className={styles.form__btn}
                       >
-                        Google log in
+                       Log in with google
                       </button>
                     </div>
                   )}
                   buttonText='Login'
                   onSuccess={handleSuccess}
                   onFailure={handleFailure}
-                  cookiePolicy={'single_host_origin'}
+                  cookiePolicy='single_host_origin'
                 />
               </div>
             </form>
