@@ -79,7 +79,7 @@ const UpdateAlbum = ({ album, genres }) => {
       if (file) {
         const res = await uploadImage(form);
         const { url } = res.data;
-        updatedAlbum.image = url;
+        updAlbum.image = url;
       }
 
       const { data } = await updateAlbum(albumId, updAlbum);
@@ -157,7 +157,7 @@ const UpdateAlbum = ({ album, genres }) => {
                 <div className={styles.form__image}>
                   {imagePreview ? (
                     <Image
-                      src='/img/banner.jpg'
+                      src={imagePreview}
                       width={180}
                       height={100}
                       objectFit='cover'
