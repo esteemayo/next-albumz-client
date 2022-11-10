@@ -157,7 +157,7 @@ const UpdateAlbum = ({ album, genres }) => {
                 <div className={styles.form__image}>
                   {imagePreview ? (
                     <Image
-                      src={imagePreview}
+                      src={file ? URL.createObjectURL(file) : imagePreview}
                       width={180}
                       height={100}
                       objectFit='cover'
