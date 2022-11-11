@@ -233,8 +233,8 @@
       padding: 2rem 1rem;
       font-size: 1.4rem;
       font-weight: 900;
-      background-color: #4285f4;
-      color: #fff;
+      // background-color: #4285f4;
+      // color: #fff;
       border: 1px solid #4285f4;
       border-radius: 0.6rem;
       line-height: 1;
@@ -247,6 +247,9 @@
 
       .socialLoginText {
         flex: 4;
+        height: 100%;
+        background-color: #4285f4;
+        color: #fff;
       }
     }
   }
