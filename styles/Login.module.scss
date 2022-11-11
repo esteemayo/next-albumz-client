@@ -245,7 +245,11 @@
         background-color: #fff;
 
         .googleIcon {
-          background-image: linear-gradient(#eb4335, #fbbc05, #34a853, #4285f4);
+          font-size: 2rem;
+          background-image: linear-gradient(to right, #eb4335, #fbbc05, #34a853, #4285f4);
+          -webkit-background-clip: text;
+          background-clip: text;
+          color: transparent;
         }
       }
 
