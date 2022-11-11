@@ -118,7 +118,7 @@ const Login = () => {
                        <span className={styles.socialLoginIcon}>
                         <GoogleIcon className={styles.googleIcon} />
                       </span>
-                       <span className={styles.socialLoginText}>Sign in with google</span>
+                       <span className={styles.socialLoginText}>Log in with google</span>
                       </button>
                     </div>
                   )}
