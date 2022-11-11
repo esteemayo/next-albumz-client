@@ -1023,6 +1023,10 @@
         color: #d4d8db;
         border-color: #111;
 
+        &:hover {
+          opacity: 0.75;
+        }
+
         .Login_socialLoginIcon__IrX_N {
           background-color: #222;
         }
