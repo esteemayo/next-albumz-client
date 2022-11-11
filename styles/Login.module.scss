@@ -220,6 +220,19 @@
         border-color: #d6d8ff;
       }
     }
+
+    &__btnGoogle {
+      display: inline-block;
+      border: none;
+      outline: none;
+      text-transform: capitalize;
+      width: 100%;
+      min-width: 11rem;
+      padding: 2rem 1rem;
+      font-size: 1.4rem;
+      font-weight: 900;
+      background-color: #f00;
+    }
   }
 
   .links {
