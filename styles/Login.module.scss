@@ -243,6 +243,10 @@
         flex: 1;
         padding: 1rem;
         background-color: #fff;
+
+        .googleIcon {
+          background-image: linear-gradient(#eb4335, #fbbc05, #34a853, #4285f4);
+        }
       }
 
       .socialLoginText {
