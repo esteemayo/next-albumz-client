@@ -106,8 +106,6 @@ const Login = () => {
                 <div className={styles.form__btnWrapper}>
                   <button type='submit' className={styles.form__btn}>Log in</button>
                 </div>
-                <br />
-                <br />
                 <GoogleLogin
                   clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}
                   render={(renderProps) => (
