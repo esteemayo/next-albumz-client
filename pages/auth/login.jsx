@@ -122,7 +122,6 @@ const Login = () => {
                       </button>
                     </div>
                   )}
-                  buttonText='Login'
                   onSuccess={handleSuccess}
                   onFailure={handleFailure}
                   cookiePolicy='single_host_origin'
