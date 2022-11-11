@@ -223,7 +223,7 @@
 
     &__btnGoogle {
       display: flex;
-      // align-items: center;
+      align-items: center;
       // justify-content: center;
       border: none;
       outline: none;
@@ -246,10 +246,8 @@
 
         .googleIcon {
           font-size: 2rem;
-          background-image: linear-gradient(to right, #eb4335, #fbbc05, #34a853, #4285f4);
-          -webkit-background-clip: text;
-          background-clip: text;
-          color: transparent;
+          // background-image: linear-gradient(to right, #eb4335, #fbbc05, #34a853, #4285f4);
+          color: #eb4335;
         }
       }
 
