@@ -117,7 +117,7 @@ const Login = () => {
                         disabled={renderProps.disabled}
                         className={styles.form__btnGoogle}
                       >
-                       Log in with google
+                       Sign in with google
                       </button>
                     </div>
                   )}
