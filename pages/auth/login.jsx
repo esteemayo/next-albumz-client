@@ -114,7 +114,7 @@ const Login = () => {
                       <button
                         onClick={renderProps.onClick}
                         disabled={renderProps.disabled}
-                        className={styles.form__btn}
+                        className={styles.form__btnGoogle}
                       >
                        Log in with google
                       </button>
