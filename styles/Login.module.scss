@@ -233,14 +233,14 @@
       font-size: 1.4rem;
       font-weight: 900;
       background-color: #4285f4;
-      // color: #fff;
+      color: #fff;
       border: 1px solid #4285f4;
       border-radius: 0.3rem;
       line-height: 1;
       cursor: pointer;
 
       .socialLoginIcon {
-        flex: 1;
+        flex: 0.5;
         padding: 1rem;
         background-color: #fff;
 
@@ -253,7 +253,7 @@
       .socialLoginText {
         flex: 4;
         height: 100%;
-        color: #fff;
+        color: currentColor;
         padding: 1rem;
       }
     }
