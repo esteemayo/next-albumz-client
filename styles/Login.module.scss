@@ -239,6 +239,15 @@
       border-radius: 0.6rem;
       line-height: 1;
       cursor: pointer;
+
+      .socialLoginIcon {
+        width: 3rem;
+        flex: 1;
+      }
+
+      .socialLoginText {
+        flex: 4;
+      }
     }
   }
 
