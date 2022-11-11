@@ -222,7 +222,9 @@
     }
 
     &__btnGoogle {
-      display: inline-block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       border: none;
       outline: none;
       text-transform: capitalize;
@@ -232,6 +234,7 @@
       font-size: 1.4rem;
       font-weight: 900;
       background-color: #4285f4;
+      color: #fff;
       border: 1px solid #4285f4;
       border-radius: 0.6rem;
       line-height: 1;
