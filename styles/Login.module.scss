@@ -230,10 +230,9 @@
       text-transform: capitalize;
       width: 100%;
       min-width: 11rem;
-      padding: 2rem 1rem;
       font-size: 1.4rem;
       font-weight: 900;
-      // background-color: #4285f4;
+      background-color: #4285f4;
       // color: #fff;
       border: 1px solid #4285f4;
       border-radius: 0.6rem;
@@ -243,13 +242,14 @@
       .socialLoginIcon {
         width: 3rem;
         flex: 1;
+        padding: 2rem 1rem;
       }
 
       .socialLoginText {
         flex: 4;
         height: 100%;
-        background-color: #4285f4;
         color: #fff;
+        padding: 2rem 1rem;
       }
     }
   }
