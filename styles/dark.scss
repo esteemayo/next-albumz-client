@@ -1008,13 +1008,16 @@
       }
     }
 
-    .Login_form__btn__2YV_H {
-      background-color: #333;
-      color: #d4d8db;
-
-      &:hover {
-        opacity: 0.75;
+    .Login_form__btnWrapper__6uqEr {
+      .Login_form__btn__2YV_H {
+        background-color: #333;
+        color: #d4d8db;
+  
+        &:hover {
+          opacity: 0.75;
+        }
       }
+
     }
 
     .Login_links__JBuKI {
