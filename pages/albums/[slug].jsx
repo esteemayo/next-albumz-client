@@ -21,7 +21,7 @@ const SingleAlbum = ({ album, reviews }) => {
       <section className={styles.container}>
         <SingleAlbumHero album={singleAlbum} />
         <AlbumDescription album={singleAlbum} setSingleAlbum={setSingleAlbum} />
-        <ReviewForm albumId={album.id} setReviews={setReviewList} />
+        <ReviewForm albumId={album.id} setReviewList={setReviewList} />
         <Reviews reviews={reviewList} />
         <RelatedAlbums albumId={album.id} tags={singleAlbum.tags} />
       </section>
