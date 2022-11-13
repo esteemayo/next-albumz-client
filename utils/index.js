@@ -29,4 +29,3 @@ export const removeFromStorage = (key) => {
 
 export const parseCookie = (req) =>
   cookie.parse(req ? req.headers.cookie || '' : '');
-  
