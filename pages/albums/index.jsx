@@ -1,6 +1,7 @@
+import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Modal from '@/components/Modal';
 import Spinner from '@/components/Spinner';
@@ -11,7 +12,7 @@ import styles from '@/styles/Albums.module.scss';
 import { getAlbums } from '@/services/albumService';
 import { getAllGenres } from '@/services/genreService';
 
-const AlbumCard = lazy(() => import ('@/components/AlbumCard'));
+const AlbumCard = dynamic(() => import ('@/components/AlbumCard'), { ssr: false });
 
 const Albums = ({ albums, genres, page, limit, total, numberOfPages }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
@@ -43,11 +44,9 @@ const Albums = ({ albums, genres, page, limit, total, numberOfPages }) => {
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <Suspense fallback={<Spinner/>}>
-          {albumList?.map((item => {
-            return <AlbumCard key={item?._id} album={item} />;
-          }))}
-        </Suspense>
+        {albumList?.map((item => {
+          return <AlbumCard key={item?._id} album={item} />;
+        }))}
       </div>
 
       <Pagination
