@@ -35,6 +35,13 @@ export const getAlbumBySlug = (slug, token) =>
     },
   });
 
+export const getReviewsOnAlbum = (albumId, token) =>
+  http.get(`${apiEndpoint}/${albumId}/reviews`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
 export const getRelatedAlbums = (tags) =>
   http.post(`${apiEndpoint}/related-albums`, tags);
 
