@@ -11,9 +11,9 @@ import RelatedAlbums from '@/components/RelatedAlbums';
 import SingleAlbumHero from '@/components/SingleAlbumHero';
 import AlbumDescription from '@/components/AlbumDescription';
 
-const SingleAlbum = ({ album }) => {
+const SingleAlbum = ({ album, reviews }) => {
   const [singleAlbum, setSingleAlbum] = useState(album);
-  const [reviews, setReviews] = useState(album.reviews);
+  const [reviewList, setReviewList] = useState(reviews);
 
   return (
     <>
@@ -21,8 +21,8 @@ const SingleAlbum = ({ album }) => {
       <section className={styles.container}>
         <SingleAlbumHero album={singleAlbum} />
         <AlbumDescription album={singleAlbum} setSingleAlbum={setSingleAlbum} />
-        <ReviewForm albumId={album.id} setReviews={setReviews} />
-        <Reviews reviews={reviews} />
+        <ReviewForm albumId={album.id} setReviews={setReviewList} />
+        <Reviews reviews={reviewList} />
         <RelatedAlbums albumId={album.id} tags={singleAlbum.tags} />
       </section>
     </>
@@ -63,9 +63,11 @@ export const getServerSideProps = async ({ req, params: { slug } }) => {
   }
 
   const { data } = await albumAPI.getAlbumBySlug(slug, token);
+  const { data: { reviews } } = await albumAPI.getReviewsOnAlbum(data?.album?._id, token);
 
   return {
     props: {
+      reviews,
       album: data.album,
     },
   };
