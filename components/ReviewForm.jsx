@@ -5,7 +5,7 @@ import Rating from '@mui/material/Rating';
 import styles from '@/styles/ReviewForm.module.scss';
 import { createReview } from '@/services/albumService';
 
-const ReviewForm = ({ albumId, setReviews }) => {
+const ReviewForm = ({ albumId, setReviewList }) => {
   const [rating, setRating] = useState(null);
   const [review, setReview] = useState(null);
 
@@ -19,7 +19,7 @@ const ReviewForm = ({ albumId, setReviews }) => {
       };
 
       const { data } = await createReview(albumId, { ...newReview });
-      setReviews((prev) => [...prev, data.review]);
+      setReviewList((prev) => [data.review, ...prev]);
     } catch (err) {
       console.log(err);
       return toast.error(err.response.data.message);
