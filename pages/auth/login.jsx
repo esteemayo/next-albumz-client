@@ -29,6 +29,8 @@ const Login = () => {
   const [password, setPassword] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
 
+  const clientId=process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
@@ -51,8 +53,6 @@ const Login = () => {
   const handleFailure = (error) => {
     return toast.error(error);
   };
-
-  const clientId=process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 
   useEffect(() => {
     isError && toast.error(message);
@@ -127,7 +127,7 @@ const Login = () => {
                   />
                 </GoogleOAuthProvider> */}
                 <GoogleLogin
-                  clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}
+                  clientId={clientId}
                   render={(renderProps) => (
                     <div className={styles.form__btnWrapper}>
                       <button
