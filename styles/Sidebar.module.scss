@@ -18,7 +18,7 @@
   z-index: 1000;
 
   @media only screen and (max-width: 64em) {
-    top: 6.83rem;
+    // top: 6.83rem;
     height: 50rem;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
@@ -30,7 +30,7 @@
   }
 
   @media only screen and (max-width: 56.25em) {
-    top: 7.1rem;
+    // top: 7.1rem;
     width: 40rem;
     right: -40rem;
   }
