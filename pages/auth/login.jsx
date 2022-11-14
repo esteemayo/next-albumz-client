@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { gapi } from 'gapi-script';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -8,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+// import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
 
 import Meta from '@/components/Meta';
 import Spinner from '@/components/Spinner';
@@ -50,11 +52,23 @@ const Login = () => {
     return toast.error(error);
   };
 
+  const clientId=process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+
   useEffect(() => {
     isError && toast.error(message);
     user && isSuccess && router.push('/users/dashboard');
     dispatch(reset());
   }, [user, isSuccess, isError, message, router, dispatch]);
+
+  useEffect(() => {
+    const initClient = () => {
+          gapi.client.init({
+          clientId: clientId,
+          scope: ''
+        });
+     };
+     gapi.load('client:auth2', initClient);
+ });
 
   if (isLoading) {
     return (
@@ -106,6 +120,12 @@ const Login = () => {
                 <div className={styles.form__btnWrapper}>
                   <button type='submit' className={styles.form__btn}>Log in</button>
                 </div>
+                {/* <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>
+                  <GoogleLogin
+                    onSuccess={handleSuccess}
+                    onError={handleFailure}
+                  />
+                </GoogleOAuthProvider> */}
                 <GoogleLogin
                   clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}
                   render={(renderProps) => (
@@ -125,6 +145,7 @@ const Login = () => {
                   onSuccess={handleSuccess}
                   onFailure={handleFailure}
                   cookiePolicy='single_host_origin'
+                  isSignedIn={true}
                 />
               </div>
             </form>
