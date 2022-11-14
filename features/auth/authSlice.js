@@ -36,6 +36,19 @@ export const loginUser = createAsyncThunk(
   }
 );
 
+export const googleSignIn = createAsyncThunk(
+  'auth/googleSignIn',
+  async ({ userData, toast }, { rejectWithValue }) => {
+    try {
+      const { data } = await authAPI.googleLogin({ ...userData });
+      toast.success('Logged in successfully');
+      return data;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
+  }
+);
+
 export const forgotPassword = createAsyncThunk(
   'auth/forgotPassword',
   async ({ email, toast }, { rejectWithValue }) => {
@@ -164,6 +177,22 @@ export const authSlice = createSlice({
         state.user = payload;
       })
       .addCase(loginUser.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = false;
+        state.isError = true;
+        state.message = payload.message;
+        state.user = null;
+      })
+      .addCase(googleSignIn.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(googleSignIn.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        setToStorage(tokenKey, payload);
+        state.user = payload;
+      })
+      .addCase(googleSignIn.rejected, (state, { payload }) => {
         state.isLoading = false;
         state.isSuccess = false;
         state.isError = true;
