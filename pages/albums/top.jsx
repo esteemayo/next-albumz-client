@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 
 import Meta from '@/components/Meta';
@@ -9,6 +10,8 @@ import styles from '@/styles/TopAlbums.module.scss';
 import { getTopAlbums } from '@/services/albumService';
 
 const TopAlbums = ({ albums }) => {
+  const [albumList, setAlbumList] = useState(albums);
+
   return (
     <>
       <Meta title='Top 10 Albums - Albumz Music Entertainment' />
@@ -29,7 +32,7 @@ const TopAlbums = ({ albums }) => {
             </tr>
           </thead>
           <tbody>
-            {albums?.map((item, index) => {
+            {albumList?.map((item, index) => {
               const {_id: id, slug, image, title, artist, reviews, avgRating} = item;
 
               return (
