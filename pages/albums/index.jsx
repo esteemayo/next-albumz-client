@@ -12,7 +12,7 @@ import styles from '@/styles/Albums.module.scss';
 import { getAlbums } from '@/services/albumService';
 import { getAllGenres } from '@/services/genreService';
 
-const AlbumCard = dynamic(() => import ('@/components/AlbumCard'), { ssr: false });
+const AlbumCard = dynamic(() => import('@/components/AlbumCard'), { ssr: false });
 
 const Albums = ({ albums, genres, page, limit, total, numberOfPages }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
