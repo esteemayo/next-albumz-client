@@ -6,6 +6,7 @@ import styles from '@/styles/Footer.module.scss';
 
 const Footer = () => {
   const year = new Date().getFullYear();
+  const { user } = useSelector((state) => ({ ...state.auth }));
 
   return (
     <footer className={styles.footer}>
