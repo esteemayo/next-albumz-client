@@ -7,6 +7,9 @@ const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 export const login = (credentials) =>
   http.post(`${apiEndpoint}/login`, credentials);
 
+export const googleLogin = (credentials) =>
+  http.post(`${apiEndpoint}/google-login`, credentials);
+
 export const nextLogin = (credentials) =>
   http.post(`${apiUrl}/auth/login`, credentials);
 
