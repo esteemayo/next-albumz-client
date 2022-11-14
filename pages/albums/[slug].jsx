@@ -1,15 +1,17 @@
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
 import PropTypes from 'prop-types';
 
-import Meta from '@/components/Meta';
-import Reviews from '@/components/Reviews';
 import { parseCookie } from '@/utils/index';
-import ReviewForm from '@/components/ReviewForm';
 import * as albumAPI from '@/services/albumservice';
 import styles from '@/styles/SingleAlbum.module.scss';
-import RelatedAlbums from '@/components/RelatedAlbums';
-import SingleAlbumHero from '@/components/SingleAlbumHero';
-import AlbumDescription from '@/components/AlbumDescription';
+
+const Meta = dynamic(() => import('@/components/Meta'));
+const Reviews = dynamic(() => import('@/components/Reviews'));
+const ReviewForm = dynamic(() => import('@/components/ReviewForm'));
+const RelatedAlbums = dynamic(() => import('@/components/RelatedAlbums'));
+const SingleAlbumHero = dynamic(() => import('@/components/SingleAlbumHero'));
+const AlbumDescription = dynamic(() => import ('@/components/AlbumDescription'));
 
 const SingleAlbum = ({ album, reviews }) => {
   const [singleAlbum, setSingleAlbum] = useState(album);
