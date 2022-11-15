@@ -3,7 +3,7 @@ import styles from '@/styles/Modal.module.scss';
 
 const Modal = ({ onClose, children }) => {
   return (
-    <div className={styles.overlay} onClick={() => onClose(false)}>
+    <div className={styles.overlay}>
       <div className={
         children.props.type === 'genre' ?
         `${styles.modal} ${styles.modalGenre}` : 
