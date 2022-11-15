@@ -41,7 +41,7 @@ export const googleSignIn = createAsyncThunk(
   async ({ userData, toast }, { rejectWithValue }) => {
     try {
       const { data } = await authAPI.googleLogin({ ...userData });
-      toast.success('Logged in successfully');
+      toast.success('Google log in successful');
       return data;
     } catch (err) {
       return rejectWithValue(err.response.data);
@@ -54,7 +54,7 @@ export const forgotPassword = createAsyncThunk(
   async ({ email, toast }, { rejectWithValue }) => {
     try {
       await authAPI.forgot({ email });
-      toast.success('Token sent to email successfully');
+      toast.success('Token sent to email');
       return;
     } catch (err) {
       return rejectWithValue(err.response.data);
