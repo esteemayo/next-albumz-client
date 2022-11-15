@@ -155,7 +155,7 @@ const UpdateAlbum = ({ album, genres }) => {
                   onChange={(e) => setFile(e.target.files[0])}
                 />
                 <div className={styles.form__image}>
-                  {imagePreview ? (
+                  {imagePreview || file ? (
                     <Image
                       src={file ? URL.createObjectURL(file) : imagePreview}
                       width={180}
