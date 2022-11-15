@@ -19,9 +19,9 @@ const initialState = {
 };
 
 const ResetPassword = () => {
-  const { query } = useRouter();
+  const router = useRouter();
   const dispatch = useDispatch();
-  const { isError, message } = useSelector((state) => ({ ...state.auth }));
+  const { isError, isSuccess, message } = useSelector((state) => ({ ...state.auth }));
 
   const [inputs, setInputs] = useState(initialState);
 
@@ -47,19 +47,20 @@ const ResetPassword = () => {
       return toast.error('Passwords do not match');
     }
 
-    const token = query.token;
+    const { token } = router.query;
     const credentials = {
       password,
       confirmPassword,
     };
 
-    dispatch(resetPassword({token, credentials, toast}));
+    dispatch(resetPassword({ token, credentials, toast }));
   };
 
   useEffect(() => {
     isError && toast.error(message);
+    isSuccess && router.push('/auth/login');
     dispatch(reset());
-  }, [isError, message, dispatch]);
+  }, [isError,isSuccess, message, router, dispatch]);
 
   return (
     <>
