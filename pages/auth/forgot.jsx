@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 import Meta from '@/components/Meta';
+import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
 import { forgotPassword, reset } from '@/features/auth/authSlice';
@@ -63,6 +64,23 @@ const ForgotPassword = () => {
       </div>
     </>
   );
+};
+
+export const getServerSideProps = ({ req }) => {
+  const { token } = parseCookie(req);
+
+  if (token) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
 };
 
 export default ForgotPassword;
