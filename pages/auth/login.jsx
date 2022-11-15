@@ -62,12 +62,12 @@ const Login = () => {
 
   useEffect(() => {
     const initClient = () => {
-          gapi.client.init({
-          clientId: clientId,
-          scope: ''
-        });
-     };
-     gapi.load('client:auth2', initClient);
+      gapi.client.init({
+        clientId: clientId,
+        scope: '',
+      });
+    };
+    gapi.load('client:auth2', initClient);
  });
 
   if (isLoading) {
