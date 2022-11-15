@@ -7,6 +7,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import Meta from '@/components/Meta';
+import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
 import styles from '@/styles/Login.module.scss';
 import { reset, resetPassword } from '@/features/auth/authSlice';
@@ -124,5 +125,22 @@ const ResetPassword = () => {
     </>
   )
 }
+
+export const getServerSideProps = ({ req }) => {
+  const { token } = parseCookie(req);
+
+  if (token) {
+    return {
+      redirect: {
+        destination: '/',
+        permanent: false,
+      },
+    };
+  }
+
+  return {
+    props: {},
+  };
+};
 
 export default ResetPassword;
