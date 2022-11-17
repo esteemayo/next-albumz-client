@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { gapi } from 'gapi-script';
+// import { gapi } from 'gapi-script';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -60,15 +60,15 @@ const Login = () => {
     dispatch(reset());
   }, [user, isSuccess, isError, message, router, dispatch]);
 
-  useEffect(() => {
-    const initClient = () => {
-      gapi.client.init({
-        clientId: clientId,
-        scope: '',
-      });
-    };
-    gapi.load('client:auth2', initClient);
- });
+//   useEffect(() => {
+//     const initClient = () => {
+//       gapi.client.init({
+//         clientId: clientId,
+//         scope: '',
+//       });
+//     };
+//     gapi.load('client:auth2', initClient);
+//  });
 
   if (isLoading) {
     return (
