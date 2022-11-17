@@ -20,13 +20,17 @@ const UpdateGenre = ({ genre }) => {
       return toast.error('Please provide a name');
     }
 
+    await handleUpdate();
+  };
+  
+  const handleUpdate = async () => {
     try {
       const genreId = genre?._id;
       const updGenre = { name };
-
+  
       await updateGenre(genreId, updGenre);
       router.push('/genres')
-    } catch(err) {
+    } catch (err) {
       console.log(err);
     }
   };
