@@ -10,7 +10,7 @@ import styles from '@/styles/UpdateGenre.module.scss';
 import { getGenreBySlug, updateGenre } from '@/services/genreService';
 
 const UpdateGenre = ({ genre }) => {
-  const router = useRouter();
+  const { push } = useRouter();
   const [name, setName] = useState(genre?.name);
 
   const handleSubmit = async (e) => {
@@ -21,6 +21,7 @@ const UpdateGenre = ({ genre }) => {
     }
 
     await handleUpdate();
+    await push('/genres');
   };
   
   const handleUpdate = async () => {
@@ -29,7 +30,6 @@ const UpdateGenre = ({ genre }) => {
       const updGenre = { name };
   
       await updateGenre(genreId, updGenre);
-      router.push('/genres')
     } catch (err) {
       console.log(err);
     }
