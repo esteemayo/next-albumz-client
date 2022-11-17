@@ -6,21 +6,33 @@ import styles from '@/styles/DeleteAlbumGenre.module.scss';
 
 const DeleteGenreAlbum = ({ type, title, albumId, genreId, closeModal, setGenreList, setAlbumList }) => {
   const handleDelete = async () => {
+    if (type === 'genre') {
+      await removeGenre();
+    } else if (type === 'album') {
+      await removeAlbum();
+    }
+  };
+
+  const removeGenre = async () => {
     try {
-      if (type === 'genre') {
-        await deleteGenre(genreId);
-        setGenreList((prev) => prev.filter((item) => item._id !== genreId));
-        return toast.success('Genre deleted successfully');
-      } else if (type === 'album') {
-        await deleteAlbum(albumId);
-        setAlbumList((prev) => prev.filter((item) => item._id !== albumId));
-        return toast.success('Album deleted successfully');
-      }
-    } catch(err) {
+      await deleteGenre(genreId);
+      setGenreList((prev) => prev.filter((item) => item._id !== genreId));
+      return toast.success('Genre deleted successfully');
+    } catch (err) {
       console.log(err);
     }
   };
-  
+
+  const removeAlbum = async () => {
+    try {
+      await deleteAlbum(albumId);
+      setAlbumList((prev) => prev.filter((item) => item._id !== albumId));
+      return toast.success('Album deleted successfully');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -33,7 +45,7 @@ const DeleteGenreAlbum = ({ type, title, albumId, genreId, closeModal, setGenreL
             Cancel
           </button>
           <button
-            onClick={()=> {
+            onClick={() => {
               handleDelete();
               closeModal(true);
             }}
