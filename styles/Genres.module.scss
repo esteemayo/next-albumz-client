@@ -248,6 +248,8 @@
       .btnUpdate {
         background-color: #008080;
         margin-right: 0.5rem;
+        display: flex !important;
+        align-items: center;
 
         &:hover,
         &:active {
