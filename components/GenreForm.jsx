@@ -16,11 +16,15 @@ const GenreForm = ({ onClose, setGenreList }) => {
       return toast.error('Please provide a name');
     }
 
+    await handleCreateGenre();
+  };
+
+  const handleCreateGenre = async () => {
     try {
       const { data } = await createGenre({ name });
       setGenreList((prev) => [data.genre, ...prev]);
       onClose(false);
-    } catch(err) {
+    } catch (err) {
       console.log(err);
     }
   };
@@ -36,7 +40,7 @@ const GenreForm = ({ onClose, setGenreList }) => {
             <div className={styles.form__wrapper} style={{ height: '25rem' }}>
               <div className={styles.form__headline}>Create New Genre</div>
               <FormInput
-                placeholder='Name' 
+                placeholder='Name'
                 onChange={(e) => setName(e.target.value)}
               />
               <FormButton text='Submit' />
