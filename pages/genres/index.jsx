@@ -110,6 +110,18 @@ const Genres = ({ genres }) => {
   );
 };
 
+Genres.propTypes = {
+  genres: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+      user: PropTypes.object.isRequired,
+      createdAt: PropTypes.string.isRequired,
+    }),
+  ),
+};
+
 export const getServerSideProps = async ({ req }) => {
   const { token } = parseCookie(req);
 
@@ -129,18 +141,6 @@ export const getServerSideProps = async ({ req }) => {
       genres: data.genres,
     },
   };
-};
-
-Genres.propTypes = {
-  genres: PropTypes.arrayOf(
-    PropTypes.shape({
-      _id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      slug: PropTypes.string.isRequired,
-      user: PropTypes.object.isRequired,
-      createdAt: PropTypes.string.isRequired,
-    }),
-  ),
 };
 
 export default Genres;
