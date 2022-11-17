@@ -40,6 +40,7 @@ const GenreForm = ({ onClose, setGenreList }) => {
             <div className={styles.form__wrapper} style={{ height: '25rem' }}>
               <div className={styles.form__headline}>Create New Genre</div>
               <FormInput
+                autoFocus
                 placeholder='Name'
                 onChange={(e) => setName(e.target.value)}
               />
