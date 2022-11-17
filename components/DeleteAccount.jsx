@@ -7,15 +7,19 @@ import { logoutUser } from '@/features/auth/authSlice';
 import styles from '@/styles/DeleteAccount.module.scss';
 
 const DeleteAccount = ({ onClose }) => {
-  const router = useRouter();
+  const { push } = useRouter();
   const dispatch = useDispatch();
 
   const handleDeleteUserAccount = async () => {
+    await deactivateUserAccount();
+    await push('/');
+  };
+
+  const deactivateUserAccount = async () => {
     try {
       await deleteMe();
       dispatch(logoutUser());
       toast.success('Account closed successfully');
-      router.push('/');
     } catch (err) {
       console.log(err);
     }
