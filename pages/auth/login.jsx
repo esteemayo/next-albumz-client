@@ -1,7 +1,6 @@
 /* global gapi */
 import Link from 'next/link';
-import { gapi } from 'gapi-cjs';
-// import { gapi } from 'gapi-script';
+import { gapi } from 'gapi-script';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -63,28 +62,14 @@ const Login = () => {
   }, [user, isSuccess, isError, message, router, dispatch]);
 
   useEffect(() => {
-    gapi.load('client:auth2', () => {
-      gapi.client
-        .init({
-          clientId,
-          scope: 'openid',
-        })
-        .then(() => {
-          const auth = gapi.auth2.getAuthInstance();
-          setUser(auth.currentUser.get().getBasicProfile());
-        });
-    });
-  }, []);
-
-//   useEffect(() => {
-//     const initClient = () => {
-//       gapi.client.init({
-//         clientId: clientId,
-//         scope: '',
-//       });
-//     };
-//     gapi.load('client:auth2', initClient);
-//  });
+    const initClient = () => {
+      gapi.client.init({
+        clientId: clientId,
+        scope: '',
+      });
+    };
+    gapi.load('client:auth2', initClient);
+ });
 
   if (isLoading) {
     return (
