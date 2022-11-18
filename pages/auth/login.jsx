@@ -66,8 +66,7 @@ const Login = () => {
     gapi.load('client:auth2', () => {
       gapi.client
         .init({
-          clientId:
-            '<client-id>',
+          clientId,
           scope: 'openid',
         })
         .then(() => {
