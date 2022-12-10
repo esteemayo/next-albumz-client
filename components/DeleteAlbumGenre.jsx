@@ -11,6 +11,7 @@ const DeleteGenreAlbum = ({ type, title, albumId, genreId, closeModal, setGenreL
     } else if (type === 'album') {
       await removeAlbum();
     }
+    closeModal(true);
   };
 
   const removeGenre = async () => {
@@ -45,10 +46,7 @@ const DeleteGenreAlbum = ({ type, title, albumId, genreId, closeModal, setGenreL
             Cancel
           </button>
           <button
-            onClick={() => {
-              handleDelete();
-              closeModal(true);
-            }}
+            onClick={handleDelete}
             className={`${styles.btn} ${styles.btnDelete}`}
           >
             Discard
