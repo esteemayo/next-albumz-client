@@ -13,6 +13,7 @@ const DeleteAccount = ({ onClose }) => {
   const handleDeleteUserAccount = async () => {
     await deactivateUserAccount();
     await push('/');
+    onClose(true);
   };
 
   const deactivateUserAccount = async () => {
@@ -43,10 +44,7 @@ const DeleteAccount = ({ onClose }) => {
             Cancel
           </button>
           <button
-            onClick={() => {
-              handleDeleteUserAccount();
-              onClose(true);
-            }}
+            onClick={handleDeleteUserAccount}
             className={styles.deleteBtn}
           >
             Delete
