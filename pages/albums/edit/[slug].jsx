@@ -30,15 +30,10 @@ const UpdateAlbum = ({ album, genres }) => {
     tags: album?.tags,
   });
 
-  const handleChange = ({ target: input }) => {
-    const { name, value } = input;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
   const { tags } = formData;
 
   const handleAddTag = (tag) => {
-    setFormData((prev) => ({ ...prev,tags: [ ...prev.tags, tag] }));
+    setFormData((prev) => ({ ...prev, tags: [...prev.tags, tag] }));
   };
 
   const handleDeleteTag = (tag) => {
@@ -47,14 +42,14 @@ const UpdateAlbum = ({ album, genres }) => {
       tags: prev.tags.filter((item) => item !== tag),
     }));
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!artist || !title || !genre || !info || !year || !label || !tracks) {
       return toast.error('Please fill all input field');
     }
-  
+
     if (!tags.length) {
       return toast.error('Please provide some tags');
     }
@@ -86,7 +81,7 @@ const UpdateAlbum = ({ album, genres }) => {
       setImagePreview(data.album.image);
       router.push(`/albums/${data.album.slug}`);
       return toast.success('Update successful');
-    } catch(err) {
+    } catch (err) {
       console.log(err);
     }
   };
