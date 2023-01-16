@@ -3,6 +3,10 @@ import http from './httpService';
 const apiEndpoint = '/users';
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
+const userUrl = (userId) => `${apiEndpoint}/${userId}`;
+
+export const getUser = (userId) => http.get(userUrl(userId));
+
 export const register = (credentials) =>
   http.post(`${apiEndpoint}/register`, credentials);
 
