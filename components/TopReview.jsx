@@ -27,7 +27,7 @@ const TopReview = ({ user: userId, rating, review }) => {
           width={80}
           height={80}
           objectFit='cover'
-          alt={user.name}
+          alt=''
         />
       </div>
       <div className={styles.reviewer__review}>
