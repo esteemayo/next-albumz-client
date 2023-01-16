@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 import StarRating from './StarRating';
 import styles from '@/styles/TopReview.module.scss';
