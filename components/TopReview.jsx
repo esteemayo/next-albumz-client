@@ -2,9 +2,23 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 import StarRating from './StarRating';
+import { getUser } from '@/services/userService';
 import styles from '@/styles/TopReview.module.scss';
 
-const TopReview = ({ user, rating, review }) => {
+const TopReview = ({ user: userId, rating, review }) => {
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await getUser(userId);
+        setUser(data.user);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, [userId]);
+
   return (
     <div className={styles.reviews}>
       <div className={styles.reviewer__img}>
