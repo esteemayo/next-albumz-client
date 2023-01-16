@@ -23,7 +23,7 @@ const TagCard = ({ album: { info, slug, image, title } }) => {
               width={200}
               height={130}
               objectFit='cover'
-              alt={title}
+              alt=''
             />
           </div>
           <h3 className={styles.card__heading}>
