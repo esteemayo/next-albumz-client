@@ -20,7 +20,7 @@ const AlbumCard = ({ album }) => {
             width={345}
             height={230}
             objectFit='cover'
-            alt={title}
+            alt=''
           />
         </div>
         <h3 className={styles.heading__tertiary}>
