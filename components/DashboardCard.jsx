@@ -29,7 +29,7 @@ const DashboardCard = ({ albums }) => {
                       src={image ? image : '/img/default-album-2.jpeg'}
                       width={200}
                       height={130}
-                      alt={title}
+                      alt=''
                     />
                   </div>
                   <h3 className={styles.card__heading}>
