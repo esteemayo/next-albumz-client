@@ -13,7 +13,7 @@ const RelatedAlbumCard = ({ slug, image, title, artist, createdAt }) => {
           width='70'
           height='70'
           objectFit='cover'
-          alt={title}
+          alt=''
         />
       </div>
       <div className={styles.right}>
