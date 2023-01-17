@@ -20,7 +20,7 @@ const DarkMode = () => {
           <LightModeOutlined />
         </Popup>
       ) : (
-        <Popup title='Dark mode'>
+        <Popup title='Dark Mode'>
           <DarkModeOutlined />
         </Popup>
       )}
