@@ -127,7 +127,7 @@ const Sidebar = () => {
         </div>
         <div className={styles.wrapper}>
           <div className={styles.darkmode} onClick={toggleDarkmode}>
-            {darkMode === 'dark' ? <DarkModeOutlined /> : <LightModeOutlined />}
+            {darkMode === 'dark' ? <LightModeOutlined /> : <DarkModeOutlined />}
           </div>
         </div>
       </>
