@@ -16,12 +16,12 @@ const DarkMode = () => {
   return (
     <div className={styles.darkmode} onClick={toggleDarkmode}>
       {darkMode === 'dark' ? (
-        <Popup title='Dark mode'>
-          <DarkModeOutlined />
-        </Popup>
-      ) : (
         <Popup title='Light mode'>
           <LightModeOutlined />
+        </Popup>
+      ) : (
+        <Popup title='Dark mode'>
+          <DarkModeOutlined />
         </Popup>
       )}
     </div>
