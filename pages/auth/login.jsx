@@ -17,8 +17,9 @@ import Meta from '@/components/Meta';
 import Spinner from '@/components/Spinner';
 import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
+import { auth, provider } from '../../firebase';
 import styles from '@/styles/Login.module.scss';
-import { loginUser, reset } from '@/features/auth/authSlice';
+import {googleSignIn, loginUser, reset } from '@/features/auth/authSlice';
 
 const Login = () => {
   const router = useRouter();
@@ -48,6 +49,23 @@ const Login = () => {
     dispatch(loginUser({ userData, toast }));
   };
 
+  const loginWithGoogle = () => {
+    signInWithPopup(auth, provider)
+    .then((result) => {
+      const userDara = {
+        name: result.user.displayName,
+        email: result.user.email,
+        username: result.user.displayName.split(' ')[0],
+        googleId: result.user.uid,
+        token: result.user.accessToken,
+      };
+
+      dispatch(googleSignIn({ userData, toast }));
+    }).catch((error) => {
+      console.log(error);
+    });
+  };
+
   const handleSuccess = (response) => {
     console.log(response);
   };
@@ -57,10 +75,13 @@ const Login = () => {
   };
 
   useEffect(() => {
-    isError && toast.error(message);
     user && isSuccess && router.push('/users/dashboard');
     dispatch(reset());
-  }, [user, isSuccess, isError, message, router, dispatch]);
+  }, [user, isSuccess, router, dispatch]);
+
+  useEffect(() => {
+    isError && toast.error(message);
+  }, [isError, message]);
 
 //   useEffect(() => {
 //     const initClient = () => {
@@ -128,7 +149,7 @@ const Login = () => {
                     onError={handleFailure}
                   />
                 </GoogleOAuthProvider> */}
-                <GoogleLogin
+                {/* <GoogleLogin
                   clientId={clientId}
                   render={(renderProps) => (
                     <div className={styles.form__btnWrapper}>
@@ -148,9 +169,17 @@ const Login = () => {
                   onFailure={handleFailure}
                   cookiePolicy='single_host_origin'
                   isSignedIn={true}
-                />
+                /> */}
               </div>
             </form>
+            <div className={styles.form__googleBtnWrapper}>
+                  <button onClick={loginWithGoogle} className={styles.form__btnGoogle}>
+                    <span className={styles.socialLoginIcon}>
+                      <GoogleIcon className={styles.googleIcon} />
+                    </span>
+                    <span className={styles.socialLoginText}>Log in with google</span>
+                  </button>
+                </div>
           </div>
           <div className={styles.links}>
             <Link href='/users/register' passHref>Register</Link> | {' '}
