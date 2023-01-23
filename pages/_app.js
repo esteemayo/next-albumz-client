@@ -11,10 +11,12 @@ import '@/styles/globals.scss';
 function MyApp({ Component, pageProps }) {
   return (
     <Provider store={store}>
-      <Layout>
-        <ScrollToTop />
-        <Component {...pageProps} />
-      </Layout>
+      <PersistGate loading={null} persistor={persistor}>
+        <Layout>
+          <ScrollToTop />
+          <Component {...pageProps} />
+        </Layout>
+      </PersistGate>
     </Provider>
   );
 }
