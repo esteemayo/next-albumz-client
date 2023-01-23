@@ -17,7 +17,6 @@ import toggleReducer from '@/features/toggle/toggleSlice';
 import bookmarkReducer from '@/features/bookmark/bookmarkSlice';
 import darkModeReducer from '@/features/darkMode/darkModeSlice';
 
-
 const persistConfig = {
   key: 'root',
   version: 1,
