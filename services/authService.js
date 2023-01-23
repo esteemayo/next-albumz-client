@@ -14,7 +14,7 @@ export const nextLogin = (credentials) =>
   http.post(`${apiUrl}/auth/login`, credentials);
 
 export const nextGoogleLogin = (credentials) =>
-  http.post(`${apiUrl}/auth/google-login`, credentials);
+  http.post(`${apiUrl}/auth/google`, credentials);
 
 export const nextLogout = () => http.post(`${apiUrl}/auth/logout`);
 
