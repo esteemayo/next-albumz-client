@@ -133,33 +133,6 @@ const Login = () => {
                 <div className={styles.form__btnWrapper}>
                   <button type='submit' className={styles.form__btn}>Log in</button>
                 </div>
-                {/* <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}>
-                  <GoogleLogin
-                    onSuccess={handleSuccess}
-                    onError={handleFailure}
-                  />
-                </GoogleOAuthProvider> */}
-                {/* <GoogleLogin
-                  clientId={clientId}
-                  render={(renderProps) => (
-                    <div className={styles.form__btnWrapper}>
-                      <button
-                        onClick={renderProps.onClick}
-                        disabled={renderProps.disabled}
-                        className={styles.form__btnGoogle}
-                      >
-                        <span className={styles.socialLoginIcon}>
-                          <GoogleIcon className={styles.googleIcon} />
-                        </span>
-                       <span className={styles.socialLoginText}>Log in with google</span>
-                      </button>
-                    </div>
-                  )}
-                  onSuccess={handleSuccess}
-                  onFailure={handleFailure}
-                  cookiePolicy='single_host_origin'
-                  isSignedIn={true}
-                /> */}
               </div>
             </form>
             <div className={styles.form__googleBtnWrapper}>
