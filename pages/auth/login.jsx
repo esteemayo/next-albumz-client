@@ -28,8 +28,6 @@ const Login = () => {
   const [password, setPassword] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
 
-  const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
-
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
   };
