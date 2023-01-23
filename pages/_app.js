@@ -1,8 +1,8 @@
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import { persistor, store} from '@/app/store';
 import Layout from '@/components/Layout';
+import { persistor, store} from '@/app/store';
 import ScrollToTop from '@/components/ScrollToTop';
 
 import '@/styles/dark.scss';
