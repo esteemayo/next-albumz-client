@@ -225,6 +225,14 @@
       }
     }
 
+    &__googleBtnWrapper {
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+      padding: 0 6.387%;
+      margin-bottom: 3rem;
+    }
+
     &__btnGoogle {
       display: flex;
       align-items: center;
