@@ -1,5 +1,5 @@
 import storage from 'redux-persist/lib/storage';
-import { configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import {
   persistStore,
   persistReducer,
@@ -17,14 +17,25 @@ import toggleReducer from '@/features/toggle/toggleSlice';
 import bookmarkReducer from '@/features/bookmark/bookmarkSlice';
 import darkModeReducer from '@/features/darkMode/darkModeSlice';
 
+
+const persistConfig = {
+  key: 'root',
+  version: 1,
+  storage,
+};
+
+const rootReducer = combineReducers({
+  auth: authReducer,
+  views: viewsReducer,
+  toggle: toggleReducer,
+  bookmark: bookmarkReducer,
+  darkMode: darkModeReducer,
+});
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 const store = configureStore({
-  reducer: {
-    auth: authReducer,
-    views: viewsReducer,
-    toggle: toggleReducer,
-    bookmark: bookmarkReducer,
-    darkMode: darkModeReducer,
-  },
+  reducer: persistedReducer,
 });
 
 export default store;
