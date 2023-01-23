@@ -67,14 +67,6 @@ const Login = () => {
       });
   };
 
-  const handleSuccess = (response) => {
-    console.log(response);
-  };
-
-  const handleFailure = (error) => {
-    return toast.error(error);
-  };
-
   useEffect(() => {
     user && isSuccess && router.push('/users/dashboard');
     dispatch(reset());
