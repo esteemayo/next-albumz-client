@@ -46,7 +46,6 @@ const Login = () => {
   const loginWithGoogle = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result)
         const userData = {
           name: result.user.displayName,
           email: result.user.email,
