@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['res.cloudinary.com', 'source.unsplash.com', 'i.pravatar.cc']
+    domains: ['res.cloudinary.com', 'source.unsplash.com', 'i.pravatar.cc', 'lh3.googleusercontent.com']
   },
   env: {
     NEXT_PUBLIC_DEV_API_URL: process.env.NEXT_PUBLIC_DEV_API_URL,
