@@ -19,7 +19,7 @@ import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
 import { auth, provider } from '../../firebase';
 import styles from '@/styles/Login.module.scss';
-import {googleSignIn, loginUser, reset } from '@/features/auth/authSlice';
+import { googleSignIn, loginUser, reset } from '@/features/auth/authSlice';
 
 const Login = () => {
   const router = useRouter();
@@ -32,7 +32,7 @@ const Login = () => {
   const [password, setPassword] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
 
-  const clientId=process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+  const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -51,19 +51,19 @@ const Login = () => {
 
   const loginWithGoogle = () => {
     signInWithPopup(auth, provider)
-    .then((result) => {
-      const userDara = {
-        name: result.user.displayName,
-        email: result.user.email,
-        username: result.user.displayName.split(' ')[0],
-        googleId: result.user.uid,
-        token: result.user.accessToken,
-      };
+      .then((result) => {
+        console.log(result)
+        const userData = {
+          name: result.user.displayName,
+          email: result.user.email,
+          username: result.user.displayName.split(' ')[0],
+          avatar: result.user.photoURL,
+        };
 
-      dispatch(googleSignIn({ userData, toast }));
-    }).catch((error) => {
-      console.log(error);
-    });
+        dispatch(googleSignIn({ userData, toast }));
+      }).catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleSuccess = (response) => {
@@ -82,16 +82,6 @@ const Login = () => {
   useEffect(() => {
     isError && toast.error(message);
   }, [isError, message]);
-
-//   useEffect(() => {
-//     const initClient = () => {
-//       gapi.client.init({
-//         clientId: clientId,
-//         scope: '',
-//       });
-//     };
-//     gapi.load('client:auth2', initClient);
-//  });
 
   if (isLoading) {
     return (
@@ -173,13 +163,13 @@ const Login = () => {
               </div>
             </form>
             <div className={styles.form__googleBtnWrapper}>
-                  <button onClick={loginWithGoogle} className={styles.form__btnGoogle}>
-                    <span className={styles.socialLoginIcon}>
-                      <GoogleIcon className={styles.googleIcon} />
-                    </span>
-                    <span className={styles.socialLoginText}>Log in with google</span>
-                  </button>
-                </div>
+              <button onClick={loginWithGoogle} className={styles.form__btnGoogle}>
+                <span className={styles.socialLoginIcon}>
+                  <GoogleIcon className={styles.googleIcon} />
+                </span>
+                <span className={styles.socialLoginText}>Log in with google</span>
+              </button>
+            </div>
           </div>
           <div className={styles.links}>
             <Link href='/users/register' passHref>Register</Link> | {' '}
