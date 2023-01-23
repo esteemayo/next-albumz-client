@@ -10,7 +10,7 @@ const DarkMode = () => {
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
   const toggleDarkmode = () => {
-    darkMode === 'dark' ? dispatch(light('light')) : dispatch(dark('dark'));
+    dispatch(darkMode === 'dark' ? light('light') : dark('dark'));
   };
 
   return (
