@@ -40,7 +40,7 @@ export const googleSignIn = createAsyncThunk(
   'auth/googleSignIn',
   async ({ userData, toast }, { rejectWithValue }) => {
     try {
-      const { data } = await authAPI.googleLogin({ ...userData });
+      const { data } = await authAPI.nextGoogleLogin({ ...userData });
       toast.success('Google log in successful');
       return data;
     } catch (err) {
