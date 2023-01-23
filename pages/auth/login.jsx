@@ -54,7 +54,6 @@ const Login = () => {
         };
 
         dispatch(googleSignIn({ userData, toast }));
-        router.push('/users/dashboard');
       }).catch((error) => {
         console.log(error);
       });
