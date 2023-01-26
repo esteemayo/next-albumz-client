@@ -159,14 +159,16 @@ const Account = () => {
                 >
                   <PersonOutlinedIcon className={styles.form__icon} />
                 </FormInput>
-                <FormInput
+                {!user?.fromGoogle && (
+                  <FormInput
                   name='email'
                   placeholder='Email Address'
                   value={email || ''}
                   onChange={handleChange}
                   >
-                  <EmailOutlinedIcon className={styles.form__icon} />
-                </FormInput>
+                    <EmailOutlinedIcon className={styles.form__icon} />
+                  </FormInput>
+                )}
                 <FormInput
                   name='username'
                   placeholder='Username'
