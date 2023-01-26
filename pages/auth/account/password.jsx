@@ -96,66 +96,70 @@ const UpdatePassword = () => {
             </ul>
           </div>
           <div className={styles.right}>
-            <h2 className={styles.accountHeader}>Password</h2>
-            <div className={styles.formWrapper}>
-              <form onSubmit={handleSubmit} className={styles.form}>
-                <FormInput
-                  value={currentPassword}
-                  type={showCurrentPassword ? 'text' : 'password'}
-                  placeholder='Current Password'
-                  onChange={(e) => setCurrentPassword(e.target.value)}
-                >
-                  {showCurrentPassword ? (
-                     <VisibilityOff
-                      onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                      />
-                   ) : (
-                    <Visibility
-                      onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                    />
-                  )}
-                </FormInput>
-                <FormInput
-                  value={password}
-                  type={showPassword ? 'text' : 'password'}
-                  placeholder='Password'
-                  onChange={(e) => setPassword(e.target.value)}
-                >
-                  {showPassword ? (
-                     <VisibilityOff
-                      onClick={() => setShowPassword(!showPassword)}
-                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                      />
-                   ) : (
-                    <Visibility
-                      onClick={() => setShowPassword(!showPassword)}
-                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                    />
-                  )}
-                </FormInput>
-                <FormInput
-                  value={confirmPassword}
-                  type={showConfirmPassword ? 'text' : 'password'}
-                  placeholder='Confirm Password'
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                >
-                  {showConfirmPassword ? (
-                     <VisibilityOff
-                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                      />
-                   ) : (
-                    <Visibility
-                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                    />
-                  )}
-                </FormInput>
-                <FormButton text='Update password' />
-              </form>
-            </div>
+            {!user?.fromGoogle && (
+              <>
+                <h2 className={styles.accountHeader}>Password</h2>
+                <div className={styles.formWrapper}>
+                  <form onSubmit={handleSubmit} className={styles.form}>
+                    <FormInput
+                      value={currentPassword}
+                      type={showCurrentPassword ? 'text' : 'password'}
+                      placeholder='Current Password'
+                      onChange={(e) => setCurrentPassword(e.target.value)}
+                    >
+                      {showCurrentPassword ? (
+                        <VisibilityOff
+                          onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                          className={`${styles.form__icon} ${styles.form__iconPassword}`}
+                          />
+                      ) : (
+                        <Visibility
+                          onClick={() => setShowCurrentPassword(!showCurrentPassword)}
+                          className={`${styles.form__icon} ${styles.form__iconPassword}`}
+                        />
+                      )}
+                    </FormInput>
+                    <FormInput
+                      value={password}
+                      type={showPassword ? 'text' : 'password'}
+                      placeholder='Password'
+                      onChange={(e) => setPassword(e.target.value)}
+                    >
+                      {showPassword ? (
+                        <VisibilityOff
+                          onClick={() => setShowPassword(!showPassword)}
+                          className={`${styles.form__icon} ${styles.form__iconPassword}`}
+                          />
+                      ) : (
+                        <Visibility
+                          onClick={() => setShowPassword(!showPassword)}
+                          className={`${styles.form__icon} ${styles.form__iconPassword}`}
+                        />
+                      )}
+                    </FormInput>
+                    <FormInput
+                      value={confirmPassword}
+                      type={showConfirmPassword ? 'text' : 'password'}
+                      placeholder='Confirm Password'
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                    >
+                      {showConfirmPassword ? (
+                        <VisibilityOff
+                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                          className={`${styles.form__icon} ${styles.form__iconPassword}`}
+                          />
+                      ) : (
+                        <Visibility
+                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                          className={`${styles.form__icon} ${styles.form__iconPassword}`}
+                        />
+                      )}
+                    </FormInput>
+                    <FormButton text='Update password' />
+                  </form>
+                </div>
+              </>
+            )}
 
             <div className={styles.delete}>
               <h3 className={styles.delete__header}>Close account</h3>
