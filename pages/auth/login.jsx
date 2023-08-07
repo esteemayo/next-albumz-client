@@ -33,7 +33,7 @@ const Login = () => {
 
   const handleShowPassword = useCallback(() => {
     setShowPassword(!showPassword);
-  }, []);
+  }, [showPassword]);
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
