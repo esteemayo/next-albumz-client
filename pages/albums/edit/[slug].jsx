@@ -10,11 +10,12 @@ import FormChipInput from '@/components/FormChipInput';
 import FormTextArea from '@/components/FormTextArea';
 import FormSelectInput from '@/components/FormSelectInput';
 
-import { parseCookie } from '@/utils/index';
 import { uploadImage } from '@/services/imageService';
-import styles from '@/styles/UpdateAlbum.module.scss';
-import { getAllGenres } from '@/services/genreService';
 import { getAlbumBySlug, updateAlbum } from '@/services/albumService';
+import { getAllGenres } from '@/services/genreService';
+
+import { parseCookie } from '@/utils/index';
+import styles from '@/styles/UpdateAlbum.module.scss';
 
 const UpdateAlbum = ({ album, genres }) => {
   const router = useRouter();
