@@ -48,7 +48,12 @@ const ResetPassword = () => {
     }));
   }, []);
 
-  const { password, confirmPassword, showPassword, showConfirmPassword } = inputs;
+  const {
+    password,
+    confirmPassword,
+    showPassword,
+    showConfirmPassword,
+   } = inputs;
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
