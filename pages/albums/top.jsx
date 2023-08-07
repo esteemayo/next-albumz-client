@@ -3,12 +3,14 @@ import { useState } from 'react';
 import Image from 'next/image';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 
-import Meta from '@/components/Meta';
-import { parseCookie } from '@/utils/index';
 import ClientOnly from '@/components/ClientOnly';
+import Meta from '@/components/Meta';
 import StarRating from '@/components/StarRating';
-import styles from '@/styles/TopAlbums.module.scss';
+
+import { parseCookie } from '@/utils/index';
 import { getTopAlbums } from '@/services/albumService';
+
+import styles from '@/styles/TopAlbums.module.scss';
 
 const TopAlbums = ({ albums }) => {
   const [albumList, setAlbumList] = useState(albums);
