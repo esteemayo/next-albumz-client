@@ -104,9 +104,9 @@ const Account = () => {
         const { data } = await uploadImage(form);
         const { url } = data;
         userData.avatar = url;
-
-        dispatch(updateUserData({ userData, toast }));
       }
+
+      dispatch(updateUserData({ userData, toast }));
     } catch (err) {
       console.log(err);
     }
