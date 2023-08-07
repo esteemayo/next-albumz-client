@@ -31,11 +31,11 @@ const Login = () => {
   const [password, setPassword] = useState(null);
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleShowPassword = () => {
+  const handleShowPassword = useCallback(() => {
     setShowPassword(!showPassword);
-  };
+  }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
 
     const userData = {
@@ -44,9 +44,9 @@ const Login = () => {
     };
 
     dispatch(loginUser({ userData, toast }));
-  };
+  }, [dispatch]);
 
-  const loginWithGoogle = () => {
+  const loginWithGoogle = useCallback(() => {
     signInWithPopup(auth, provider)
       .then((result) => {
         const userData = {
@@ -60,7 +60,7 @@ const Login = () => {
       }).catch((error) => {
         console.log(error);
       });
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     user && isSuccess && router.push('/users/dashboard');
