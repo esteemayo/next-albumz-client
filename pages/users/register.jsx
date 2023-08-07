@@ -256,7 +256,7 @@ const Register = () => {
                   <FileUploadOutlinedIcon className={styles.form__icon} />
                 </FormInput>
                 <div className={styles.form__btnWrapper}>
-                  <button type='submit' className={styles.form__btn}>Register</button>
+                  <button type='submit' className={styles.form__btn} disabled={isLoading}>Register</button>
                 </div>
               </div>
             </form>
