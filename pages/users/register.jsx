@@ -47,52 +47,52 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const handleShowPassword = () => {
+  const handleShowPassword = useCallback(() => {
     setShowPassword(!showPassword);
-  };
+  }, [showPassword]);
 
-  const handleShowConfirmPassword = () => {
+  const handleShowConfirmPassword = useCallback(() => {
     setShowConfirmPassword(!showConfirmPassword);
-  };
+  }, [showConfirmPassword]);
 
-  const handleChange = ({ target: input }) => {
+  const handleChange = useCallback(({ target: input }) => {
     const { name, value } = input;
     setFormInputs((prev) => ({ ...prev, [name]: value }));
-  };
+  }, []);
 
-  const handleAddFavArtist = (favArtist) => {
+  const handleAddFavArtist = useCallback((favArtist) => {
     setFormInputs((prev) => ({
       ...prev,
       favArtists: [...prev.favArtists, favArtist],
     }));
-  };
+  }, []);
 
-  const handleDeleteFavArtist = (favArtist) => {
+  const handleDeleteFavArtist = useCallback((favArtist) => {
     setFormInputs((prev) => ({
       ...prev,
       favArtists: prev.favArtists.filter((artist) => artist !== favArtist),
     }));
-  };
+  }, []);
   
-  const handleAddFavGenre = (favGenre) => {
+  const handleAddFavGenre = useCallback((favGenre) => {
     setFormInputs((prev) => ({
       ...prev,
       favGenres: [...prev.favGenres, favGenre],
     }));
-  };
+  }, []);
 
-  const handleDeleteFavGenre = (favGenre) => {
+  const handleDeleteFavGenre = useCallback((favGenre) => {
     setFormInputs((prev) => ({
       ...prev,
       favGenres: prev.favGenres.filter((genre) => genre !== favGenre),
     }));
-  };
+  }, []);
 
   const { favGenres, favArtists, password, confirmPassword } = formInputs;
 
   const emptyFieldCheck = Object.values(formInputs).some((item) => item === '');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -128,7 +128,16 @@ const Register = () => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }, 
+    [
+      password,
+      confirmPassword,
+      favGenres,
+      favArtists,
+      emptyFieldCheck,
+      formInputs,
+    ]
+  );
 
   useEffect(() => {
     isError && toast.error(message);
