@@ -32,7 +32,7 @@ const ForgotPassword = () => {
   }, [isError, message, dispatch]);
 
   return (
-    <>
+    <ClientOnly>
       <Meta title='Forgot Password - Albumz Music Entertainment' />
       <div className={styles.container}>
         <div className={styles.wrapper}>
@@ -63,7 +63,7 @@ const ForgotPassword = () => {
           </div>
         </div>
       </div>
-    </>
+    </ClientOnly>
   );
 };
 
