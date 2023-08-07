@@ -37,7 +37,7 @@ const UpdateGenre = ({ genre }) => {
   };
 
   return (
-    <>
+    <ClientOnly>
       <Meta title={`${genre?.name} - Albumz Music Entertainment`} />
       <section className={styles.container}>
         <div className={styles.wrapper}>
@@ -59,7 +59,7 @@ const UpdateGenre = ({ genre }) => {
           </div>
         </div>
       </section>
-    </>
+    </ClientOnly>
   );
 };
 
