@@ -10,7 +10,7 @@ const DashboardCard = dynamic(() => import('@/components/DashboardCard'), { ssr:
 
 const Dashboard = ({ albums }) => {
   return (
-    <>
+    <ClientOnly>
       <Meta title='User Dashboard - Albumz Music Entertainment' />
       <section className={styles.container}>
         <h1 className={styles.header}>Dashboard</h1>
@@ -20,7 +20,7 @@ const Dashboard = ({ albums }) => {
           <DashboardCard albums={albums} />
         )}
       </section>
-    </>
+    </ClientOnly>
   );
 };
 
