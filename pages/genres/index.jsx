@@ -1,20 +1,22 @@
-import Link from 'next/link';
 import { useState } from 'react';
-import Moment from 'react-moment';
-import PropTypes from 'prop-types';
+import Link from 'next/link';
 import { useSelector } from 'react-redux';
+import Moment from 'react-moment';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
+import PropTypes from 'prop-types';
 
 import Meta from '@/components/Meta';
-import Modal from '@/components/Modal';
 import ClientOnly from '@/components/ClientOnly';
-import { parseCookie } from '@/utils/index';
+import Modal from '@/components/Modal';
 import AddButton from '@/components/AddButton';
+import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 import DialogBox from '@/components/DialogBox';
 import GenreForm from '@/components/GenreForm';
-import styles from '@/styles/Genres.module.scss';
+
+import { parseCookie } from '@/utils/index';
 import { getGenres } from '@/services/genreService';
-import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
+
+import styles from '@/styles/Genres.module.scss';
 
 const Genres = ({ genres }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
