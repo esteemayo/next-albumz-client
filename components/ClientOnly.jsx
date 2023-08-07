@@ -14,4 +14,4 @@ const ClientOnly = ({ children }) => {
   return <>{children}</>;
 };
 
-export const ClientOnly;
+export default ClientOnly;
