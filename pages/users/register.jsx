@@ -130,12 +130,14 @@ const Register = () => {
     }
   }, 
     [
+      file,
       password,
       confirmPassword,
       favGenres,
       favArtists,
       emptyFieldCheck,
       formInputs,
+      dispatch,
     ]
   );
 
