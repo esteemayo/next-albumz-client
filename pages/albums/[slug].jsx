@@ -9,10 +9,10 @@ import ClientOnly from '@/components/ClientOnly';
 import styles from '@/styles/SingleAlbum.module.scss';
 
 const Meta = dynamic(() => import('@/components/Meta'));
-const Reviews = dynamic(() => import('@/components/Reviews'));
 const ReviewForm = dynamic(() => import('@/components/ReviewForm'));
-const RelatedAlbums = dynamic(() => import('@/components/RelatedAlbums'));
+const Reviews = dynamic(() => import('@/components/Reviews'));
 const SingleAlbumHero = dynamic(() => import('@/components/SingleAlbumHero'));
+const RelatedAlbums = dynamic(() => import('@/components/RelatedAlbums'));
 const AlbumDescription = dynamic(() => import ('@/components/AlbumDescription'));
 
 const SingleAlbum = ({ album, reviews }) => {
