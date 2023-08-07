@@ -5,6 +5,7 @@ import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 
 import Meta from '@/components/Meta';
 import { parseCookie } from '@/utils/index';
+import ClientOnly from '@/components/ClientOnly';
 import StarRating from '@/components/StarRating';
 import styles from '@/styles/TopAlbums.module.scss';
 import { getTopAlbums } from '@/services/albumService';
