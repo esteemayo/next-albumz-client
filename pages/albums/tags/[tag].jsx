@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
-import { useRouter } from 'next/router';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
+import { useRouter } from 'next/router';
 
 import Spinner from '@/components/Spinner';
 import ClientOnly from '@/components/ClientOnly';
