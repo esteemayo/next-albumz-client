@@ -19,14 +19,14 @@ const ForgotPassword = () => {
 
   const [email, setEmail] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
 
     if (!email) return toast.error('Please enter your email address');
 
     dispatch(forgotPassword({ email, toast }));
     setEmail('');
-  };
+  }, [email, dispatch]);
 
   useEffect(() => {
     isError && toast.error(message);
