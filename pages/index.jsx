@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { useSelector } from 'react-redux';
 
 import Hero from '@/components/Hero';
+import ClientOnly from '@/components/ClientOnly';
 import Modal from '@/components/Modal';
 import AddButton from '@/components/AddButton';
 import AlbumForm from '@/components/AlbumForm';
