@@ -84,7 +84,7 @@ const Account = () => {
     favArtists,
    } = formInputs;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
     if (emptyFieldCheck) {
@@ -110,7 +110,7 @@ const Account = () => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }, [file, formInputs, emptyFieldCheck, dispatch]);
 
   useEffect(() => {
     isError && toast.error(message);
