@@ -8,6 +8,7 @@ import Spinner from '@/components/Spinner';
 import AddButton from '@/components/AddButton';
 import AlbumForm from '@/components/AlbumForm';
 import Pagination from '@/components/Pagination';
+import ClientOnly from '@/components/ClientOnly';
 import styles from '@/styles/Albums.module.scss';
 import { getAlbums } from '@/services/albumService';
 import { getAllGenres } from '@/services/genreService';
