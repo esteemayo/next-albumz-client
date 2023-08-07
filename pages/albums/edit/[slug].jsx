@@ -5,14 +5,15 @@ import { toast } from 'react-toastify';
 
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
-import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
+import FormChipInput from '@/components/FormChipInput';
 import FormTextArea from '@/components/FormTextArea';
+import FormSelectInput from '@/components/FormSelectInput';
+
+import { parseCookie } from '@/utils/index';
 import { uploadImage } from '@/services/imageService';
 import styles from '@/styles/UpdateAlbum.module.scss';
-import FormChipInput from '@/components/FormChipInput';
 import { getAllGenres } from '@/services/genreService';
-import FormSelectInput from '@/components/FormSelectInput';
 import { getAlbumBySlug, updateAlbum } from '@/services/albumService';
 
 const UpdateAlbum = ({ album, genres }) => {
