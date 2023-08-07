@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic';
 
 import Meta from '@/components/Meta';
+import ClientOnly from '@/components/ClientOnly';
 import { parseCookie } from '@/utils/index';
 import styles from '@/styles/Dashboard.module.scss';
 import { getUserAlbums } from '@/services/albumService';
