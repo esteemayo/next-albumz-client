@@ -2,11 +2,12 @@ import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 
 import Meta from './Meta';
-import Navbar from './Navbar';
-import Footer from './Footer';
 import Sidebar from './Sidebar';
-import DarkMode from './DarkMode';
+import Navbar from './Navbar';
 import ClientOnly from './ClientOnly';
+import Footer from './Footer';
+import DarkMode from './DarkMode';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 const Layout = ({ children }) => {
