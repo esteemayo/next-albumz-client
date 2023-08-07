@@ -15,6 +15,7 @@ import { getAlbumBySlug, updateAlbum } from '@/services/albumService';
 import { getAllGenres } from '@/services/genreService';
 
 import { parseCookie } from '@/utils/index';
+
 import styles from '@/styles/UpdateAlbum.module.scss';
 
 const UpdateAlbum = ({ album, genres }) => {
