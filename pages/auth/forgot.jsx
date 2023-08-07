@@ -1,15 +1,17 @@
-import Link from 'next/link';
-import { toast } from 'react-toastify';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
-import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
-import { parseCookie } from '@/utils/index';
+import Meta from '@/components/Meta';
 import FormInput from '@/components/FormInput';
-import styles from '@/styles/Login.module.scss';
+
+import { parseCookie } from '@/utils/index';
 import { forgotPassword, reset } from '@/features/auth/authSlice';
+
+import styles from '@/styles/Login.module.scss';
 
 const ForgotPassword = () => {
   const dispatch = useDispatch();
