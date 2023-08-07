@@ -15,8 +15,8 @@ const Layout = ({ children }) => {
 
   return (
     <div className={darkMode === 'dark' ? 'app dark' : 'app'}>
-      <Meta />
       <ClientOnly>
+        <Meta />
         <Navbar />
         <ToastContainer />
         <Sidebar />
