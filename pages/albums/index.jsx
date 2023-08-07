@@ -10,9 +10,10 @@ import Pagination from '@/components/Pagination';
 import Spinner from '@/components/Spinner';
 import ClientOnly from '@/components/ClientOnly';
 
-import styles from '@/styles/Albums.module.scss';
 import { getAlbums } from '@/services/albumService';
 import { getAllGenres } from '@/services/genreService';
+
+import styles from '@/styles/Albums.module.scss';
 
 const AlbumCard = dynamic(() => import('@/components/AlbumCard'), { ssr: false });
 
