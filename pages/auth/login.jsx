@@ -78,7 +78,7 @@ const Login = () => {
   }
 
   return (
-    <>
+    <ClientOnly>
       <Meta title='Log in to Your Account - Albumz Music Entertainment' />
       <section className={styles.container}>
         <div className={styles.wrapper}>
@@ -136,7 +136,7 @@ const Login = () => {
           </div>
         </div>
       </section>
-    </>
+    </ClientOnly>
   );
 };
 
