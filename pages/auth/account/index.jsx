@@ -21,9 +21,10 @@ import FormChipInput from '@/components/FormChipInput';
 import FormButton from '@/components/FormButton';
 
 import { parseCookie } from '@/utils/index';
-import styles from '@/styles/Account.module.scss';
-import { uploadImage } from '@/services/imageService';
 import { reset, updateUserData } from '@/features/auth/authSlice';
+import { uploadImage } from '@/services/imageService';
+
+import styles from '@/styles/Account.module.scss';
 
 const Account = () => {
   const dispatch = useDispatch();
