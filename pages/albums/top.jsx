@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState } from 'react';
+import Image from 'next/image';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 
 import Meta from '@/components/Meta';
