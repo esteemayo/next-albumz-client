@@ -29,22 +29,28 @@ const ResetPassword = () => {
 
   const [inputs, setInputs] = useState(initialState);
 
-  const handleChange = ({ target: input }) => {
+  const handleChange = useCallback(({ target: input }) => {
     const { name, value } = input;
     setInputs((prev) => ({ ...prev, [name]: value }));
-  };
+  }, []);
 
-  const toggleShowPassword = () => {
-    setInputs((prev) => ({ ...prev, showPassword: !prev.showPassword }));
-  };
+  const toggleShowPassword = useCallback(() => {
+    setInputs((prev) => ({
+      ...prev,
+      showPassword: !prev.showPassword,
+    }));
+  }, []);
 
-  const toggleShowConfirmPassword = () => {
-    setInputs((prev) => ({ ...prev, showConfirmPassword: !prev.showConfirmPassword }));
-  };
+  const toggleShowConfirmPassword = useCallback(() => {
+    setInputs((prev) => ({
+      ...prev,
+      showConfirmPassword: !prev.showConfirmPassword,
+    }));
+  }, []);
 
   const { password, confirmPassword, showPassword, showConfirmPassword } = inputs;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
@@ -58,7 +64,7 @@ const ResetPassword = () => {
     };
 
     dispatch(resetPassword({ token, credentials, toast }));
-  };
+  }, [password, confirmPassword, router, dispatch]);
 
   useEffect(() => {
     isError && toast.error(message);
