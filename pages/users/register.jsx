@@ -1,26 +1,28 @@
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Visibility from '@mui/icons-material/Visibility';
+import { useRouter } from 'next/router';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import Visibility from '@mui/icons-material/Visibility';
+import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import PianoOutlinedIcon from '@mui/icons-material/PianoOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
-import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import PlaylistAddCheckCircleOutlinedIcon from '@mui/icons-material/PlaylistAddCheckCircleOutlined';
 
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
 import Spinner from '@/components/Spinner';
-import FormInput from '@/components/FormInput';
-import styles from '@/styles/Login.module.scss';
-import { uploadImage } from '@/services/imageService';
 import FormChipInput from '@/components/FormChipInput';
+import FormInput from '@/components/FormInput';
+
+import { uploadImage } from '@/services/imageService';
 import { registerUser, reset } from '@/features/auth/authSlice';
+
+import styles from '@/styles/Login.module.scss';
 
 const initialState = {
   name: '',
@@ -41,8 +43,8 @@ const Register = () => {
   );
 
   const [file, setFile] = useState(null);
-  const [showPassword, setShowPassword] = useState(false);
   const [formInputs, setFormInputs] = useState(initialState);
+  const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const handleShowPassword = () => {
