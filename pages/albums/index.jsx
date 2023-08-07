@@ -34,12 +34,14 @@ const Albums = ({ albums, genres, page, limit, total, numberOfPages }) => {
 
   if (albumList.length < 1) {
     return (
-      <main className={styles.main}>
-        <div className={styles.container}>
-          <h1 className={styles.errorMsg}>There are no albums in the database...</h1>
-        </div>
-      </main>
-    )
+      <ClientOnly>
+        <main className={styles.main}>
+          <div className={styles.container}>
+            <h1 className={styles.errorMsg}>There are no albums in the database...</h1>
+          </div>
+        </main>
+      </ClientOnly>
+    );
   }
 
   return (
