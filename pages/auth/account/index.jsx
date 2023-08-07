@@ -16,12 +16,13 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
-import { parseCookie } from '@/utils/index';
 import FormInput from '@/components/FormInput';
+import FormChipInput from '@/components/FormChipInput';
 import FormButton from '@/components/FormButton';
+
+import { parseCookie } from '@/utils/index';
 import styles from '@/styles/Account.module.scss';
 import { uploadImage } from '@/services/imageService';
-import FormChipInput from '@/components/FormChipInput';
 import { reset, updateUserData } from '@/features/auth/authSlice';
 
 const Account = () => {
