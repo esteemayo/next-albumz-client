@@ -14,19 +14,21 @@ const AlbumTags = ({ albums }) => {
   const { query } = useRouter();
 
   return (
-    <section className={styles.container}>
-      <h1 className={styles.heading}>
-        <span className={styles.heading__main}>Album with tags:</span>
-        <span className={styles.heading__sub}>
-          <TagOutlinedIcon className={styles.tagIcon}/>{query.tag}
-        </span>
-      </h1>
-      <Suspense fallback={<Spinner />}>
-        {albums?.map((item) => {
-          return <TagCard key={item._id} album={item} />;
-        })}
-      </Suspense>
-    </section>
+    <ClientOnly>
+      <section className={styles.container}>
+        <h1 className={styles.heading}>
+          <span className={styles.heading__main}>Album with tags:</span>
+          <span className={styles.heading__sub}>
+            <TagOutlinedIcon className={styles.tagIcon}/>{query.tag}
+          </span>
+        </h1>
+        <Suspense fallback={<Spinner />}>
+          {albums?.map((item) => {
+            return <TagCard key={item._id} album={item} />;
+          })}
+        </Suspense>
+      </section>
+    </ClientOnly>
   );
 };
 
