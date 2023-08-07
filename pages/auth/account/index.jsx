@@ -109,7 +109,7 @@ const Account = () => {
   }, [isError, message, dispatch]);
 
   return (
-    <>
+    <ClientOnly>
       <Meta title='Account - Albumz Music Entertainment' />
       <section className={styles.account}>
         <h1 className={styles.account__heading}>Account settings</h1>
@@ -216,7 +216,7 @@ const Account = () => {
           </div>
         </div>
       </section>
-    </>
+    </ClientOnly>
   );
 };
 
