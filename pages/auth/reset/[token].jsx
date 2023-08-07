@@ -25,7 +25,7 @@ const initialState = {
 const ResetPassword = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const { isError, isSuccess, message } = useSelector((state) => ({ ...state.auth }));
+  const { isError, isLoading, isSuccess, message } = useSelector((state) => ({ ...state.auth }));
 
   const [inputs, setInputs] = useState(initialState);
 
@@ -121,7 +121,13 @@ const ResetPassword = () => {
                   )}
                 </FormInput>
                 <div className={styles.form__btnWrapper}>
-                  <button type='submit' className={styles.form__btn}>Reset password</button>
+                  <button
+                    type='submit'
+                    className={styles.form__btn}
+                    disabled={isLoading}
+                  >
+                    Reset password
+                  </button>
                 </div>
               </div>
             </form>
