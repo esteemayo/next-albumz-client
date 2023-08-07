@@ -1,22 +1,24 @@
-import Link from 'next/link';
-import { toast } from 'react-toastify';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { signInWithPopup } from 'firebase/auth';
+import { toast } from 'react-toastify';
 import GoogleIcon from '@mui/icons-material/Google';
-import { useDispatch, useSelector } from 'react-redux';
-import Visibility from '@mui/icons-material/Visibility';
+import { useRouter } from 'next/router';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { useDispatch, useSelector } from 'react-redux';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import Visibility from '@mui/icons-material/Visibility';
 
-import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
-import Spinner from '@/components/Spinner';
-import { parseCookie } from '@/utils/index';
+import Meta from '@/components/Meta';
 import FormInput from '@/components/FormInput';
-import { auth, provider } from '../../firebase';
-import styles from '@/styles/Login.module.scss';
+import Spinner from '@/components/Spinner';
+
+import { parseCookie } from '@/utils/index';
 import { googleSignIn, loginUser, reset } from '@/features/auth/authSlice';
+import { auth, provider } from '../../firebase';
+
+import styles from '@/styles/Login.module.scss';
 
 const Login = () => {
   const router = useRouter();
