@@ -25,7 +25,7 @@ const Genres = ({ genres }) => {
   const [genreList, setGenreList] = useState(genres);
   
   return (
-    <>
+    <ClientOnly>
       <Meta title='Genres - Albumz Music Entertainment' />
       {genres.length > 0 ? (
         <section className={styles.genres}>
@@ -107,7 +107,7 @@ const Genres = ({ genres }) => {
           />
         </DialogBox>
       )}
-    </>
+    </ClientOnly>
   );
 };
 
