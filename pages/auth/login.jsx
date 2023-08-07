@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { signInWithPopup } from 'firebase/auth';
 import { toast } from 'react-toastify';
