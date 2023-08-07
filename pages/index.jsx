@@ -19,7 +19,7 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   return (
-    <>
+    <ClientOnly>
       <Hero />
       <FeaturedAlbums albums={featuredAlbums} />
       <TopReviews reviews={reviews} />
@@ -34,7 +34,7 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
           <AlbumForm genres={genres} onClose={setShowModal} />
         </Modal>
       )}
-    </>
+    </ClientOnly>
   );
 };
 
