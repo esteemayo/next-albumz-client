@@ -1,12 +1,13 @@
-import PropTypes from 'prop-types';
 import { lazy, Suspense } from 'react';
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
 import Spinner from '@/components/Spinner';
 import ClientOnly from '@/components/ClientOnly';
 
-import styles from '@/styles/Albums.module.scss';
 import { searchAlbums } from '@/services/albumService';
+
+import styles from '@/styles/Albums.module.scss';
 
 const AlbumCard = lazy(() => import('@/components/AlbumCard'));
 
