@@ -88,7 +88,7 @@ const UpdateAlbum = ({ album, genres }) => {
   };
 
   return (
-    <>
+    <ClientOnly>
       <Meta title={`Update ${album?.title} - Albumz Music Entertainment`} />
       <section className={styles.container}>
         <div className={styles.wrapper}>
@@ -171,7 +171,7 @@ const UpdateAlbum = ({ album, genres }) => {
           </div>
         </div>
       </section>
-    </>
+    </ClientOnly>
   );
 };
 
