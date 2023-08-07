@@ -9,14 +9,16 @@ import Visibility from '@mui/icons-material/Visibility';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 
-import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
-import { parseCookie } from '@/utils/index';
-import FormInput from '@/components/FormInput';
-import DialogBox from '@/components/DialogBox';
+import Meta from '@/components/Meta';
 import FormButton from '@/components/FormButton';
+import FormInput from '@/components/FormInput';
 import DeleteAccount from '@/components/DeleteAccount';
+import DialogBox from '@/components/DialogBox';
+
+import { parseCookie } from '@/utils/index';
 import styles from '@/styles/UpdatePassword.module.scss';
+
 import { reset, updateUserPassword } from '@/features/auth/authSlice';
 
 const UpdatePassword = () => {
