@@ -23,7 +23,7 @@ import { reset, updateUserPassword } from '@/features/auth/authSlice';
 
 const UpdatePassword = () => {
   const dispatch = useDispatch();
-  const { user, isError, message } = useSelector((state) => ({ ...state.auth }));
+  const { user, isError, isLoading, message } = useSelector((state) => ({ ...state.auth }));
 
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -34,7 +34,7 @@ const UpdatePassword = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
 
     const userData = {
@@ -45,13 +45,13 @@ const UpdatePassword = () => {
 
     dispatch(updateUserPassword({ userData, toast }));
     handleClear();
-  };
+  }, [handleClear, dispatch]);
 
-  const handleClear = () => {
+  const handleClear = useCallback(() => {
     setPassword('');
     setConfirmPassword('');
     setCurrentPassword('');
-  };
+  }, []);
 
   useEffect(() => {
     isError && toast.error(message);
@@ -171,7 +171,8 @@ const UpdatePassword = () => {
                 <button
                   onClick={() => setShowModal(false)}
                   className={styles.delete__btn}
-                  >
+                  disabled={isLoading}
+                >
                     Close this account...
                   </button>
               </div>
