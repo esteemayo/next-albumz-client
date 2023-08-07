@@ -13,19 +13,21 @@ const SearchPage = ({ albums }) => {
   const { query } = useRouter();
 
   return (
-    <main className={styles.main}>
-      <div className={styles.searchWrapper}>
-        {albums.length > 0 && <h1>Search results for &quot;<span>{query.q}</span> &quot;</h1>}
-        {albums.length === 0 && <h3>No search result for &quot;<span>{query.q}</span> &quot;</h3>}
-      </div>
-      <div className={styles.container}>
-        <Suspense fallback={<Spinner />}>
-          {albums?.map((item) => {
-            return <AlbumCard key={item._id} album={item} />;
-          })}
-        </Suspense>
-      </div>
-    </main>
+    <ClientOnly>
+      <main className={styles.main}>
+        <div className={styles.searchWrapper}>
+          {albums.length > 0 && <h1>Search results for &quot;<span>{query.q}</span> &quot;</h1>}
+          {albums.length === 0 && <h3>No search result for &quot;<span>{query.q}</span> &quot;</h3>}
+        </div>
+        <div className={styles.container}>
+          <Suspense fallback={<Spinner />}>
+            {albums?.map((item) => {
+              return <AlbumCard key={item._id} album={item} />;
+            })}
+          </Suspense>
+        </div>
+      </main>
+    </ClientOnly>
   );
 };
 
