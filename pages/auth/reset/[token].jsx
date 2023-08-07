@@ -1,17 +1,19 @@
-import Link from 'next/link';
-import { toast } from 'react-toastify';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import Visibility from '@mui/icons-material/Visibility';
+import { useRouter } from 'next/router';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
-import { parseCookie } from '@/utils/index';
+import Meta from '@/components/Meta';
 import FormInput from '@/components/FormInput';
-import styles from '@/styles/Login.module.scss';
+
+import { parseCookie } from '@/utils/index';
 import { reset, resetPassword } from '@/features/auth/authSlice';
+
+import styles from '@/styles/Login.module.scss';
 
 const initialState = {
   password: '',
