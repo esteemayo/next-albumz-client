@@ -28,7 +28,7 @@ import styles from '@/styles/Account.module.scss';
 
 const Account = () => {
   const dispatch = useDispatch();
-  const { user, isError, message } = useSelector((state) => ({ ...state.auth }));
+  const { user, isError, isLoading, message } = useSelector((state) => ({ ...state.auth }));
 
   const [file, setFile] = useState(null);
   const [formInputs, setFormInputs] = useState({
@@ -219,7 +219,7 @@ const Account = () => {
                 >
                   <FileUploadOutlinedIcon className={styles.form__icon} />
                 </FormInput>
-                <FormButton text='Save' />
+                <FormButton text='Save' disabled={isLoading} />
               </form>
             </div>
           </div>
