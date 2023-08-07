@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 import DarkMode from './DarkMode';
+import ClientOnly from './ClientOnly';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Layout = ({ children }) => {
