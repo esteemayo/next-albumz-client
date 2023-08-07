@@ -14,7 +14,7 @@ const TopAlbums = ({ albums }) => {
   const [albumList, setAlbumList] = useState(albums);
 
   return (
-    <>
+    <ClientOnly>
       <Meta title='Top 10 Albums - Albumz Music Entertainment' />
       <section className={styles.top}>
         <div className={styles.headerBox}>
@@ -66,7 +66,7 @@ const TopAlbums = ({ albums }) => {
           </tbody>
         </table>
       </section>
-    </>
+    </ClientOnly>
   );
 };
 
