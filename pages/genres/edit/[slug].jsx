@@ -1,14 +1,16 @@
-import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 
-import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
-import { parseCookie } from '@/utils/index';
-import FormInput from '@/components/FormInput';
+import Meta from '@/components/Meta';
 import FormButton from '@/components/FormButton';
-import styles from '@/styles/UpdateGenre.module.scss';
+import FormInput from '@/components/FormInput';
+
+import { parseCookie } from '@/utils/index';
 import { getGenreBySlug, updateGenre } from '@/services/genreService';
+
+import styles from '@/styles/UpdateGenre.module.scss';
 
 const UpdateGenre = ({ genre }) => {
   const { push } = useRouter();
