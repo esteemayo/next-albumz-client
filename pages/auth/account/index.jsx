@@ -1,18 +1,18 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { toast } from 'react-toastify';
-import { useEffect, useState  } from 'react';
+import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
-import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
+import { useEffect, useState  } from 'react';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
+import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import PianoOutlinedIcon from '@mui/icons-material/PianoOutlined';
+import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
-import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
+import PianoOutlinedIcon from '@mui/icons-material/PianoOutlined';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import PlaylistAddCheckCircleOutlinedIcon from '@mui/icons-material/PlaylistAddCheckCircleOutlined';
+import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
