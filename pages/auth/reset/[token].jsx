@@ -65,7 +65,7 @@ const ResetPassword = () => {
   }, [isError,isSuccess, message, router, dispatch]);
 
   return (
-    <>
+    <ClientOnly>
       <Meta title='Reset Password - Albumz Music Entertainment' />
       <div className={styles.container}>
         <div className={styles.wrapper}>
@@ -123,9 +123,9 @@ const ResetPassword = () => {
           </div>
         </div>
       </div>
-    </>
-  )
-}
+    </ClientOnly>
+  );
+};
 
 export const getServerSideProps = ({ req }) => {
   const { token } = parseCookie(req);
