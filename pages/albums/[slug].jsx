@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import { parseCookie } from '@/utils/index';
 import * as albumAPI from '@/services/albumservice';
+import ClientOnly from '@/components/ClientOnly';
+
 import styles from '@/styles/SingleAlbum.module.scss';
 
 const Meta = dynamic(() => import('@/components/Meta'));
