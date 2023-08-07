@@ -15,7 +15,7 @@ import styles from '@/styles/Login.module.scss';
 
 const ForgotPassword = () => {
   const dispatch = useDispatch();
-  const { isError, message } = useSelector((state) => ({ ...state.auth }));
+  const { isError, isLoading, message } = useSelector((state) => ({ ...state.auth }));
 
   const [email, setEmail] = useState('');
 
@@ -55,7 +55,13 @@ const ForgotPassword = () => {
                   <EmailOutlinedIcon className={styles.form__icon} />
                 </FormInput>
                 <div className={styles.form__btnWrapper}>
-                  <button type='submit' className={styles.form__btn}>Reset password</button>
+                  <button
+                    type='submit'
+                    className={styles.form__btn}
+                    disabled={isLoading}
+                  >
+                    Reset password
+                   </button>
                 </div>
               </div>
             </form>
