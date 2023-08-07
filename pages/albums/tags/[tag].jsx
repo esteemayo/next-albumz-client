@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 
 import Spinner from '@/components/Spinner';
+import ClientOnly from '@/components/ClientOnly';
+
 import styles from '@/styles/Tags.module.scss';
 import { getAlbumsByTag } from '@/services/albumService';
 
