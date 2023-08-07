@@ -20,7 +20,7 @@ const SingleAlbum = ({ album, reviews }) => {
   const [reviewList, setReviewList] = useState(reviews);
 
   return (
-    <>
+    <ClientOnly>
       <Meta title={`${album.title} - Albumz Music Entertainment`} />
       <section className={styles.container}>
         <SingleAlbumHero album={singleAlbum} />
@@ -29,7 +29,7 @@ const SingleAlbum = ({ album, reviews }) => {
         <Reviews reviews={reviewList} />
         <RelatedAlbums albumId={album.id} tags={singleAlbum.tags} />
       </section>
-    </>
+    </ClientOnly>
   );
 };
 
