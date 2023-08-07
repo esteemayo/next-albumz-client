@@ -75,7 +75,14 @@ const Account = () => {
 
   const emptyFieldCheck = Object.values(formInputs).some((item) => item === '');
 
-  const { name, username, email, location, favGenres, favArtists } = formInputs;
+  const { 
+    name,
+    username,
+    email,
+    location,
+    favGenres,
+    favArtists,
+   } = formInputs;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
