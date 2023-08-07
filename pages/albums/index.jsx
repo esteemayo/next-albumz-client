@@ -43,37 +43,39 @@ const Albums = ({ albums, genres, page, limit, total, numberOfPages }) => {
   }
 
   return (
-    <main className={styles.main}>
-      <div className={styles.container}>
-        {albumList?.map((item => {
-          return <AlbumCard key={item?._id} album={item} />;
-        }))}
-      </div>
+    <ClientOnly>
+      <main className={styles.main}>
+        <div className={styles.container}>
+          {albumList?.map((item => {
+            return <AlbumCard key={item?._id} album={item} />;
+          }))}
+        </div>
 
-      <Pagination
-        page={page}
-        total={total}
-        setAlbumList={setAlbumList}
-        numberOfPages={numberOfPages}
-      />
-
-      {user && (
-        <AddButton
-          text='New album'
-          onClick={() => setShowModal(true)}
+        <Pagination
+          page={page}
+          total={total}
+          setAlbumList={setAlbumList}
+          numberOfPages={numberOfPages}
         />
-      )}
 
-      {showModal && (
-        <Modal onClose={setShowModal}>
-          <AlbumForm
-            genres={genres}
-            onClose={setShowModal}
-            setAlbumList={setAlbumList}
+        {user && (
+          <AddButton
+            text='New album'
+            onClick={() => setShowModal(true)}
           />
-        </Modal>
-      )}
-    </main>
+        )}
+
+        {showModal && (
+          <Modal onClose={setShowModal}>
+            <AlbumForm
+              genres={genres}
+              onClose={setShowModal}
+              setAlbumList={setAlbumList}
+            />
+          </Modal>
+        )}
+      </main>
+    </ClientOnly>
   );
 };
 
