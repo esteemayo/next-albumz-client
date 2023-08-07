@@ -219,7 +219,10 @@ const Account = () => {
                 >
                   <FileUploadOutlinedIcon className={styles.form__icon} />
                 </FormInput>
-                <FormButton text='Save' disabled={isLoading} />
+                <FormButton
+                  text='Save'
+                  disabled={isLoading}
+                />
               </form>
             </div>
           </div>
