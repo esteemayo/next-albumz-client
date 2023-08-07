@@ -45,7 +45,15 @@ const UpdatePassword = () => {
 
     dispatch(updateUserPassword({ userData, toast }));
     handleClear();
-  }, [handleClear, dispatch]);
+  }, 
+    [
+      password,
+      confirmPassword,
+      currentPassword,
+      handleClear,
+      dispatch,
+    ]
+  );
 
   const handleClear = useCallback(() => {
     setPassword('');
