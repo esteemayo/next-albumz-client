@@ -1,14 +1,15 @@
-import { useState } from 'react';
 import dynamic from 'next/dynamic';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import Hero from '@/components/Hero';
-import ClientOnly from '@/components/ClientOnly';
-import Modal from '@/components/Modal';
 import AddButton from '@/components/AddButton';
+import Modal from '@/components/Modal';
+import ClientOnly from '@/components/ClientOnly';
 import AlbumForm from '@/components/AlbumForm';
-import { getAllGenres } from '@/services/genreService';
+
 import { getTopReviews } from '@/services/reviewService';
+import { getAllGenres } from '@/services/genreService';
 import { getFeaturedAlbums } from '@/services/albumService';
 
 const TopReviews = dynamic(() => import('@/components/TopReviews'), { ssr: false });
