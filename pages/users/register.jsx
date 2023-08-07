@@ -143,7 +143,7 @@ const Register = () => {
   }
 
   return (
-    <>
+    <ClientOnly>
       <Meta title='Create an Account - Albumz Music Entertainment' />
       <section className={`${styles.container} ${styles.registerContainer}`}>
         <div className={styles.wrapper}>
@@ -253,7 +253,7 @@ const Register = () => {
           </div>
         </div>
       </section>
-    </>
+    </ClientOnly>
   );
 };
 
