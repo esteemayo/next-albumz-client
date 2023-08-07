@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import { useState } from 'react';
-import { toast } from 'react-toastify';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
