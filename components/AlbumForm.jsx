@@ -1,14 +1,16 @@
-import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useCallback, useState } from 'react';
 
 import FormInput from './FormInput';
-import FormButton from './FormButton';
 import FormTextArea from './FormTextArea';
-import FormChipInput from './FormChipInput';
-import styles from '@/styles/Form.module.scss';
+import FormButton from './FormButton';
 import FormSelectInput from './FormSelectInput';
+import FormChipInput from './FormChipInput';
+
 import { createAlbum } from '@/services/albumService';
 import { uploadImage } from '@/services/imageService';
+
+import styles from '@/styles/Form.module.scss';
 
 const initialState = {
   artist: '',
