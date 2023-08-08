@@ -25,9 +25,9 @@ const Navbar = () => {
     router.push('/');
   }, [router, dispatch]);
 
-  const toggleScroll = () => {
+  const toggleScroll = useCallback(() => {
     setIsScrolled(window.scrollY === 0 ? false : true);
-  };
+  }, []);
 
   useEffect(() => {
     document.addEventListener('scroll', toggleScroll);
