@@ -40,7 +40,7 @@ const UpdatePassword = () => {
   }, []);
 
   const handleCloseModal = useCallback(() => {
-    setShowModal(false);
+    setShowModal(true);
   }, []);
 
   const handleSubmit = useCallback((e) => {
