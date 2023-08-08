@@ -2,6 +2,7 @@ import { toast } from 'react-toastify';
 
 import { deleteAlbum } from '@/services/albumService';
 import { deleteGenre } from '@/services/genreService';
+
 import styles from '@/styles/DeleteAlbumGenre.module.scss';
 
 const DeleteGenreAlbum = ({ type, title, albumId, genreId, closeModal, setGenreList, setAlbumList }) => {
