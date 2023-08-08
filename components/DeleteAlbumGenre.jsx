@@ -6,7 +6,15 @@ import { deleteGenre } from '@/services/genreService';
 
 import styles from '@/styles/DeleteAlbumGenre.module.scss';
 
-const DeleteGenreAlbum = ({ type, title, albumId, genreId, closeModal, setGenreList, setAlbumList }) => {
+const DeleteGenreAlbum = ({
+  type,
+  title,
+  albumId,
+  genreId,
+  closeModal,
+  setGenreList,
+  setAlbumList,
+ }) => {
   const handleDelete = async () => {
     if (type === 'genre') {
       await removeGenre();
