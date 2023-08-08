@@ -15,7 +15,7 @@ import DialogBox from '@/components/DialogBox';
 import GenreForm from '@/components/GenreForm';
 
 import { parseCookie } from '@/utils/index';
-import { getGenres } from '@/services/genreService';
+import { getGenres, deleteGenre } from '@/services/genreService';
 
 import styles from '@/styles/Genres.module.scss';
 
