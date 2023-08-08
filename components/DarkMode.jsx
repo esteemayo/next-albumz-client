@@ -3,16 +3,17 @@ import { useCallback } from 'react';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 
 import Popup from './Popup';
-import styles from '@/styles/DarkMode.module.scss';
 import { dark, light } from '@/features/darkMode/darkModeSlice';
+
+import styles from '@/styles/DarkMode.module.scss';
 
 const DarkMode = () => {
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
-  const toggleDarkmode = () => {
+  const toggleDarkmode = useCallback(() => {
     dispatch(darkMode === 'dark' ? light('light') : dark('dark'));
-  };
+  }, [dispatch]);
 
   return (
     <div className={styles.darkmode} onClick={toggleDarkmode}>
