@@ -189,7 +189,7 @@ const UpdatePassword = () => {
       </section>
       {!showModal && (
         <DialogBox>
-          <DeleteAccount onClose={setShowModal} />
+          <DeleteAccount onClose={handleCloseModal} />
         </DialogBox>
       )}
     </ClientOnly>
