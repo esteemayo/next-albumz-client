@@ -28,7 +28,16 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
   const [file, setFile] = useState(null);
   const [formData, setFormData] = useState(initialState);
 
-  const { artist, title, genre, info, year, label, tracks, tags } = formData;
+  const {
+    artist,
+    title,
+    genre,
+    info,
+    year,
+    label,
+    tracks,
+    tags,
+   } = formData;
 
   const handleChange = useCallback(({ target: input }) => {
     const { name, value } = input;
