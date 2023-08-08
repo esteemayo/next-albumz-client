@@ -46,7 +46,9 @@ const Login = () => {
     dispatch(loginUser({ userData, toast }));
   }, [dispatch]);
 
-  const loginWithGoogle = useCallback(() => {
+  const loginWithGoogle = useCallback((e) => {
+    e.stopPropagation();
+
     signInWithPopup(auth, provider)
       .then((result) => {
         const userData = {
