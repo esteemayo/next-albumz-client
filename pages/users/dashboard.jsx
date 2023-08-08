@@ -47,6 +47,7 @@ const Dashboard = ({ albums }) => {
           <h2>There are no albums in the database</h2>
         ): (
           <DashboardCard
+            isOpen={showModal}
             albums={albums}
             actionId={albumId}
             onOpen={handleOpenModal}
