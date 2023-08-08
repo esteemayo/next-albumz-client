@@ -26,7 +26,7 @@ const Navbar = () => {
   };
 
   const toggleScroll = () => {
-    setIsScrolled(window.pageYOffset === 0 ? false : true);
+    setIsScrolled(window.scrollY === 0 ? false : true);
   };
 
   useEffect(() => {
