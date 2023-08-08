@@ -20,10 +20,10 @@ const Navbar = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const handleLogout = () => {
+  const handleLogout = useCallback(() => {
     dispatch(logoutUser());
     router.push('/');
-  };
+  }, [router, dispatch]);
 
   const toggleScroll = () => {
     setIsScrolled(window.scrollY === 0 ? false : true);
