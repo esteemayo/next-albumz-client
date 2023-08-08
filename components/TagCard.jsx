@@ -1,16 +1,18 @@
-import Image from 'next/image';
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useCallback } from 'react';
 
 import { excerpts } from '@/utils/index';
+
 import styles from '@/styles/TagCard.module.scss';
 
 const TagCard = ({ album: { info, slug, image, title } }) => {
   const router = useRouter();
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     router.push(`/albums/${slug}`);
-  };
+  }, [slug, router]);
 
   return (
     <div className={styles.wrapper}>
