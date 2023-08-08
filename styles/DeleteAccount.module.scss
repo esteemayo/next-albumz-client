@@ -123,6 +123,10 @@
           color: #de0a0a;
           border: 1px solid #de0a0a;
         }
+
+        &:disabled {
+          cursor: not-allowed;
+        }
       }
     }
   }
