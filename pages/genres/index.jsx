@@ -4,6 +4,7 @@ import { useCallback, useSelector } from 'react-redux';
 import Moment from 'react-moment';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
@@ -25,6 +26,25 @@ const Genres = ({ genres }) => {
   const [genreId, setGenreId] = useState(null);
   const [showModal, setShowModal] = useState(true);
   const [genreList, setGenreList] = useState(genres);
+
+  const handleOpenModal = useCallback((genreId) => {
+    setShowModal(false);
+    setGenreId(genreId);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setShowModal(true);
+  }, []);
+
+  const handleDelete = useCallback(async () => {
+    try {
+      await deleteGenre(genreId);
+      setGenreList((prev) => prev.filter((item) => item._id !== genreId));
+      return toast.success('Genre deleted successfully');
+    } catch (err) {
+      console.log(err);
+    }
+  }, [genreId]);
   
   return (
     <ClientOnly>
@@ -66,13 +86,7 @@ const Genres = ({ genres }) => {
                       <Link href={`/genres/edit/${slug}`} passHref>
                         <a className={styles.btnUpdate}>Update</a>
                       </Link>
-                      <button
-                        className={styles.btnDelete}
-                        onClick={() => {
-                          setShowModal(false);
-                          setGenreId(id);
-                        }}
-                      >
+                      <button className={styles.btnDelete} onClick={() => handleOpenModal(id)}>
                         Delete
                       </button>
                     </td>
@@ -102,10 +116,10 @@ const Genres = ({ genres }) => {
         <DialogBox>
           <DeleteAlbumGenre
             type='genre'
-            genreId={genreId}
+            actionId={genreId}
             title='Discard genre?'
-            closeModal={setShowModal}
-            setGenreList={setGenreList}
+            onClose={handleCloseModal}
+            onAction={handleDelete}
           />
         </DialogBox>
       )}
