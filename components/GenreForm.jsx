@@ -19,7 +19,7 @@ const GenreForm = ({ onClose, setGenreList }) => {
     }
 
     await handleCreateGenre();
-  }, [handleCreateGenre]);
+  }, [ name, handleCreateGenre]);
 
   const handleCreateGenre = useCallback(async () => {
     try {
