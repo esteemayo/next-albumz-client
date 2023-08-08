@@ -7,7 +7,6 @@ import ClientOnly from '@/components/ClientOnly';
 
 import { deleteAlbum } from '@/services/albumService';
 import { getUserAlbums } from '@/services/albumService';
-import { deleteGenre } from '@/services/genreService';
 
 import { parseCookie } from '@/utils/index';
 
