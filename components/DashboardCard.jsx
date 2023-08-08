@@ -73,6 +73,7 @@ const DashboardCard = ({
 };
 
 DashboardCard.propTypes = {
+  isOpen: PropTypes.boolean.isRequired,
   albums: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -82,6 +83,10 @@ DashboardCard.propTypes = {
       image: PropTypes.string.isRequired,
     }),
   ),
+  actionId: PropTypes.string.isRequired,
+  onOpen: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default DashboardCard;
