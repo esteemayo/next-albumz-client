@@ -10,7 +10,7 @@ import styles from '@/styles/Pagination.module.scss';
 const Pagination = ({ page, total, numberOfPages, setAlbumList }) => {
   const [limit, setLimit] = useState(6);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
     try {
@@ -19,7 +19,7 @@ const Pagination = ({ page, total, numberOfPages, setAlbumList }) => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }, [page, limit]);
 
   const renderPagination = () => {
     if (page === 1 && page === numberOfPages) return null;
