@@ -25,7 +25,7 @@ const GenreForm = ({ onClose, setGenreList }) => {
     try {
       const { data } = await createGenre({ name });
       setGenreList((prev) => [data.genre, ...prev]);
-      onClose(false);
+      onClose();
     } catch (err) {
       console.log(err);
     }

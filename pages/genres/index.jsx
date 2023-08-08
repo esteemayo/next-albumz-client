@@ -36,6 +36,10 @@ const Genres = ({ genres }) => {
     setShowModal(true);
   }, []);
 
+  const handleCancel = useCallback(() => {
+    setOpen(false);
+  }, []);
+
   const handleDelete = useCallback(async (genreId) => {
     try {
       await deleteGenre(genreId);
@@ -106,7 +110,7 @@ const Genres = ({ genres }) => {
         <Modal onClose={setOpen}>
           <GenreForm
             type='genre'
-            onClose={setOpen}
+            onClose={handleCancel}
             setGenreList={setGenreList}
           />
         </Modal>
