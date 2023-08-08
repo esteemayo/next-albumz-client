@@ -1,3 +1,5 @@
+import styles from '@/styles/DeactivateAccount.module.scss';
+
 const DeactivateAccount = ({ disabled, onOpen }) => {
   return (
     <div className={styles.delete}>
