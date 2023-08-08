@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import RelatedAlbumCard from './RelatedAlbumCard';
-import styles from '@/styles/RelatedAlbums.module.scss';
 import { getRelatedAlbums } from '@/services/albumService';
+
+import styles from '@/styles/RelatedAlbums.module.scss';
 
 const RelatedAlbums = ({ albumId, tags }) => {
   const [relatedAlbums, setRelatedAlbums] = useState([]);

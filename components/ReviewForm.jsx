@@ -1,15 +1,16 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { toast } from 'react-toastify';
 import Rating from '@mui/material/Rating';
 
-import styles from '@/styles/ReviewForm.module.scss';
 import { createReview } from '@/services/albumService';
+
+import styles from '@/styles/ReviewForm.module.scss';
 
 const ReviewForm = ({ albumId, setReviewList }) => {
   const [rating, setRating] = useState(null);
   const [review, setReview] = useState(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
     try {
@@ -24,7 +25,7 @@ const ReviewForm = ({ albumId, setReviewList }) => {
       console.log(err);
       return toast.error(err.response.data.message);
     }
-  };
+  }, [rating, review]);
 
   return (
     <section className={styles.review}>

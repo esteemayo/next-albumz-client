@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import styles from '@/styles/RelatedAlbumCard.module.scss';
