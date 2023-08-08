@@ -24,7 +24,7 @@ const DeleteGenreAlbum = ({
     closeModal(true);
   };
 
-  const removeGenre = async () => {
+  const removeGenre = useCallback(async () => {
     try {
       await deleteGenre(genreId);
       setGenreList((prev) => prev.filter((item) => item._id !== genreId));
@@ -32,9 +32,9 @@ const DeleteGenreAlbum = ({
     } catch (err) {
       console.log(err);
     }
-  };
+  }, [genreId]);
 
-  const removeAlbum = async () => {
+  const removeAlbum = useCallback(async () => {
     try {
       await deleteAlbum(albumId);
       setAlbumList((prev) => prev.filter((item) => item._id !== albumId));
@@ -42,7 +42,7 @@ const DeleteGenreAlbum = ({
     } catch (err) {
       console.log(err);
     }
-  };
+  }, [albumId]);
 
   return (
     <div className={styles.container}>
