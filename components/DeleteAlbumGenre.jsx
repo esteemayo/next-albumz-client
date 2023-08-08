@@ -40,7 +40,7 @@ const DeleteGenreAlbum = ({
         <h3 className={styles.header}>{title}</h3>
         <div className={styles.btnBox}>
           <button
-            onClick={() => closeModal(true)}
+            onClick={onClose}
             className={`${styles.btn} ${styles.btnCancel}`}
           >
             Cancel
