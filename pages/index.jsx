@@ -20,7 +20,7 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const handleClose = useCallback(() => {
-    setShowmodal(false);
+    setShowModal(false);
   }, []);
 
   return (
