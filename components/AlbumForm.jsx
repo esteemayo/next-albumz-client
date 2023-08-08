@@ -86,6 +86,11 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
     }
   }, [tags, file, onClose, formData, emptyFieldCheck]);
 
+  const disableButton = useMemo(() => {
+    const disabled = !formData || !tags.length;
+    return !!disabled;
+  }, [formData]);
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
