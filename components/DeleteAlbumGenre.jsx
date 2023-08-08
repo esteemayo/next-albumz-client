@@ -15,14 +15,14 @@ const DeleteGenreAlbum = ({
   setGenreList,
   setAlbumList,
  }) => {
-  const handleDelete = async () => {
+  const handleDelete = useCallback(async () => {
     if (type === 'genre') {
       await removeGenre();
     } else if (type === 'album') {
       await removeAlbum();
     }
     closeModal(true);
-  };
+  }, [removeGenre, removeAlbum, closeModal]);
 
   const removeGenre = useCallback(async () => {
     try {
