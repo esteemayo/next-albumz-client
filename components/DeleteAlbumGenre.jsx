@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import styles from '@/styles/DeleteAlbumGenre.module.scss';
 
 const DeleteGenreAlbum = ({
-  type,
   title,
   actionId,
   onAction,
