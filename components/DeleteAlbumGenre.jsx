@@ -10,7 +10,7 @@ const DeleteGenreAlbum = ({
  }) => {
   const handleDelete = useCallback(async () => {
     if (type === 'genre') {
-      await onAction();
+      onAction?.(actionId);
     } else if (type === 'album') {
       onAction();
     }
