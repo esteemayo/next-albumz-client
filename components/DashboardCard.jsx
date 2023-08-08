@@ -51,7 +51,7 @@ const DashboardCard = ({ isOpen, albums, actionId, onOpen, onClose, onDelete }) 
           );
         })}
       </Suspense>
-      {!showModal && (
+      {!isOpen && (
         <DialogBox>
           <DeleteAlbumGenre
             type='album'
