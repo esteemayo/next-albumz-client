@@ -22,10 +22,10 @@ import styles from '@/styles/Genres.module.scss';
 const Genres = ({ genres }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
 
-  const [open, setOpen] = useState(false);
   const [genreId, setGenreId] = useState(null);
-  const [showModal, setShowModal] = useState(true);
+  const [open, setOpen] = useState(false);
   const [genreList, setGenreList] = useState(genres);
+  const [showModal, setShowModal] = useState(true);
 
   const handleOpenModal = useCallback((genreId) => {
     setShowModal(false);
