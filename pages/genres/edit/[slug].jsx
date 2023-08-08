@@ -16,7 +16,7 @@ const UpdateGenre = ({ genre }) => {
   const { push } = useRouter();
   const [name, setName] = useState(genre?.name);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
     if (name.trim().length === 0) {
@@ -25,9 +25,9 @@ const UpdateGenre = ({ genre }) => {
 
     await handleUpdate();
     await push('/genres');
-  };
+  }, [name, push, handleUpdate]);
   
-  const handleUpdate = async () => {
+  const handleUpdate = useCallback(async () => {
     try {
       const genreId = genre?._id;
       const updGenre = { name };
@@ -36,7 +36,7 @@ const UpdateGenre = ({ genre }) => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }, [name, genre._id]);
 
   return (
     <ClientOnly>
