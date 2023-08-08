@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 import AlbumOutlinedIcon from '@mui/icons-material/AlbumOutlined';
 import { useDispatch, useSelector } from 'react-redux';
 import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined';
 import TitleOutlinedIcon from '@mui/icons-material/TitleOutlined';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
@@ -32,14 +32,14 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
 
   const albumId = album?._id;
 
-  const handleSetAsBookmark = (album) => {
+  const handleSetAsBookmark = useCallback((album) => {
     user && dispatch(bookmarkReducer.createNewBookmark({ album, toast }));
-  };
+  }, [user, dispatch]);
 
-  const handleUnSetAsBookmark = () => {
+  const handleUnSetAsBookmark = useCallback(() => {
     const bookmarkId = bookmark?._id;
     user && dispatch(bookmarkReducer.removeBookmark({ bookmarkId, toast }));
-  };
+  }, [user, bookmark._id, dispatch]);
 
   useEffect(() => {
     albumId && dispatch(bookmarkReducer.fetchBookmark(albumId));
