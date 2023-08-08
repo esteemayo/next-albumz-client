@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import StarRating from './StarRating';
 import { getUser } from '@/services/userService';
+
 import styles from '@/styles/TopReview.module.scss';
 
 const TopReview = ({ user: userId, rating, review }) => {
