@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import { useCallback } from 'react';
+
 import styles from '@/styles/DeleteAlbumGenre.module.scss';
 
 const DeleteGenreAlbum = ({
