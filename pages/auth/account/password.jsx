@@ -35,7 +35,11 @@ const UpdatePassword = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
 
-  const handleOpen = useCallback(() => {
+  const handleOpenModal = useCallback(() => {
+    setShowModal(false);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
     setShowModal(false);
   }, []);
 
@@ -178,7 +182,7 @@ const UpdatePassword = () => {
             )}
             <DeactivateAccount
               disabled={isLoading}
-              onOpen={handleOpen}
+              onOpen={handleOpenModal}
             />
           </div>
         </div>
