@@ -1,9 +1,10 @@
 import Link from 'next/link';
-import { useCallback, useState } from 'react';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
+import { useCallback, useState } from 'react';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 
 import { getAlbums } from '@/services/albumService';
+
 import styles from '@/styles/Pagination.module.scss';
 
 const Pagination = ({ page, total, numberOfPages, setAlbumList }) => {
