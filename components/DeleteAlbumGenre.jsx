@@ -37,4 +37,11 @@ const DeleteGenreAlbum = ({
   );
 };
 
+DeleteGenreAlbum.propTypes = {
+  title: PropTypes.string.isRequired,
+  actionId: PropTypes.string.isRequired,
+  onAction: PropTypes.func.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
 export default DeleteGenreAlbum;
