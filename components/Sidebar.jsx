@@ -1,9 +1,9 @@
-import Link from 'next/link';
 import { useState } from 'react';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import SearchIcon from '@mui/icons-material/Search';
-import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
+import { useDispatch, useSelector } from 'react-redux';
 
 import styles from '@/styles/Sidebar.module.scss';
 import { logoutUser } from '@/features/auth/authSlice';
