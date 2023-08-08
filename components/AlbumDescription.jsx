@@ -1,29 +1,31 @@
 import { toast } from 'react-toastify';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import AlbumOutlinedIcon from '@mui/icons-material/AlbumOutlined';
-import TitleOutlinedIcon from '@mui/icons-material/TitleOutlined';
+import { useDispatch, useSelector } from 'react-redux';
 import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
+import { useEffect, useState } from 'react';
 import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined';
-import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
+import TitleOutlinedIcon from '@mui/icons-material/TitleOutlined';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
-import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined';
+import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumberedOutlined';
 
-import Popup from './Popup';
 import LikeButton from './LikeButton';
+import Popup from './Popup';
 import StarRating from './StarRating';
-import { excerpts } from '@/utils/index';
-import styles from '@/styles/AlbumDescription.module.scss';
-import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
+
 import { createViews, getViews, reset } from '@/features/views/viewSlice';
+import { excerpts } from '@/utils/index';
+import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
+
+import styles from '@/styles/AlbumDescription.module.scss';
 
 const AlbumDescription = ({ album, setSingleAlbum }) => {
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => ({ ...state.auth }));
   const { views } = useSelector((state) => ({ ...state.views }));
+  const { user } = useSelector((state) => ({ ...state.auth }));
   const { bookmark } = useSelector((state) => ({ ...state.bookmark }));
 
   const [readMore, setReadMore] = useState(false);
@@ -170,7 +172,6 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
               )}
             </>
           )}
-
         </div>
       </div>
     </section>
