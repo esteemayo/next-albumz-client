@@ -29,25 +29,28 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
 
   const { tags } = formData;
 
-  const handleChange = ({ target: input }) => {
+  const handleChange = useCallback(({ target: input }) => {
     const { name, value } = input;
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  }, []);
 
-  const handleAddTag = (tag) => {
-    setFormData((prev) => ({ ...prev, tags: [...prev.tags, tag] }));
-  };
+  const handleAddTag = useCallback((tag) => {
+    setFormData((prev) => ({
+      ...prev,
+      tags: [...prev.tags, tag] },
+    ));
+  }, []);
 
-  const handleDeleteTag = (tag) => {
+  const handleDeleteTag = useCallback((tag) => {
     setFormData((prev) => ({
       ...prev,
       tags: prev.tags.filter((item) => item !== tag)
     }));
-  };
+  }, []);
 
   const emptyFieldCheck = Object.values(formData).some((item) => item === '');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
     if (!tags.length) {
@@ -80,7 +83,7 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }, [tags, file, onClose, formData, emptyFieldCheck]);
 
   return (
     <div className={styles.container}>
