@@ -35,6 +35,11 @@ const GenreForm = ({ onClose, setGenreList }) => {
     }
   }, [name, onClose]);
 
+  const disableButton = useMemo(() => {
+    const disabled = !name;
+    return !!disabled;
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
