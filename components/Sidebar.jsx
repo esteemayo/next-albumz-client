@@ -14,8 +14,9 @@ import styles from '@/styles/Sidebar.module.scss';
 const Sidebar = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => ({ ...state.auth }));
+
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
+  const { user } = useSelector((state) => ({ ...state.auth }));
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
   const [query, setQuery] = useState('');
