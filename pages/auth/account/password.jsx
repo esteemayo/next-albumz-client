@@ -50,7 +50,7 @@ const UpdatePassword = () => {
       confirmPassword=== '' ||
       currentPassword=== '';
     
-    return disabled;
+    return !!disabled;
   }, 
     [
       isLoading,
