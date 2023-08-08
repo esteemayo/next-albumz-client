@@ -28,7 +28,7 @@ const Dashboard = ({ albums }) => {
     setShowModal(true);
   }, []);
 
-  const handleDelete = useCallback(() => {
+  const handleDelete = useCallback(async () => {
     try {
       await deleteAlbum(albumId);
       setAlbumList((prev) => prev.filter((item) => item._id !== albumId));
