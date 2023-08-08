@@ -15,6 +15,7 @@ import FormButton from '@/components/FormButton';
 import FormInput from '@/components/FormInput';
 import DeleteAccount from '@/components/DeleteAccount';
 import DialogBox from '@/components/DialogBox';
+import DeactivateAccount from '@/components/DeactivateAccount';
 
 import { parseCookie } from '@/utils/index';
 import { reset, updateUserPassword } from '@/features/auth/authSlice';
