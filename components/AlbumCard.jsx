@@ -1,14 +1,25 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
 
 import { excerpts } from '@/utils/index';
 import LikeButton from '@/components/LikeButton';
+
 import styles from '@/styles/AlbumCard.module.scss';
 
 const AlbumCard = ({ album }) => {
   const [singleAlbum, setSingleAlbum] = useState(album);
-  const { _id: id, tags, info, slug, image, likes, title, ratingsAverage, ratingsQuantity } = singleAlbum;
+  const {
+    _id: id,
+    tags,
+    info,
+    slug,
+    image,
+    likes,
+    title,
+    ratingsAverage,
+    ratingsQuantity,
+   } = singleAlbum;
 
   return (
     <div className={styles.card}>
