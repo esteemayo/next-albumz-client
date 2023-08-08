@@ -12,10 +12,6 @@ import { excerpts } from '@/utils/index';
 import styles from '@/styles/DashboardCard.module.scss';
 
 const DashboardCard = ({ albums, actionId, onOpen, onClose, onDelete }) => {
-  const [albumList, setAlbumList] = useState(albums);
-  const [albumId, setAlbumId] = useState(null);
-  const [showModal, setShowModal] = useState(true);
-
   return (
     <>
       <Suspense fallback={<Spinner />}>
