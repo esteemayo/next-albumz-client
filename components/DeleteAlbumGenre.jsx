@@ -1,38 +1,21 @@
 import { useCallback } from 'react';
-import { toast } from 'react-toastify';
-
-import { deleteAlbum } from '@/services/albumService';
-import { deleteGenre } from '@/services/genreService';
-
 import styles from '@/styles/DeleteAlbumGenre.module.scss';
 
 const DeleteGenreAlbum = ({
   type,
   title,
   actionId,
-  genreId,
   onAction,
   onClose,
-  setGenreList,
  }) => {
   const handleDelete = useCallback(async () => {
     if (type === 'genre') {
-      await removeGenre();
+      await onAction();
     } else if (type === 'album') {
       onAction();
     }
     onClose();
-  }, [removeGenre, onClose]);
-
-  const removeGenre = useCallback(async () => {
-    try {
-      await deleteGenre(genreId);
-      setGenreList((prev) => prev.filter((item) => item._id !== genreId));
-      return toast.success('Genre deleted successfully');
-    } catch (err) {
-      console.log(err);
-    }
-  }, [genreId]);
+  }, [onClose]);
 
   return (
     <div className={styles.container}>
