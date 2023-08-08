@@ -148,7 +148,10 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
                 type='file'
                 onChange={(e) => setFile(e.target.files[0])}
               />
-              <FormButton text='Submit' />
+              <FormButton
+                text='Submit'
+                disabled={disableButton}
+              />
             </div>
           </form>
         </div>
