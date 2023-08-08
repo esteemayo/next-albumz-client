@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import { useEffect, useState } from 'react';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 import Popup from './Popup';
 import { likeAlbum } from '@/services/albumService';
+
 import styles from '@/styles/LikeButton.module.scss';
 
 const LikeButton = ({ type, likes, albumId, setSingleAlbum }) => {
