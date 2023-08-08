@@ -36,7 +36,7 @@ const Genres = ({ genres }) => {
     setShowModal(true);
   }, []);
 
-  const handleDelete = useCallback(async () => {
+  const handleDelete = useCallback(async (genreId) => {
     try {
       await deleteGenre(genreId);
       setGenreList((prev) => prev.filter((item) => item._id !== genreId));
@@ -44,7 +44,7 @@ const Genres = ({ genres }) => {
     } catch (err) {
       console.log(err);
     }
-  }, [genreId]);
+  }, []);
   
   return (
     <ClientOnly>
