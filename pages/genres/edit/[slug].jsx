@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import ClientOnly from '@/components/ClientOnly';
