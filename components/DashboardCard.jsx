@@ -15,7 +15,7 @@ const DashboardCard = ({ albums, actionId, onOpen, onClose, onDelete }) => {
   return (
     <>
       <Suspense fallback={<Spinner />}>
-        {albumList?.map((item) => {
+        {albums?.map((item) => {
           const { _id: id, info, slug, image, title } = item;
           return (
             <div key={id} className={styles.wrapper}>
