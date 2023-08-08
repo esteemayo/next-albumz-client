@@ -1,18 +1,20 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import PropTypes from 'prop-types';
+import Link from 'next/link';
 import { lazy, Suspense, useState } from 'react';
+import PropTypes from 'prop-types';
 
-import { excerpts } from '@/utils/index';
-import Spinner from '@/components/Spinner';
 import DialogBox from '@/components/DialogBox';
-import styles from '@/styles/DashboardCard.module.scss';
+import Spinner from '@/components/Spinner';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 
+import { excerpts } from '@/utils/index';
+
+import styles from '@/styles/DashboardCard.module.scss';
+
 const DashboardCard = ({ albums }) => {
+  const [albumList, setAlbumList] = useState(albums);
   const [albumId, setAlbumId] = useState(null);
   const [showModal, setShowModal] = useState(true);
-  const [albumList, setAlbumList] = useState(albums);
 
   return (
     <>
