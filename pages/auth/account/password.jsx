@@ -17,9 +17,9 @@ import DeleteAccount from '@/components/DeleteAccount';
 import DialogBox from '@/components/DialogBox';
 
 import { parseCookie } from '@/utils/index';
-import styles from '@/styles/UpdatePassword.module.scss';
-
 import { reset, updateUserPassword } from '@/features/auth/authSlice';
+
+import styles from '@/styles/UpdatePassword.module.scss';
 
 const UpdatePassword = () => {
   const dispatch = useDispatch();
