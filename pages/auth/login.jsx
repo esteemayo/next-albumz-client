@@ -50,7 +50,7 @@ const Login = () => {
     };
 
     dispatch(loginUser({ userData, toast }));
-  }, [dispatch]);
+  }, [email, password,  dispatch]);
 
   const loginWithGoogle = useCallback((e) => {
     e.stopPropagation();
