@@ -223,6 +223,10 @@
         color: #fff;
         border-color: #d6d8ff;
       }
+
+      &:disabled {
+        cursor: not-allowed;
+      }
     }
 
     &__googleBtnWrapper {
@@ -251,6 +255,10 @@
 
       &:hover {
         background-color: rgba(66,133,244, 0.7);
+      }
+
+      &:disabled {
+        cursor: not-allowed;
       }
 
       .socialLoginIcon {
