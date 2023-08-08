@@ -12,13 +12,15 @@ const DeleteAccount = ({ onClose }) => {
   const { push } = useRouter();
   const dispatch = useDispatch();
 
-  const handleDeleteUserAccount = async () => {
+  const handleDeleteUserAccount = useCallback(async (e) => {
+    e.stopPropagation();
+
     await deactivateUserAccount();
     await push('/');
     onClose();
-  };
+  }, [onClose, deactivateUserAccount, push]);
 
-  const deactivateUserAccount = async () => {
+  const deactivateUserAccount = useCallback(async () => {
     try {
       await deleteMe();
       dispatch(logoutUser());
@@ -26,7 +28,7 @@ const DeleteAccount = ({ onClose }) => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }, [dispatch]);
 
   return (
     <div className={styles.container}>
