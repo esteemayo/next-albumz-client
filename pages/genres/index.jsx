@@ -115,7 +115,6 @@ const Genres = ({ genres }) => {
       {!showModal && (
         <DialogBox>
           <DeleteAlbumGenre
-            type='genre'
             actionId={genreId}
             title='Discard genre?'
             onClose={handleCloseModal}
