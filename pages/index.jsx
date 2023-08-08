@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import Hero from '@/components/Hero';
@@ -19,6 +19,10 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
   const [showModal, setShowModal] = useState(false);
   const { user } = useSelector((state) => ({ ...state.auth }));
 
+  const handleClose = useCallback(() => {
+    setShowmodal(false);
+  }, []);
+
   return (
     <ClientOnly>
       <Hero />
@@ -32,7 +36,10 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
       )}
       {showModal && (
         <Modal onClose={setShowModal}>
-          <AlbumForm genres={genres} onClose={setShowModal} />
+          <AlbumForm
+            genres={genres}
+            onClose={handleClose}
+          />
         </Modal>
       )}
     </ClientOnly>
