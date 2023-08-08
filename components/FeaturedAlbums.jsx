@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { lazy, Suspense } from 'react';
 
 import Spinner from '@/components/Spinner';
+
 import styles from '@/styles/FeaturedAlbums.module.scss';
 
 const AlbumCard = lazy(() => import('@/components/AlbumCard'));
