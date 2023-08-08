@@ -106,6 +106,11 @@ Albums.propTypes = {
       ratingsQuantity: PropTypes.number.isRequired,
     }),
   ),
+  genres: PropTypes.array.isRequired,
+  page: PropTypes.number.isRequired,
+  limit: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  numberOfPages: PropTypes.number.isRequired,
 };
 
 export const getServerSideProps = async ({ query: { page, limit } }) => {
