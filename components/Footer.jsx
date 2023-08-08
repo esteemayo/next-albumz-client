@@ -1,6 +1,7 @@
+import { useMemo } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useSelector } from 'react-redux';
+import Image from 'next/image';
 
 import styles from '@/styles/Footer.module.scss';
 
