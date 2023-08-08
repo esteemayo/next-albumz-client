@@ -50,14 +50,14 @@ const LikeButton = ({ type, likes, albumId, setSingleAlbum }) => {
     </Popup>
   );
 
-  const handleLike = async () => {
+  const handleLike = useCallback(async () => {
     try {
       const { data } = await likeAlbum(albumId);
       setSingleAlbum(data.album);
     } catch (err) {
       console.log(err);
     }
-  };
+  }, [albumId]);
 
   return (
     <div className={styles.icon__wrapper}>
