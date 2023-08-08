@@ -1,6 +1,7 @@
 import { toast } from 'react-toastify';
 import { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 
 import FormInput from './FormInput';
 import FormButton from './FormButton';
@@ -10,6 +11,7 @@ import { createGenre } from '@/services/genreService';
 import styles from '@/styles/Form.module.scss';
 
 const GenreForm = ({ onClose, setGenreList }) => {
+  const { reload } = useRouter();
   const [name, setName] = useState(null);
 
   const handleSubmit = useCallback(async (e) => {
@@ -20,7 +22,8 @@ const GenreForm = ({ onClose, setGenreList }) => {
     }
 
     await handleCreateGenre();
-  }, [ name, handleCreateGenre]);
+    await reload();
+  }, [ name, reload, handleCreateGenre]);
 
   const handleCreateGenre = useCallback(async () => {
     try {
