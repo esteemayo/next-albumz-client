@@ -9,11 +9,7 @@ const DeleteGenreAlbum = ({
   onClose,
  }) => {
   const handleDelete = useCallback(async () => {
-    if (type === 'genre') {
-      onAction?.(actionId);
-    } else if (type === 'album') {
-      onAction();
-    }
+    onAction?.(actionId);
     onClose();
   }, [onClose]);
 
