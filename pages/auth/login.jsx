@@ -126,7 +126,11 @@ const Login = () => {
               </div>
             </form>
             <div className={styles.form__googleBtnWrapper}>
-              <button onClick={loginWithGoogle} className={styles.form__btnGoogle}>
+              <button 
+                onClick={loginWithGoogle}
+                className={styles.form__btnGoogle}
+                disabled={isLoading}
+              >
                 <span className={styles.socialLoginIcon}>
                   <GoogleIcon className={styles.googleIcon} />
                 </span>
