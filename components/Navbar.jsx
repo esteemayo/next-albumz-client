@@ -1,17 +1,20 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Search from '@/components/Search';
-import styles from '@/styles/Navbar.module.scss';
 import { logoutUser } from '@/features/auth/authSlice';
 import { toggleMenu } from '@/features/toggle/toggleSlice';
+
+import Search from '@/components/Search';
+
+import styles from '@/styles/Navbar.module.scss';
 
 const Navbar = () => {
   const router = useRouter();
   const dispatch = useDispatch();
+
   const { user } = useSelector((state) => ({ ...state.auth }));
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
 
