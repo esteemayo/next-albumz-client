@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import Link from 'next/link';
 import SearchIcon from '@mui/icons-material/Search';
 import { useRouter } from 'next/router';
@@ -26,7 +26,7 @@ const Sidebar = () => {
     router.push('/');
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = useCallback((e) => {
     e.preventDefault();
 
     if (query) {
@@ -34,7 +34,7 @@ const Sidebar = () => {
       setQuery('');
       dispatch(closeMenu());
     }
-  };
+  }, [query, router, dispatch]);
 
   const toggleDarkmode = () => {
     darkMode === 'dark' ? dispatch(light('light')) : dispatch(dark('dark'));
