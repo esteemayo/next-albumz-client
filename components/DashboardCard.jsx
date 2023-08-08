@@ -61,7 +61,6 @@ const DashboardCard = ({
       {!isOpen && (
         <DialogBox>
           <DeleteAlbumGenre
-            type='album'
             actionId={actionId}
             title='Discard album?'
             onClose={onClose}
