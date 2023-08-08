@@ -55,7 +55,7 @@ const GenreForm = ({ onClose, setGenreList }) => {
                 placeholder='Name'
                 onChange={(e) => setName(e.target.value)}
               />
-              <FormButton text='Submit' />
+              <FormButton text='Submit' disabled={disableButton} />
             </div>
           </form>
         </div>
