@@ -107,7 +107,7 @@ const Genres = ({ genres }) => {
       )}
       {user && <AddButton text='New genre' onClick={() => setOpen(true)} />}
       {open && (
-        <Modal onClose={setOpen}>
+        <Modal onClose={handleCancel}>
           <GenreForm
             type='genre'
             onClose={handleCancel}
