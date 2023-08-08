@@ -11,7 +11,7 @@ import styles from '@/styles/Form.module.scss';
 const GenreForm = ({ onClose, setGenreList }) => {
   const [name, setName] = useState(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
     if (!name) {
@@ -19,9 +19,9 @@ const GenreForm = ({ onClose, setGenreList }) => {
     }
 
     await handleCreateGenre();
-  };
+  }, [handleCreateGenre]);
 
-  const handleCreateGenre = async () => {
+  const handleCreateGenre = useCallback(async () => {
     try {
       const { data } = await createGenre({ name });
       setGenreList((prev) => [data.genre, ...prev]);
@@ -29,7 +29,7 @@ const GenreForm = ({ onClose, setGenreList }) => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }, [name, onClose]);
 
   return (
     <div className={styles.container}>
