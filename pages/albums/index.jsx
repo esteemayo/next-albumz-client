@@ -17,7 +17,14 @@ import styles from '@/styles/Albums.module.scss';
 
 const AlbumCard = dynamic(() => import('@/components/AlbumCard'), { ssr: false });
 
-const Albums = ({ albums, genres, page, limit, total, numberOfPages }) => {
+const Albums = ({
+  albums,
+  genres,
+  page,
+  limit,
+  total,
+  numberOfPages,
+}) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const [showModal, setShowModal] = useState(false);
