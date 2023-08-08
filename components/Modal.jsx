@@ -6,14 +6,14 @@ const Modal = ({ onClose, children }) => {
     <div className={styles.overlay}>
       <div className={
         children.props.type === 'genre' ?
-        `${styles.modal} ${styles.modalGenre}` : 
+        `${styles.modal} ${styles.modalGenre}` :
         `${styles.modal}`}
       >
         <header className={styles.modal__header}>
           <div className={styles.modal__iconWrapper}>
-            <CloseOutlinedIcon 
-              className={styles.modal__closeIcon} 
-              onClick={() => onClose(false)} 
+            <CloseOutlinedIcon
+              className={styles.modal__closeIcon}
+              onClick={onClose}
             />
           </div>
         </header>

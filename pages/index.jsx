@@ -35,7 +35,7 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
         />
       )}
       {showModal && (
-        <Modal onClose={setShowModal}>
+        <Modal onClose={handleClose}>
           <AlbumForm
             genres={genres}
             onClose={handleClose}

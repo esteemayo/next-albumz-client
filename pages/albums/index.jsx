@@ -81,7 +81,7 @@ const Albums = ({
         )}
 
         {showModal && (
-          <Modal onClose={setShowModal}>
+          <Modal onClose={handleClose}>
             <AlbumForm
               genres={genres}
               onClose={handleClose}
