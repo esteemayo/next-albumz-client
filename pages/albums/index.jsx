@@ -23,6 +23,10 @@ const Albums = ({ albums, genres, page, limit, total, numberOfPages }) => {
   const [showModal, setShowModal] = useState(false);
   const [albumList, setAlbumList] = useState(albums);
 
+  const handleClose = useCallback(() => {
+    setShowModal(false);
+  }, []);
+
   useEffect(() => {
     (async () => {
       try {
@@ -73,7 +77,7 @@ const Albums = ({ albums, genres, page, limit, total, numberOfPages }) => {
           <Modal onClose={setShowModal}>
             <AlbumForm
               genres={genres}
-              onClose={setShowModal}
+              onClose={handleClose}
               setAlbumList={setAlbumList}
             />
           </Modal>
