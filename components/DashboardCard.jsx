@@ -11,7 +11,14 @@ import { excerpts } from '@/utils/index';
 
 import styles from '@/styles/DashboardCard.module.scss';
 
-const DashboardCard = ({ isOpen, albums, actionId, onOpen, onClose, onDelete }) => {
+const DashboardCard = ({
+  isOpen,
+  albums,
+  actionId,
+  onOpen,
+  onClose,
+  onDelete,
+ }) => {
   return (
     <>
       <Suspense fallback={<Spinner />}>
