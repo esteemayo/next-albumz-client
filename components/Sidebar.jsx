@@ -5,10 +5,11 @@ import { useRouter } from 'next/router';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 
-import styles from '@/styles/Sidebar.module.scss';
 import { logoutUser } from '@/features/auth/authSlice';
-import { closeMenu } from '@/features/toggle/toggleSlice';
 import { dark, light } from '@/features/darkMode/darkModeSlice';
+import { closeMenu } from '@/features/toggle/toggleSlice';
+
+import styles from '@/styles/Sidebar.module.scss';
 
 const Sidebar = () => {
   const router = useRouter();
