@@ -58,7 +58,7 @@ const GenreForm = ({ onClose, setGenreList }) => {
 
 GenreForm.propTypes = {
   onClose: PropTypes.func.isRequired,
-  setGenreList: PropTypes.arr.isRequired,
+  setGenreList: PropTypes.array.isRequired,
 };
 
 export default GenreForm;
