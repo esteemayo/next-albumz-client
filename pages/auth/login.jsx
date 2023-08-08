@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useDispatch, useSelector } from 'react-redux';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import { useMemo } from 'react';
 import Visibility from '@mui/icons-material/Visibility';
 
 import ClientOnly from '@/components/ClientOnly';
@@ -34,6 +35,11 @@ const Login = () => {
   const handleShowPassword = useCallback(() => {
     setShowPassword(!showPassword);
   }, [showPassword]);
+
+  const disableButton = useMemo(() => {
+    const disabled = isLoading || !email || !password;
+    return !!disabled;
+  }, [email, password, isLoading]);
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
@@ -121,7 +127,13 @@ const Login = () => {
                   )}
                 </FormInput>
                 <div className={styles.form__btnWrapper}>
-                  <button type='submit' className={styles.form__btn}>Log in</button>
+                  <button
+                    type='submit'
+                    className={styles.form__btn}
+                    disabled={disableButton}
+                  >
+                      Log in
+                    </button>
                 </div>
               </div>
             </form>
