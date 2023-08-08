@@ -28,7 +28,7 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
   const [file, setFile] = useState(null);
   const [formData, setFormData] = useState(initialState);
 
-  const { tags } = formData;
+  const { artist, title, genre, info, year, label, tracks, tags } = formData;
 
   const handleChange = useCallback(({ target: input }) => {
     const { name, value } = input;
@@ -87,7 +87,10 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
   }, [tags, file, onClose, formData, emptyFieldCheck]);
 
   const disableButton = useMemo(() => {
-    const disabled = !formData || !tags.length;
+    const disabled = 
+      !artist ||!title || !genre || !info ||
+      !year || !label || !tracks || !tags.length;
+
     return !!disabled;
   }, [formData]);
 
