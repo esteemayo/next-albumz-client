@@ -6,8 +6,11 @@ import Image from 'next/image';
 import styles from '@/styles/Footer.module.scss';
 
 const Footer = () => {
-  const year = new Date().getFullYear();
   const { user } = useSelector((state) => ({ ...state.auth }));
+
+  const year = useMemo(() => {
+    return new Date().getFullYear();
+  }, []);
 
   return (
     <footer className={styles.footer}>
