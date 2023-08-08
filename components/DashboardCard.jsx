@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { lazy, Suspense, useState } from 'react';
+import { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 
 import DialogBox from '@/components/DialogBox';
