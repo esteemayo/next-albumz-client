@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 
 import styles from '@/styles/Search.module.scss';

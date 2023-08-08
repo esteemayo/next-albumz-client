@@ -2,6 +2,7 @@ import { useState } from 'react';
 import KeyboardArrowUpOutlinedIcon from '@mui/icons-material/KeyboardArrowUpOutlined';
 
 import Popup from './Popup';
+
 import styles from '@/styles/ScrollToTop.module.scss';
 
 const ScrollToTop = () => {
@@ -9,7 +10,7 @@ const ScrollToTop = () => {
 
   if(typeof window !== 'undefined') {
     window.onscroll = () => {
-      setIsVisible(window.pageYOffset > 300 ? true : false);
+      setIsVisible(window.scrollY > 300 ? true : false);
       return () => (window.onscroll = null);
     };
   }

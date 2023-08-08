@@ -1,12 +1,15 @@
 import { useCallback, useState } from 'react';
 import { toast } from 'react-toastify';
 import Rating from '@mui/material/Rating';
+import { useRouter } from 'next/router';
 
 import { createReview } from '@/services/albumService';
 
 import styles from '@/styles/ReviewForm.module.scss';
 
 const ReviewForm = ({ albumId, setReviewList }) => {
+  const router = useRouter();
+
   const [rating, setRating] = useState(null);
   const [review, setReview] = useState(null);
 
@@ -21,6 +24,7 @@ const ReviewForm = ({ albumId, setReviewList }) => {
 
       const { data } = await createReview(albumId, { ...newReview });
       setReviewList((prev) => [data.review, ...prev]);
+      router.reload();
     } catch (err) {
       console.log(err);
       return toast.error(err.response.data.message);
