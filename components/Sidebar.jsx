@@ -21,10 +21,10 @@ const Sidebar = () => {
 
   const [query, setQuery] = useState('');
 
-  const handleLogout = () => {
+  const handleLogout = useCallback(() => {
     dispatch(logoutUser());
     router.push('/');
-  };
+  }, [router, dispatch]);
 
   const handleSearch = useCallback((e) => {
     e.preventDefault();
@@ -36,9 +36,9 @@ const Sidebar = () => {
     }
   }, [query, router, dispatch]);
 
-  const toggleDarkmode = () => {
+  const toggleDarkmode = useCallback(() => {
     darkMode === 'dark' ? dispatch(light('light')) : dispatch(dark('dark'));
-  };
+  }, [dispatch]);
 
   return (
     <aside
