@@ -3,8 +3,10 @@ import { toast } from 'react-toastify';
 
 import FormInput from './FormInput';
 import FormButton from './FormButton';
-import styles from '@/styles/Form.module.scss';
+
 import { createGenre } from '@/services/genreService';
+
+import styles from '@/styles/Form.module.scss';
 
 const GenreForm = ({ onClose, setGenreList }) => {
   const [name, setName] = useState(null);
