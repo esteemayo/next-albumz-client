@@ -9,20 +9,20 @@ import styles from '@/styles/DeleteAlbumGenre.module.scss';
 const DeleteGenreAlbum = ({
   type,
   title,
-  albumId,
+  actionId,
   genreId,
-  closeModal,
+  onAction,
+  onClose,
   setGenreList,
-  setAlbumList,
  }) => {
   const handleDelete = useCallback(async () => {
     if (type === 'genre') {
       await removeGenre();
     } else if (type === 'album') {
-      await removeAlbum();
+      onAction();
     }
-    closeModal(true);
-  }, [removeGenre, removeAlbum, closeModal]);
+    onClose();
+  }, [removeGenre, onClose]);
 
   const removeGenre = useCallback(async () => {
     try {
@@ -33,16 +33,6 @@ const DeleteGenreAlbum = ({
       console.log(err);
     }
   }, [genreId]);
-
-  const removeAlbum = useCallback(async () => {
-    try {
-      await deleteAlbum(albumId);
-      setAlbumList((prev) => prev.filter((item) => item._id !== albumId));
-      return toast.success('Album deleted successfully');
-    } catch (err) {
-      console.log(err);
-    }
-  }, [albumId]);
 
   return (
     <div className={styles.container}>

@@ -11,7 +11,7 @@ import { excerpts } from '@/utils/index';
 
 import styles from '@/styles/DashboardCard.module.scss';
 
-const DashboardCard = ({ albums }) => {
+const DashboardCard = ({ albums, actionId, onOpen, onClose, onDelete }) => {
   const [albumList, setAlbumList] = useState(albums);
   const [albumId, setAlbumId] = useState(null);
   const [showModal, setShowModal] = useState(true);
@@ -45,13 +45,7 @@ const DashboardCard = ({ albums }) => {
                     <Link href={`/albums/edit/${slug}`} passHref>
                       <a className={styles.card__updateBtn}>Update</a>
                     </Link>
-                    <button
-                      onClick={() => {
-                        setShowModal(false);
-                        setAlbumId(id);
-                      }}
-                      className={styles.card__delete}
-                    >
+                    <button onClick={() => onOpen(id)} className={styles.card__delete}>
                       Delete
                     </button>
                   </div>
@@ -65,10 +59,10 @@ const DashboardCard = ({ albums }) => {
         <DialogBox>
           <DeleteAlbumGenre
             type='album'
-            albumId={albumId}
+            actionId={actionId}
             title='Discard album?'
-            closeModal={setShowModal}
-            setAlbumList={setAlbumList}
+            onClose={onClose}
+            onAction={onDelete}
           />
         </DialogBox>
       )}
