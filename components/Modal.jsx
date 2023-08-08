@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+
 import styles from '@/styles/Modal.module.scss';
 
 const Modal = ({ onClose, children }) => {
