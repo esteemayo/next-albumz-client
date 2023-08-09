@@ -5,7 +5,7 @@ import Spinner from '@/components/Spinner';
 
 import styles from '@/styles/FeaturedAlbums.module.scss';
 
-const AlbumCard = lazy(() => import('@/components/AlbumCard'));
+const AlbumCard = lazy(() => import('@/components/albums/AlbumCard'));
 
 const FeaturedAlbums = ({ albums }) => {
   return (
