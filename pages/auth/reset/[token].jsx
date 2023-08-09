@@ -8,7 +8,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 import ClientOnly from '@/components/ClientOnly';
 import Meta from '@/components/Meta';
-import FormInput from '@/components/FormInput';
+import FormInput from '@/components/form/FormInput';
 
 import { parseCookie } from '@/utils/index';
 import { reset, resetPassword } from '@/features/auth/authSlice';
