@@ -3,6 +3,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import MenuItem from './MenuItem';
+import MenuButton from './MenuButton';
 
 import styles from '@/styles/Sidebar.module.scss';
 
@@ -36,14 +37,10 @@ const MenuItems = ({ currentUser, onClose, onAction }) => {
             label='Account'
             onClose={onClose}
           />
-          <li className={styles.list__items}>
-            <button
-              onClick={logoutHandler}
-              className={styles.btn__logout}
-            >
-              Logout
-            </button>
-          </li>
+          <MenuButton
+            label='Logout'
+            onClick={logoutHandler}
+          />
         </>
       ) : (
         <MenuItem
