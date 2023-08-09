@@ -7,8 +7,8 @@ import DarkMode from '@/components/sidebar/DarkMode';
 import Search from '@/components/sidebar/Search';
 import MenuItems from '@/components/sidebar/MenuItems';
 
-import { logoutUser } from '@/features/auth/authSlice';
 import { dark, light } from '@/features/darkMode/darkModeSlice';
+import { logoutUser } from '@/features/auth/authSlice';
 import { closeMenu } from '@/features/toggle/toggleSlice';
 
 import styles from '@/styles/Sidebar.module.scss';
