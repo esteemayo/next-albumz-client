@@ -2,11 +2,11 @@ import { toast } from 'react-toastify';
 import { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 
-import FormInput from '../FormInput';
-import FormTextArea from '../FormTextArea';
-import FormButton from '../FormButton';
-import FormSelectInput from '../FormSelectInput';
-import FormChipInput from '../FormChipInput';
+import FormInput from '../form/FormInput';
+import FormTextArea from '../form/FormTextArea';
+import FormButton from '../form/FormButton';
+import FormSelectInput from '../form/FormSelectInput';
+import FormChipInput from '../form/FormChipInput';
 
 import { createAlbum } from '@/services/albumService';
 import { uploadImage } from '@/services/imageService';
