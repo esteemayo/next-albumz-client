@@ -12,7 +12,7 @@ const Meta = dynamic(() => import('@/components/Meta'));
 const ReviewForm = dynamic(() => import('@/components/review/ReviewForm'));
 const Reviews = dynamic(() => import('@/components/review/Reviews'));
 const SingleAlbumHero = dynamic(() => import('@/components/hero/SingleAlbumHero'));
-const RelatedAlbums = dynamic(() => import('@/components/albums/RelatedAlbumsdAlbums'));
+const RelatedAlbums = dynamic(() => import('@/components/albums/RelatedAlbums'));
 const AlbumDescription = dynamic(() => import ('@/components/albums/AlbumDescription'));
 
 const SingleAlbum = ({ album, reviews }) => {
