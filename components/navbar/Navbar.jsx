@@ -4,10 +4,11 @@ import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
 
+import Search from '@/components/Search';
+import NavItem from '@/components/navbar/NavItem';
+
 import { logoutUser } from '@/features/auth/authSlice';
 import { toggleMenu } from '@/features/toggle/toggleSlice';
-
-import Search from '@/components/Search';
 
 import styles from '@/styles/Navbar.module.scss';
 
@@ -61,13 +62,7 @@ const Navbar = () => {
           </Link>
         </div>
         <ul className={styles.list}>
-          <li className={styles.list__items}>
-            <Link href='/albums' passHref>
-              <a className={styles.navbar__link}>
-                Albums
-              </a>
-            </Link>
-          </li>
+          <NavItem url='/albums' label='Albums' />
           {user ? (
             <>
               <li className={styles.list__items}>
