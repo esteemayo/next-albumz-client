@@ -16,8 +16,8 @@ import PlaylistAddCheckCircleOutlinedIcon from '@mui/icons-material/PlaylistAddC
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
 import Spinner from '@/components/Spinner';
-import FormChipInput from '@/components/FormChipInput';
-import FormInput from '@/components/FormInput';
+import FormChipInput from '@/components/form/FormChipInput';
+import FormInput from '@/components/form/FormInput';
 
 import { uploadImage } from '@/services/imageService';
 import { registerUser, reset } from '@/features/auth/authSlice';
