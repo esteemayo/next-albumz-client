@@ -50,10 +50,7 @@ const MenuItems = ({ onClose, onAction }) => {
           </li>
           <li className={styles.list__items}>
             <button
-              onClick={() => {
-                handleLogout();
-                dispatch(closeMenu());
-              }}
+              onClick={onAction}
               className={styles.btn__logout}
             >
               Logout
