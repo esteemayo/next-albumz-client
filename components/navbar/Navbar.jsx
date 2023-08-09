@@ -4,9 +4,11 @@ import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
 
-import Search from '@/components/Search';
 import NavButton from '@/components/navbar/NavButton';
 import NavItem from '@/components/navbar/NavItem';
+import Hamburger from '@/components/navbar/Hamburger';
+
+import Search from '@/components/Search';
 
 import { logoutUser } from '@/features/auth/authSlice';
 import { toggleMenu } from '@/features/toggle/toggleSlice';
@@ -30,6 +32,10 @@ const Navbar = () => {
   const toggleScroll = useCallback(() => {
     setIsScrolled(window.scrollY === 0 ? false : true);
   }, []);
+
+  const handleToggleMenu = useCallback(() => {
+    dispatch(toggleMenu());
+  }, [dispatch]);
 
   useEffect(() => {
     document.addEventListener('scroll', toggleScroll);
@@ -78,19 +84,10 @@ const Navbar = () => {
       </div>
       <div className={styles.navbar__right}>
         <Search />
-
-        <div
-          className={
-            menuOpen
-              ? `${styles.hamburger} ${styles.active}`
-              : `${styles.hamburger}`
-          }
-          onClick={() => dispatch(toggleMenu())}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <Hamburger 
+          isOpen={menuOpen}
+          onClick={handleToggleMenu}
+        />
       </div>
     </nav>
   );
