@@ -13,7 +13,7 @@ const ReviewForm = dynamic(() => import('@/components/ReviewForm'));
 const Reviews = dynamic(() => import('@/components/Reviews'));
 const SingleAlbumHero = dynamic(() => import('@/components/SingleAlbumHero'));
 const RelatedAlbums = dynamic(() => import('@/components/RelatedAlbums'));
-const AlbumDescription = dynamic(() => import ('@/components/AlbumDescription'));
+const AlbumDescription = dynamic(() => import ('@/components/albums/AlbumDescription'));
 
 const SingleAlbum = ({ album, reviews }) => {
   const [singleAlbum, setSingleAlbum] = useState(album);
