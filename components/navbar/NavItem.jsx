@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import PropTypes from 'prop-types';
+
 import styles from '@/styles/Navbar.module.scss';
 
 const NavItem = ({ url, label }) => {
@@ -9,6 +11,11 @@ const NavItem = ({ url, label }) => {
       </Link>
     </li>
   );
+};
+
+NavItem.propTypes = {
+  url: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 export default NavItem;
