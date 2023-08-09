@@ -48,8 +48,8 @@ const UpdatePassword = () => {
     const disabled = 
       isLoading ||
       password === '' ||
-      confirmPassword=== '' ||
-      currentPassword=== '';
+      confirmPassword === '' ||
+      currentPassword === '';
     
     return !!disabled;
   }, 
