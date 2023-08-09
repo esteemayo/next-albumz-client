@@ -3,8 +3,8 @@ import { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
-import FormInput from '../form/FormInput';
-import FormButton from '../form/FormButton';
+import FormInput from '@/components/form/FormInput';
+import FormButton from '@/components/form/FormButton';
 
 import { createGenre } from '@/services/genreService';
 
