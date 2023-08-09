@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
@@ -47,6 +47,12 @@ const Sidebar = () => {
       dispatch(dark('dark'));
   }, [dispatch]);
 
+  const modeIcon = useMemo(() => {
+    return darkMode === 'dark' ?
+      <LightModeOutlined /> :
+      <DarkModeOutlined />;
+  }, [darkMode]);
+
   return (
     <aside
       className={
@@ -66,7 +72,7 @@ const Sidebar = () => {
         />
         <div className={styles.wrapper}>
           <div className={styles.darkmode} onClick={toggleDarkmode}>
-            {darkMode === 'dark' ? <LightModeOutlined /> : <DarkModeOutlined />}
+            {modeIcon}
           </div>
         </div>
       </>
