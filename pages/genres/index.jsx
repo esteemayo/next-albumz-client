@@ -6,14 +6,14 @@ import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 
-import Modal from '@/components/modal/Modal';
 import AddButton from '@/components/button/AddButton';
+import Modal from '@/components/modal/Modal';
 import DialogBox from '@/components/modal/DialogBox';
+import GenreForm from '@/componentsform/GenreForm';
 
 import Meta from '@/components/Meta';
-import ClientOnly from '@/components/ClientOnly';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
-import GenreForm from '@/components/GenreForm';
+import ClientOnly from '@/components/ClientOnly';
 
 import { parseCookie } from '@/utils/index';
 import { getGenres, deleteGenre } from '@/services/genreService';
