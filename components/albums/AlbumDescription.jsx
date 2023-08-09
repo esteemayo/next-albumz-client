@@ -40,7 +40,7 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
   const handleUnSetAsBookmark = useCallback(() => {
     const bookmarkId = bookmark?._id;
     user && dispatch(bookmarkReducer.removeBookmark({ bookmarkId, toast }));
-  }, [user, bookmark._id, dispatch]);
+  }, [user, bookmark?._id, dispatch]);
 
   useEffect(() => {
     albumId && dispatch(bookmarkReducer.fetchBookmark(albumId));

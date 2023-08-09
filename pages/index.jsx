@@ -2,11 +2,12 @@ import dynamic from 'next/dynamic';
 import { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import Hero from '@/components/Hero';
-import AddButton from '@/button/AddButton';
-import Modal from '@/components/Modal';
-import ClientOnly from '@/components/ClientOnly';
+import AddButton from '@/components/button/AddButton';
 import AlbumForm from '@/components/albums/AlbumForm';
+
+import Hero from '@/components/Hero';
+import ClientOnly from '@/components/ClientOnly';
+import Modal from '@/components/Modal';
 
 import { getTopReviews } from '@/services/reviewService';
 import { getAllGenres } from '@/services/genreService';
