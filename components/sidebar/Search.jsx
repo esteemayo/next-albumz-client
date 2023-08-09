@@ -12,7 +12,7 @@ const Search = ({ value, onChange, onSubmit }) => {
           value={value}
           placeholder='Search albums...'
           className={styles.search__input}
-          onChange={(value) => onChange(value)}
+          onChange={(e) => onChange(e.target.value)}
         />
         <SearchIcon className={styles.search__icon} />
       </form>
@@ -22,7 +22,7 @@ const Search = ({ value, onChange, onSubmit }) => {
 
 Search.propTypes = {
   value: PropTypes.string.isRequired,
-  onChange: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };
 
