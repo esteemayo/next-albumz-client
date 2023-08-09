@@ -47,6 +47,12 @@ const Sidebar = () => {
       dispatch(dark('dark'));
   }, [dark, light, darkMode, dispatch]);
 
+  const toggleClasses = useMemo(() => {
+    return menuOpen ?
+      `${styles.sidebar} ${styles.active}` :
+      `${styles.sidebar}`;
+  }, [menuOpen]);
+
   const modeIcon = useMemo(() => {
     return darkMode === 'dark' ?
       <LightModeOutlined /> :
@@ -54,11 +60,7 @@ const Sidebar = () => {
   }, [darkMode]);
 
   return (
-    <aside
-      className={
-        menuOpen ? `${styles.sidebar} ${styles.active}` : `${styles.sidebar}`
-      }
-    >
+    <aside className={toggleClasses}>
       <>
         <MenuItems
           currentUser={user}
