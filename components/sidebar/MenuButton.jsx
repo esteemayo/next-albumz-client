@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import styles from '@/styles/Sidebar.module.scss';
 
 const MenuButton = ({ label, onClick }) => {
-  return {
+  return (
     <li className={styles.list__items}>
       <button
         onClick={onClick}
@@ -11,7 +11,7 @@ const MenuButton = ({ label, onClick }) => {
         {label}
       </button>
     </li>
-  };
+  );
 };
 
 MenuButton.propTypes = {
