@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 
+import DarkMode from '@/components/sidebar/DarkMode';
 import Search from '@/components/sidebar/Search';
 import MenuItems from '@/components/sidebar/MenuItems';
 
@@ -72,11 +73,10 @@ const Sidebar = () => {
           onChange={(value) => setQuery(value)}
           onSubmit={handleSearch}
         />
-        <div className={styles.wrapper}>
-          <div className={styles.darkmode} onClick={toggleDarkmode}>
-            {modeIcon}
-          </div>
-        </div>
+        <DarkMode
+          icon={modeIcon}
+          onToggle={toggleDarkmode}
+        />
       </>
     </aside>
   );
