@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Logo from '@/components/navbar/Logo';
 import NavButton from '@/components/navbar/NavButton';
-import NavItem from '@/components/navbar/NavItem';
+import NavItems from '@/components/navbar/NavItems';
 import Hamburger from '@/components/navbar/Hamburger';
 
 import Search from '@/components/Search';
@@ -55,19 +55,10 @@ const Navbar = () => {
     >
       <div className={styles.navbar__left}>
         <Logo />
-        <ul className={styles.list}>
-          <NavItem url='/albums' label='Albums' />
-          {user ? (
-            <>
-              <NavItem url='/genres' label='Genres' />
-              <NavItem url='/albums/top' label='Top Albums' />
-              <NavItem url='/auth/account' label='Account' />
-              <NavButton label='Logout' onAction={handleLogout} />
-            </>
-          ) : (
-            <NavItem url='/auth/login' label='Login' />
-          )}
-        </ul>
+        <NavItems
+          currentUser={user}
+          onClick={handleLogout}
+        />
       </div>
       <div className={styles.navbar__right}>
         <Search />
