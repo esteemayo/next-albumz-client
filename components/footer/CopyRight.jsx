@@ -12,7 +12,7 @@ const CopyRight = ({ year }) => {
 };
 
 CopyRight.propTypes = {
-  year: PropTypes.func.isRequired,
+  year: PropTypes.number.isRequired,
 };
 
 export default CopyRight;
