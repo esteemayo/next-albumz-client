@@ -9,10 +9,11 @@ import Visibility from '@mui/icons-material/Visibility';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 
+import FormInput from '@/components/form/FormInput';
+import FormButton from '@/components/form/FormButton';
+
 import ClientOnly from '@/components/ClientOnly';
 import Meta from '@/components/Meta';
-import FormButton from '@/components/FormButton';
-import FormInput from '@/components/FormInput';
 import DeleteAccount from '@/components/DeleteAccount';
 import DialogBox from '@/components/DialogBox';
 import DeactivateAccount from '@/components/DeactivateAccount';
