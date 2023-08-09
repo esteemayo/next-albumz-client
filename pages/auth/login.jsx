@@ -12,7 +12,7 @@ import Visibility from '@mui/icons-material/Visibility';
 
 import ClientOnly from '@/components/ClientOnly';
 import Meta from '@/components/Meta';
-import FormInput from '@/components/FormInput';
+import FormInput from '@/components/form/FormInput';
 import Spinner from '@/components/Spinner';
 
 import { parseCookie } from '@/utils/index';
