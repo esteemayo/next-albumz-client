@@ -21,6 +21,7 @@ const Sidebar = () => {
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
   const [query, setQuery] = useState('');
+  const [isOpen, setIsOpen] = useState(menuOpen);
 
   const handleClose = useCallback(() => {
     dispatch(closeMenu());
