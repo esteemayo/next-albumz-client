@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from '@/styles/Navbar.module.scss';
 
 const Hamburger = ({ isOpen, onClick }) => {
@@ -15,6 +16,11 @@ const Hamburger = ({ isOpen, onClick }) => {
       <span></span>
     </div>
   );
+};
+
+Hamburger.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Hamburger;
