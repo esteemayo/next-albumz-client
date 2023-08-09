@@ -1,9 +1,15 @@
+import { useCallback } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import styles from '@/styles/Sidebar.module.scss';
 
 const MenuItems = ({ onClose, onAction }) => {
+  const logoutHandler = useCallback(() => {
+    onAction();
+    onClose();
+  }, [onAction, onClose]);
+
   return (
     <ul className={styles.list}>
       <li
@@ -50,7 +56,7 @@ const MenuItems = ({ onClose, onAction }) => {
           </li>
           <li className={styles.list__items}>
             <button
-              onClick={onAction}
+              onClick={logoutHandler}
               className={styles.btn__logout}
             >
               Logout
