@@ -11,8 +11,8 @@ import styles from '@/styles/SingleAlbum.module.scss';
 const Meta = dynamic(() => import('@/components/Meta'));
 const ReviewForm = dynamic(() => import('@/components/ReviewForm'));
 const Reviews = dynamic(() => import('@/components/Reviews'));
+const SingleAlbumHero = dynamic(() => import('@/components/hero/SingleAlbumHero'));
 const RelatedAlbums = dynamic(() => import('@/components/albums/RelatedAlbums'));
-const SingleAlbumHero = dynamic(() => import('@/components/SingleAlbumHero'));
 const AlbumDescription = dynamic(() => import ('@/components/albums/AlbumDescription'));
 
 const SingleAlbum = ({ album, reviews }) => {
