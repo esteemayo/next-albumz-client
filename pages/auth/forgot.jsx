@@ -28,6 +28,12 @@ const ForgotPassword = () => {
     setEmail('');
   }, [email, dispatch]);
 
+  const disableButton = (() => {
+    const disabled = (email === '' || isLoading);
+    return !!disabled; 
+  }, [email, isLoading]);
+  console.log(disableButton)
+
   useEffect(() => {
     isError && toast.error(message);
     dispatch(reset());
@@ -58,7 +64,7 @@ const ForgotPassword = () => {
                   <button
                     type='submit'
                     className={styles.form__btn}
-                    disabled={isLoading}
+                    disabled={disableButton}
                   >
                     Reset password
                    </button>
