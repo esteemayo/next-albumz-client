@@ -6,7 +6,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 import ClientOnly from '@/components/ClientOnly';
 import Meta from '@/components/Meta';
-import FormInput from '@/components/FormInput';
+import FormInput from '@/components/form/FormInput';
 
 import { parseCookie } from '@/utils/index';
 import { forgotPassword, reset } from '@/features/auth/authSlice';
