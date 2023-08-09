@@ -3,10 +3,11 @@ import { ToastContainer } from 'react-toastify';
 
 import Meta from './Meta';
 import Sidebar from './Sidebar';
-import Navbar from './Navbar';
-import ClientOnly from './ClientOnly';
 import Footer from './Footer';
+import ClientOnly from './ClientOnly';
 import DarkMode from './DarkMode';
+
+import Navbar from '@/components/navbar/Navbar';
 
 import 'react-toastify/dist/ReactToastify.css';
 
