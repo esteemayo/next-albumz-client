@@ -1,7 +1,7 @@
-import { useCallback, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
-import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 
 import Search from '@/components/sidebar/Search';
 import MenuItems from '@/components/sidebar/MenuItems';
