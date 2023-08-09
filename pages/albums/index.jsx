@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import AddButton from '@/components/button/AddButton';
 import Modal from '@/components/Modal';
-import AlbumForm from '@/components/AlbumForm';
+import AlbumForm from '@/components/albums/AlbumForm';
 import Pagination from '@/components/Pagination';
 import Spinner from '@/components/Spinner';
 import ClientOnly from '@/components/ClientOnly';
@@ -15,7 +15,7 @@ import { getAllGenres } from '@/services/genreService';
 
 import styles from '@/styles/Albums.module.scss';
 
-const AlbumCard = dynamic(() => import('@/components/AlbumCard'), { ssr: false });
+const AlbumCard = dynamic(() => import('@/components/albums/AlbumCard'), { ssr: false });
 
 const Albums = ({
   albums,
