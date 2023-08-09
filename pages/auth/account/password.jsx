@@ -9,14 +9,14 @@ import Visibility from '@mui/icons-material/Visibility';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 
+import DeleteAccount from '@/components/account/DeleteAccount';
 import FormInput from '@/components/form/FormInput';
+import DeactivateAccount from '@/components/account/DeactivateAccount';
+import DialogBox from '@/components/modal/DialogBox';
 import FormButton from '@/components/form/FormButton';
 
-import ClientOnly from '@/components/ClientOnly';
 import Meta from '@/components/Meta';
-import DeleteAccount from '@/components/DeleteAccount';
-import DialogBox from '@/components/modal/DialogBox';
-import DeactivateAccount from '@/components/DeactivateAccount';
+import ClientOnly from '@/components/ClientOnly';
 
 import { parseCookie } from '@/utils/index';
 import { reset, updateUserPassword } from '@/features/auth/authSlice';
