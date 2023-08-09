@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 
+import Navbar from '@/components/navbar/Navbar';
+import Footer from '@/components/footer/Footer';
+
 import Meta from './Meta';
 import Sidebar from './Sidebar';
-import Footer from './Footer';
 import ClientOnly from './ClientOnly';
 import DarkMode from './DarkMode';
-
-import Navbar from '@/components/navbar/Navbar';
 
 import 'react-toastify/dist/ReactToastify.css';
 
