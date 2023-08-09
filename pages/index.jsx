@@ -6,7 +6,7 @@ import Hero from '@/components/Hero';
 import AddButton from '@/button/AddButton';
 import Modal from '@/components/Modal';
 import ClientOnly from '@/components/ClientOnly';
-import AlbumForm from '@/components/AlbumForm';
+import AlbumForm from '@/components/albums/AlbumForm';
 
 import { getTopReviews } from '@/services/reviewService';
 import { getAllGenres } from '@/services/genreService';
