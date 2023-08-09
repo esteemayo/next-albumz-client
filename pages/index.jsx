@@ -3,11 +3,11 @@ import { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import AddButton from '@/components/button/AddButton';
+import Modal from '@/components/modal/Modal';
 import AlbumForm from '@/components/albums/AlbumForm';
-
 import Hero from '@/components/hero/Hero';
+
 import ClientOnly from '@/components/ClientOnly';
-import Modal from '@/components/Modal';
 
 import { getTopReviews } from '@/services/reviewService';
 import { getAllGenres } from '@/services/genreService';
