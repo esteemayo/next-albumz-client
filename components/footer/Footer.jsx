@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
-import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import Image from 'next/image';
 
-import Logo from '@/components/footer/Logo';
 import MenuItems from '@/components/footer/MenuItems';
+import Logo from '@/components/footer/Logo';
+import CopyRight from '@/components/footer/CopyRight';
 
 import styles from '@/styles/Footer.module.scss';
 
@@ -21,9 +21,7 @@ const Footer = () => {
         <Logo />
         <MenuItems currentUser={user} />
       </div>
-      <p className={styles.footer__copyright}>
-        Copyright &copy; {year} <Link href='/' passHref>Albumz Inc.</Link> All rights reserved
-      </p>
+      <CopyRight year={year} />
     </footer>
   );
 };
