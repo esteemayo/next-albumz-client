@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import AddButton from '@/components/button/AddButton';
 import Modal from '@/components/modal/Modal';
-import AlbumForm from '@/components/albums/AlbumForm';
+import AlbumForm from '@/components/form/AlbumForm';
 import Hero from '@/components/hero/Hero';
 
 import ClientOnly from '@/components/ClientOnly';

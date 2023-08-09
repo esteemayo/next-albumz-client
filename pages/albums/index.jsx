@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import AddButton from '@/components/button/AddButton';
 import Modal from '@/components/modal/Modal';
-import AlbumForm from '@/components/albums/AlbumForm';
+import AlbumForm from '@/components/form/AlbumForm';
 
 import Pagination from '@/components/Pagination';
 import Spinner from '@/components/Spinner';
