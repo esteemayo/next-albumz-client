@@ -35,23 +35,23 @@ const Navbar = () => {
     dispatch(toggleMenu());
   }, [dispatch]);
 
+  const navClasses = useMemo(() => {
+    return isScrolled
+      ? `${styles.navbar} ${styles.scrolled}`
+      : `${styles.navbar}`
+      ? menuOpen
+        ? `${styles.navbar} ${styles.active}`
+        : `${styles.navbar}`
+      : '';
+  }, [isScrolled, menuOpen]);
+
   useEffect(() => {
     document.addEventListener('scroll', toggleScroll);
     return () => document.removeEventListener('scroll', toggleScroll);
   }, [toggleScroll]);
 
   return (
-    <nav
-      className={
-        isScrolled
-          ? `${styles.navbar} ${styles.scrolled}`
-          : `${styles.navbar}`
-          ? menuOpen
-            ? `${styles.navbar} ${styles.active}`
-            : `${styles.navbar}`
-          : ''
-      }
-    >
+    <nav className={navClasses}>
       <div className={styles.navbar__left}>
         <Logo />
         <NavItems
