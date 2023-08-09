@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
+
 import NavItem from './NavItem';
+import NavButton from './NavButton';
 
 import styles from '@/styles/Navbar.module.scss';
 

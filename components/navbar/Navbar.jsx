@@ -2,9 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Logo from '@/components/navbar/Logo';
-import NavButton from '@/components/navbar/NavButton';
 import NavItems from '@/components/navbar/NavItems';
+import Logo from '@/components/navbar/Logo';
 import Hamburger from '@/components/navbar/Hamburger';
 
 import Search from '@/components/Search';
