@@ -19,7 +19,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footer__navigation}>
         <Logo />
-        <MenuItems user={user} />
+        <MenuItems currentUser={user} />
       </div>
       <p className={styles.footer__copyright}>
         Copyright &copy; {year} <Link href='/' passHref>Albumz Inc.</Link> All rights reserved
