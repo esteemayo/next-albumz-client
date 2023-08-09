@@ -3,12 +3,13 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 
+import FormInput from '@/components/form/FormInput';
+import FormChipInput from '@/components/form/FormChipInput';
+import FormTextArea from '@/components/form/FormTextArea';
+import FormSelectInput from '@/components/form/FormSelectInput';
+
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
-import FormInput from '@/components/FormInput';
-import FormChipInput from '@/components/FormChipInput';
-import FormTextArea from '@/components/FormTextArea';
-import FormSelectInput from '@/components/FormSelectInput';
 
 import { uploadImage } from '@/services/imageService';
 import { getAlbumBySlug, updateAlbum } from '@/services/albumService';
