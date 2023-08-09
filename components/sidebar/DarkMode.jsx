@@ -4,7 +4,7 @@ import styles from '@/styles/Sidebar.module.scss';
 const DarkMode = ({ icon, onToggle }) => {
   return (
     <div className={styles.wrapper}>
-      <div className={styles.darkmode} onClick={toggleDarkmode}>
+      <div className={styles.darkmode} onClick={onToggle}>
         {icon}
       </div>
     </div>
