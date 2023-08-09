@@ -37,18 +37,21 @@ const UpdateAlbum = ({ album, genres }) => {
 
   const { tags } = formData;
 
-  const handleAddTag = (tag) => {
-    setFormData((prev) => ({ ...prev, tags: [...prev.tags, tag] }));
-  };
+  const handleAddTag = useCallback((tag) => {
+    setFormData((prev) => ({
+      ...prev,
+      tags: [...prev.tags, tag],
+    }));
+  }, []);
 
-  const handleDeleteTag = (tag) => {
+  const handleDeleteTag = useCallback((tag) => {
     setFormData((prev) => ({
       ...prev,
       tags: prev.tags.filter((item) => item !== tag),
     }));
-  };
+  }, []);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
 
     if (!artist || !title || !genre || !info || !year || !label || !tracks) {
@@ -89,7 +92,17 @@ const UpdateAlbum = ({ album, genres }) => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }, [
+    artist,
+    title,
+    genre,
+    info,
+    year,
+    label,
+    tracks,
+    tags,
+    file,
+  ]);
 
   return (
     <ClientOnly>
