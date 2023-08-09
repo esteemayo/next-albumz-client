@@ -42,7 +42,9 @@ const Sidebar = () => {
   }, [query, router, dispatch]);
 
   const toggleDarkmode = useCallback(() => {
-    darkMode === 'dark' ? dispatch(light('light')) : dispatch(dark('dark'));
+    darkMode === 'dark' ?
+      dispatch(light('light')) :
+      dispatch(dark('dark'));
   }, [dispatch]);
 
   return (
