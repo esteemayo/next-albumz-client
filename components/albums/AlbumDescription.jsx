@@ -12,13 +12,14 @@ import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined
 import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumberedOutlined';
 
-import LikeButton from './button/LikeButton';
 import Popup from '../Popup';
 import StarRating from '../StarRating';
 
-import { createViews, getViews, reset } from '@/features/views/viewSlice';
 import { excerpts } from '@/utils/index';
+import LikeButton from '@/components/button/LikeButton';
+
 import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
+import { createViews, getViews, reset } from '@/features/views/viewSlice';
 
 import styles from '@/styles/AlbumDescription.module.scss';
 
