@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from '@/styles/Navbar.module.scss';
 
 const NavButton = ({ label, onAction }) => {
@@ -11,6 +12,11 @@ const NavButton = ({ label, onAction }) => {
       </button>
     </li>
   );
+};
+
+NavButton.propTypes = {
+  label: PropTypes.string.isRequired,
+  onAction: PropTypes.func.isRequired,
 };
 
 export default NavButton;
