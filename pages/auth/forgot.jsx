@@ -32,7 +32,6 @@ const ForgotPassword = () => {
     const disabled = (email === '' || isLoading);
     return !!disabled; 
   }, [email, isLoading]);
-  console.log(disableButton)
 
   useEffect(() => {
     isError && toast.error(message);
