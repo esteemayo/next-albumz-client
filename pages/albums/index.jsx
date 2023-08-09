@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import AddButton from '@/components/AddButton';
+import AddButton from '@/components/button/AddButton';
 import Modal from '@/components/Modal';
 import AlbumForm from '@/components/AlbumForm';
 import Pagination from '@/components/Pagination';
