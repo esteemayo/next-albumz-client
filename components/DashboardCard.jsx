@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 
-import DialogBox from '@/components/DialogBox';
+import DialogBox from '@/components/modal/DialogBox';
 import Spinner from '@/components/Spinner';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 
