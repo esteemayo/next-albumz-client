@@ -15,12 +15,12 @@ const ScrollToTop = () => {
     };
   }
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
-  };
+  }, []);
 
   return (
     <div className={styles.scroll}>
