@@ -4,8 +4,9 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import AddButton from '@/components/button/AddButton';
-import Modal from '@/components/Modal';
+import Modal from '@/components/modal/Modal';
 import AlbumForm from '@/components/albums/AlbumForm';
+
 import Pagination from '@/components/Pagination';
 import Spinner from '@/components/Spinner';
 import ClientOnly from '@/components/ClientOnly';
