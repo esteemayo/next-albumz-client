@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
 
+import Logo from '@/components/navbar/Logo';
 import NavButton from '@/components/navbar/NavButton';
 import NavItem from '@/components/navbar/NavItem';
 import Hamburger from '@/components/navbar/Hamburger';
@@ -55,19 +56,7 @@ const Navbar = () => {
       }
     >
       <div className={styles.navbar__left}>
-        <div className={styles.logo}>
-          <Link href='/' passHref>
-            <a className={styles.logo__link}>
-              <Image
-                src='/img/logo-x1.png'
-                width={120}
-                height={50}
-                objectFit='contain'
-                alt=''
-              />
-            </a>
-          </Link>
-        </div>
+        <Logo />
         <ul className={styles.list}>
           <NavItem url='/albums' label='Albums' />
           {user ? (
