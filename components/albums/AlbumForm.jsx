@@ -175,7 +175,7 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
 AlbumForm.propTypes = {
   genres: PropTypes.array.isRequired,
   onClose: PropTypes.func.isRequired,
-  setAlbumList: PropTypes.any.isRequired,
+  setAlbumList: PropTypes.any,
 };
 
 export default AlbumForm;
