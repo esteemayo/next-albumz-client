@@ -2,10 +2,11 @@ import { toast } from 'react-toastify';
 import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 
-import ClientOnly from '@/components/ClientOnly';
+import FormInput from '@/components/form/FormInput';
+import FormButton from '@/components/form/FormButton';
+
 import Meta from '@/components/Meta';
-import FormButton from '@/components/FormButton';
-import FormInput from '@/components/FormInput';
+import ClientOnly from '@/components/ClientOnly';
 
 import { parseCookie } from '@/utils/index';
 import { getGenreBySlug, updateGenre } from '@/services/genreService';
