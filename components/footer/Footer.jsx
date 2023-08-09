@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Image from 'next/image';
 
 import Logo from '@/components/footer/Logo';
+import MenuItems from '@/components/footer/MenuItems';
 
 import styles from '@/styles/Footer.module.scss';
 
@@ -18,36 +19,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footer__navigation}>
         <Logo />
-        <ul className={styles.footer__list}>
-          <li className={styles.footer__item}>
-            <Link href='/albums' passHref>Albums</Link>
-          </li>
-          {user && (
-            <>
-              <li className={styles.footer__item}>
-                <Link href='/genres' passHref>Genres</Link>
-              </li>
-              <li className={styles.footer__item}>
-                <Link href='/albums/top' passHref>Top albums</Link>
-              </li>
-              <li className={styles.footer__item}>
-                <Link href='/auth/account' passHref>Account</Link>
-              </li>
-              <li className={styles.footer__item}>
-                <Link href='/users/dashboard' passHref>Dashboard</Link>
-              </li>
-            </>
-          )}
-          <li className={styles.footer__item}>
-            <Link href='#' passHref>Cookie warning</Link>
-          </li>
-          <li className={styles.footer__item}>
-            <Link href='#' passHref>Support</Link>
-          </li>
-          <li className={styles.footer__item}>
-            <Link href='#' passHref>Feedback</Link>
-          </li>
-        </ul>
+        <MenuItems user={user} />
       </div>
       <p className={styles.footer__copyright}>
         Copyright &copy; {year} <Link href='/' passHref>Albumz Inc.</Link> All rights reserved

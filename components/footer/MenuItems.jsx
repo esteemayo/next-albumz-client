@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import styles from '@/styles/Footer.module.scss';
 
-const MenuItems = ({ user }) => {
+const MenuItems = ({ currentUser }) => {
   return (
     <ul className={styles.footer__list}>
       <li className={styles.footer__item}>
         <Link href='/albums' passHref>Albums</Link>
       </li>
-      {user && (
+      {currentUser && (
         <>
           <li className={styles.footer__item}>
             <Link href='/genres' passHref>Genres</Link>
@@ -39,7 +39,7 @@ const MenuItems = ({ user }) => {
 };
 
 MenuItems.propTypes = {
-  user: PropTypes.object.isRequired,
+  currentUser: PropTypes.object.isRequired,
 };
 
 export default MenuItems;
