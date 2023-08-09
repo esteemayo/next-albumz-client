@@ -1,7 +1,7 @@
+import { useCallback, useMemo, useState } from 'react';
 import { useRouter } from 'next/router';
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Search from '@/components/sidebar/Search';
 import MenuItems from '@/components/sidebar/MenuItems';
@@ -21,7 +21,6 @@ const Sidebar = () => {
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
   const [query, setQuery] = useState('');
-  const [isOpen, setIsOpen] = useState(menuOpen);
 
   const handleClose = useCallback(() => {
     dispatch(closeMenu());
