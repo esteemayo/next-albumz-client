@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import styles from '@/styles/Sidebar.module.scss';
 
-const MenuItems = ({ onClose, onAction }) => {
+const MenuItems = ({ currentUser, onClose, onAction }) => {
   const logoutHandler = useCallback(() => {
     onAction();
     onClose();
@@ -22,7 +22,7 @@ const MenuItems = ({ onClose, onAction }) => {
           </a>
         </Link>
       </li>
-      {user ? (
+      {currentUser ? (
         <>
           <li
             className={styles.list__items}
@@ -80,6 +80,7 @@ const MenuItems = ({ onClose, onAction }) => {
 };
 
 MenuItems.propTypes = {
+  currentUser: PropTypes.object,
   onClose: PropTypes.func.isRequired,
   onAction: PropTypes.func,
 };

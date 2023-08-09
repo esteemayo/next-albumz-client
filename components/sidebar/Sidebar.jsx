@@ -53,6 +53,7 @@ const Sidebar = () => {
     >
       <>
         <MenuItems
+          currentUser={user}
           onClose={handleClose}
           onAction={handleLogout}
         />
