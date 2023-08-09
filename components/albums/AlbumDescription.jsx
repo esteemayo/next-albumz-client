@@ -12,9 +12,9 @@ import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined
 import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumberedOutlined';
 
-import LikeButton from './LikeButton';
-import Popup from './Popup';
-import StarRating from './StarRating';
+import LikeButton from './button/LikeButton';
+import Popup from '../Popup';
+import StarRating from '../StarRating';
 
 import { createViews, getViews, reset } from '@/features/views/viewSlice';
 import { excerpts } from '@/utils/index';
