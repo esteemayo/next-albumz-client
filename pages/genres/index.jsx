@@ -9,9 +9,9 @@ import { toast } from 'react-toastify';
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
 import Modal from '@/components/Modal';
-import AddButton from '@/components/AddButton';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 import DialogBox from '@/components/DialogBox';
+import AddButton from '@/components/button/AddButton';
 import GenreForm from '@/components/GenreForm';
 
 import { parseCookie } from '@/utils/index';
