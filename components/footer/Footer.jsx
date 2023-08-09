@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import Image from 'next/image';
 
+import Logo from '@/components/footer/Logo';
+
 import styles from '@/styles/Footer.module.scss';
 
 const Footer = () => {
@@ -15,19 +17,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__navigation}>
-        <div className={styles.footer__logo}>
-          <Link href='/' passHref>
-            <a className={styles.footer__link}>
-              <Image
-                src='/img/logo-x2.png'
-                width={200}
-                height={70}
-                objectFit='center'
-                alt=''
-              />
-            </a>
-          </Link>
-        </div>
+        <Logo />
         <ul className={styles.footer__list}>
           <li className={styles.footer__item}>
             <Link href='/albums' passHref>Albums</Link>
