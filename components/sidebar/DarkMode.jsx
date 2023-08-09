@@ -12,7 +12,7 @@ const DarkMode = ({ icon, onToggle }) => {
 };
 
 DarkMode.propTypes = {
-  icon: PropTypes.any.isRequired,
+  icon: PropTypes.object.isRequired,
   onToggle: PropTypes.func.isRequired,
 };
 
