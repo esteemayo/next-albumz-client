@@ -15,7 +15,7 @@ import FormButton from '@/components/form/FormButton';
 import ClientOnly from '@/components/ClientOnly';
 import Meta from '@/components/Meta';
 import DeleteAccount from '@/components/DeleteAccount';
-import DialogBox from '@/components/DialogBox';
+import DialogBox from '@/components/modal/DialogBox';
 import DeactivateAccount from '@/components/DeactivateAccount';
 
 import { parseCookie } from '@/utils/index';
