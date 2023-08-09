@@ -28,7 +28,7 @@ const ForgotPassword = () => {
     setEmail('');
   }, [email, dispatch]);
 
-  const disableButton = (() => {
+  const disableButton = useMemo(() => {
     const disabled = (email === '' || isLoading);
     return !!disabled; 
   }, [email, isLoading]);
