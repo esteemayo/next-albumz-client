@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import Hero from '@/components/Hero';
-import AddButton from '@/components/AddButton';
+import AddButton from '@/button/AddButton';
 import Modal from '@/components/Modal';
 import ClientOnly from '@/components/ClientOnly';
 import AlbumForm from '@/components/AlbumForm';
