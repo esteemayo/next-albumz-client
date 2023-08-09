@@ -39,7 +39,7 @@ const MenuItems = ({ currentUser }) => {
 };
 
 MenuItems.propTypes = {
-  currentUser: PropTypes.object.isRequired,
+  currentUser: PropTypes.object,
 };
 
 export default MenuItems;
