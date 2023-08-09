@@ -5,9 +5,11 @@ import { useRouter } from 'next/router';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Search from '@/components/sidebar/Search';
+import MenuItems from '@/components/sidebar/MenuItems';
+
 import { logoutUser } from '@/features/auth/authSlice';
 import { dark, light } from '@/features/darkMode/darkModeSlice';
-import MenuItems from '@/components/sidebar/MenuItems';
 import { closeMenu } from '@/features/toggle/toggleSlice';
 
 import styles from '@/styles/Sidebar.module.scss';
@@ -57,18 +59,11 @@ const Sidebar = () => {
           onClose={handleClose}
           onAction={handleLogout}
         />
-        <div>
-          <form onSubmit={handleSearch} className={styles.search}>
-            <input
-              type='search'
-              value={query}
-              placeholder='Search albums...'
-              className={styles.search__input}
-              onChange={(e) => setQuery(e.target.value)}
-            />
-            <SearchIcon className={styles.search__icon} />
-          </form>
-        </div>
+        <Search
+          value={query}
+          onChange={(value) => setQuery(value)}
+          onSubmit={handleSearch}
+        />
         <div className={styles.wrapper}>
           <div className={styles.darkmode} onClick={toggleDarkmode}>
             {darkMode === 'dark' ? <LightModeOutlined /> : <DarkModeOutlined />}
