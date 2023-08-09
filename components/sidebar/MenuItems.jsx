@@ -2,6 +2,8 @@ import { useCallback } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
+import MenuItem from './MenuItem';
+
 import styles from '@/styles/Sidebar.module.scss';
 
 const MenuItems = ({ currentUser, onClose, onAction }) => {
@@ -12,48 +14,28 @@ const MenuItems = ({ currentUser, onClose, onAction }) => {
 
   return (
     <ul className={styles.list}>
-      <li
-        className={styles.list__items}
-        onClick={onClose}
-      >
-        <Link href='/albums' passHref>
-          <a className={styles.sidebar__link}>
-            Albums
-          </a>
-        </Link>
-      </li>
+      <MenuItem
+        url='/albums'
+        label='Albums'
+        onClose={onClose}
+      />
       {currentUser ? (
         <>
-          <li
-            className={styles.list__items}
-            onClick={onClose}
-          >
-            <Link href='/genres' passHref>
-              <a className={styles.sidebar__link}>
-                Genres
-              </a>
-            </Link>
-          </li>
-          <li
-            className={styles.list__items}
-            onClick={onClose}
-          >
-            <Link href='/albums/top' passHref>
-              <a className={styles.sidebar__link}>
-                Top Albums
-              </a>
-            </Link>
-          </li>
-          <li
-            className={styles.list__items}
-            onClick={onClose}
-          >
-            <Link href='/auth/account' passHref>
-              <a className={styles.sidebar__link}>
-                Account
-              </a>
-            </Link>
-          </li>
+          <MenuItem
+            url='/genres'
+            label='Genres'
+            onClose={onClose}
+          />
+          <MenuItem
+            url='/albums/top'
+            label='Top Albums'
+            onClose={onClose}
+          />
+          <MenuItem
+            url='/auth/account'
+            label='Account'
+            onClose={onClose}
+          />
           <li className={styles.list__items}>
             <button
               onClick={logoutHandler}
@@ -64,16 +46,11 @@ const MenuItems = ({ currentUser, onClose, onAction }) => {
           </li>
         </>
       ) : (
-        <li
-          className={styles.list__items}
-          onClick={onClose}
-        >
-          <Link href='/auth/login' passHref>
-            <a className={styles.sidebar__link}>
-              Login
-            </a>
-          </Link>
-        </li>
+        <MenuItem
+          url='/auth/login'
+          label='Login'
+          onClose={onClose}
+        />
       )}
     </ul>
   );
