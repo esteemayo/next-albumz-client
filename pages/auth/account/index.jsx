@@ -16,9 +16,10 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
-import FormInput from '@/components/FormInput';
-import FormChipInput from '@/components/FormChipInput';
-import FormButton from '@/components/FormButton';
+
+import FormInput from '@/components/form/FormInput';
+import FormChipInput from '@/components/form/FormChipInput';
+import FormButton from '@/components/form/FormButton';
 
 import { parseCookie } from '@/utils/index';
 import { reset, updateUserData } from '@/features/auth/authSlice';
