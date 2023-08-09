@@ -45,7 +45,7 @@ const Sidebar = () => {
     darkMode === 'dark' ?
       dispatch(light('light')) :
       dispatch(dark('dark'));
-  }, [dark, light, dispatch]);
+  }, [dark, light, darkMode, dispatch]);
 
   const modeIcon = useMemo(() => {
     return darkMode === 'dark' ?
