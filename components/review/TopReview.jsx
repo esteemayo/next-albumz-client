@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-import StarRating from './StarRating';
+import StarRating from '@/components/StarRating';
 import { getUser } from '@/services/userService';
 
 import styles from '@/styles/TopReview.module.scss';
