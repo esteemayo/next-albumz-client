@@ -22,7 +22,7 @@ const Search = ({ value, onChange, onSubmit }) => {
 
 Search.propTypes = {
   value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };
 

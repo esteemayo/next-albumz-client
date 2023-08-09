@@ -1,6 +1,4 @@
 import { useCallback, useState } from 'react';
-import Link from 'next/link';
-import SearchIcon from '@mui/icons-material/Search';
 import { useRouter } from 'next/router';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
