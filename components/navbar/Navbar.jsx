@@ -65,27 +65,9 @@ const Navbar = () => {
           <NavItem url='/albums' label='Albums' />
           {user ? (
             <>
-              <li className={styles.list__items}>
-                <Link href='/genres' passHref>
-                  <a className={styles.navbar__link}>
-                    Genres
-                  </a>
-                </Link>
-              </li>
-              <li className={styles.list__items}>
-                <Link href='/albums/top' passHref>
-                  <a className={styles.navbar__link}>
-                    Top Albums
-                  </a>
-                </Link>
-              </li>
-              <li className={styles.list__items}>
-                <Link href='/auth/account' passHref>
-                  <a className={styles.navbar__link}>
-                    Account
-                  </a>
-                </Link>
-              </li>
+              <NavItem url='/genres' label='Genres' />
+              <NavItem url='/albums/top' label='Top Albums' />
+              <NavItem url='/auth/account' label='Account' />
               <li className={styles.list__items}>
                 <button
                   onClick={handleLogout}
@@ -96,13 +78,7 @@ const Navbar = () => {
               </li>
             </>
           ) : (
-            <li className={styles.list__items}>
-              <Link href='/auth/login' passHref>
-                <a className={styles.navbar__link}>
-                  Login
-                </a>
-              </Link>
-            </li>
+            <NavItem url='/auth/login' label='Login' />
           )}
         </ul>
       </div>
