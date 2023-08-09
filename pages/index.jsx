@@ -13,7 +13,7 @@ import { getTopReviews } from '@/services/reviewService';
 import { getAllGenres } from '@/services/genreService';
 import { getFeaturedAlbums } from '@/services/albumService';
 
-const TopReviews = dynamic(() => import('@/components/TopReviews'), { ssr: false });
+const TopReviews = dynamic(() => import('@/components/review/TopReviews'), { ssr: false });
 const FeaturedAlbums = dynamic(() => import('@/components/albums/FeaturedAlbums'), { ssr: false });
 
 const Home = ({ genres, reviews, featuredAlbums }) => {
