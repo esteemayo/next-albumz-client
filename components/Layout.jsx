@@ -2,10 +2,10 @@ import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 
 import Navbar from '@/components/navbar/Navbar';
+import Sidebar from '@/components/sidebar/Sidebar';
 import Footer from '@/components/footer/Footer';
 
 import Meta from './Meta';
-import Sidebar from './Sidebar';
 import ClientOnly from './ClientOnly';
 import DarkMode from './DarkMode';
 
