@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { excerpts } from '@/utils/index';
-import LikeButton from '@/components/LikeButton';
+import LikeButton from '@/components/button/LikeButton';
 
 import styles from '@/styles/AlbumCard.module.scss';
 
