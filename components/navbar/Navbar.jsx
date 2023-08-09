@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
 
 import Search from '@/components/Search';
+import NavButton from '@/components/navbar/NavButton';
 import NavItem from '@/components/navbar/NavItem';
 
 import { logoutUser } from '@/features/auth/authSlice';
@@ -68,14 +69,7 @@ const Navbar = () => {
               <NavItem url='/genres' label='Genres' />
               <NavItem url='/albums/top' label='Top Albums' />
               <NavItem url='/auth/account' label='Account' />
-              <li className={styles.list__items}>
-                <button
-                  onClick={handleLogout}
-                  className={styles.btn__logout}
-                >
-                  Logout
-                </button>
-              </li>
+              <NavButton label='Logout' onAction={handleLogout} />
             </>
           ) : (
             <NavItem url='/auth/login' label='Login' />
