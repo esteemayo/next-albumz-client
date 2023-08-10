@@ -17,7 +17,6 @@ import StarRating from '../StarRating';
 import AlbumInfo from './AlbumInfo';
 import AlbumDetails from './AlbumDetails';
 
-import { excerpts } from '@/utils/index';
 import LikeButton from '@/components/button/LikeButton';
 
 import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
@@ -134,46 +133,12 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
           </div>
         </div>
       </div>
-      <div className={styles.right}>
-        <div className={styles.rightWrapper}>
-          <h2 className={styles.album__heading}>About {album.title} album</h2>
-          {!!readMore ? (
-            <>
-              {album.info.split('\n').map((item, index) => {
-                return (
-                  <p key={index} className={styles.album__info}>
-                    {item}
-                  </p>
-                );
-              })}
-              <button
-                onClick={() => setReadMore(false)}
-                className={styles.btn__info}
-            >
-                Show less
-              </button>
-            </>
-          ) : (
-            <>
-              {excerpts(album?.info, 350).split('\n').map((item, index) => {
-              return (
-                  <p key={index} className={styles.album__info}>
-                    {item}
-                  </p>
-                );
-              })}
-              {album.info.length > 350 && (
-                <button
-                  onClick={() => setReadMore(true)}
-                  className={styles.btn__info}
-                >
-                  Read more
-              </button>
-              )}
-            </>
-          )}
-        </div>
-      </div>
+      <AlbumDetails
+        info={album?.info}
+        title={album.title}
+        show={readMore}
+        onClick={setReadMore}
+      />
     </section>
   );
 };
