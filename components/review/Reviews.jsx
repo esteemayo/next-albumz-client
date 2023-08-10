@@ -18,8 +18,8 @@ const Reviews = ({ reviews, onSort }) => {
           <h4 className={styles.header}>
             {reviews.length > 1 ? 'Reviews' : 'Review'}
           </h4>
-          <ReactSortable list={reviewList} setList={updateReviewOrder}>
-            {reviewList.map((item) => {
+          <ReactSortable list={reviews} setList={onSort}>
+            {reviews.map((item) => {
               return <ReviewCard key={item._id} {...item} />;
             })}
           </ReactSortable>
