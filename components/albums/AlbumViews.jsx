@@ -10,14 +10,12 @@ const AlbumViews = ({ views }) => {
   }, [views]);
 
   return (
-    <span className={styles.action__wrapper}>
-      <div className={styles.view__container}>
-        <VisibilityOutlinedIcon className={styles.action__icon} />
-        <span className={styles.views}>
-          {views?.length} {viewsLabel}
-        </span>
-      </div>
-    </span>
+    <div className={styles.view__container}>
+      <VisibilityOutlinedIcon className={styles.action__icon} />
+      <span className={styles.views}>
+        {views?.length} {viewsLabel}
+      </span>
+    </div>
   );
 };
 
