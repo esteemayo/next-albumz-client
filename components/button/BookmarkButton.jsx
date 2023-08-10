@@ -27,7 +27,7 @@ const BookmarkButton = ({ bookmark, onAdd, onRemove }) => {
   );
 };
 
-Bookmark.porpTypes = {
+BookmarkButton.porpTypes = {
   bookmark: PropTypes.any,
   onAdd: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
