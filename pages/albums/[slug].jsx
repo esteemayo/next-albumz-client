@@ -68,6 +68,13 @@ SingleAlbum.propTypes = {
     image: PropTypes.string.isRequired,
     createdAt: PropTypes.string.isRequired,
   }),
+  reviews: PropTypes.shape({
+    rating: PropTypes.number.isRequired,
+    review: PropTypes.string.isRequired,
+    user: PropTypes.object.isRequired,
+    album: PropTypes.object.isRequired,
+    createdAt: PropTypes.string.isRequired,
+  }),
 };
 
 export const getServerSideProps = async ({ req, params: { slug } }) => {
