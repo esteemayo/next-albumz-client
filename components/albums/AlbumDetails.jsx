@@ -20,14 +20,14 @@ const AlbumDetails = ({ info, show, title, onClick }) => {
             <button
               onClick={() => onClick(false)}
               className={styles.btn__info}
-          >
+            >
               Show less
             </button>
           </>
         ) : (
           <>
             {excerpts(info, 350)?.split('\n')?.map((item, index) => {
-            return (
+              return (
                 <p key={index} className={styles.album__info}>
                   {item}
                 </p>
