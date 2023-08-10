@@ -11,8 +11,8 @@ import styles from '@/styles/SingleAlbum.module.scss';
 const Meta = dynamic(() => import('@/components/Meta'));
 const ReviewForm = dynamic(() => import('@/components/form/ReviewForm'));
 const Reviews = dynamic(() => import('@/components/review/Reviews'));
-const SingleAlbumHero = dynamic(() => import('@/components/hero/SingleAlbumHero'));
 const RelatedAlbums = dynamic(() => import('@/components/albums/RelatedAlbums'));
+const AlbumHero = dynamic(() => import('@/components/hero/AlbumHero'));
 const AlbumDescription = dynamic(() => import ('@/components/albums/AlbumDescription'));
 
 const SingleAlbum = ({ album, reviews }) => {
@@ -27,7 +27,7 @@ const SingleAlbum = ({ album, reviews }) => {
     <ClientOnly>
       <Meta title={`${album.title} - Albumz Music Entertainment`} />
       <section className={styles.container}>
-        <SingleAlbumHero album={singleAlbum} />
+        <AlbumHero album={singleAlbum} />
         <AlbumDescription
           album={singleAlbum}
           setSingleAlbum={setSingleAlbum}

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import styles from '@/styles/SingleAlbumHero.module.scss';
 
-const SingleAlbumHero = ({ album }) => {
+const AlbumHero = ({ album }) => {
   return (
     <header className={styles.header}>
       <div className={styles.header__hero}>
@@ -48,4 +48,4 @@ SingleAlbumHero.propTypes = {
   }),
 };
 
-export default SingleAlbumHero;
+export default AlbumHero;
