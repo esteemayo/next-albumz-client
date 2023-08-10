@@ -14,6 +14,7 @@ import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumber
 
 import Popup from '../Popup';
 import StarRating from '../StarRating';
+import AlbumInfo from './AlbumInfo';
 
 import { excerpts } from '@/utils/index';
 import LikeButton from '@/components/button/LikeButton';
@@ -58,13 +59,11 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
       <div className={styles.left}>
         <div className={styles.album__wrapper}>
           <h2 className={styles.album__heading}>About album</h2>
-          <div className={styles.album__details}>
-            <span>
-              <MusicNoteOutlinedIcon className={styles.icon} />
-            </span>
-            <span>Artist</span>
-            <span>{album.artist}</span>
-          </div>
+          <AlbumInfo
+            icon={MusicNoteOutlinedIcon}
+            label='Artist'
+            data={album.artist}
+          />
           <div className={styles.album__details}>
             <span>
               <TitleOutlinedIcon className={styles.icon} />
