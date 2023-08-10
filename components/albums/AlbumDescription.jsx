@@ -62,4 +62,18 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
   );
 };
 
+AlbumDescription.propTypes = {
+  album: PropTypes.shape({
+    artist: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    tracks: PropTypes.number.isRequired,
+    likes: PropTypes.array.isRequired,
+    ratingsAverage: PropTypes.number.isRequired,
+  }),
+  setSingleAlbum: PropTypes.any.isRequired,
+};
+
 export default AlbumDescription;
