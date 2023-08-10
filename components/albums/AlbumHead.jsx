@@ -8,6 +8,7 @@ import Popup from '../Popup';
 import StarRating from '../StarRating';
 import AlbumInfo from './AlbumInfo';
 import { albumInfoItems } from '../../data';
+import AlbumViews from './AlbumViews';
 
 import LikeButton from '@/components/button/LikeButton';
 
@@ -48,12 +49,7 @@ const AlbumHead = ({
           value={album.ratingsAverage}
         />
         <div className={styles.action}>
-          <span className={styles.action__wrapper}>
-            <div className={styles.view__container}>
-              <VisibilityOutlinedIcon className={styles.action__icon} />
-              <span className={styles.views}>{views?.length} {views?.length > 1 ? 'views' : 'view'}</span>
-            </div>
-          </span>
+          <AlbumViews views={views} />
           <span className={styles.action__wrapper}>
             {!bookmark ? (
               <Popup title='Bookmark'>
