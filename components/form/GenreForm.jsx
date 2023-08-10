@@ -63,7 +63,7 @@ const GenreForm = ({ onClose, setGenreList }) => {
               />
               <FormButton
                 text='Submit'
-                disabled={disableButton}
+                disabled={isLoading}
               />
             </div>
           </form>
