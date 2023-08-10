@@ -23,7 +23,7 @@ const AlbumCard = ({ album }) => {
 
    const albumUrl = useMemo(() => {
     return `/albums/${encodeURIComponent(slug)}`;
-   }, []);
+   }, [slug]);
 
   return (
     <div className={styles.card}>
