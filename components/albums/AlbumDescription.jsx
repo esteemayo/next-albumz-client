@@ -2,11 +2,11 @@ import { toast } from 'react-toastify';
 import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import AlbumHead from './AlbumHead';
-import AlbumDetails from './AlbumDetails';
-
 import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
 import { createViews, getViews, reset } from '@/features/views/viewSlice';
+
+import AlbumHead from './AlbumHead';
+import AlbumDetails from './AlbumDetails';
 
 import styles from '@/styles/AlbumDescription.module.scss';
 
