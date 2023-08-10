@@ -89,13 +89,11 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
             label='Number of Tracks'
             data={album.tracks}
           />
-          <div className={styles.album__details}>
-            <span>
-              <StarOutlineOutlinedIcon className={styles.icon} />
-            </span>
-            <span>Ratings</span>
-            <span>{album.ratingsAverage} / 5</span>
-          </div>
+          <AlbumInfo
+            icon={StarOutlineOutlinedIcon}
+            label='Ratings'
+            data={`${album.ratingsAverage} / 5`}
+          />
           <StarRating value={album.ratingsAverage} className={styles.rating} />
           <div className={styles.action}>
             <span className={styles.action__wrapper}>
