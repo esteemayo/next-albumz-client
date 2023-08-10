@@ -70,7 +70,6 @@ const Albums = ({
             return <AlbumCard key={item?._id} album={item} />;
           }))}
         </div>
-
         <Pagination
           page={page}
           total={total}
