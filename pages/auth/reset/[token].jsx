@@ -71,6 +71,11 @@ const ResetPassword = () => {
     dispatch(resetPassword({ token, credentials, toast }));
   }, [password, confirmPassword, router, dispatch]);
 
+  const disableButton = useMemo(() => {
+    const disabled = (!password || !confirmPassword || isLoading);
+    return !!disabled;
+  }, []);
+
   useEffect(() => {
     isError && toast.error(message);
     isSuccess && router.push('/auth/login');
@@ -129,7 +134,7 @@ const ResetPassword = () => {
                   <button
                     type='submit'
                     className={styles.form__btn}
-                    disabled={isLoading}
+                    disabled={disableButton}
                   >
                     Reset password
                   </button>
