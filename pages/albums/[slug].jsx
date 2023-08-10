@@ -28,13 +28,22 @@ const SingleAlbum = ({ album, reviews }) => {
       <Meta title={`${album.title} - Albumz Music Entertainment`} />
       <section className={styles.container}>
         <SingleAlbumHero album={singleAlbum} />
-        <AlbumDescription album={singleAlbum} setSingleAlbum={setSingleAlbum} />
-        <ReviewForm albumId={album.id} setReviewList={setReviewList} />
+        <AlbumDescription
+          album={singleAlbum}
+          setSingleAlbum={setSingleAlbum}
+        />
+        <ReviewForm
+          albumId={album.id}
+          setReviewList={setReviewList}
+        />
         <Reviews
           reviews={reviewList}
           onSort={updateReviewOrder}
         />
-        <RelatedAlbums albumId={album.id} tags={singleAlbum.tags} />
+        <RelatedAlbums
+          albumId={album.id}
+          tags={singleAlbum.tags}
+        />
       </section>
     </ClientOnly>
   );
