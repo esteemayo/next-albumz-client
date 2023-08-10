@@ -18,7 +18,15 @@ import LikeButton from '@/components/button/LikeButton';
 
 import styles from '@/styles/AlbumDescription.module.scss';
 
-const AlbumHead = ({ album, views, albumId, bookmark, onAdd, onRemove, onAction }) => {
+const AlbumHead = ({
+  album,
+  views,
+  albumId,
+  bookmark,
+  onAdd,
+  onRemove,
+  onAction,
+}) => {
   return (
     <div className={styles.left}>
       <div className={styles.album__wrapper}>
