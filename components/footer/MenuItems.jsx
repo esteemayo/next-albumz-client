@@ -7,7 +7,7 @@ const MenuItems = ({ currentUser }) => {
   return (
     <ul className={styles.footer__list}>
       <MenuItem url='/albums' label='Albums' />
-      {currentUser && (
+      {!!currentUser && (
         <>
           <MenuItem url='/genres' label='Genres' />
           <MenuItem url='/albums/top' label='Top albums' />
