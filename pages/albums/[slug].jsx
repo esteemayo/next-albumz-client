@@ -9,7 +9,7 @@ import ClientOnly from '@/components/ClientOnly';
 import styles from '@/styles/SingleAlbum.module.scss';
 
 const Meta = dynamic(() => import('@/components/Meta'));
-const ReviewForm = dynamic(() => import('@/components/review/ReviewForm'));
+const ReviewForm = dynamic(() => import('@/components/form/ReviewForm'));
 const Reviews = dynamic(() => import('@/components/review/Reviews'));
 const SingleAlbumHero = dynamic(() => import('@/components/hero/SingleAlbumHero'));
 const RelatedAlbums = dynamic(() => import('@/components/albums/RelatedAlbums'));
