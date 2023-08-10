@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import { useCallback } from 'react';
 
-import StarRating from '../StarRating';
-import AlbumInfo from './AlbumInfo';
-import { albumInfoItems } from '../../data';
-import AlbumViews from './AlbumViews';
-
 import LikeButton from '@/components/button/LikeButton';
 import BookmarkButton from '@/components/button/BookmarkButton';
 
+import StarRating from '../StarRating';
+import AlbumInfo from './AlbumInfo';
+import AlbumViews from './AlbumViews';
+
+import { albumInfoItems } from '../../data';
 import styles from '@/styles/AlbumDescription.module.scss';
 
 const AlbumHead = ({
