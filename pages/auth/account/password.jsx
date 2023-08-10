@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useDispatch, useSelector } from 'react-redux';
@@ -43,23 +43,6 @@ const UpdatePassword = () => {
   const handleCloseModal = useCallback(() => {
     setShowModal(true);
   }, []);
-
-  const disableButton = useMemo(() => {
-    const disabled = 
-      isLoading ||
-      password === '' ||
-      confirmPassword === '' ||
-      currentPassword === '';
-    
-    return !!disabled;
-  }, 
-    [
-      isLoading,
-      password,
-      confirmPassword,
-      currentPassword,
-    ]
-  );
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
@@ -195,7 +178,7 @@ const UpdatePassword = () => {
                     </FormInput>
                     <FormButton
                       text='Update password'
-                      disabled={disableButton}
+                      disabled={isLoading}
                     />
                   </form>
                 </div>
