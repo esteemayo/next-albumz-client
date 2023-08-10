@@ -29,7 +29,7 @@ const ReviewCard = ({ rating, review, user, createdAt }) => {
         <div className={styles.right}>
           <div className={styles.image__wrapper}>
             <Image
-              src={user.avatar ? user.avatar : '/img/user-default.jpg'}
+              src={user.avatar ?? '/img/user-default.jpg'}
               width={80}
               height={80}
               objectFit='cover'
