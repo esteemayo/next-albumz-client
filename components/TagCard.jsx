@@ -10,7 +10,8 @@ import styles from '@/styles/TagCard.module.scss';
 const TagCard = ({ album: { info, slug, image, title } }) => {
   const router = useRouter();
 
-  const handleClick = useCallback(() => {
+  const handleClick = useCallback((e) => {
+    e.stopPropagation();
     router.push(`/albums/${slug}`);
   }, [slug, router]);
 
@@ -21,7 +22,7 @@ const TagCard = ({ album: { info, slug, image, title } }) => {
           <div className={styles.card__image}>
             <div className={styles.overlay}>&nbsp;</div>
             <Image
-              src={image ? image : '/img/default-album-1.webp'}
+              src={image ??'/img/default-album-1.webp'}
               width={200}
               height={130}
               objectFit='cover'
@@ -35,7 +36,12 @@ const TagCard = ({ album: { info, slug, image, title } }) => {
         <div className={styles.right}>
           <p className={styles.card__info}>{info && excerpts(info, 250)}</p>
           <div className={styles.btnWrapper}>
-            <button className={styles.btn} onClick={handleClick}>Read more</button>
+            <button
+              className={styles.btn}
+              onClick={handleClick}
+            >
+              Read more
+            </button>
           </div>
         </div>
       </div>
