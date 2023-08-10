@@ -1,5 +1,5 @@
 import { toast } from 'react-toastify';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
@@ -40,11 +40,6 @@ const GenreForm = ({ onClose, setGenreList }) => {
       setIsLoading(false);
     }
   }, [name, onClose]);
-
-  const disableButton = useMemo(() => {
-    const disabled = !name;
-    return !!disabled;
-  }, [name]);
 
   return (
     <div className={styles.container}>
