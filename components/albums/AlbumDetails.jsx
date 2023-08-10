@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import { excerpts } from '@/utils/index';
+
 import styles from '@/styles/AlbumDescription.module.scss';
 
 const AlbumDetails = ({ info, show, title, onClick }) => {
