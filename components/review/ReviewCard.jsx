@@ -5,8 +5,8 @@ import StarRating from '@/components/StarRating';
 import styles from '@/styles/ReviewCard.module.scss';
 
 const ReviewCard = ({ rating, review, user, createdAt }) => {
-  const timeOptions ={ hour: 'numeric', minute: 'numeric' };
-  const dateOptions ={ month: 'long', day: 'numeric', year: 'numeric' };
+  const timeOptions = { hour: 'numeric', minute: 'numeric' };
+  const dateOptions = { month: 'long', day: 'numeric', year: 'numeric' };
 
   return (
     <div className={styles.review}>
