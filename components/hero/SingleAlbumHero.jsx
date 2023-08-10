@@ -39,4 +39,13 @@ const SingleAlbumHero = ({ album }) => {
   );
 };
 
+SingleAlbumHero.propTypes = {
+  album: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    year: PropTypes.string.isRequired,
+    tracks: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+  }),
+};
+
 export default SingleAlbumHero;
