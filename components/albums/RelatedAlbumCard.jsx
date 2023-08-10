@@ -5,7 +5,13 @@ import { useMemo } from 'react';
 
 import styles from '@/styles/RelatedAlbumCard.module.scss';
 
-const RelatedAlbumCard = ({ slug, image, title, artist, createdAt }) => {
+const RelatedAlbumCard = ({
+  slug,
+  image,
+  title,
+  artist,
+  createdAt,
+}) => {
   return (
     <div className={styles.related__card}>
       <div className={styles.left}>
