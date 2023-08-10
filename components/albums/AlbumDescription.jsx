@@ -64,13 +64,11 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
             label='Artist'
             data={album.artist}
           />
-          <div className={styles.album__details}>
-            <span>
-              <TitleOutlinedIcon className={styles.icon} />
-            </span>
-            <span>Title</span>
-            <span>{album.title}</span>
-          </div>
+          <AlbumInfo
+            icon={TitleOutlinedIcon}
+            label='Title'
+            data={album.title}
+          />
           <div className={styles.album__details}>
             <span>
               <CategoryOutlinedIcon className={styles.icon} />
