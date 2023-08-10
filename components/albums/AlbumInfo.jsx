@@ -5,7 +5,7 @@ const AlbumInfo = ({ icon: Icon, label, data }) => {
   return (
     <div className={styles.album__details}>
       <span>
-        <Icon className={styles.icon} />
+        {/* <Icon className={styles.icon} /> */}
       </span>
       <span>{label}</span>
       <span>{data}</span>

@@ -32,12 +32,12 @@ const AlbumHead = ({
     <div className={styles.left}>
       <div className={styles.album__wrapper}>
         <h2 className={styles.album__heading}>About album</h2>
-        {albumInfoItems?.map((item) => {
+        {albumInfoItems.map((item) => {
           const { id, icon, label } = item;
           return (
             <AlbumInfo
               key={id}
-              icon={icon}
+              // icon={icon}
               label={label}
               data={album[id] === 'ratingsAverage' ? `${album[id] / 5}` : album[id]}
             />
@@ -92,7 +92,7 @@ AlbumHead.propTypes = {
     genre: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    tracks: PropTypes.string.isRequired,
+    tracks: PropTypes.number.isRequired,
     likes: PropTypes.array.isRequired,
     ratingsAverage: PropTypes.number.isRequired,
   }),
