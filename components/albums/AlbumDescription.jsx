@@ -1,16 +1,4 @@
 import { toast } from 'react-toastify';
-import AlbumOutlinedIcon from '@mui/icons-material/AlbumOutlined';
-import { useDispatch, useSelector } from 'react-redux';
-import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
-import { useCallback, useEffect, useState } from 'react';
-import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined';
-import TitleOutlinedIcon from '@mui/icons-material/TitleOutlined';
-import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
-import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
-import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
-import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined';
-import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
-import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumberedOutlined';
 
 import Popup from '../Popup';
 import StarRating from '../StarRating';
