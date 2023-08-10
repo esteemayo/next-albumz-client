@@ -42,4 +42,11 @@ const ReviewCard = ({ rating, review, user, createdAt }) => {
   );
 };
 
+ReviewCard.propTypes = {
+  rating: PropTypes.number.isRequired,
+  review: PropTypes.string.isRequired,
+  user: PropTypes.object.isRequired,
+  createdAt: PropTypes.string.isRequired,
+};
+
 export default ReviewCard;
