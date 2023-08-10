@@ -20,7 +20,7 @@ import LikeButton from '@/components/button/LikeButton';
 
 import styles from '@/styles/AlbumDescription.module.scss';
 
-const AlbumHead = ({ album, views, albumId, bookmark, onAdd, onRemove }) => {
+const AlbumHead = ({ album, views, albumId, bookmark, onAdd, onRemove, onAction }) => {
   return (
     <div className={styles.left}>
       <div className={styles.album__wrapper}>
@@ -118,6 +118,7 @@ AlbumHead.propTypes = {
   bookmark: PropTypes.any.isRequired,
   onAdd: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
+  onAction: PropTypes.any.isRequired,
 };
 
 export default AlbumHead;
