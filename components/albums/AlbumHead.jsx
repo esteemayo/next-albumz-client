@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined';
 import { useCallback } from 'react';
 
 import Popup from '../Popup';
