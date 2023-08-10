@@ -31,6 +31,10 @@ const Albums = ({
   const [showModal, setShowModal] = useState(false);
   const [albumList, setAlbumList] = useState(albums);
 
+  const handleOpen = useCallback(() => {
+    setShowModal(true);
+  }, []);
+
   const handleClose = useCallback(() => {
     setShowModal(false);
   }, []);
@@ -77,7 +81,7 @@ const Albums = ({
         {user && (
           <AddButton
             text='New album'
-            onClick={() => setShowModal(true)}
+            onClick={handleOpen}
           />
         )}
 

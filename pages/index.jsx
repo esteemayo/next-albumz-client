@@ -33,7 +33,7 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
       <Hero />
       <FeaturedAlbums albums={featuredAlbums} />
       <TopReviews reviews={reviews} />
-      {user && (
+      {!!user && (
         <AddButton
           text='New album'
           onClick={handleOpen}
