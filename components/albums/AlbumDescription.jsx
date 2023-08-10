@@ -15,6 +15,7 @@ import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumber
 import Popup from '../Popup';
 import StarRating from '../StarRating';
 import AlbumInfo from './AlbumInfo';
+import AlbumDetails from './AlbumDetails';
 
 import { excerpts } from '@/utils/index';
 import LikeButton from '@/components/button/LikeButton';
