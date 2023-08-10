@@ -10,7 +10,7 @@ const SingleAlbumHero = ({ album }) => {
       <div className={styles.header__hero}>
         <div className={styles.header__heroOverlay}>&nbsp;</div>
         <Image
-          src={album.image ? album.image : '/img/default-album-1.webp'}
+          src={album.image ?? '/img/default-album-1.webp'}
           width='1600'
           height='693'
           objectFit='cover'
