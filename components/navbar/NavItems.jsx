@@ -9,7 +9,7 @@ const NavItems = ({ currentUser, onClick }) => {
   return (
     <ul className={styles.list}>
       <NavItem url='/albums' label='Albums' />
-      {currentUser ? (
+      {!!currentUser ? (
         <>
           <NavItem url='/genres' label='Genres' />
           <NavItem url='/albums/top' label='Top Albums' />
