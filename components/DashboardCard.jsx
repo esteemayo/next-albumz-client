@@ -45,7 +45,7 @@ const DashboardCard = ({
                   <p className={styles.card__info}>{info && excerpts(info, 200)}</p>
                   <div className={styles.card__line}>&nbsp;</div>
                   <div className={styles.card__button}>
-                    <Link href={`/albums/edit/${slug}`} passHref>
+                    <Link href={`/albums/edit/${encodeURIComponent(slug)}`} passHref>
                       <a className={styles.card__updateBtn}>Update</a>
                     </Link>
                     <button onClick={() => onOpen(id)} className={styles.card__delete}>
