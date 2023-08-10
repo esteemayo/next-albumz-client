@@ -158,7 +158,7 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
               <button
                 onClick={() => setReadMore(false)}
                 className={styles.btn__info}
-              >
+            >
                 Show less
               </button>
             </>
