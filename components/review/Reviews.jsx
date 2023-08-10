@@ -5,8 +5,6 @@ import ReviewCard from './ReviewCard';
 import styles from '@/styles/Reviews.module.scss';
 
 const Reviews = ({ reviews, onSort }) => {
-  const [reviewList, setReviewList] = useState(reviews);
-
   return (
     <>
       {reviews.length > 0 && (
