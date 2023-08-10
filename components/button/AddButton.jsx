@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from '@/styles/AddButton.module.scss';
 
 const AddButton = ({text, onClick }) => {
