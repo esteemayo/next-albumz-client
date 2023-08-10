@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from '@/styles/AddButton.module.scss';
 
-const AddButton = ({text, onClick }) => {
+const AddButton = ({ text, onClick }) => {
   return (
     <div className={styles.wrapper}>
       <button 
@@ -12,6 +12,11 @@ const AddButton = ({text, onClick }) => {
       </button>
     </div>
   );
+};
+
+AddButton.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default AddButton;
