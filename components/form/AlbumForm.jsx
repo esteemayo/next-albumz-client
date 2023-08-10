@@ -155,7 +155,7 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
               />
               <FormButton
                 text='Submit'
-                disabled={}
+                disabled={isLoading}
               />
             </div>
           </form>
