@@ -10,6 +10,7 @@ import { albumInfoItems } from '../../data';
 import AlbumViews from './AlbumViews';
 
 import LikeButton from '@/components/button/LikeButton';
+import BookmarkButton from '@/components/button/BookmarkButton';
 
 import styles from '@/styles/AlbumDescription.module.scss';
 
@@ -52,21 +53,11 @@ const AlbumHead = ({
             <AlbumViews views={views} />
           </span>
           <span className={styles.action__wrapper}>
-            {!bookmark ? (
-              <Popup title='Bookmark'>
-                <BookmarkAddOutlinedIcon
-                  onClick={onAdd}
-                  className={`${styles.action__icon} ${styles.bookmark__icon}`}
-                />
-              </Popup>
-            ) : (
-              <Popup title='Unbookmark'>
-                <BookmarkAddedOutlinedIcon
-                  onClick={onRemove}
-                  className={`${styles.action__icon} ${styles.bookmark__icon}`}
-                />
-              </Popup>
-            )}
+            <BookmarkButton
+              bookmark={bookmark}
+              onAdd={onAdd}
+              onRemove={onRemove}
+            />
           </span>
           <span className={styles.action__wrapper}>
             <LikeButton
