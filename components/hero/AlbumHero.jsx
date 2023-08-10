@@ -3,7 +3,7 @@ import Image from 'next/image';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 import PropTypes from 'prop-types';
 
-import styles from '@/styles/SingleAlbumHero.module.scss';
+import styles from '@/styles/AlbumHero.module.scss';
 
 const AlbumHero = ({ album }) => {
   return (
