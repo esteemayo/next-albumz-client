@@ -31,7 +31,7 @@ const SingleAlbumHero = ({ album }) => {
           </div>
           <div className={styles.headingBox__detail}>
             <CalendarTodayOutlinedIcon className={styles.headingBox__icon} />
-            <div className={styles.headingBox__text}>{ album.year}</div>
+            <div className={styles.headingBox__text}>{album.year}</div>
           </div>
         </div>
       </div>
