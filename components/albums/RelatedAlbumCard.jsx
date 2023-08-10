@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import { useMemo } from 'react';
 
 import styles from '@/styles/RelatedAlbumCard.module.scss';
 
