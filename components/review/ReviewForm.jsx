@@ -78,4 +78,9 @@ const ReviewForm = ({ albumId, setReviewList }) => {
   );
 };
 
+ReviewForm.propTypes = {
+  albumId: PropTypes.string.isRequired,
+  setReviewList: PropTypes.any.isRequired,
+};
+
 export default ReviewForm;
