@@ -64,6 +64,7 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
         bookmark={bookmark}
         onAdd={handleSetAsBookmark}
         onRemove={handleUnSetAsBookmark}
+        onAction={setSingleAlbum}
       />
       <AlbumDetails
         info={album?.info}
