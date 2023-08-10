@@ -177,7 +177,7 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
                   className={styles.btn__info}
                 >
                   Read more
-                </button>
+              </button>
               )}
             </>
           )}
