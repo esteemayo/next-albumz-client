@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined';
-import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import { useCallback } from 'react';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 
 import Popup from '../Popup';
 import StarRating from '../StarRating';
 import AlbumInfo from './AlbumInfo';
-
 import { albumInfoItems } from '../../data';
+
 import LikeButton from '@/components/button/LikeButton';
 
 import styles from '@/styles/AlbumDescription.module.scss';
