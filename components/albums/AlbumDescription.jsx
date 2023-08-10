@@ -79,13 +79,11 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
             label='Year of Release'
             data={album.year}
           />
-          <div className={styles.album__details}>
-            <span>
-              <AlbumOutlinedIcon className={styles.icon} />
-            </span>
-            <span>Record Label</span>
-            <span>{album.label}</span>
-          </div>
+          <AlbumInfo
+            icon={AlbumOutlinedIcon}
+            label='Record Label'
+            data={album.label}
+          />
           <div className={styles.album__details}>
             <span>
               <FormatListNumberedOutlinedIcon className={styles.icon} />
