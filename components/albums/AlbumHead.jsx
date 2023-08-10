@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 import AlbumOutlinedIcon from '@mui/icons-material/AlbumOutlined';
-import { useDispatch, useSelector } from 'react-redux';
 import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
-import { useCallback, useEffect, useState } from 'react';
 import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined';
 import TitleOutlinedIcon from '@mui/icons-material/TitleOutlined';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
