@@ -28,12 +28,16 @@ const GenreForm = ({ onClose, setGenreList }) => {
   }, [ name, reload, handleCreateGenre]);
 
   const handleCreateGenre = useCallback(async () => {
+    setIsLoading(true);
+
     try {
       const { data } = await createGenre({ name });
       setGenreList((prev) => [data.genre, ...prev]);
       onClose();
     } catch (err) {
       console.log(err);
+    } finally {
+      setIsLoading(false);
     }
   }, [name, onClose]);
 
