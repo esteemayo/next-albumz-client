@@ -113,7 +113,7 @@ AlbumHead.propTypes = {
   }),
   views: PropTypes.array.isRequired,
   albumId: PropTypes.string.isRequired,
-  bookmark: PropTypes.any.isRequired,
+  bookmark: PropTypes.any,
   onAdd: PropTypes.func.isRequired,
   onRemove: PropTypes.func.isRequired,
   onAction: PropTypes.any.isRequired,
