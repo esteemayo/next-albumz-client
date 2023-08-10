@@ -24,4 +24,16 @@ const Reviews = ({ reviews, onSort }) => {
   );
 };
 
+Reviews.propTypes = {
+  reviews: PropTypes.arrayOf({
+    PropTypes.shape({
+      rating: PropTypes.number.isRequired,
+      review: PropTypes.string.isRequired,
+      user: PropTypes.object.isRequired,
+      album: PropTypes.object.isRequired,
+      createdAt: PropTypes.string.isRequired,
+    }),
+  }),
+};
+
 export default Reviews;
