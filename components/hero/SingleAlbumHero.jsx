@@ -1,6 +1,7 @@
 import ArtTrackIcon from '@mui/icons-material/ArtTrack';
 import Image from 'next/image';
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
+import PropTypes from 'prop-types';
 
 import styles from '@/styles/SingleAlbumHero.module.scss';
 
