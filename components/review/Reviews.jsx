@@ -7,10 +7,6 @@ import styles from '@/styles/Reviews.module.scss';
 const Reviews = ({ reviews, onSort }) => {
   const [reviewList, setReviewList] = useState(reviews);
 
-  const updateReviewOrder = useCallback((reviews) => {
-    setReviewList(reviews);
-  }, []);
-
   return (
     <>
       {reviews.length > 0 && (
