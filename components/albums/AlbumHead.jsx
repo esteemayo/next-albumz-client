@@ -49,7 +49,9 @@ const AlbumHead = ({
           value={album.ratingsAverage}
         />
         <div className={styles.action}>
-          <AlbumViews views={views} />
+          <span className={styles.action__wrapper}>
+            <AlbumViews views={views} />
+          </span>
           <span className={styles.action__wrapper}>
             {!bookmark ? (
               <Popup title='Bookmark'>
