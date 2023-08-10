@@ -82,7 +82,6 @@ const Albums = ({
             onClick={handleOpen}
           />
         )}
-
         {showModal && (
           <Modal onClose={handleClose}>
             <AlbumForm
