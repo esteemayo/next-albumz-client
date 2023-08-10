@@ -69,13 +69,11 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
             label='Title'
             data={album.title}
           />
-          <div className={styles.album__details}>
-            <span>
-              <CategoryOutlinedIcon className={styles.icon} />
-            </span>
-            <span>Genre</span>
-            <span>{album.genre}</span>
-          </div>
+          <AlbumInfo
+            icon={CategoryOutlinedIcon}
+            label='Genre'
+            data={album.genre}
+          />
           <div className={styles.album__details}>
             <span>
               <DateRangeOutlinedIcon className={styles.icon} />
