@@ -82,6 +82,8 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
     form.append('upload_preset', 'albumz');
     
     try {
+      setIsLoading(true);
+
       if (file) {
         const res = await uploadImage(form);
         const { url } = res.data;
@@ -93,6 +95,8 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
       onClose();
     } catch (err) {
       console.log(err);
+    } finally {
+      setIsLoading(false);
     }
   }, [tags, file, onClose, formData, emptyFieldCheck]);
 
