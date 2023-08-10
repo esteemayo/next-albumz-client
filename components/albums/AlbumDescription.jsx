@@ -1,5 +1,6 @@
 import { toast } from 'react-toastify';
 import { useCallback, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
