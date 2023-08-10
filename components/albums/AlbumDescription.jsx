@@ -94,7 +94,10 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
             label='Ratings'
             data={`${album.ratingsAverage} / 5`}
           />
-          <StarRating value={album.ratingsAverage} className={styles.rating} />
+          <StarRating
+            className={styles.rating}
+            value={album.ratingsAverage}
+          />
           <div className={styles.action}>
             <span className={styles.action__wrapper}>
               <div className={styles.view__container}>
