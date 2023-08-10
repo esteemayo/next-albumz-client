@@ -50,7 +50,7 @@ const AlbumDetails = ({ info, show, title, onClick }) => {
 
 AlbumDetails.propTypes = {
   info: PropTypes.string.isRequired,
-  show: PropTypes.boolean.isRequired,
+  show: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
   onClick: PropTypes.any.isRequired,
 };
