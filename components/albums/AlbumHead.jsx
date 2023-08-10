@@ -91,7 +91,7 @@ const AlbumHead = ({ album, views, albumId, bookmark, onAdd, onRemove, onAction 
               type='single'
               likes={album.likes}
               actionId={albumId}
-              onAction={setSingleAlbum}
+              onAction={onAction}
             />
           </span>
         </div>
