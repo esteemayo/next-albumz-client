@@ -8,7 +8,7 @@ import { likeAlbum } from '@/services/albumService';
 
 import styles from '@/styles/LikeButton.module.scss';
 
-const LikeButton = ({ type, likes, albumId, setSingleAlbum }) => {
+const LikeButton = ({ type, likes, actionId, onAction }) => {
   const [liked, setLiked] = useState(false);
   const { user } = useSelector((state) => ({ ...state.auth }));
 
@@ -52,12 +52,12 @@ const LikeButton = ({ type, likes, albumId, setSingleAlbum }) => {
 
   const handleLike = useCallback(async () => {
     try {
-      const { data } = await likeAlbum(albumId);
-      setSingleAlbum(data.album);
+      const { data } = await likeAlbum(actionId);
+      onAction(data.album);
     } catch (err) {
       console.log(err);
     }
-  }, [albumId]);
+  }, [actionId]);
 
   return (
     <div className={styles.icon__wrapper}>
