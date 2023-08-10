@@ -4,7 +4,7 @@ import { ReactSortable } from 'react-sortablejs';
 import ReviewCard from './ReviewCard';
 import styles from '@/styles/Reviews.module.scss';
 
-const Reviews = ({ reviews }) => {
+const Reviews = ({ reviews, onSort }) => {
   const [reviewList, setReviewList] = useState(reviews);
 
   const updateReviewOrder = useCallback((reviews) => {
