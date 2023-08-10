@@ -1,14 +1,4 @@
 import PropTypes from 'prop-types';
-import AlbumOutlinedIcon from '@mui/icons-material/AlbumOutlined';
-import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
-import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined';
-import TitleOutlinedIcon from '@mui/icons-material/TitleOutlined';
-import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
-import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
-import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
-import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined';
-import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
-import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumberedOutlined';
 
 import Popup from '../Popup';
 import StarRating from '../StarRating';
@@ -39,7 +29,7 @@ const AlbumHead = ({
               key={id}
               icon={icon}
               label={label}
-              data={album[id] === 'ratingsAverage' ? `${album[id] / 5}` : album[id]}
+              data={album[id]}
             />
           );
         })}

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import styles from '@/styles/AlbumDescription.module.scss';
 
 const AlbumInfo = ({ icon: Icon, label, data }) => {
+  console.log({ data})
   return (
     <div className={styles.album__details}>
       <span>
