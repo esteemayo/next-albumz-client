@@ -12,6 +12,10 @@ const RelatedAlbumCard = ({
   artist,
   createdAt,
 }) => {
+  const url = useMemo(() => {
+    return `/albums/${encodeURIComponent(slug)}`;
+  }, [slug]);
+
   return (
     <div className={styles.related__card}>
       <div className={styles.left}>
@@ -25,7 +29,7 @@ const RelatedAlbumCard = ({
       </div>
       <div className={styles.right}>
         <h6 className={styles.title}>
-          <Link href={`/albums/${slug}`} passHref>
+          <Link href={url} passHref>
             <a className={styles.link}>{title}</a>
           </Link>
         </h6>
