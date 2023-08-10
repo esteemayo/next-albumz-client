@@ -20,7 +20,7 @@ const MenuItems = ({ currentUser, onClose, onAction }) => {
         label='Albums'
         onClose={onClose}
       />
-      {currentUser ? (
+      {!!currentUser ? (
         <>
           <MenuItem
             url='/genres'
