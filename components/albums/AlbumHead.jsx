@@ -37,7 +37,7 @@ const AlbumHead = ({
           return (
             <AlbumInfo
               key={id}
-              // icon={icon}
+              icon={icon}
               label={label}
               data={album[id] === 'ratingsAverage' ? `${album[id] / 5}` : album[id]}
             />
