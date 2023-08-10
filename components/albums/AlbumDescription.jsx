@@ -16,6 +16,7 @@ import Popup from '../Popup';
 import StarRating from '../StarRating';
 import AlbumInfo from './AlbumInfo';
 import AlbumDetails from './AlbumDetails';
+import AlbumHead from './AlbumHead';
 
 import LikeButton from '@/components/button/LikeButton';
 
@@ -34,9 +35,9 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
 
   const albumId = album?._id;
 
-  const handleSetAsBookmark = useCallback((album) => {
+  const handleSetAsBookmark = useCallback(() => {
     user && dispatch(bookmarkReducer.createNewBookmark({ album, toast }));
-  }, [user, dispatch]);
+  }, [user, album, dispatch]);
 
   const handleUnSetAsBookmark = useCallback(() => {
     const bookmarkId = bookmark?._id;
@@ -56,83 +57,14 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
 
   return (
     <section className={styles.description}>
-      <div className={styles.left}>
-        <div className={styles.album__wrapper}>
-          <h2 className={styles.album__heading}>About album</h2>
-          <AlbumInfo
-            icon={MusicNoteOutlinedIcon}
-            label='Artist'
-            data={album.artist}
-          />
-          <AlbumInfo
-            icon={TitleOutlinedIcon}
-            label='Title'
-            data={album.title}
-          />
-          <AlbumInfo
-            icon={CategoryOutlinedIcon}
-            label='Genre'
-            data={album.genre}
-          />
-          <AlbumInfo
-            icon={DateRangeOutlinedIcon}
-            label='Year of Release'
-            data={album.year}
-          />
-          <AlbumInfo
-            icon={AlbumOutlinedIcon}
-            label='Record Label'
-            data={album.label}
-          />
-          <AlbumInfo
-            icon={FormatListNumberedOutlinedIcon}
-            label='Number of Tracks'
-            data={album.tracks}
-          />
-          <AlbumInfo
-            icon={StarOutlineOutlinedIcon}
-            label='Ratings'
-            data={`${album.ratingsAverage} / 5`}
-          />
-          <StarRating
-            className={styles.rating}
-            value={album.ratingsAverage}
-          />
-          <div className={styles.action}>
-            <span className={styles.action__wrapper}>
-              <div className={styles.view__container}>
-                <VisibilityOutlinedIcon className={styles.action__icon} />
-                <span className={styles.views}>{views?.length} {views?.length > 1 ? 'views' : 'view'}</span>
-              </div>
-            </span>
-            <span className={styles.action__wrapper}>
-              {!bookmark ? (
-                <Popup title='Bookmark'>
-                  <BookmarkAddOutlinedIcon
-                    onClick={() => handleSetAsBookmark(album?._id)}
-                    className={`${styles.action__icon} ${styles.bookmark__icon}`}
-                  />
-                </Popup>
-              ) : (
-                <Popup title='Unbookmark'>
-                  <BookmarkAddedOutlinedIcon
-                    onClick={handleUnSetAsBookmark}
-                    className={`${styles.action__icon} ${styles.bookmark__icon}`}
-                  />
-                </Popup>
-              )}
-            </span>
-            <span className={styles.action__wrapper}>
-              <LikeButton
-                type='single'
-                likes={album.likes}
-                albumId={albumId}
-                setSingleAlbum={setSingleAlbum}
-              />
-            </span>
-          </div>
-        </div>
-      </div>
+      <AlbumHead
+        album={album}
+        views={views}
+        albumId={albumId}
+        bookmark={bookmark}
+        onAdd={handleSetAsBookmark}
+        onRemove={handleUnSetAsBookmark}
+      />
       <AlbumDetails
         info={album?.info}
         title={album.title}
