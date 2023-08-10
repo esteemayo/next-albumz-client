@@ -73,7 +73,6 @@ SingleAlbum.propTypes = {
       rating: PropTypes.number.isRequired,
       review: PropTypes.string.isRequired,
       user: PropTypes.object.isRequired,
-      album: PropTypes.object.isRequired,
       createdAt: PropTypes.string.isRequired,
     }),
   ),
