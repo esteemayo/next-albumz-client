@@ -1,4 +1,7 @@
 import PropTypes from 'prop-types';
+import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 
 import Popup from '../Popup';
 import StarRating from '../StarRating';
