@@ -21,6 +21,10 @@ const AlbumCard = ({ album }) => {
     ratingsQuantity,
    } = singleAlbum;
 
+   const albumUrl = useMemo(() => {
+    return `/albums/${encodeURIComponent(slug)}`;
+   }, []);
+
   return (
     <div className={styles.card}>
       <div className={styles.card__header}>
