@@ -30,7 +30,10 @@ const SingleAlbum = ({ album, reviews }) => {
         <SingleAlbumHero album={singleAlbum} />
         <AlbumDescription album={singleAlbum} setSingleAlbum={setSingleAlbum} />
         <ReviewForm albumId={album.id} setReviewList={setReviewList} />
-        <Reviews reviews={reviewList} />
+        <Reviews
+          reviews={reviewList}
+          onSort={updateReviewOrder}
+        />
         <RelatedAlbums albumId={album.id} tags={singleAlbum.tags} />
       </section>
     </ClientOnly>
