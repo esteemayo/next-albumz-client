@@ -3,8 +3,6 @@ import { toast } from 'react-toastify';
 import AlbumHead from './AlbumHead';
 import AlbumDetails from './AlbumDetails';
 
-import LikeButton from '@/components/button/LikeButton';
-
 import * as bookmarkReducer from '@/features/bookmark/bookmarkSlice';
 import { createViews, getViews, reset } from '@/features/views/viewSlice';
 
