@@ -4,7 +4,7 @@ import StarRating from '@/components/StarRating';
 import styles from '@/styles/ReviewCard.module.scss';
 
 const ReviewCard = ({ rating, review, user, createdAt }) => {
-  const options ={ month: 'long', day: 'numeric', year: 'numeric' };
+  const dateOptions ={ month: 'long', day: 'numeric', year: 'numeric' };
 
   return (
     <div className={styles.review}>
@@ -20,7 +20,7 @@ const ReviewCard = ({ rating, review, user, createdAt }) => {
             <span>
               {new Date(createdAt).toLocaleTimeString().length > 10 ? new Date(createdAt).toLocaleTimeString().slice(0, 5) : new Date(createdAt).toLocaleTimeString().slice(0, 4) } {new Date(createdAt).toLocaleTimeString().slice(8, 11)} 
               {' - '} 
-              {new Date(createdAt).toLocaleDateString('us', options)}
+              {new Date(createdAt).toLocaleDateString('us', dateOptions)}
             </span>
           </div>
         </div>
