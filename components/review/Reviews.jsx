@@ -7,7 +7,7 @@ import styles from '@/styles/Reviews.module.scss';
 const Reviews = ({ reviews, onSort }) => {
   return (
     <>
-      {reviews.length > 0 && (
+      {!!reviews.length > 0 && (
         <section className={styles.reviews}>
           <h4 className={styles.header}>
             {reviews.length > 1 ? 'Reviews' : 'Review'}
