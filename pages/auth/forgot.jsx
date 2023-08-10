@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
@@ -27,11 +27,6 @@ const ForgotPassword = () => {
     dispatch(forgotPassword({ email, toast }));
     setEmail('');
   }, [email, dispatch]);
-
-  const disableButton = useMemo(() => {
-    const disabled = (email === '' || isLoading);
-    return !!disabled; 
-  }, [email, isLoading]);
 
   useEffect(() => {
     isError && toast.error(message);
@@ -63,7 +58,7 @@ const ForgotPassword = () => {
                   <button
                     type='submit'
                     className={styles.form__btn}
-                    disabled={disableButton}
+                    disabled={isLoading}
                   >
                     Reset password
                    </button>
