@@ -22,6 +22,12 @@ const AlbumHead = ({
   onRemove,
   onAction,
 }) => {
+  const albumData = useCallback((item) => {
+    return item === 'ratingsAverage' ?
+      `${album[item]} / 5` :
+        album[item];
+  }, [album]);
+
   return (
     <div className={styles.left}>
       <div className={styles.album__wrapper}>
@@ -33,7 +39,7 @@ const AlbumHead = ({
               key={id}
               icon={icon}
               label={label}
-              data={album[id]}
+              data={albumData(id)}
             />
           );
         })}
