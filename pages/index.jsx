@@ -20,6 +20,10 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
   const [showModal, setShowModal] = useState(false);
   const { user } = useSelector((state) => ({ ...state.auth }));
 
+  const handleOpen = useCallback(() => {
+    setShowModal(true);
+  }, []);
+
   const handleClose = useCallback(() => {
     setShowModal(false);
   }, []);
@@ -32,7 +36,7 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
       {user && (
         <AddButton
           text='New album'
-          onClick={() => setShowModal(true)}
+          onClick={handleOpen}
         />
       )}
       {showModal && (
