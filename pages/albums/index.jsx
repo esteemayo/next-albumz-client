@@ -76,8 +76,7 @@ const Albums = ({
           setAlbumList={setAlbumList}
           numberOfPages={numberOfPages}
         />
-
-        {user && (
+        {!!user && (
           <AddButton
             text='New album'
             onClick={handleOpen}
