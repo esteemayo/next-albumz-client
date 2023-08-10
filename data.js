@@ -6,40 +6,42 @@ import FormatListNumberedOutlinedIcon from '@mui/icons-material/FormatListNumber
 import MusicNoteOutlinedIcon from '@mui/icons-material/MusicNoteOutlined';
 import StarOutlineOutlinedIcon from '@mui/icons-material/StarOutlineOutlined';
 
+import styles from '@/styles/AlbumDescription.module.scss';
+
 export const albumInfoItems = [
   {
     id: 'artist',
-    icon: {MusicNoteOutlinedIcon},
+    icon: <MusicNoteOutlinedIcon className={styles.icon} />,
     label: 'Artist',
   },
   {
     id: 'title',
-    icon: {TitleOutlinedIcon},
+    icon: <TitleOutlinedIcon className={styles.icon} />,
     label: 'Title',
   },
   {
     id: 'genre',
-    icon: {CategoryOutlinedIcon},
+    icon: <CategoryOutlinedIcon className={styles.icon} />,
     label: 'Genre',
   },
   {
     id: 'year',
-    icon: {DateRangeOutlinedIcon},
+    icon: <DateRangeOutlinedIcon className={styles.icon} />,
     label: 'Year of Release',
   },
   {
     id: 'label',
-    icon: {AlbumOutlinedIcon},
+    icon: <AlbumOutlinedIcon className={styles.icon} />,
     label: 'Record Label',
   },
   {
     id: 'tracks',
-    icon: {FormatListNumberedOutlinedIcon},
+    icon: <FormatListNumberedOutlinedIcon className={styles.icon} />,
     label: 'Number of Tracks',
   },
   {
     id: 'ratingsAverage',
-    icon: {StarOutlineOutlinedIcon},
+    icon: <StarOutlineOutlinedIcon className={styles.icon} />,
     label: 'Ratings',
   },
 ];
