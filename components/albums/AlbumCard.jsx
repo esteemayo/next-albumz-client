@@ -66,7 +66,7 @@ const AlbumCard = ({ album }) => {
           <span className={styles.card__footerValue}>{ratingsAverage}</span> {' | '}
           <span className={styles.card__footerText}>rating ({ratingsQuantity})</span>
         </p>
-        <Link href={`/albums/${slug}`}>
+        <Link href={albumUrl}>
           <a className={styles.card__footerBtn}>Details</a>
         </Link>
       </div>
