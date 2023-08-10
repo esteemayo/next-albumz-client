@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { useCallback } from 'react';
 
-import Popup from '../Popup';
 import StarRating from '../StarRating';
 import AlbumInfo from './AlbumInfo';
 import { albumInfoItems } from '../../data';
