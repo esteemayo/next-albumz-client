@@ -12,6 +12,7 @@ import styles from '@/styles/Form.module.scss';
 
 const GenreForm = ({ onClose, setGenreList }) => {
   const { reload } = useRouter();
+
   const [name, setName] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
