@@ -19,6 +19,10 @@ const SingleAlbum = ({ album, reviews }) => {
   const [singleAlbum, setSingleAlbum] = useState(album);
   const [reviewList, setReviewList] = useState(reviews);
 
+  const updateReviewOrder = useCallback((reviews) => {
+    setReviewList(reviews);
+  }, []);
+
   return (
     <ClientOnly>
       <Meta title={`${album.title} - Albumz Music Entertainment`} />
