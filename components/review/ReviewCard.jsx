@@ -20,7 +20,8 @@ const ReviewCard = ({ rating, review, user, createdAt }) => {
             <span>
               {new Date(createdAt).toLocaleTimeString().length > 10 ? new Date(createdAt).toLocaleTimeString().slice(0, 5) : new Date(createdAt).toLocaleTimeString().slice(0, 4) } {new Date(createdAt).toLocaleTimeString().slice(8, 11)} 
               {' - '} 
-              {new Date(createdAt).toLocaleDateString('us', options)}</span>
+              {new Date(createdAt).toLocaleDateString('us', options)}
+            </span>
           </div>
         </div>
         <div className={styles.right}>
