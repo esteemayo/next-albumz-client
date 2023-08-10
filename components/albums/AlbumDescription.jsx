@@ -165,7 +165,11 @@ const AlbumDescription = ({ album, setSingleAlbum }) => {
           ) : (
             <>
               {excerpts(album?.info, 350).split('\n').map((item, index) => {
-                return <p key={index} className={styles.album__info}>{item}</p>
+              return (
+                  <p key={index} className={styles.album__info}>
+                    {item}
+                  </p>
+                );
               })}
               {album.info.length > 350 && (
                 <button
