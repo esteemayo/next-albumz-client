@@ -74,7 +74,7 @@ const ResetPassword = () => {
   const disableButton = useMemo(() => {
     const disabled = (!password || !confirmPassword || isLoading);
     return !!disabled;
-  }, []);
+  }, [password, confirmPassword, isLoading]);
 
   useEffect(() => {
     isError && toast.error(message);
