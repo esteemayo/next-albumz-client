@@ -44,8 +44,8 @@ const AlbumCard = ({ album }) => {
         <div className={styles.icon__wrapper}>
           <LikeButton
             likes={likes}
-            albumId={id}
-            setSingleAlbum={setSingleAlbum}
+            actionId={id}
+            onAction={setSingleAlbum}
           />
         </div>
       </div>
