@@ -39,7 +39,7 @@ const AlbumHero = ({ album }) => {
   );
 };
 
-SingleAlbumHero.propTypes = {
+AlbumHero.propTypes = {
   album: PropTypes.shape({
     title: PropTypes.string.isRequired,
     year: PropTypes.string.isRequired,
