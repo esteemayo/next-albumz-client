@@ -21,7 +21,7 @@ const AlbumCard = ({ album }) => {
     ratingsQuantity,
    } = singleAlbum;
 
-   const albumUrl = useMemo(() => {
+   const url = useMemo(() => {
     return `/albums/${encodeURIComponent(slug)}`;
    }, [slug]);
 
@@ -66,7 +66,7 @@ const AlbumCard = ({ album }) => {
           <span className={styles.card__footerValue}>{ratingsAverage}</span> {' | '}
           <span className={styles.card__footerText}>rating ({ratingsQuantity})</span>
         </p>
-        <Link href={albumUrl}>
+        <Link href={url}>
           <a className={styles.card__footerBtn}>Details</a>
         </Link>
       </div>
