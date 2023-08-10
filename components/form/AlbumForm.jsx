@@ -27,6 +27,7 @@ const initialState = {
 const AlbumForm = ({ genres, onClose, setAlbumList }) => {
   const [file, setFile] = useState(null);
   const [formData, setFormData] = useState(initialState);
+  const [isLoading, setIsLoading] = useState(false);
 
   const {
     artist,
@@ -95,14 +96,6 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
     }
   }, [tags, file, onClose, formData, emptyFieldCheck]);
 
-  const disableButton = useMemo(() => {
-    const disabled = 
-      !artist ||!title || !genre || !info ||
-      !year || !label || !tracks || !tags.length;
-
-    return !!disabled;
-  }, [formData]);
-
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -162,7 +155,7 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
               />
               <FormButton
                 text='Submit'
-                disabled={disableButton}
+                disabled={}
               />
             </div>
           </form>
