@@ -1,10 +1,7 @@
 import { toast } from 'react-toastify';
 
-import Popup from '../Popup';
-import StarRating from '../StarRating';
-import AlbumInfo from './AlbumInfo';
-import AlbumDetails from './AlbumDetails';
 import AlbumHead from './AlbumHead';
+import AlbumDetails from './AlbumDetails';
 
 import LikeButton from '@/components/button/LikeButton';
 
