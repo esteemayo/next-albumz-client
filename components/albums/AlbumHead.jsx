@@ -14,6 +14,7 @@ import Popup from '../Popup';
 import StarRating from '../StarRating';
 import AlbumInfo from './AlbumInfo';
 
+import albumInfoItems from '../../data';
 import LikeButton from '@/components/button/LikeButton';
 
 import styles from '@/styles/AlbumDescription.module.scss';
