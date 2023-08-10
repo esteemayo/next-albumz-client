@@ -102,6 +102,8 @@ const UpdateAlbum = ({ album, genres }) => {
     tracks,
     tags,
     file,
+    album?._id,
+    router,
   ]);
 
   return (
