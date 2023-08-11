@@ -55,7 +55,6 @@ const Navbar = () => {
     <nav className={navClasses}>
       <div className={styles.navbar__left}>
         <Logo />
-        <DarkModeToggle />
         <NavItems
           currentUser={user}
           onClick={handleLogout}
@@ -63,6 +62,7 @@ const Navbar = () => {
       </div>
       <div className={styles.navbar__right}>
         <Search />
+        <DarkModeToggle />
         <Hamburger 
           isOpen={menuOpen}
           onClick={handleToggleMenu}
