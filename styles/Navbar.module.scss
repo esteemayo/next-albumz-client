@@ -34,14 +34,14 @@
   }
 
   &__left {
-    flex: 2;
+    flex: 1;
     display: flex;
     align-items: center;
-    margin-left: 10rem;
-
-    @media only screen and (max-width: 64em) {
-      flex: 1;
-      margin-left: 2rem;
+    margin-left: 2rem;
+    
+    @media only screen and (min-width: 48em) {
+      flex: 2;
+      margin-left: 10rem;
     }
 
     .logo {
