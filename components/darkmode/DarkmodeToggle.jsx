@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 
 import { dark, light } from '@/features/darkMode/darkModeSlice';
@@ -16,6 +16,12 @@ const DarkModeToggle = () => {
       dispatch(dark('dark'));
   }, [mode, dark, light, dispatch]);
 
+  const ballClasses = useMemo(() => {
+    return mode === 'dark' ?
+      `${styles.ball} ${styles.left}` : 
+      `${styles.ball} ${styles.right}`;
+  }, [mode]);
+
   return (
     <div className={styles.container} onClick={handleToggle}>
       <div className={styles.icon}>
@@ -24,7 +30,7 @@ const DarkModeToggle = () => {
       <div className={styles.icon}>
         <LightModeOutlined />
       </div>
-      <div className={styles.ball} />
+      <div className={ballClasses} />
     </div>
   );
 };
