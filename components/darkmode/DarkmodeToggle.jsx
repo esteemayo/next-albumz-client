@@ -11,7 +11,13 @@ const DarkmodeToggle = () => {
 
   return (
     <div className={styles.container}>
-      mode
+      <div className={styles.icon}>
+        <DarkModeOutlined />
+      </div>
+      <div className={styles.icon}>
+        <LightModeOutlined />
+      </div>
+      <div className={styles.ball} />
     </div>
   );
 };
