@@ -38,7 +38,7 @@
     display: flex;
     align-items: center;
     margin-left: 2rem;
-    
+
     @media only screen and (min-width: 48.0625em) {
       flex: 3;
       margin-left: 10rem;
@@ -67,7 +67,7 @@
     .list {
       list-style: none;
       display: none;
-      
+
       @media only screen and (min-width: 48.0625em) {
         display: flex;
         align-items: center;
@@ -136,7 +136,7 @@
       cursor: pointer;
       opacity: 1;
       visibility: visible;
-      
+
       @media only screen and (min-width: 48.0625em) {
         opacity: 0;
         visibility: hidden;
