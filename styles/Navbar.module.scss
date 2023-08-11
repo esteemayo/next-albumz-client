@@ -66,11 +66,11 @@
 
     .list {
       list-style: none;
-      display: flex;
-      align-items: center;
-
-      @media only screen and (max-width: 64em) {
-        display: none;
+      display: none;
+      
+      @media only screen and (min-width: 56.25em) {
+        display: flex;
+        align-items: center;
       }
 
       &__items {
