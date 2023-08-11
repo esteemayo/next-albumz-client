@@ -68,7 +68,7 @@
       list-style: none;
       display: none;
       
-      @media only screen and (min-width: 56.25em) {
+      @media only screen and (min-width: 48em) {
         display: flex;
         align-items: center;
       }
@@ -134,12 +134,12 @@
       height: 2.5rem;
       margin-right: 2rem;
       cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-
-      @media only screen and (max-width: 64em) {
-        opacity: 1;
-        visibility: visible;
+      opacity: 1;
+      visibility: visible;
+      
+      @media only screen and (min-width: 48em) {
+        opacity: 0;
+        visibility: hidden;
       }
 
       span {

@@ -53,7 +53,7 @@
   &.active {
     right: 0;
     
-    @media only screen and (min-width: 56.25em) {
+    @media only screen and (min-width: 48em) {
       right: 3rem;
       display: none;
     }
