@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import NavItems from '@/components/navbar/NavItems';
 import Logo from '@/components/navbar/Logo';
+import DarkmodeToggle from '@/components/darkmode/DarkmodeToggle';
 import Hamburger from '@/components/navbar/Hamburger';
 
 import Search from '@/components/Search';
@@ -54,6 +55,7 @@ const Navbar = () => {
     <nav className={navClasses}>
       <div className={styles.navbar__left}>
         <Logo />
+        <DarkmodeToggle />
         <NavItems
           currentUser={user}
           onClick={handleLogout}
