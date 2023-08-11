@@ -18,7 +18,7 @@ const DarkModeToggle = () => {
 
   const ballClasses = useMemo(() => {
     return mode === 'dark' ?
-      `${styles.ball} ${styles.left}` : 
+      `${styles.ball} ${styles.left}` :
       `${styles.ball} ${styles.right}`;
   }, [mode]);
 
