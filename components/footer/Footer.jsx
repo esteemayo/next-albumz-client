@@ -17,11 +17,13 @@ const Footer = () => {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.footer__navigation}>
-        <Logo />
-        <MenuItems currentUser={user} />
+      <div className={styles.footer__wrapper}>
+        <div className={styles.footer__navigation}>
+          <Logo />
+          <MenuItems currentUser={user} />
+        </div>
+        <CopyRight year={year} />
       </div>
-      <CopyRight year={year} />
     </footer>
   );
 };
