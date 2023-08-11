@@ -17,9 +17,9 @@ const Sidebar = () => {
   const router = useRouter();
   const dispatch = useDispatch();
 
+  const { mode } = useSelector((state) => ({ ...state.mode }));
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
   const { user } = useSelector((state) => ({ ...state.auth }));
-  const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
   const [query, setQuery] = useState('');
 
@@ -55,10 +55,10 @@ const Sidebar = () => {
   }, [menuOpen]);
 
   const modeIcon = useMemo(() => {
-    return darkMode === 'dark' ?
+    return mode === 'dark' ?
       <LightModeOutlined /> :
       <DarkModeOutlined />;
-  }, [darkMode]);
+  }, [mode]);
 
   return (
     <aside className={toggleClasses}>
