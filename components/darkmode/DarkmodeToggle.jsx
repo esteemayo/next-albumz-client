@@ -8,7 +8,9 @@ const DarkmodeToggle = () => {
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
   return (
-    <div>mode</div>
+    <div className={styles.container}>
+      mode
+    </div>
   );
 };
 
