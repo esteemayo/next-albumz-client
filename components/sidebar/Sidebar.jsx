@@ -43,10 +43,10 @@ const Sidebar = () => {
   }, [query, router, dispatch]);
 
   const toggleDarkmode = useCallback(() => {
-    darkMode === 'dark' ?
+    mode === 'dark' ?
       dispatch(light('light')) :
       dispatch(dark('dark'));
-  }, [dark, light, darkMode, dispatch]);
+  }, [dark, light, mode, dispatch]);
 
   const toggleClasses = useMemo(() => {
     return menuOpen ?
