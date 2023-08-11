@@ -4,15 +4,14 @@ import PropTypes from 'prop-types';
 import styles from '@/styles/Navbar.module.scss';
 
 const Hamburger = ({ isOpen, onClick }) => {
+  const activeClasses = useMemo(() => {
+    return isOpen ?
+      `${styles.hamburger} ${styles.active}` :
+      `${styles.hamburger}`;
+  }, [isOpen]);
+
   return (
-    <div
-      className={
-        isOpen
-          ? `${styles.hamburger} ${styles.active}`
-          : `${styles.hamburger}`
-      }
-      onClick={onClick}
-    >
+    <div className={activeClasses} onClick={onClick}>
       <span></span>
       <span></span>
       <span></span>
