@@ -1,4 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
+
 import { dark, light } from '@/features/darkMode/darkModeSlice';
 
 import styles from '@/styles/DarkmodeToggle.module.scss';
