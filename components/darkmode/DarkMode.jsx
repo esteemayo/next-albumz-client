@@ -9,7 +9,7 @@ import styles from '@/styles/DarkMode.module.scss';
 
 const DarkMode = () => {
   const dispatch = useDispatch();
-  const { mode } = useSelector((state) => ({ ...state.mode }));
+  const { mode } = useSelector((state) => ({ ...state.darkMode }));
 
   const toggleDarkmode = useCallback(() => {
     dispatch(mode === 'dark' ? light('light') : dark('dark'));

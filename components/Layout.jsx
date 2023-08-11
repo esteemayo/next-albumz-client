@@ -12,7 +12,7 @@ import ClientOnly from './ClientOnly';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Layout = ({ children }) => {
-  const { mode } = useSelector((state) => ({ ...state.mode }));
+  const { mode } = useSelector((state) => ({ ...state.darkMode }));
 
   return (
     <div className={mode === 'dark' ? 'app dark' : 'app'}>

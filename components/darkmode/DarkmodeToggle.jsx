@@ -7,7 +7,7 @@ import styles from '@/styles/DarkModeToggle.module.scss';
 
 const DarkModeToggle = () => {
   const dispatch = useDispatch();
-  const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
+  const { mode } = useSelector((state) => ({ ...state.darkMode }));
 
   return (
     <div className={styles.container}>

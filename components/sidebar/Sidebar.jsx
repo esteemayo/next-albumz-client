@@ -17,9 +17,9 @@ const Sidebar = () => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const { mode } = useSelector((state) => ({ ...state.mode }));
-  const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
+  const { mode } = useSelector((state) => ({ ...state.darkMode }));
   const { user } = useSelector((state) => ({ ...state.auth }));
+  const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
 
   const [query, setQuery] = useState('');
 

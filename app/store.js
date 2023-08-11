@@ -28,7 +28,7 @@ const rootReducer = combineReducers({
   views: viewsReducer,
   toggle: toggleReducer,
   bookmark: bookmarkReducer,
-  mode: darkModeReducer,
+  darkMode: darkModeReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
