@@ -62,7 +62,7 @@ const Navbar = () => {
       </div>
       <div className={styles.navbar__right}>
         <Search />
-        <div>
+        <div className={styles.container}>
           <DarkModeToggle />
           <Hamburger 
             isOpen={menuOpen}
