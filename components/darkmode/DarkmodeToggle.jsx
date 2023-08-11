@@ -3,9 +3,9 @@ import { DarkModeOutlined, LightModeOutlined } from '@mui/icons-material';
 
 import { dark, light } from '@/features/darkMode/darkModeSlice';
 
-import styles from '@/styles/DarkmodeToggle.module.scss';
+import styles from '@/styles/DarkModeToggle.module.scss';
 
-const DarkmodeToggle = () => {
+const DarkModeToggle = () => {
   const dispatch = useDispatch();
   const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
 
@@ -22,4 +22,4 @@ const DarkmodeToggle = () => {
   );
 };
 
-export default DarkmodeToggle;
+export default DarkModeToggle;
