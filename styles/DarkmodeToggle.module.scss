@@ -1,4 +1,11 @@
 .container {
+  width: 4.2rem;
+  height: 4.2rem;
+  padding: 2px;
+  border: 1.5px solid #29003f;
+  border-radius: 3rem;
+
+
   @media only screen and (min-width: 56.25em) {
     display: none;
   }
