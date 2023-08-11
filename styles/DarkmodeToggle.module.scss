@@ -4,7 +4,9 @@
   padding: 2px;
   border: 1.5px solid #29003f;
   border-radius: 3rem;
-
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   @media only screen and (min-width: 56.25em) {
     display: none;
