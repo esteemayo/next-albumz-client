@@ -9,15 +9,15 @@ import styles from '@/styles/DarkMode.module.scss';
 
 const DarkMode = () => {
   const dispatch = useDispatch();
-  const { darkMode } = useSelector((state) => ({ ...state.darkMode }));
+  const { mode } = useSelector((state) => ({ ...state.mode }));
 
   const toggleDarkmode = useCallback(() => {
-    dispatch(darkMode === 'dark' ? light('light') : dark('dark'));
+    dispatch(mode === 'dark' ? light('light') : dark('dark'));
   }, [dark, light, darkMode, dispatch]);
 
   return (
     <div className={styles.darkmode} onClick={toggleDarkmode}>
-      {darkMode === 'dark' ? (
+      {mode === 'dark' ? (
         <Popup title='Light Mode'>
           <LightModeOutlined style={{ color: '#fff' }} />
         </Popup>
