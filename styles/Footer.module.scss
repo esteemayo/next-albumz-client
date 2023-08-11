@@ -1,13 +1,13 @@
 .footer {
-  padding: 18rem 0;
+  padding: 15rem 0;
   background-color: #24299b;
   color: #fff;
-  font-size: 1.8rem;
-
+  font-size: 1.5rem;
   
-  @media only screen and (max-width: 64em) {
-    padding: 15rem 0;
-    font-size: 1.5rem;
+  
+  @media only screen and (max-width: 48em) {
+    padding: 18rem 0;
+    font-size: 1.8rem;
    }
 
   @media only screen and (max-width: 37.5em) {
