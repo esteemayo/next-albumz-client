@@ -130,6 +130,12 @@
       margin-right: 2rem;
     }
 
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+    }
+
     .hamburger {
       display: flex;
       flex-direction: column;
