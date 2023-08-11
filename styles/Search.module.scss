@@ -1,13 +1,13 @@
 .search {
-  margin-right: auto;
-  background-color: #fff;
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  position: relative;
+  display: none;
 
-  @media only screen and (max-width: 64em) {
-    display: none;
+  @media only screen and (min-width: 48.0625em) {
+    margin-right: auto;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    position: relative;
   }
 
   &__input {
