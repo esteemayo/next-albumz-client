@@ -4,10 +4,10 @@ import { ToastContainer } from 'react-toastify';
 import Navbar from '@/components/navbar/Navbar';
 import Sidebar from '@/components/sidebar/Sidebar';
 import Footer from '@/components/footer/Footer';
+import DarkMode from '@/components/darkmode/DarkMode';
 
 import Meta from './Meta';
 import ClientOnly from './ClientOnly';
-import DarkMode from './DarkMode';
 
 import 'react-toastify/dist/ReactToastify.css';
 
