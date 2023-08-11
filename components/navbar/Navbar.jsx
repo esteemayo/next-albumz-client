@@ -62,11 +62,13 @@ const Navbar = () => {
       </div>
       <div className={styles.navbar__right}>
         <Search />
-        <DarkModeToggle />
-        <Hamburger 
-          isOpen={menuOpen}
-          onClick={handleToggleMenu}
-        />
+        <div>
+          <DarkModeToggle />
+          <Hamburger 
+            isOpen={menuOpen}
+            onClick={handleToggleMenu}
+          />
+        </div>
       </div>
     </nav>
   );
