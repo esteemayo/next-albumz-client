@@ -46,6 +46,10 @@
   &__text {
     text-align: center;
 
+    @media only screen and (max-width: 29.375em) {
+      padding: 0 1.5rem;
+    }
+
     .heading__primary {
       color: #fff;
       text-transform: capitalize;
