@@ -25,5 +25,13 @@
     background-color: #29003f;
     border-radius: 50%;
     position: absolute;
+
+    &.left {
+      left: 2px;
+    }
+
+    &.right {
+      right: 2px;
+    }
   }
 }
