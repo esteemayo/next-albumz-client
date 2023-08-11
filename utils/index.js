@@ -2,7 +2,7 @@ import cookie from 'cookie';
 
 export const tokenKey = 'token';
 
-export const darkModeKey = 'dark';
+export const darkModeKey = 'mode';
 
 export const excerpts = (str, count) => {
   if (str.length > count) {
