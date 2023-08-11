@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import styles from '@/styles/Navbar.module.scss';
 
