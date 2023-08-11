@@ -34,11 +34,12 @@
   @media only screen and (max-width: 37.5em) {
     -webkit-clip-path: none;
     clip-path: none;
+    align-items: flex-start;
+    padding-top: 23rem;
   }
   
   @media only screen and (max-width: 26.25em) {
     height: 60vh;
-    align-items: flex-start;
     padding-top: 10rem;
   }
 
