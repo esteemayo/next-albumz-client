@@ -23,6 +23,12 @@
     font-size: 1.3rem;
   }
 
+  &__wrapper {
+    @media only screen and (min-width: 48.0625em) {
+      margin-left: 6rem;
+    }
+  }
+
   &__navigation {
     display: flex;
     align-items: center;
