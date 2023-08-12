@@ -42,4 +42,17 @@ const RelatedAlbums = ({ albumId, tags }) => {
   );
 };
 
+RelatedAlbums.propTypes = {
+  albumId: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(
+    PropTypes.shape({
+      slug: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      artist: PropTypes.string.isRequired,
+      createdAt: PropTypes.string.isRequired,
+    }),
+  ),
+};
+
 export default RelatedAlbums;
