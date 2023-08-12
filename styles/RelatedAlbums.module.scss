@@ -6,6 +6,10 @@
     position: relative;
     max-width: 80rem;
     margin: 0 auto;
+
+    @media only screen and (max-width: 48em) {
+      max-width: 58rem;
+    }
   }
 
   &__header {
