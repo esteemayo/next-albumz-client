@@ -17,23 +17,9 @@
     cubic-bezier(0.77, 0.2, 0.05, 1);
   z-index: 1000;
 
-  @media only screen and (max-width: 57.5em) {
-    padding-top: 10rem;
-    padding-bottom: 7rem;
-  }
-
-  @media only screen and (max-width: 56.25em) {
-    width: 40rem;
-    right: -40rem;
-  }
-
-  @media only screen and (max-width: 50em) {
+  @media only screen and (max-width: 48em) {
     width: 82rem;
     right: -82rem;
-    // height: 100vh;
-  }
-
-  @media only screen and (max-width: 45em) {
     padding: 7rem 0 10rem 0;
   }
 
