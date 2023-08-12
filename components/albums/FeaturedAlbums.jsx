@@ -10,13 +10,15 @@ const AlbumCard = lazy(() => import('@/components/albums/AlbumCard'));
 const FeaturedAlbums = ({ albums }) => {
   return (
     <div className={styles.container}>
-      <h2 className={styles.heading__secondary}>Featured albums</h2>
-      <div className={styles.wrapper}>
-        <Suspense fallback={<Spinner />}>
-          {albums?.map((item) => {
-            return <AlbumCard key={item._id} album={item} />;
-          })}
-        </Suspense>
+      <div className={styles.box}>
+        <h2 className={styles.heading__secondary}>Featured albums</h2>
+        <div className={styles.wrapper}>
+          <Suspense fallback={<Spinner />}>
+            {albums?.map((item) => {
+              return <AlbumCard key={item._id} album={item} />;
+            })}
+          </Suspense>
+        </div>
       </div>
     </div>
   );
