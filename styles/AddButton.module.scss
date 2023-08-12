@@ -22,6 +22,10 @@
     cursor: pointer;
     transition: all 0.5s ease-in-out;
 
+    @media only screen and (max-width: 48em) {
+      font-size: 1.6rem;
+    }
+
     &:hover {
       opacity: 0.85;
     }
