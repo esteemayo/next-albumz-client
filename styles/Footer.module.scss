@@ -27,8 +27,8 @@
     max-width: 120rem;
     margin: 0 auto;
 
-    @media only screen and (min-width: 48.0625em) {
-      margin-left: 6rem;
+    @media only screen and (max-width: 64em) {
+      margin: 0 5rem;
     }
   }
 
