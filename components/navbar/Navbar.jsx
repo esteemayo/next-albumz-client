@@ -53,21 +53,23 @@ const Navbar = () => {
 
   return (
     <nav className={navClasses}>
-      <div className={styles.navbar__left}>
-        <Logo />
-        <NavItems
-          currentUser={user}
-          onClick={handleLogout}
-        />
-      </div>
-      <div className={styles.navbar__right}>
-        <Search />
-        <div className={styles.container}>
-          <DarkModeToggle />
-          <Hamburger 
-            isOpen={menuOpen}
-            onClick={handleToggleMenu}
+      <div className={styles.wrapper}>
+        <div className={styles.navbar__left}>
+          <Logo />
+          <NavItems
+            currentUser={user}
+            onClick={handleLogout}
           />
+        </div>
+        <div className={styles.navbar__right}>
+          <Search />
+          <div className={styles.container}>
+            <DarkModeToggle />
+            <Hamburger 
+              isOpen={menuOpen}
+              onClick={handleToggleMenu}
+            />
+          </div>
         </div>
       </div>
     </nav>
