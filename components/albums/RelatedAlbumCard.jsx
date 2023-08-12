@@ -12,6 +12,8 @@ const RelatedAlbumCard = ({
   artist,
   createdAt,
 }) => {
+  const options = { day: 'numeric', month: 'long', year: 'numeric' };
+
   const url = useMemo(() => {
     return `/albums/${encodeURIComponent(slug)}`;
   }, [slug]);
@@ -35,11 +37,7 @@ const RelatedAlbumCard = ({
         </h6>
         <p className={styles.artist}>{artist}</p>
         <span className={styles.year}>
-          {new Date(createdAt).toLocaleString('en-us', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric',
-          })}
+          {new Date(createdAt).toLocaleString('en-us', options)}
         </span>
       </div>
     </div>
