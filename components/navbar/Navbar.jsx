@@ -5,9 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import NavItems from '@/components/navbar/NavItems';
 import Logo from '@/components/navbar/Logo';
 import DarkModeToggle from '@/components/darkmode/DarkModeToggle';
-import Hamburger from '@/components/navbar/Hamburger';
-
 import Search from '@/components/Search';
+import Hamburger from '@/components/navbar/Hamburger';
 
 import { logoutUser } from '@/features/auth/authSlice';
 import { toggleMenu } from '@/features/toggle/toggleSlice';
