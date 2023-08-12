@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
 import RelatedAlbumCard from './RelatedAlbumCard';
