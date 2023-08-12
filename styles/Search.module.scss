@@ -25,6 +25,10 @@
     transition: all 1s ease-in-out;
     z-index: 2;
 
+    @media only screen and (max-width: 60em) {
+      width: 30rem;
+    }
+
     &:focus {
       border: 1px solid #999;
     }
