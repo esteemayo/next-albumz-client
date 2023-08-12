@@ -149,6 +149,10 @@
       align-items: center;
       gap: 4rem;
 
+      @media only screen and (max-width: 18.75em) {
+        gap: 1.5rem;
+      }
+
       @media only screen and (min-width: 48.0625em) {
         display: none;
       }
