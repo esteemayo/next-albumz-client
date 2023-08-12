@@ -24,6 +24,9 @@
   }
 
   &__wrapper {
+    max-width: 120rem;
+    margin: 0 auto;
+
     @media only screen and (min-width: 48.0625em) {
       margin-left: 6rem;
     }
