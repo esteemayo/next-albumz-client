@@ -20,12 +20,18 @@ const RelatedAlbums = ({ albumId, tags }) => {
     })();
   }, [tags]);
 
+  const relatedHeader = useMemo(() => {
+    return relatedAlbums.length > 1 ?
+      'Related Albums' :
+      'Related Album';
+  }, [relatedAlbums]);
+
   return (
     <>
       {!!relatedAlbums && !!relatedAlbums.length && (
         <section className={styles.related}>
           <div className={styles.related__wrapper}>
-            <h6 className={styles.related__header}>{relatedAlbums.length > 1 ? 'Related Albums' : 'Related Album'}</h6>
+            <h6 className={styles.related__header}>{relatedHeader}</h6>
             <div className={styles.related__container}>
               {relatedAlbums
                 .filter((item) => item._id !== albumId)
