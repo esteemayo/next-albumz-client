@@ -21,7 +21,7 @@ const RelatedAlbums = ({ albumId, tags }) => {
 
   return (
     <>
-      {relatedAlbums && relatedAlbums.length && (
+      {!!relatedAlbums && !!relatedAlbums.length && (
         <section className={styles.related}>
           <div className={styles.related__wrapper}>
             <h6 className={styles.related__header}>{relatedAlbums.length > 1 ? 'Related Albums' : 'Related Album'}</h6>
