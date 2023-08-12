@@ -9,7 +9,7 @@ const AlbumCard = lazy(() => import('@/components/albums/AlbumCard'));
 
 const FeaturedAlbums = ({ albums }) => {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.box}>
         <h2 className={styles.heading__secondary}>Featured albums</h2>
         <div className={styles.wrapper}>
@@ -20,7 +20,7 @@ const FeaturedAlbums = ({ albums }) => {
           </Suspense>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
