@@ -5,25 +5,17 @@
   position: fixed;
   top: 0;
   right: -30rem;
-  height: 55vh;
+  height: 100vh;
   padding-top: 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
   transition: all 0.5s ease-in-out;
   transition-timing-function: cubic-bezier(0.77, 0.2, 0.05, 1),
     cubic-bezier(0.77, 0.2, 0.05, 1),
     cubic-bezier(0.77, 0.2, 0.05, 1);
   z-index: 1000;
-
-  @media only screen and (max-width: 64em) {
-    height: 50rem;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    padding-bottom: 2rem;
-  }
 
   @media only screen and (max-width: 57.5em) {
     padding-top: 10rem;
@@ -38,7 +30,7 @@
   @media only screen and (max-width: 50em) {
     width: 82rem;
     right: -82rem;
-    height: 100vh;
+    // height: 100vh;
   }
 
   @media only screen and (max-width: 45em) {
