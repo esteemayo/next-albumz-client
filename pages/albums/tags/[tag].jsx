@@ -1,5 +1,6 @@
 import { lazy, Suspense } from 'react';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 
 import Spinner from '@/components/Spinner';
