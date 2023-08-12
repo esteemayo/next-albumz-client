@@ -22,6 +22,10 @@
     svg {
       font-size: 2rem;
       color: #29003f;
+
+      @media only screen and (max-width: 26.25em) {
+        font-size: 1.6rem;
+      }
     }
   }
 
