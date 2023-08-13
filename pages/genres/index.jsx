@@ -106,7 +106,12 @@ const Genres = ({ genres }) => {
           <h3 className={styles.notFound}>There are no genres available</h3>
         </section>
       )}
-      {user && <AddButton text='New genre' onClick={() => setOpen(true)} />}
+      {user && (
+        <AddButton
+          text='New genre'
+          onClick={() => setOpen(true)}
+        />
+      )}
       {open && (
         <Modal onClose={handleCancel}>
           <GenreForm
