@@ -92,4 +92,16 @@ export const getServerSideProps = async ({ req }) => {
   };
 };
 
+Dashboard.propTypes = {
+  albums: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+      info: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    }),
+  ),
+};
+
 export default Dashboard;
