@@ -110,7 +110,7 @@ const Genres = ({ genres }) => {
           <h3 className={styles.notFound}>There are no genres available</h3>
         </section>
       )}
-      {user && (
+      {!!user && (
         <AddButton
           text='New genre'
           onClick={handleOpen}
