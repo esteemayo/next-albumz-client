@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import Image from 'next/image';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
+import PropTypes from 'prop-types';
 
 import ClientOnly from '@/components/ClientOnly';
 import Meta from '@/components/Meta';
