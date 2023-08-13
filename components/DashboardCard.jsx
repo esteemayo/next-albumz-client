@@ -24,7 +24,7 @@ const DashboardCard = ({ albums, onOpen}) => {
                   <div className={styles.card__img}>
                     <div className={styles.overlay}>&nbsp;</div>
                     <Image
-                      src={image ? image : '/img/default-album-2.jpeg'}
+                      src={image ?? '/img/default-album-2.jpeg'}
                       width={200}
                       height={130}
                       alt=''
