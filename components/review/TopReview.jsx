@@ -21,7 +21,7 @@ const TopReview = ({ user: userId, rating, review }) => {
   }, [userId]);
 
   return (
-    <div className={styles.reviews}>
+    <article className={styles.reviews}>
       <div className={styles.reviewer__img}>
         <Image
           src={user.avatar ?? '/img/user-default.jpg'}
@@ -39,7 +39,7 @@ const TopReview = ({ user: userId, rating, review }) => {
         <span className={styles.ratingValue}>{`(${rating.toFixed(1)})`}</span>
       </div>
       <div className={styles.reviewer__name}>{user.name}</div>
-    </div>
+    </article>
   );
 };
 
