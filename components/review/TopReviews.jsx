@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import TopReview from './TopReview';
 import styles from '@/styles/TopReviews.module.scss';
 
