@@ -38,7 +38,6 @@ const TopAlbums = ({ albums }) => {
           <tbody>
             {albumList?.map((item, index) => {
               const {_id: id, slug, image, title, artist, reviews, avgRating} = item;
-
               return (
                 <tr key={id}>
                   <td>{index + 1}</td>
