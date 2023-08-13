@@ -22,7 +22,7 @@ const TagCard = ({ album: { info, slug, image, title } }) => {
           <div className={styles.card__image}>
             <div className={styles.overlay}>&nbsp;</div>
             <Image
-              src={image ??'/img/default-album-1.webp'}
+              src={image ?? '/img/default-album-1.webp'}
               width={200}
               height={130}
               objectFit='cover'
