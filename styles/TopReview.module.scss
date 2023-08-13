@@ -1,5 +1,9 @@
 .reviews {
   width: 34rem;
+
+  @media only screen and (max-width: 64em) {
+    width: 30rem;
+  }
   
   .reviewer__img {
     & > * {
