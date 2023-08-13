@@ -15,7 +15,7 @@ import { parseCookie } from '@/utils/index';
 
 import styles from '@/styles/Dashboard.module.scss';
 
-const DashboardCard = dynamic(() => import('@/components/DashboardCard'), { ssr: false });
+const DashboardCard = dynamic(() => import('@/components/card/DashboardCard'), { ssr: false });
 
 const Dashboard = ({ albums }) => {
   const [albumList, setAlbumList] = useState(albums);
