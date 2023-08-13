@@ -121,7 +121,6 @@ const Genres = ({ genres }) => {
           />
         </Modal>
       )}
-      
       {!showModal && (
         <DialogBox>
           <DeleteAlbumGenre
