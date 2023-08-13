@@ -19,7 +19,7 @@ const RelatedAlbumCard = ({
   }, [slug]);
 
   return (
-    <div className={styles.related__card}>
+    <article className={styles.related__card}>
       <div className={styles.left}>
         <Image
           src={image ?? '/img/default-related-album.webp'}
@@ -40,7 +40,7 @@ const RelatedAlbumCard = ({
           {new Date(createdAt).toLocaleString('en-us', options)}
         </span>
       </div>
-    </div>
+    </article>
   );
 };
 
