@@ -14,8 +14,8 @@ const Modal = ({ onClose, children }) => {
         <header className={styles.modal__header}>
           <div className={styles.modal__iconWrapper}>
             <CloseOutlinedIcon
-              className={styles.modal__closeIcon}
               onClick={onClose}
+              className={styles.modal__closeIcon}
             />
           </div>
         </header>
