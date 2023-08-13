@@ -94,4 +94,18 @@ export const getServerSideProps = async ({ req }) => {
   };
 };
 
+TopAlbums.propTypes = {
+  albums: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      artist: PropTypes.string.isRequired,
+      reviews: PropTypes.array.isRequired,
+      avgRating: PropTypes.number.isRequired,
+    }),
+  ),
+};
+
 export default TopAlbums;
