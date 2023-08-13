@@ -75,4 +75,18 @@ const AlbumCard = ({ album }) => {
   );
 };
 
+AlbumCard.propTypes = {
+  album: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    tags: PropTypes.array.isRequired,
+    info: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    likes: PropTypes.array.isRequired,
+    title: PropTypes.string.isRequired,
+    ratingsAverage: PropTypes.number.isRequired,
+    ratingsQuantity: PropTypes.number.isRequired,
+  }),
+};
+
 export default AlbumCard;
