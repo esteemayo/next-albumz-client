@@ -66,5 +66,9 @@
     justify-content: center;
     gap: 7rem;
     text-align: center;
+
+    @media only screen and (max-width: 58.4375em) {
+      justify-content: flex-start;
+    }
   }
 }
