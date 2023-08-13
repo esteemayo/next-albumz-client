@@ -5,7 +5,7 @@ import styles from '@/styles/Modal.module.scss';
 
 const Modal = ({ onClose, children }) => {
   return (
-    <div className={styles.overlay}>
+    <aside className={styles.overlay}>
       <div className={
         children.props.type === 'genre' ?
         `${styles.modal} ${styles.modalGenre}` :
@@ -27,7 +27,7 @@ const Modal = ({ onClose, children }) => {
           {children}
         </div>
       </div>
-    </div>
+    </aside>
   );
 };
 
