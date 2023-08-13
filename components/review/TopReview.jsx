@@ -44,4 +44,10 @@ const TopReview = ({ user: userId, rating, review }) => {
   );
 };
 
+TopReview.propTypes = {
+  user: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  review: PropTypes.string.isRequired,
+};
+
 export default TopReview;
