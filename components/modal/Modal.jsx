@@ -5,13 +5,15 @@ import { useMemo } from 'react';
 import styles from '@/styles/Modal.module.scss';
 
 const Modal = ({ onClose, children }) => {
+  const modalClasses = useMemo(() => {
+    return children.props.type === 'genre' ?
+      `${styles.modal} ${styles.modalGenre}` :
+      `${styles.modal}`;
+  }, [children.props.type]);
+
   return (
     <aside className={styles.overlay}>
-      <div className={
-        children.props.type === 'genre' ?
-        `${styles.modal} ${styles.modalGenre}` :
-        `${styles.modal}`}
-      >
+      <div className={modalClasses}>
         <header className={styles.modal__header}>
           <div className={styles.modal__iconWrapper}>
             <CloseOutlinedIcon
