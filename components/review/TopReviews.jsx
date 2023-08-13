@@ -18,4 +18,15 @@ const TopReviews = ({ reviews }) => {
   );
 };
 
+TopReviews.propTypes = {
+  reviews: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+      review: PropTypes.string.isRequired,
+      user: PropTypes.object.isRequired,
+    }),
+  ),
+};
+
 export default TopReviews;
