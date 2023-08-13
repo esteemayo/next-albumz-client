@@ -194,6 +194,10 @@
       margin-top: 2.3rem;   
     }
 
+    @media only screen and (min-width: 48.0625em) {
+      display: none;
+    }
+
     &__input {
       border: none;
       outline: none;

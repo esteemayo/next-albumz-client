@@ -52,11 +52,13 @@ const Sidebar = () => {
           onClose={handleClose}
           onAction={handleLogout}
         />
-        <Search
-          value={query}
-          onChange={(value) => setQuery(value)}
-          onSubmit={handleSearch}
-        />
+        {menuOpen && (
+          <Search
+            value={query}
+            onChange={(value) => setQuery(value)}
+            onSubmit={handleSearch}
+          />
+        )}
       </>
     </aside>
   );
