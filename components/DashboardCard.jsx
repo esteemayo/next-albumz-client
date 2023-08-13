@@ -25,7 +25,7 @@ const DashboardCard = ({
         {albums?.map((item) => {
           const { _id: id, info, slug, image, title } = item;
           return (
-            <div key={id} className={styles.wrapper}>
+            <article key={id} className={styles.wrapper}>
               <div className={styles.card}>
                 <div className={styles.card__left}>
                   <div className={styles.card__img}>
@@ -54,7 +54,7 @@ const DashboardCard = ({
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
           );
         })}
       </Suspense>
