@@ -44,7 +44,7 @@ const TopAlbums = ({ albums }) => {
                   <td>{index + 1}</td>
                   <td>
                     <Image
-                      src={image ? image : '/img/default-album-1.webp'}
+                      src={image ?? '/img/default-album-1.webp'}
                       width={100}
                       height={100}
                       objectFit='cover'
