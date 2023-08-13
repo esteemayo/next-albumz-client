@@ -21,8 +21,6 @@ const Dashboard = ({ albums }) => {
   const [albumList, setAlbumList] = useState(albums);
   const [albumId, setAlbumId] = useState(null);
   const [showModal, setShowModal] = useState(true);
-  console.log('albums', albums)
-  console.log('albumList', albumList)
 
   const handleOpenModal = useCallback((albumId) => {
     setShowModal(false);
