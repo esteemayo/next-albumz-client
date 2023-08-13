@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import { lazy, Suspense, useCallback, useState } from 'react';
+import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 
 import Meta from '@/components/Meta';
