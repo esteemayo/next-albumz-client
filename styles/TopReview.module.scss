@@ -4,7 +4,11 @@
   @media only screen and (max-width: 64em) {
     width: 30rem;
   }
-  
+
+  @media only screen and (max-width: 37.5em) {
+    width: 40rem;
+  }
+
   .reviewer__img {
     & > * {
       border-radius: 50%;
