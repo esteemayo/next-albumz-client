@@ -113,7 +113,7 @@ const Genres = ({ genres }) => {
       {user && (
         <AddButton
           text='New genre'
-          onClick={() => setOpen(true)}
+          onClick={handleOpen}
         />
       )}
       {open && (
