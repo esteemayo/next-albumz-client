@@ -50,7 +50,7 @@ const Dashboard = ({ albums }) => {
         ): (
           <DashboardCard
             isOpen={showModal}
-            albums={albums}
+            albums={albumList}
             actionId={albumId}
             onOpen={handleOpenModal}
             onDelete={handleDelete}
