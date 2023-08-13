@@ -12,12 +12,8 @@ import { excerpts } from '@/utils/index';
 import styles from '@/styles/DashboardCard.module.scss';
 
 const DashboardCard = ({
-  isOpen,
   albums,
-  actionId,
   onOpen,
-  onClose,
-  onDelete,
  }) => {
   return (
     <>
@@ -58,22 +54,11 @@ const DashboardCard = ({
           );
         })}
       </Suspense>
-      {!isOpen && (
-        <DialogBox>
-          <DeleteAlbumGenre
-            actionId={actionId}
-            title='Discard album?'
-            onClose={onClose}
-            onAction={onDelete}
-          />
-        </DialogBox>
-      )}
     </>
   );
 };
 
 DashboardCard.propTypes = {
-  isOpen: PropTypes.boolean.isRequired,
   albums: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -83,10 +68,7 @@ DashboardCard.propTypes = {
       image: PropTypes.string.isRequired,
     }),
   ),
-  actionId: PropTypes.string.isRequired,
   onOpen: PropTypes.func.isRequired,
-  onClose: PropTypes.func.isRequired,
-  onDelete: PropTypes.func.isRequired,
 };
 
 export default DashboardCard;

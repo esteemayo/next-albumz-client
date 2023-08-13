@@ -3,7 +3,9 @@ import { lazy, Suspense, useCallback, useState } from 'react';
 import { toast } from 'react-toastify';
 
 import Meta from '@/components/Meta';
+import DialogBox from '@/components/modal/DialogBox';
 import ClientOnly from '@/components/ClientOnly';
+import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 
 import { deleteAlbum } from '@/services/albumService';
 import { getUserAlbums } from '@/services/albumService';
@@ -49,15 +51,21 @@ const Dashboard = ({ albums }) => {
           <h2>There are no albums in the database</h2>
         ): (
           <DashboardCard
-            isOpen={showModal}
             albums={albumList}
-            actionId={albumId}
             onOpen={handleOpenModal}
-            onDelete={handleDelete}
-            onClose={handleCloseModal}
           />
         )}
       </section>
+      {!showModal && (
+        <DialogBox>
+          <DeleteAlbumGenre
+            actionId={albumId}
+            title='Discard album?'
+            onClose={handleCloseModal}
+            onAction={handleDelete}
+          />
+        </DialogBox>
+      )}
     </ClientOnly>
   );
 };
