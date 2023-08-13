@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { ReactSortable } from 'react-sortablejs';
 import PropTypes from 'prop-types';
 
-import ReviewCard from './ReviewCard';
+import ReviewCard from '@/components/card/ReviewCard';
+
 import styles from '@/styles/Reviews.module.scss';
 
 const Reviews = ({ reviews, onSort }) => {
