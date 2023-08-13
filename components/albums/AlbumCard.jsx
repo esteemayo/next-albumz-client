@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import Image from 'next/image';
+import PropTypes from 'prop-types';
 
 import { excerpts } from '@/utils/index';
 import LikeButton from '@/components/button/LikeButton';
