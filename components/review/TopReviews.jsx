@@ -16,6 +16,4 @@ const TopReviews = ({ reviews }) => {
   );
 };
 
-export const getStaticProps = async () => {};
-
 export default TopReviews;
