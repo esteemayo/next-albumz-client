@@ -54,7 +54,7 @@ const Genres = ({ genres }) => {
   return (
     <ClientOnly>
       <Meta title='Genres - Albumz Music Entertainment' />
-      {genres.length > 0 ? (
+      {!!genres.length > 0 ? (
         <section className={styles.genres}>
           <table className={styles.table}>
             <thead>
