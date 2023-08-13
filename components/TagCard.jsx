@@ -16,7 +16,7 @@ const TagCard = ({ album: { info, slug, image, title } }) => {
   }, [slug, router]);
 
   return (
-    <div className={styles.wrapper}>
+    <article className={styles.wrapper}>
       <div className={styles.card}>
         <div className={styles.left}>
           <div className={styles.card__image}>
@@ -45,7 +45,7 @@ const TagCard = ({ album: { info, slug, image, title } }) => {
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
