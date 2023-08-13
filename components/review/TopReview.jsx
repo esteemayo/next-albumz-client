@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 
 import StarRating from '@/components/StarRating';
 import { getUser } from '@/services/userService';
