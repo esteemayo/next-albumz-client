@@ -50,6 +50,10 @@
     max-width: 120rem;
     margin: 0 auto;
 
+    @media only screen and (max-width: 58.4375em) {
+      max-width: 80rem;
+    }
+
     @media only screen and (max-width: 43.75em) {
       gap: 5rem;
     }
