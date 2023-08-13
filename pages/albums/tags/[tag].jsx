@@ -10,7 +10,7 @@ import { getAlbumsByTag } from '@/services/albumService';
 
 import styles from '@/styles/Tags.module.scss';
 
-const TagCard = lazy(() => import('@/components/TagCard'));
+const TagCard = lazy(() => import('@/components/card/TagCard'));
 
 const AlbumTags = ({ albums }) => {
   const { query } = useRouter();
