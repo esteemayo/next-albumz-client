@@ -26,7 +26,7 @@ const AlbumCard = ({ album }) => {
    }, [slug]);
 
   return (
-    <div className={styles.card}>
+    <article className={styles.card}>
       <div className={styles.card__header}>
         <div className={styles.card__picture}>
           <div className={styles.card__pictureOverlay}>&nbsp;</div>
@@ -70,7 +70,7 @@ const AlbumCard = ({ album }) => {
           <a className={styles.card__footerBtn}>Details</a>
         </Link>
       </div>
-    </div>
+    </article>
   );
 };
 
