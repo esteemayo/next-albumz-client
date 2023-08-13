@@ -9,7 +9,7 @@ const ReviewCard = ({ rating, review, user, createdAt }) => {
   const dateOptions = { month: 'long', day: 'numeric', year: 'numeric' };
 
   return (
-    <div className={styles.review}>
+    <article className={styles.review}>
       <div className={styles.review__card}>
         <div className={styles.left}>
           <div className={styles.reviewer}>
@@ -38,7 +38,7 @@ const ReviewCard = ({ rating, review, user, createdAt }) => {
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
