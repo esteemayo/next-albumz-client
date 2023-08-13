@@ -11,6 +11,12 @@ const Modal = ({ onClose, children }) => {
       `${styles.modal}`;
   }, [children.props.type]);
 
+  const bodyClasses = useMemo(() => {
+    return children.props.type === 'genre' ? 
+      `${styles.modal__bodyGenre}` : 
+      `${styles.modal__body}`;
+  }, [children.props.type]);
+
   return (
     <aside className={styles.overlay}>
       <div className={modalClasses}>
@@ -22,13 +28,7 @@ const Modal = ({ onClose, children }) => {
             />
           </div>
         </header>
-        <div className={
-          children.props.type === 'genre' ? 
-          `${styles.modal__bodyGenre}` : 
-          `${styles.modal__body}`}
-        >
-          {children}
-        </div>
+        <div className={bodyClasses}>{children}</div>
       </div>
     </aside>
   );
