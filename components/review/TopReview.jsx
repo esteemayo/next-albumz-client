@@ -36,7 +36,7 @@ const TopReview = ({ user: userId, rating, review }) => {
       </div>
       <div className={styles.reviewer__rating}>
         <StarRating value={rating} className={styles.ratingIcon} />
-        <span className={styles.ratingValue}>{rating.toFixed(1)}</span>
+        <span className={styles.ratingValue}>{`(${rating.toFixed(1)})`}</span>
       </div>
       <div className={styles.reviewer__name}>{user.name}</div>
     </div>
