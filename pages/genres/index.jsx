@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Moment from 'react-moment';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 import PropTypes from 'prop-types';
+import { ReactSortable } from 'react-sortablejs';
 import { toast } from 'react-toastify';
 
 import AddButton from '@/components/button/AddButton';
