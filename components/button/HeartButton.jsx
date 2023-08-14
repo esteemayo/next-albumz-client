@@ -1,6 +1,6 @@
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import { useCallback, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 
 import Popup from '../Popup';
 
