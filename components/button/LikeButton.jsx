@@ -33,28 +33,6 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
       `${styles.like__icon}`;
   }, [type]);
 
-  const likeButton = user ? (
-    hasFavorited ? (
-      likes.length > 2 ? (
-        <Popup title={likePopup}>
-          <FavoriteOutlinedIcon className={likeClasses} />
-        </Popup>
-      ) : (
-        <Popup title={popupTitle}>
-          <FavoriteOutlinedIcon className={likeClasses} />
-        </Popup>
-      )
-    ) : (
-      <Popup title={popupTitle}>
-        <FavoriteBorderOutlinedIcon className={likeClasses} />
-      </Popup>
-    )
-  ) : (
-    <Popup title={popupTitle}>
-      <FavoriteBorderOutlinedIcon className={likeClasses} />
-    </Popup>
-  );
-
   return (
     <div className={styles.icon__wrapper}>
       <button
