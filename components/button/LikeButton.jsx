@@ -30,23 +30,21 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
     liked ? (
       likes.length > 2 ? (
         <Popup title={`You and ${likes.length - 1} others`}>
-          <FavoriteOutlinedIcon className={likeClasses}/>
+          <FavoriteOutlinedIcon className={likeClasses} />
         </Popup>
       ) : (
         <Popup title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`}>
-          <FavoriteOutlinedIcon className={likeClasses}/>
+          <FavoriteOutlinedIcon className={likeClasses} />
         </Popup>
       )
     ) : (
       <Popup title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`}>
-        <FavoriteBorderOutlinedIcon className={likeClasses}/>
+        <FavoriteBorderOutlinedIcon className={likeClasses} />
       </Popup>
     )
   ) : (
     <Popup title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`}>
-      <FavoriteBorderOutlinedIcon
-        className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-      />
+      <FavoriteBorderOutlinedIcon className={likeClasses} />
     </Popup>
   );
 
