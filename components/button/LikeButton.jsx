@@ -3,7 +3,6 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useCallback, useMemo } from 'react';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
-import Popup from '../Popup';
 import HeartButton from './HeartButton';
 import useFavorite from '@/hooks/useFavorite';
 
