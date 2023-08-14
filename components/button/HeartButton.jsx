@@ -6,7 +6,7 @@ import Popup from '../Popup';
 
 import styles from '@/styles/LikeButton.module.scss';
 
-const HeartButton = ({ user, likes, liked  }) => {
+const HeartButton = ({ user, type, likes, liked  }) => {
   const likePopup = useMemo(() => {
     return `You and ${likes.length - 1} others`;
   }, [likes]);

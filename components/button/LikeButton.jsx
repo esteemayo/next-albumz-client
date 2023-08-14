@@ -4,6 +4,7 @@ import { useCallback, useMemo } from 'react';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 import Popup from '../Popup';
+import HeartButton from './HeartButton';
 import useFavorite from '@/hooks/useFavorite';
 
 import styles from '@/styles/LikeButton.module.scss';
@@ -60,7 +61,12 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
         onClick={!user ? null : handleLike}
         className={hasFavorited ? 'btnLiked' : 'btnUnlike'}
       >
-        {likeButton}
+        <HeartButton
+          user={user}
+          type={type}
+          likes={likes}
+          liked={hasFavorited}
+        />
       </button>
     </div>
   );
