@@ -17,7 +17,7 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
   });
 
   const toggleLike = useCallback(() => {
-    return !user ? null : handleLike;
+    return !user ? null : handleLike();
   }, [user, handleLike]);
 
   const likeClasses = useMemo(() => {
