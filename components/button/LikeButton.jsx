@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useCallback, useMemo } from 'react';
+import { useRouter } from 'next/router';
 
 import useFavorite from '@/hooks/useFavorite';
 import HeartIcon from '@/components/HeartIcon';
