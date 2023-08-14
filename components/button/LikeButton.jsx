@@ -27,12 +27,6 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
     return `${likes.length} Like${likes.length > 1 ? 's' : ''}`;
   }, [likes]);
 
-  const likeClasses = useMemo(() => {
-    return type === 'single' ?
-      `${styles.like__icon} ${styles.action__icon}` :
-      `${styles.like__icon}`;
-  }, [type]);
-
   return (
     <div className={styles.icon__wrapper}>
       <button
