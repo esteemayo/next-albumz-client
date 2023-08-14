@@ -40,4 +40,11 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
   );
 };
 
+LikeButton.propTypes = {
+  type: PropTypes.string,
+  likes: PropTypes.array.isRequired,
+  actionId: PropTypes.string.isRequired,
+  onAction: PropTypes.any,
+};
+
 export default LikeButton;
