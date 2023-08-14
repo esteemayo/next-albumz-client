@@ -16,7 +16,8 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
     onAction,
   });
 
-  const handleLike = useCallback(() => {
+  const handleLike = useCallback((e) => {
+    e.stopPropagation();
     return !user ? null : toggleFavorite();
   }, [user, toggleFavorite]);
 
