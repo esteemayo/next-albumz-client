@@ -69,4 +69,34 @@ export const getStaticProps = async () => {
   };
 };
 
+Home.propTypes = {
+  genres: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ),
+  reviews: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      rating: PropTypes.number.isRequired,
+      review: PropTypes.string.isRequired,
+      user: PropTypes.object.isRequired,
+      album: PropTypes.object.isRequired,
+    }),
+  ),
+  featuredAlbums: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      tags: PropTypes.array.isRequired,
+      info: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      ratingsAverage: PropTypes.number.isRequired,
+      ratingsQuantity: PropTypes.number.isRequired,
+    }),
+  ),
+};
+
 export default Home;
