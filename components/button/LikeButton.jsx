@@ -21,7 +21,7 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
   }, [user, toggleFavorite]);
 
   const likeClasses = useMemo(() => {
-    return hasFavorited ? 'btnLiked' : 'btnUnlike';
+    return !!hasFavorited ? 'btnLiked' : 'btnUnlike';
   }, [hasFavorited]);
 
   return (
