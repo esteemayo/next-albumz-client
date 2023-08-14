@@ -23,10 +23,6 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
     return `You and ${likes.length - 1} others`;
   }, [likes]);
 
-  const popupTitle = useMemo(() => {
-    return `${likes.length} Like${likes.length > 1 ? 's' : ''}`;
-  }, [likes]);
-
   return (
     <div className={styles.icon__wrapper}>
       <button
