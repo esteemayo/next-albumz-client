@@ -9,16 +9,16 @@ import styles from '@/styles/LikeButton.module.scss';
 const LikeButton = ({ type, likes, actionId, onAction }) => {
   const { user } = useSelector((state) => ({ ...state.auth }));
 
-  const { hasFavorited, handleLike } = useFavorite({
+  const { hasFavorited, toggleFavorite } = useFavorite({
     actionId,
     likes,
     user,
     onAction,
   });
 
-  const toggleLike = useCallback(() => {
-    return !user ? null : handleLike();
-  }, [user, handleLike]);
+  const handleLike = useCallback(() => {
+    return !user ? null : toggleFavorite();
+  }, [user, toggleFavorite]);
 
   const likeClasses = useMemo(() => {
     return hasFavorited ? 'btnLiked' : 'btnUnlike';
@@ -26,7 +26,7 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
 
   return (
     <div className={styles.icon__wrapper}>
-      <button onClick={toggleLike} className={likeClasses}>
+      <button onClick={handleLike} className={likeClasses}>
         <HeartButton
           user={user}
           type={type}

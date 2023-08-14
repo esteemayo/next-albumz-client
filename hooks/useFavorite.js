@@ -7,7 +7,7 @@ const useFavorite = ({ actionId, likes, user, onAction }) => {
     return album.includes(user?._id);
   }, [likes, user]);
 
-  const handleLike = useCallback(async () => {
+  const toggleFavorite = useCallback(async () => {
     try {
       const { data } = await likeAlbum(actionId);
       onAction(data.album);
@@ -18,7 +18,7 @@ const useFavorite = ({ actionId, likes, user, onAction }) => {
 
   return {
     hasFavorited,
-    handleLike,
+    toggleFavorite,
   };
 };
 
