@@ -46,7 +46,7 @@ const Dashboard = ({ albums }) => {
       <Meta title='User Dashboard - Albumz Music Entertainment' />
       <section className={styles.container}>
         <h1 className={styles.header}>Dashboard</h1>
-        {!albums.length === 0 ? (
+        {albumList.length === 0 ? (
           <h2>There are no albums in the database</h2>
         ): (
           <DashboardCard
