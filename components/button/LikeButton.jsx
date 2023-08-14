@@ -34,9 +34,7 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
         </Popup>
       ) : (
         <Popup title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`}>
-          <FavoriteOutlinedIcon
-            className={type === 'single' ? `${styles.like__icon} ${styles.action__icon}` : `${styles.like__icon}`}
-          />
+          <FavoriteOutlinedIcon className={likeClasses}/>
         </Popup>
       )
     ) : (
