@@ -44,7 +44,7 @@ LikeButton.propTypes = {
   type: PropTypes.string,
   likes: PropTypes.array.isRequired,
   actionId: PropTypes.string.isRequired,
-  onAction: PropTypes.any,
+  onAction: PropTypes.any.isRequired,
 };
 
 export default LikeButton;
