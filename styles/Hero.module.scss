@@ -43,6 +43,10 @@
     padding-top: 17rem;
   }
 
+  @media only screen and (max-width: 18.75em) {
+    padding-top: 10rem;
+  }
+
   &__text {
     text-align: center;
 
