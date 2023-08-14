@@ -16,11 +16,15 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
     onAction,
   });
 
+  const likeClasses = useMemo(() => {
+    return hasFavorited ? 'btnLiked' : 'btnUnlike';
+  }, [hasFavorited]);
+
   return (
     <div className={styles.icon__wrapper}>
       <button
         onClick={!user ? null : handleLike}
-        className={hasFavorited ? 'btnLiked' : 'btnUnlike'}
+        className={likeClasses}
       >
         <HeartButton
           user={user}
