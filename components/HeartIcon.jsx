@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 
-import Popup from '../Popup';
+import Popup from './Popup';
 
 import styles from '@/styles/LikeButton.module.scss';
 
