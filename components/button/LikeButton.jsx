@@ -26,16 +26,6 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
       `${styles.like__icon}`;
   }, [type]);
 
-  useEffect(() => {
-    if (user && likes.find((like) => like === user?._id)) {
-      setLiked(true);
-    } else {
-      setLiked(false);
-    }
-  }, [likes, user]);
-
-  console.log(hasFavorited)
-
   const likeButton = user ? (
     hasFavorited ? (
       likes.length > 2 ? (
