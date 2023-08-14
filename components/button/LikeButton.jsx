@@ -48,15 +48,6 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
     </Popup>
   );
 
-  // const handleLike = useCallback(async () => {
-  //   try {
-  //     const { data } = await likeAlbum(actionId);
-  //     onAction(data.album);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // }, [actionId]);
-
   return (
     <div className={styles.icon__wrapper}>
       <button
