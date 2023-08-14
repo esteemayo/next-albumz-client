@@ -10,7 +10,6 @@ import { likeAlbum } from '@/services/albumService';
 import styles from '@/styles/LikeButton.module.scss';
 
 const LikeButton = ({ type, likes, actionId, onAction }) => {
-  const [liked, setLiked] = useState(false);
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const { hasFavorited, handleLike } = useFavorite({
