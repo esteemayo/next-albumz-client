@@ -18,8 +18,9 @@ const TopReviews = dynamic(() => import('@/components/review/TopReviews'), { ssr
 const FeaturedAlbums = dynamic(() => import('@/components/albums/FeaturedAlbums'), { ssr: false });
 
 const Home = ({ genres, reviews, featuredAlbums }) => {
-  const [showModal, setShowModal] = useState(false);
   const { user } = useSelector((state) => ({ ...state.auth }));
+
+  const [showModal, setShowModal] = useState(false);
 
   const handleOpen = useCallback(() => {
     setShowModal(true);
