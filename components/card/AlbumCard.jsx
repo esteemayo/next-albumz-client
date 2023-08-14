@@ -32,7 +32,7 @@ const AlbumCard = ({ album }) => {
         <div className={styles.card__picture}>
           <div className={styles.card__pictureOverlay}>&nbsp;</div>
           <Image 
-            src={image ? image : '/img/default-album-1.webp'}
+            src={image ?? '/img/default-album-1.webp'}
             width={345}
             height={230}
             objectFit='cover'
