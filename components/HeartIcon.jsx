@@ -51,7 +51,7 @@ HeartIcon.propTypes = {
   user: PropTypes.object.isRequired,
   type: PropTypes.string,
   likes: PropTypes.array.isRequired,
-  liked: PropTypes.boolean.isRequired,
+  liked: PropTypes.bool.isRequired,
 };
 
 export default HeartIcon;
