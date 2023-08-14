@@ -47,4 +47,11 @@ const HeartIcon = ({ user, type, likes, liked }) => {
   return likeButton;
 };
 
+HeartIcon.propTypes = {
+  user: PropTypes.object.isRequired,
+  type: PropTypes.string,
+  likes: PropTypes.array.isRequired,
+  liked: PropTypes.boolean.isRequired,
+};
+
 export default HeartIcon;
