@@ -23,4 +23,11 @@ const useFavorite = ({ actionId, likes, user, onAction }) => {
   };
 };
 
+useFavorite.propTypes = {
+  actionId: PropTypes.string.isRequired,
+  likes: PropTypes.array.isRequired,
+  user: PropTypes.object.isRequired,
+  onAction: PropTypes.any.isRequired,
+};
+
 export default useFavorite;
