@@ -12,6 +12,12 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
   const [liked, setLiked] = useState(false);
   const { user } = useSelector((state) => ({ ...state.auth }));
 
+  const likeClasses = useMemo(() => {
+    return type === 'single' ?
+      `${styles.like__icon} ${styles.action__icon}` :
+      `${styles.like__icon}`;
+  }, [type]);
+
   useEffect(() => {
     if (user && likes.find((like) => like === user?._id)) {
       setLiked(true);
