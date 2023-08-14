@@ -1,12 +1,13 @@
 import { useMemo } from 'react';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import PropTypes from 'prop-types';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 
 import Popup from './Popup';
 
 import styles from '@/styles/LikeButton.module.scss';
 
-const HeartIcon = ({ user, type, likes, liked  }) => {
+const HeartIcon = ({ user, type, likes, liked }) => {
   const likePopup = useMemo(() => {
     return `You and ${likes.length - 1} others`;
   }, [likes]);
