@@ -21,8 +21,11 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
 
   const handleLike = useCallback((e) => {
     e.stopPropagation();
-    return !user ? null : toggleFavorite();
-  }, [user, toggleFavorite]);
+
+    return !user ?
+      router.push('/auth/login') :
+      toggleFavorite();
+  }, [user, toggleFavorite, router]);
 
   const likeClasses = useMemo(() => {
     return !!hasFavorited ? 'btnLiked' : 'btnUnlike';
