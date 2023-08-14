@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useCallback, useMemo } from 'react';
 
-import HeartButton from './HeartButton';
+import HeartIcon from './HeartIcon';
 import useFavorite from '@/hooks/useFavorite';
 
 import styles from '@/styles/LikeButton.module.scss';
@@ -28,7 +28,7 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
   return (
     <div className={styles.icon__wrapper}>
       <button onClick={handleLike} className={likeClasses}>
-        <HeartButton
+        <HeartIcon
           user={user}
           type={type}
           likes={likes}
