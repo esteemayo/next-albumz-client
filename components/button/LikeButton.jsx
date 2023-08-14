@@ -3,10 +3,8 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useCallback, useMemo, useState } from 'react';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
-import useFavorite from '@/hooks/useFavorite';
-import { likeAlbum } from '@/services/albumService';
-
 import Popup from '../Popup';
+import useFavorite from '@/hooks/useFavorite';
 
 import styles from '@/styles/LikeButton.module.scss';
 
