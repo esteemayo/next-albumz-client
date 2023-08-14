@@ -22,6 +22,10 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
     return `You and ${likes.length - 1} others`;
   }, [likes]);
 
+  const popupTitle = useMemo(() => {
+    return `${likes.length} Like${likes.length > 1 ? 's' : ''}`;
+  }, [likes]);
+
   const likeClasses = useMemo(() => {
     return type === 'single' ?
       `${styles.like__icon} ${styles.action__icon}` :
@@ -35,17 +39,17 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
           <FavoriteOutlinedIcon className={likeClasses} />
         </Popup>
       ) : (
-        <Popup title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`}>
+        <Popup title={popupTitle}>
           <FavoriteOutlinedIcon className={likeClasses} />
         </Popup>
       )
     ) : (
-      <Popup title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`}>
+      <Popup title={popupTitle}>
         <FavoriteBorderOutlinedIcon className={likeClasses} />
       </Popup>
     )
   ) : (
-    <Popup title={`${likes.length} Like${likes.length > 1 ? 's' : ''}`}>
+    <Popup title={popupTitle}>
       <FavoriteBorderOutlinedIcon className={likeClasses} />
     </Popup>
   );
