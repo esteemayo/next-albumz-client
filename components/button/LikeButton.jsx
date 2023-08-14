@@ -52,7 +52,7 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
     <div className={styles.icon__wrapper}>
       <button
         onClick={!user ? null : handleLike}
-        className={liked ? 'btnLiked' : 'btnUnlike'}
+        className={hasFavorited ? 'btnLiked' : 'btnUnlike'}
       >
         {likeButton}
       </button>
