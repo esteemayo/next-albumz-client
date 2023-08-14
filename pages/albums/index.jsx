@@ -16,7 +16,7 @@ import { getAllGenres } from '@/services/genreService';
 
 import styles from '@/styles/Albums.module.scss';
 
-const AlbumCard = dynamic(() => import('@/components/albums/AlbumCard'), { ssr: false });
+const AlbumCard = dynamic(() => import('@/components/card/AlbumCard'), { ssr: false });
 
 const Albums = ({
   albums,

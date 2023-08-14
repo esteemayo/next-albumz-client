@@ -12,10 +12,12 @@ import styles from '@/styles/LikeButton.module.scss';
 const LikeButton = ({ type, likes, actionId, onAction }) => {
   const [liked, setLiked] = useState(false);
   const { user } = useSelector((state) => ({ ...state.auth }));
+
   const { hasFavorited, handleLike } = useFavorite({
     actionId,
     likes,
     user,
+    onAction,
   });
 
   const likeClasses = useMemo(() => {
@@ -32,8 +34,10 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
     }
   }, [likes, user]);
 
+  console.log(hasFavorited)
+
   const likeButton = user ? (
-    liked ? (
+    hasFavorited ? (
       likes.length > 2 ? (
         <Popup title={`You and ${likes.length - 1} others`}>
           <FavoriteOutlinedIcon className={likeClasses} />
