@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 import Popup from '../Popup';
