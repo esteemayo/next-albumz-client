@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
-import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import PropTypes from 'prop-types';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import PropTypes from 'prop-types';
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 import Popup from './Popup';
 
