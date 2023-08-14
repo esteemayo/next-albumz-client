@@ -19,10 +19,6 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
     onAction,
   });
 
-  const likePopup = useMemo(() => {
-    return `You and ${likes.length - 1} others`;
-  }, [likes]);
-
   return (
     <div className={styles.icon__wrapper}>
       <button
