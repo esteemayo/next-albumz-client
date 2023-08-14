@@ -7,6 +7,8 @@
       "@/styles/*": ["styles/*"],
       "@/utils/*": ["utils/*"],
       "@/features/*": ["features/*"],
+      "@/providers/*": ["providers/*"],
+      "@/hooks/*": ["hooks/*"],
       "@/app/*": ["app/*"]
     }
   }

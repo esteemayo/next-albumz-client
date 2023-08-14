@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 import Popup from '../Popup';
+import useFavorite from '@/hooks/useFavorite';
 import { likeAlbum } from '@/services/albumService';
 
 import styles from '@/styles/LikeButton.module.scss';
@@ -11,6 +12,11 @@ import styles from '@/styles/LikeButton.module.scss';
 const LikeButton = ({ type, likes, actionId, onAction }) => {
   const [liked, setLiked] = useState(false);
   const { user } = useSelector((state) => ({ ...state.auth }));
+  const { hasFavorited, handleLike } = useFavorite({
+    actionId,
+    likes,
+    user,
+  });
 
   const likeClasses = useMemo(() => {
     return type === 'single' ?
@@ -48,14 +54,14 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
     </Popup>
   );
 
-  const handleLike = useCallback(async () => {
-    try {
-      const { data } = await likeAlbum(actionId);
-      onAction(data.album);
-    } catch (err) {
-      console.log(err);
-    }
-  }, [actionId]);
+  // const handleLike = useCallback(async () => {
+  //   try {
+  //     const { data } = await likeAlbum(actionId);
+  //     onAction(data.album);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }, [actionId]);
 
   return (
     <div className={styles.icon__wrapper}>
