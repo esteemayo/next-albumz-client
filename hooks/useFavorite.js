@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useCallback, useMemo, useState } from 'react';
 import { likeAlbum } from '@/services/albumService';
 
