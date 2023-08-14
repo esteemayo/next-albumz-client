@@ -6,6 +6,8 @@ import Sidebar from '@/components/sidebar/Sidebar';
 import Footer from '@/components/footer/Footer';
 import DarkMode from '@/components/darkmode/DarkMode';
 
+import ToastProvider from '@/providers/ToastProvider';
+
 import Meta from './Meta';
 import ClientOnly from './ClientOnly';
 
@@ -19,7 +21,7 @@ const Layout = ({ children }) => {
       <ClientOnly>
         <Meta />
         <Navbar />
-        <ToastContainer />
+        <ToastProvider />
         <Sidebar />
       </ClientOnly>
       <DarkMode />
