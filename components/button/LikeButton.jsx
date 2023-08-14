@@ -18,7 +18,7 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
     onAction,
   });
 
-  const likeLabel = useMemo(() => {
+  const likePopup = useMemo(() => {
     return `You and ${likes.length - 1} others`;
   }, [likes]);
 
@@ -35,7 +35,7 @@ const LikeButton = ({ type, likes, actionId, onAction }) => {
   const likeButton = user ? (
     hasFavorited ? (
       likes.length > 2 ? (
-        <Popup title={likeLabel}>
+        <Popup title={likePopup}>
           <FavoriteOutlinedIcon className={likeClasses} />
         </Popup>
       ) : (
