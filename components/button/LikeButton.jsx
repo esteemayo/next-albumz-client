@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useCallback, useMemo } from 'react';
 
-import HeartIcon from './HeartIcon';
 import useFavorite from '@/hooks/useFavorite';
+import HeartIcon from '@/components/HeartIcon';
 
 import styles from '@/styles/LikeButton.module.scss';
 
