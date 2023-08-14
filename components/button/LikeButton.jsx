@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useCallback, useMemo } from 'react';
+import PropTypes from 'prop-types';
 
 import useFavorite from '@/hooks/useFavorite';
 import HeartIcon from '@/components/HeartIcon';
