@@ -9,6 +9,7 @@ import HeartIcon from '@/components/HeartIcon';
 import styles from '@/styles/LikeButton.module.scss';
 
 const LikeButton = ({ type, likes, actionId, onAction }) => {
+  const router = useRouter();
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const { hasFavorited, toggleFavorite } = useFavorite({
