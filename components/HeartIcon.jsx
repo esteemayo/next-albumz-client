@@ -48,7 +48,7 @@ const HeartIcon = ({ user, type, likes, liked }) => {
 };
 
 HeartIcon.propTypes = {
-  user: PropTypes.object.isRequired,
+  user: PropTypes.object,
   type: PropTypes.string,
   likes: PropTypes.array.isRequired,
   liked: PropTypes.bool.isRequired,
