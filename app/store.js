@@ -24,6 +24,7 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
+  auth: authReducer,
   views: viewsReducer,
   toggle: toggleReducer,
   bookmark: bookmarkReducer,
@@ -33,10 +34,7 @@ const rootReducer = combineReducers({
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
-  reducer: {
-    persistedReducer,
-    auth: authReducer,
-  },
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
   getDefaultMiddleware({
     serializableCheck: {
