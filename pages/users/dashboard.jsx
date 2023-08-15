@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import { lazy, Suspense, useCallback, useState } from 'react';
+import { Suspense, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 
