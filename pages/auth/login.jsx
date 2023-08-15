@@ -36,11 +36,6 @@ const Login = () => {
     setShowPassword(!showPassword);
   }, [showPassword]);
 
-  const disableButton = useMemo(() => {
-    const disabled = isLoading || !email || !password;
-    return !!disabled;
-  }, [email, password, isLoading]);
-
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
 
