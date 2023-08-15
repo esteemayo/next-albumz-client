@@ -6,11 +6,12 @@ import { toast } from 'react-toastify';
 import Modal from '@/components/modal/Modal';
 import DialogBox from '@/components/modal/DialogBox';
 
+import AlbumForm from '@/components/form/AlbumForm';
+import AddButton from '@/components/button/AddButton';
+
 import Meta from '@/components/Meta';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 import ClientOnly from '@/components/ClientOnly';
-import AddButton from '@/components/button/AddButton';
-import AlbumForm from '@/components/form/AlbumForm';
 
 import { getAllGenres } from '@/services/genreService';
 import { deleteAlbum, getUserAlbums } from '@/services/albumService';
