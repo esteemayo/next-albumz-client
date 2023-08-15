@@ -68,6 +68,10 @@ const Dashboard = ({ albums }) => {
           />
         )}
       </section>
+      <AddButton
+        text='New album'
+        onClick={handleOpen}
+      />
       {!showModal && (
         <DialogBox>
           <DeleteAlbumGenre
