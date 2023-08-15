@@ -7,6 +7,7 @@ import Meta from '@/components/Meta';
 import DialogBox from '@/components/modal/DialogBox';
 import ClientOnly from '@/components/ClientOnly';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
+import Modal from '@/components/modal/Modal';
 import AddButton from '@/components/button/AddButton';
 
 import { deleteAlbum } from '@/services/albumService';
