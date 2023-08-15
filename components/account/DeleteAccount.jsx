@@ -16,8 +16,8 @@ const DeleteAccount = ({ onClose }) => {
     e.stopPropagation();
 
     await deactivateUserAccount();
+    await onClose();
     await push('/');
-    onClose();
   }, [onClose, deactivateUserAccount, push]);
 
   const deactivateUserAccount = useCallback(async () => {

@@ -130,7 +130,7 @@ const Login = () => {
                   <button
                     type='submit'
                     className={styles.form__btn}
-                    disabled={disableButton}
+                    disabled={isLoading}
                   >
                       Log in
                     </button>
