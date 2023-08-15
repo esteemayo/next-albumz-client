@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 import { lazy, Suspense, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
 import Modal from '@/components/modal/Modal';
@@ -11,6 +10,7 @@ import Meta from '@/components/Meta';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 import ClientOnly from '@/components/ClientOnly';
 import AddButton from '@/components/button/AddButton';
+import AlbumForm from '@/components/form/AlbumForm';
 
 import { deleteAlbum } from '@/services/albumService';
 import { getUserAlbums } from '@/services/albumService';
