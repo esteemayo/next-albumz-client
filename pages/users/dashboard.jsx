@@ -3,11 +3,12 @@ import { lazy, Suspense, useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 
-import Meta from '@/components/Meta';
-import DialogBox from '@/components/modal/DialogBox';
-import ClientOnly from '@/components/ClientOnly';
-import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
 import Modal from '@/components/modal/Modal';
+import DialogBox from '@/components/modal/DialogBox';
+
+import Meta from '@/components/Meta';
+import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
+import ClientOnly from '@/components/ClientOnly';
 import AddButton from '@/components/button/AddButton';
 
 import { deleteAlbum } from '@/services/albumService';
