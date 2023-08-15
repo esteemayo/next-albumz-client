@@ -73,6 +73,14 @@ const Dashboard = ({ albums }) => {
         onClick={handleOpen}
       />
       {!showModal && (
+        <Modal onClose={handleClose}>
+          <AlbumForm
+            genres={genres}
+            onClose={handleClose}
+          />
+        </Modal>
+      )}
+      {!showModal && (
         <DialogBox>
           <DeleteAlbumGenre
             actionId={albumId}
