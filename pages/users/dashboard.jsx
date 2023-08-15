@@ -12,8 +12,7 @@ import ClientOnly from '@/components/ClientOnly';
 import AddButton from '@/components/button/AddButton';
 import AlbumForm from '@/components/form/AlbumForm';
 
-import { deleteAlbum } from '@/services/albumService';
-import { getUserAlbums } from '@/services/albumService';
+import { deleteAlbum, getUserAlbums } from '@/services/albumService';
 import { getAllGenres } from '@/services/genreService';
 
 import { parseCookie } from '@/utils/index';
