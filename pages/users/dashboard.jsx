@@ -128,6 +128,12 @@ Dashboard.propTypes = {
       image: PropTypes.string.isRequired,
     }),
   ),
+  genres: PropTypes.arrayOf(
+    PropTypes.shape({
+      _id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    }),
+  ),
 };
 
 export default Dashboard;
