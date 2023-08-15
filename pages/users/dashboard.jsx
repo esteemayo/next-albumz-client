@@ -14,6 +14,7 @@ import AlbumForm from '@/components/form/AlbumForm';
 
 import { deleteAlbum } from '@/services/albumService';
 import { getUserAlbums } from '@/services/albumService';
+import { getAllGenres } from '@/services/genreService';
 
 import { parseCookie } from '@/utils/index';
 
