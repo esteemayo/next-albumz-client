@@ -23,8 +23,8 @@ const Layout = ({ children }) => {
         <Navbar />
         <ToastProvider />
         <Sidebar />
+        <DarkMode />
       </ClientOnly>
-      <DarkMode />
       {children}
       <ClientOnly>
         <Footer />
