@@ -21,7 +21,7 @@ import styles from '@/styles/Dashboard.module.scss';
 
 const DashboardCard = dynamic(() => import('@/components/card/DashboardCard'), { ssr: false });
 
-const Dashboard = ({ albums }) => {
+const Dashboard = ({ albums, genres }) => {
   const [albumList, setAlbumList] = useState(albums);
   const [albumId, setAlbumId] = useState(null);
   const [showModal, setShowModal] = useState(true);
@@ -72,7 +72,7 @@ const Dashboard = ({ albums }) => {
         text='New album'
         onClick={handleOpen}
       />
-      {!showModal && (
+      {!isOpen && (
         <Modal onClose={handleClose}>
           <AlbumForm
             genres={genres}
@@ -107,10 +107,12 @@ export const getServerSideProps = async ({ req }) => {
   }
   
   const { data } = await getUserAlbums(token);
+  const { data: { genres } } = await getAllGenres();
 
   return {
     props: {
       albums: data.albums,
+      genres,
     },
   };
 };
