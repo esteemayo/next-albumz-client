@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
+import { Suspense } from 'react';
 
 import DialogBox from '@/components/modal/DialogBox';
 import Spinner from '@/components/Spinner';
