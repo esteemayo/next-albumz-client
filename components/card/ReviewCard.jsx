@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
+import { useMemo } from 'react';
 
 import StarRating from '@/components/StarRating';
 import styles from '@/styles/ReviewCard.module.scss';
