@@ -6,8 +6,19 @@ import StarRating from '@/components/StarRating';
 import styles from '@/styles/ReviewCard.module.scss';
 
 const ReviewCard = ({ rating, review, user, createdAt }) => {
-  const timeOptions = { hour: 'numeric', minute: 'numeric' };
-  const dateOptions = { month: 'long', day: 'numeric', year: 'numeric' };
+  const dateLabel = useMemo(() => {
+    const timeOptions = { hour: 'numeric', minute: 'numeric' };
+    const dateOptions = { month: 'long', day: 'numeric', year: 'numeric' };
+
+    const time = new Date(createdAt)
+      .toLocaleTimeString('en-us', timeOptions);
+
+    const date = new Date(createdAt)
+      .toLocaleDateString('en-us', dateOptions)
+      .replace(',', '');
+
+    return `${time} - ${date}`;
+  }, [createdAt]);
 
   return (
     <article className={styles.review}>
@@ -21,8 +32,8 @@ const ReviewCard = ({ rating, review, user, createdAt }) => {
           <div className={styles.line}>&nbsp;</div>
           <div className={styles.date}>
             <span>
-              {new Date(createdAt).toLocaleTimeString('en-us', timeOptions)} 
-              {' - '} 
+              {new Date(createdAt).toLocaleTimeString('en-us', timeOptions)}
+              {' - '}
               {new Date(createdAt).toLocaleDateString('en-us', dateOptions)}
             </span>
           </div>
