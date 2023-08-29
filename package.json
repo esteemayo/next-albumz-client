@@ -34,7 +34,8 @@
     "react-sortablejs": "^6.1.4",
     "react-toastify": "^9.0.8",
     "redux-persist": "^6.0.0",
-    "sortablejs": "^1.15.0"
+    "sortablejs": "^1.15.0",
+    "zustand": "^4.4.1"
   },
   "devDependencies": {
     "eslint": "8.23.1",
