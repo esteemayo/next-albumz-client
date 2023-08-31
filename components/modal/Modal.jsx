@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 
 import styles from '@/styles/Modal.module.scss';
 
-const Modal = ({ onClose, children }) => {
+const Modal = ({ isOpen, onClose, children }) => {
   const modalClasses = useMemo(() => {
     return children.props.type === 'genre' ?
       `${styles.modal} ${styles.modalGenre}` :
