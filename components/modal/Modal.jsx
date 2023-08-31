@@ -18,7 +18,7 @@ const Modal = ({ isOpen, onClose, children }) => {
   }, [children.props.type]);
 
   return (
-    <aside className={styles.overlay}>
+    <aside className={isOpen ? `${styles.overlay} ${styles.show}`: styles.overlay}>
       <div className={modalClasses}>
         <header className={styles.modal__header}>
           <div className={styles.modal__iconWrapper}>
