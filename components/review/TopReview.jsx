@@ -45,7 +45,7 @@ const TopReview = ({ user: userId, rating, review }) => {
 };
 
 TopReview.propTypes = {
-  user: PropTypes.string.isRequired,
+  user: PropTypes.object.isRequired,
   rating: PropTypes.number.isRequired,
   review: PropTypes.string.isRequired,
 };
