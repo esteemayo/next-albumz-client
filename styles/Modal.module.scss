@@ -13,8 +13,12 @@
   z-index: 3000;
 
   &.show {
+    display: block;
     opacity: 1;
     visibility: visible;
+  }
+
+  .container {
     display: flex;
     align-items: center;
     justify-content: center;
