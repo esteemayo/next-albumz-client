@@ -3,7 +3,7 @@ import AlbumForm from '../form/AlbumForm';
 
 const AlbumModal = ({ genres, onClose }) => {
   return (
-    <Modal>
+    <Modal onClose={onClose}>
       <AlbumForm
         genres={genres}
         onClose={onClose}
