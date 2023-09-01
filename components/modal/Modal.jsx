@@ -19,16 +19,18 @@ const Modal = ({ isOpen, onClose, children }) => {
 
   return (
     <aside className={isOpen ? `${styles.overlay} ${styles.show}`: styles.overlay}>
-      <div className={modalClasses}>
-        <header className={styles.modal__header}>
-          <div className={styles.modal__iconWrapper}>
-            <CloseOutlinedIcon
-              onClick={onClose}
-              className={styles.modal__closeIcon}
-            />
-          </div>
-        </header>
-        <div className={bodyClasses}>{children}</div>
+      <div className={styles.container}>
+        <div className={modalClasses}>
+          <header className={styles.modal__header}>
+            <div className={styles.modal__iconWrapper}>
+              <CloseOutlinedIcon
+                onClick={onClose}
+                className={styles.modal__closeIcon}
+              />
+            </div>
+          </header>
+          <div className={bodyClasses}>{children}</div>
+        </div>
       </div>
     </aside>
   );
