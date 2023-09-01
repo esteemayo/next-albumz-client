@@ -5,10 +5,12 @@ import { useSelector } from 'react-redux';
 
 import AddButton from '@/components/button/AddButton';
 import Modal from '@/components/modal/Modal';
+import AlbumModal from '@/components/modal/AlbumModal';
 import AlbumForm from '@/components/form/AlbumForm';
 import Hero from '@/components/hero/Hero';
 
 import ClientOnly from '@/components/ClientOnly';
+import { useAlbumModal } from '@/hooks/useAlbumModal';
 
 import { getTopReviews } from '@/services/reviewService';
 import { getAllGenres } from '@/services/genreService';
@@ -18,6 +20,7 @@ const TopReviews = dynamic(() => import('@/components/review/TopReviews'), { ssr
 const FeaturedAlbums = dynamic(() => import('@/components/albums/FeaturedAlbums'), { ssr: false });
 
 const Home = ({ genres, reviews, featuredAlbums }) => {
+  const { isOpen, onOpen, onClose } = useAlbumModal();
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const [showModal, setShowModal] = useState(false);
@@ -38,17 +41,13 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
       {!!user && (
         <AddButton
           text='New album'
-          onClick={handleOpen}
+          onClick={onOpen}
         />
       )}
-      {showModal && (
-        <Modal onClose={handleClose}>
-          <AlbumForm
-            genres={genres}
-            onClose={handleClose}
-          />
-        </Modal>
-      )}
+      <AlbumModal
+        genres={genres}
+        onClose={onClose}
+      />
     </ClientOnly>
   );
 };
