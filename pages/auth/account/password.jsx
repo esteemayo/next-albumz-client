@@ -116,7 +116,7 @@ const UpdatePassword = () => {
             </ul>
           </div>
           <div className={styles.right}>
-            {!user?.fromGoogle && (
+            {!currentUser?.fromGoogle && (
               <>
                 <h2 className={styles.accountHeader}>Password</h2>
                 <div className={styles.formWrapper}>
