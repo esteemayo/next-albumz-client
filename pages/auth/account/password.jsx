@@ -27,7 +27,12 @@ import styles from '@/styles/UpdatePassword.module.scss';
 const UpdatePassword = () => {
   const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDialogBox();
-  const { user, isError, isLoading, message } = useSelector((state) => ({ ...state.auth }));
+  const {
+    user: currentUser,
+    isError,
+    isLoading,
+    message,
+  } = useSelector((state) => ({ ...state.auth }));
 
   const [confirmPassword, setConfirmPassword] = useState('');
   const [password, setPassword] = useState('');
@@ -80,14 +85,14 @@ const UpdatePassword = () => {
             <div className={styles.userContainer}>
               <div className={styles.imageContainer}>
                 <Image
-                  src={user?.avatar ? user?.avatar : '/img/user-default.jpg'}
+                  src={currentUser?.avatar ? currentUser?.avatar : '/img/user-default.jpg'}
                   width={80}
                   height={80}
                   objectFit='cover'
-                  alt={user?.username}
+                  alt={currentUser?.username}
                 />
               </div>
-              <h2 className={styles.userName}>{user?.name}</h2>
+              <h2 className={styles.userName}>{currentUser?.name}</h2>
             </div>
             <ul className={styles.list}>
               <li className={styles.list__item}>
