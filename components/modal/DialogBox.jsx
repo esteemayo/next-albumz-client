@@ -4,8 +4,10 @@ import styles from '@/styles/DialogBox.module.scss';
 const DialogBox = ({ children }) => {
   return (
     <section className={styles.dialog}>
-      <div className={styles.dialog__modal}>
-        {children}
+      <div className={styles.dialog__container}>
+        <div className={styles.dialog__modal}>
+          {children}
+        </div>
       </div>
     </section>
   );
