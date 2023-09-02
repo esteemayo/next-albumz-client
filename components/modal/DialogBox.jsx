@@ -11,4 +11,8 @@ const DialogBox = ({ children }) => {
   );
 };
 
+DialogBox.propTypes = {
+  children: PropTypes.any.isRequired,
+};
+
 export default DialogBox;
