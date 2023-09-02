@@ -43,6 +43,12 @@ const UpdatePassword = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
 
+  const handleClear = useCallback(() => {
+    setPassword('');
+    setConfirmPassword('');
+    setCurrentPassword('');
+  }, []);
+
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
 
@@ -63,12 +69,6 @@ const UpdatePassword = () => {
       dispatch,
     ]
   );
-
-  const handleClear = useCallback(() => {
-    setPassword('');
-    setConfirmPassword('');
-    setCurrentPassword('');
-  }, []);
 
   useEffect(() => {
     isError && toast.error(message);
