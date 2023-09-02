@@ -1,11 +1,4 @@
-import Link from 'next/link';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import Image from 'next/image';
-import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
-import PropTypes from 'prop-types';
-import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
-import { useRouter } from 'next/router';
-
 import MenuItems from './MenuItems';
 
 const Sidebar = ({ avatar, currentUser, styles }) => {
