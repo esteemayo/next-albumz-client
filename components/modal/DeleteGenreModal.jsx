@@ -4,13 +4,14 @@ import DialogBox from './DialogBox';
 import DeleteAlbumGenre from '../DeleteAlbumGenre';
 
 const DeleteGenreModal = ({
+  isOpen,
   actionId,
   title,
   onClose,
   onAction,
 }) => {
   return (
-    <DialogBox>
+    <DialogBox isOpen={isOpen}>
       <DeleteAlbumGenre
         actionId={actionId}
         title={title}
@@ -22,6 +23,7 @@ const DeleteGenreModal = ({
 };
 
 DeleteGenreModal.propTypes = {
+  isOPen: PropTypes.bool.isRequired,
   actionId: PropTypes.string.isRequired,
   title: PropTypes.string,
   onClose: PropTypes.func.isRequired,
