@@ -46,4 +46,9 @@ const Sidebar = ({ avatar, currentUser }) => {
   );
 };
 
+Sidebar.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  currentUser: PropTypes.object.isRequired,
+};
+
 export default Sidebar;
