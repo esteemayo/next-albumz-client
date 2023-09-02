@@ -3,6 +3,7 @@ import Link from 'next/link';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import Image from 'next/image';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
+import PropTypes from 'prop-types';
 
 import styles from '@/styles/Account.module.scss';
 
