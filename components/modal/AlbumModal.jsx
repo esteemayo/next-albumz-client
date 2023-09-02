@@ -14,4 +14,10 @@ const AlbumModal = ({ genres, isOpen, onClose }) => {
   );
 };
 
+AlbumModal.propTypes = {
+  genres: PropTypes.array.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
 export default AlbumModal;
