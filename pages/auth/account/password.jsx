@@ -70,6 +70,10 @@ const UpdatePassword = () => {
     ]
   );
 
+  const userAvatar = useMemo(() => {
+    return currentUser?.avatar ?? '/img/user-default.jpg';
+  }, [currentUser]);
+
   useEffect(() => {
     isError && toast.error(message);
     dispatch(reset());
@@ -85,7 +89,7 @@ const UpdatePassword = () => {
             <div className={styles.userContainer}>
               <div className={styles.imageContainer}>
                 <Image
-                  src={currentUser?.avatar ? currentUser?.avatar : '/img/user-default.jpg'}
+                  src={userAvatar}
                   width={80}
                   height={80}
                   objectFit='cover'
