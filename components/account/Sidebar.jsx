@@ -6,14 +6,14 @@ import AccountInfo from './AccountInfo';
 
 const Sidebar = ({ avatar, currentUser, styles }) => {
   return (
-    <div className={styles.left}>
+    <aside className={styles.left}>
       <AccountInfo
         src={avatar}
         currentUser={currentUser}
         styles={styles}
       />
       <MenuItems styles={styles} />
-    </div>
+    </aside>
   );
 };
 
