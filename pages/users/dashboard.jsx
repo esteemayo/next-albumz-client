@@ -25,6 +25,8 @@ import styles from '@/styles/Dashboard.module.scss';
 const DashboardCard = dynamic(() => import('@/components/card/DashboardCard'), { ssr: false });
 
 const Dashboard = ({ albums, genres }) => {
+  const { isOpen, onOpen, onClose } = useAlbumModal();
+
   const [albumList, setAlbumList] = useState(albums);
   const [albumId, setAlbumId] = useState(null);
   const [showModal, setShowModal] = useState(true);
