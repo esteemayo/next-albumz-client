@@ -18,14 +18,14 @@ const FeaturedAlbums = dynamic(() => import('@/components/albums/FeaturedAlbums'
 
 const Home = ({ genres, reviews, featuredAlbums }) => {
   const { isOpen, onOpen, onClose } = useAlbumModal();
-  const { user } = useSelector((state) => ({ ...state.auth }));
+  const { user: currentUser } = useSelector((state) => ({ ...state.auth }));
 
   return (
     <ClientOnly>
       <Hero />
       <FeaturedAlbums albums={featuredAlbums} />
       <TopReviews reviews={reviews} />
-      {!!user && (
+      {!!currentUser && (
         <AddButton
           text='New album'
           onClick={onOpen}
