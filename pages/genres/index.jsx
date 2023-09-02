@@ -31,7 +31,6 @@ const Genres = ({ genres }) => {
 
   const [genreId, setGenreId] = useState(null);
   const [genreList, setGenreList] = useState(genres);
-  const [showModal, setShowModal] = useState(true);
 
   const handleOpenModal = useCallback((genreId) => {
     dialogBox.onOpen();
