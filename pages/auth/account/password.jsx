@@ -29,8 +29,8 @@ const UpdatePassword = () => {
   const { isOpen, onOpen, onClose } = useDialogBox();
   const { user, isError, isLoading, message } = useSelector((state) => ({ ...state.auth }));
 
-  const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [password, setPassword] = useState('');
   const [currentPassword, setCurrentPassword] = useState('');
   
   const [showModal, setShowModal] = useState(true);
