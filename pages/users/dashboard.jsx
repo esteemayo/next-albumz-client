@@ -3,15 +3,11 @@ import { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 
-import Modal from '@/components/modal/Modal';
-import DialogBox from '@/components/modal/DialogBox';
-
 import AddButton from '@/components/button/AddButton';
+import DeleteAlbumGenreModal from '@/components/modal/DeleteAlbumGenreModal';
 import AlbumModal from '@/components/modal/AlbumModal';
 
 import Meta from '@/components/Meta';
-import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
-import DeleteAlbumGenreModal from '@/components/modal/DeleteAlbumGenreModal';
 import ClientOnly from '@/components/ClientOnly';
 
 import { getAllGenres } from '@/services/genreService';
