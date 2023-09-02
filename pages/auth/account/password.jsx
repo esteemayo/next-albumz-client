@@ -38,10 +38,6 @@ const UpdatePassword = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
 
-  const handleOpenModal = useCallback(() => {
-    setShowModal(false);
-  }, []);
-
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
 
