@@ -7,7 +7,7 @@ const DialogBox = ({ isOpen, children }) => {
   const dialogClasses = useMemo(() => {
     return isOpen ?
       `${styles.dialog} ${styles.show}` :
-      {styles.dialog};
+      styles.dialog;
   }, [isOpen]);
 
   return (
