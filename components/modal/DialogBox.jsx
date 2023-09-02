@@ -7,10 +7,10 @@ const DialogBox = ({ isOpen, children }) => {
   const [showModal, setShowModal] = useState(isOpen);
 
   const dialogClasses = useMemo(() => {
-    return isOpen ?
+    return showModal ?
       `${styles.dialog} ${styles.show}` :
       styles.dialog;
-  }, [isOpen]);
+  }, [showModal]);
 
   useEffect(() => {
     setShowModal(isOpen);
