@@ -27,6 +27,7 @@ import styles from '@/styles/UpdatePassword.module.scss';
 
 const UpdatePassword = () => {
   const dispatch = useDispatch();
+  const { isOpen, onOpen, onClose } = useDialogBox();
   const { user, isError, isLoading, message } = useSelector((state) => ({ ...state.auth }));
 
   const [password, setPassword] = useState('');
