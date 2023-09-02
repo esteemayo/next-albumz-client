@@ -27,10 +27,10 @@ const Genres = ({ genres }) => {
   const [genreId, setGenreId] = useState(null);
   const [genreList, setGenreList] = useState(genres);
 
-  const handleOpen = useCallback((genreId) => {
+  const handleOpen = useCallback(() => {
     dialogBox.onOpen();
     setGenreId(genreId);
-  }, [dialogBox]);
+  }, [dialogBox, genreId]);
 
   const handleDelete = useCallback(async (genreId) => {
     try {
