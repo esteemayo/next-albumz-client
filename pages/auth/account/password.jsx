@@ -19,6 +19,8 @@ import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
 
 import { parseCookie } from '@/utils/index';
+import { useDialogBox } from '@/hooks/useDialogBox';
+
 import { reset, updateUserPassword } from '@/features/auth/authSlice';
 
 import styles from '@/styles/UpdatePassword.module.scss';
