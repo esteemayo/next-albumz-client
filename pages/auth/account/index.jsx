@@ -1,7 +1,5 @@
-import { toast } from 'react-toastify';
-import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import { useDispatch, useSelector } from 'react-redux';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import { toast } from 'react-toastify';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import Meta from '@/components/Meta';
