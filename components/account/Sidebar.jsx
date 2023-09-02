@@ -2,22 +2,16 @@ import Image from 'next/image';
 import PropTypes from 'prop-types';
 
 import MenuItems from './MenuItems';
+import AccountInfo from './AccountInfo';
 
 const Sidebar = ({ avatar, currentUser, styles }) => {
   return (
     <div className={styles.left}>
-      <div className={styles.userContainer}>
-        <div className={styles.imageContainer}>
-          <Image
-            src={avatar}
-            width={80}
-            height={80}
-            objectFit='cover'
-            alt={currentUser?.username}
-          />
-        </div>
-        <h2 className={styles.userName}>{currentUser?.name}</h2>
-      </div>
+      <AccountInfo
+        src={avatar}
+        currentUser={currentUser}
+        styles={styles}
+      />
       <MenuItems styles={styles} />
     </div>
   );
