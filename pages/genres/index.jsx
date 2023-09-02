@@ -116,18 +116,14 @@ const Genres = ({ genres }) => {
       {!!user && (
         <AddButton
           text='New genre'
-          onClick={handleOpen}
+          onClick={genreModal.onOpen}
         />
       )}
-      {open && (
-        <Modal onClose={handleCancel}>
-          <GenreForm
-            type='genre'
-            onClose={handleCancel}
-            setGenreList={setGenreList}
-          />
-        </Modal>
-      )}
+      <GenreModal
+        isOpen={genreModal.isOpen}
+        onClose={genreModal.onClose}
+        onAction={setGenreList}
+      />
       {!showModal && (
         <DialogBox>
           <DeleteAlbumGenre
