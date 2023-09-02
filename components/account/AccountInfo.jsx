@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import PropTypes from 'prop-types';
-
 import Avatar from './Avatar';
 
 const AccountInfo = ({ src, currentUser, styles }) => {
