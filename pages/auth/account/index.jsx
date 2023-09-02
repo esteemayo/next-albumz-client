@@ -113,6 +113,13 @@ const Account = () => {
     }
   }, [file, formInputs, emptyFieldCheck, dispatch]);
 
+  const userAvatar = useMemo(() => {
+    return file ?
+      URL.createObjectURL(file) :
+      user?.avatar ? user?.avatar :
+      !user?.avatar ? '/img/user-default.jpg' : '';
+  }, [file, user]);
+
   useEffect(() => {
     isError && toast.error(message);
     dispatch(reset());
@@ -128,7 +135,7 @@ const Account = () => {
             <div className={styles.userContainer}>
               <div className={styles.imageContainer}>
                 <Image
-                  src={file ? URL.createObjectURL(file) : user?.avatar ? user?.avatar : !user?.avatar ? '/img/user-default.jpg' : ''}
+                  src={userAvatar}
                   width={80}
                   height={80}
                   objectFit='cover'
