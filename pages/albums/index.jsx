@@ -74,7 +74,7 @@ const Albums = ({
         {!!user && (
           <AddButton
             text='New album'
-            onClick={handleOpen}
+            onClick={onOpen}
           />
         )}
         <AlbumModal
