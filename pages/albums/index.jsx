@@ -29,6 +29,7 @@ const Albums = ({
   total,
   numberOfPages,
 }) => {
+  const { isOpen, onOpen, onClose } = useAlbumModal();
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const [showModal, setShowModal] = useState(false);
