@@ -10,6 +10,7 @@ import AddButton from '@/components/button/AddButton';
 import Modal from '@/components/modal/Modal';
 import GenreModal from '@/components/modal/GenreModal';
 import DialogBox from '@/components/modal/DialogBox';
+import DeleteGenreModal from '@/components/modal/DeleteGenreModal';
 
 import Meta from '@/components/Meta';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
