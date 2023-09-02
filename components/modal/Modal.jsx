@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 
 import styles from '@/styles/Modal.module.scss';
 
