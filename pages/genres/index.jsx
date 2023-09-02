@@ -24,6 +24,7 @@ import { getGenres, deleteGenre } from '@/services/genreService';
 import styles from '@/styles/Genres.module.scss';
 
 const Genres = ({ genres }) => {
+  const dialogBox = useDialogBox();
   const genreModal = useGenreModal();
   const { user } = useSelector((state) => ({ ...state.auth }));
 
