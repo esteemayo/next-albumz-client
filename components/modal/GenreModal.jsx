@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import Modal from './Modal';
 import GenreForm from '../form/GenreForm';
 
