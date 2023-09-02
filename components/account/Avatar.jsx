@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
-const Avatar = ({ src, styles, alt }) => {
+const Avatar = ({ alt, src, styles }) => {
   return (
     <div className={styles.imageContainer}>
       <Image
@@ -16,9 +16,9 @@ const Avatar = ({ src, styles, alt }) => {
 };
 
 Avatar.propTypes = {
+  alt: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
   styles: PropTypes.object.isRequired,
-  alt: PropTypes.string.isRequired,
 };
 
 export default Avatar;
