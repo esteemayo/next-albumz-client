@@ -77,12 +77,12 @@ const Albums = ({
             onClick={onOpen}
           />
         )}
-        <AlbumModal
-          genres={genres}
-          isOpen={isOpen}
-          onClose={onClose}
-        />
       </main>
+      <AlbumModal
+        genres={genres}
+        isOpen={isOpen}
+        onClose={onClose}
+      />
     </ClientOnly>
   );
 };
