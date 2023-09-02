@@ -34,10 +34,6 @@ const Albums = ({
   const [showModal, setShowModal] = useState(false);
   const [albumList, setAlbumList] = useState(albums);
 
-  const handleOpen = useCallback(() => {
-    setShowModal(true);
-  }, []);
-
   useEffect(() => {
     (async () => {
       try {
