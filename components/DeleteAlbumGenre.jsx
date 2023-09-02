@@ -3,7 +3,12 @@ import { useCallback } from 'react';
 
 import styles from '@/styles/DeleteAlbumGenre.module.scss';
 
-const DeleteGenreAlbum = ({ title, actionId, onAction, onClose}) => {
+const DeleteGenreAlbum = ({
+  title,
+  actionId,
+  onAction,
+  onClose,
+}) => {
   const handleDelete = useCallback(async () => {
     onAction?.(actionId);
     onClose();
