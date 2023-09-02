@@ -9,7 +9,6 @@ import { toast } from 'react-toastify';
 import AddButton from '@/components/button/AddButton';
 import Modal from '@/components/modal/Modal';
 import DialogBox from '@/components/modal/DialogBox';
-import GenreForm from '@/components/form/GenreForm';
 import GenreModal from '@/components/modal/GenreModal';
 
 import Meta from '@/components/Meta';
