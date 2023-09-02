@@ -1,10 +1,9 @@
 import { useCallback, useState } from 'react';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
-import Moment from 'react-moment';
 import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
-import PropTypes from 'prop-types';
+import Moment from 'react-moment';
 import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
 
 import GenreModal from '@/components/modal/GenreModal';
 import DeleteAlbumGenreModal from '@/components/modal/DeleteAlbumGenreModal';
