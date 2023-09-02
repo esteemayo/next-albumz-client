@@ -24,7 +24,7 @@ const DashboardCard = dynamic(() => import('@/components/card/DashboardCard'), {
 
 const Dashboard = ({ albums, genres }) => {
   const dialogBox = useDialogBox();
-  const { isOpen, onOpen, onClose } = useAlbumModal();
+  const albumModal = useAlbumModal();
 
   const [albumId, setAlbumId] = useState(null);
   const [albumList, setAlbumList] = useState(albums);
@@ -60,12 +60,12 @@ const Dashboard = ({ albums, genres }) => {
       </section>
       <AddButton
         text='New album'
-        onClick={onOpen}
+        onClick={albumModal.onOpen}
       />
       <AlbumModal
         genres={genres}
-        isOpen={isOpen}
-        onClose={onClose}
+        isOpen={albumModal.isOpen}
+        onClose={albumModal.onClose}
       />
       <DeleteAlbumGenreModal
         isOpen={dialogBox.isOpen}
