@@ -1,7 +1,7 @@
 import Modal from './Modal';
 import AlbumForm from '../form/AlbumForm';
 
-const AlbumModal = ({ genres, onClose }) => {
+const AlbumModal = ({ genres, isOpen, onClose }) => {
   return (
     <Modal onClose={onClose}>
       <AlbumForm
