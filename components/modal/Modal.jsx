@@ -13,10 +13,10 @@ const Modal = ({ isOpen, onClose, children }) => {
   }, [onClose]);
 
   const overlayClasses = useMemo(() => {
-    return isOpen ?
+    return showModal ?
       `${styles.overlay} ${styles.show}` :
       styles.overlay;
-  }, [isOpen]);
+  }, [showModal]);
 
   const modalClasses = useMemo(() => {
     return children.props.type === 'genre' ?
