@@ -16,6 +16,7 @@ import ClientOnly from '@/components/ClientOnly';
 import FormInput from '@/components/form/FormInput';
 import FormChipInput from '@/components/form/FormChipInput';
 import Sidebar from '@/components/account/Sidebar';
+import AccountData from '@/components/account/AccountData';
 import FormButton from '@/components/form/FormButton';
 
 import { parseCookie } from '@/utils/index';
@@ -142,75 +143,23 @@ const Account = () => {
             currentUser={currentUser}
             styles={styles}
           />
-          <div className={styles.right}>
-            <h2 className={styles.accountHeader}>Profile</h2>
-            <div className={styles.formWrapper}>
-              <form onSubmit={handleSubmit} className={styles.form}>
-                <FormInput
-                  name='name'
-                  placeholder='Name'
-                  value={name || ''}
-                  onChange={handleChange}
-                >
-                  <PersonOutlinedIcon className={styles.form__icon} />
-                </FormInput>
-                {!currentUser?.fromGoogle && (
-                  <FormInput
-                  name='email'
-                  placeholder='Email Address'
-                  value={email || ''}
-                  onChange={handleChange}
-                  >
-                    <EmailOutlinedIcon className={styles.form__icon} />
-                  </FormInput>
-                )}
-                <FormInput
-                  name='username'
-                  placeholder='Username'
-                  value={username}
-                  onChange={handleChange}
-                >
-                  <FaceOutlinedIcon className={styles.form__icon} />
-                </FormInput>
-                <FormInput
-                  name='location'
-                  placeholder='Location'
-                  value={location}
-                  onChange={handleChange}
-                >
-                  <LocationOnOutlinedIcon className={styles.form__icon} />
-                </FormInput>
-                <FormChipInput
-                  name='favGenres'
-                  placeholder='Favorite Genres'
-                  value={favGenres}
-                  onAdd={(genre) => handleAddFavGenre(genre)}
-                  onDelete={(genre) => handleDeleteFavGenre(genre)}
-                >
-                  <PianoOutlinedIcon className={styles.form__chipIcon} />
-                </FormChipInput>
-                <FormChipInput
-                  name='favArtists'
-                  placeholder='Favorite Artists'
-                  value={favArtists}
-                  onAdd={(artist) => handleAddFavArtist(artist)}
-                  onDelete={(artist) => handleDeleteFavArtist(artist)}
-                >
-                  <PlaylistAddCheckCircleOutlinedIcon className={styles.form__chipIcon} />
-                </FormChipInput>
-                <FormInput
-                  type='file'
-                  onChange={(e) => setFile(e.target.files[0])}
-                >
-                  <FileUploadOutlinedIcon className={styles.form__icon} />
-                </FormInput>
-                <FormButton
-                  text='Save'
-                  disabled={isLoading}
-                />
-              </form>
-            </div>
-          </div>
+          <AccountData
+            name={name}
+            email={email}
+            username={username}
+            location={location}
+            favGenres={favGenres}
+            favArtists={favArtists}
+            currentUser={currentUser}
+            disabled={isLoading}
+            onChange={handleChange}
+            onUpload={handleFile}
+            onSubmit={handleSubmit}
+            onAddArtist={handleAddFavArtist}
+            onAddGenre={handleAddDeleteArtist}
+            onDeleteArtist={handleAddFavGenre}
+            onDeleteGenre={handleDeleteFavGenre}
+          />
         </div>
       </section>
     </ClientOnly>
