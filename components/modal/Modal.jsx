@@ -19,6 +19,10 @@ const Modal = ({ isOpen, onClose, children }) => {
       `${styles.modal__body}`;
   }, [children.props.type]);
 
+  useEffect(() => {
+    setShowModal(isOpen);
+  }, [isOpen]);
+
   return (
     <aside className={isOpen ? `${styles.overlay} ${styles.show}`: styles.overlay}>
       <div className={styles.container}>
