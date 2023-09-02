@@ -8,6 +8,7 @@ import DialogBox from '@/components/modal/DialogBox';
 
 import AlbumForm from '@/components/form/AlbumForm';
 import AddButton from '@/components/button/AddButton';
+import AlbumModal from '@/components/modal/AlbumModal';
 
 import Meta from '@/components/Meta';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
