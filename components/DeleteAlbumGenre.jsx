@@ -9,7 +9,9 @@ const DeleteGenreAlbum = ({
   onAction,
   onClose,
 }) => {
-  const handleDelete = useCallback(async () => {
+  const handleDelete = useCallback(async (e) => {
+    e.stopPropagation();
+
     onAction?.(actionId);
     onClose();
   }, [onClose]);
