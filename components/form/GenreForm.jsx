@@ -10,7 +10,7 @@ import { createGenre } from '@/services/genreService';
 
 import styles from '@/styles/Form.module.scss';
 
-const GenreForm = ({ onClose, setGenreList }) => {
+const GenreForm = ({ onClose, onAction }) => {
   const { reload } = useRouter();
 
   const [name, setName] = useState(null);
@@ -32,7 +32,7 @@ const GenreForm = ({ onClose, setGenreList }) => {
 
     try {
       const { data } = await createGenre({ name });
-      setGenreList((prev) => [data.genre, ...prev]);
+      onAction((prev) => [data.genre, ...prev]);
       onClose();
     } catch (err) {
       console.log(err);
@@ -70,7 +70,7 @@ const GenreForm = ({ onClose, setGenreList }) => {
 
 GenreForm.propTypes = {
   onClose: PropTypes.func.isRequired,
-  setGenreList: PropTypes.any.isRequired,
+  onAction: PropTypes.any.isRequired,
 };
 
 export default GenreForm;
