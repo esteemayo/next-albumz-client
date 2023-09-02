@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import PropTypes from 'prop-types';
+
 import MenuItems from './MenuItems';
 
 const Sidebar = ({ avatar, currentUser, styles }) => {
