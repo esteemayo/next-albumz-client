@@ -6,7 +6,6 @@ import { toast } from 'react-toastify';
 import Modal from '@/components/modal/Modal';
 import DialogBox from '@/components/modal/DialogBox';
 
-import AlbumForm from '@/components/form/AlbumForm';
 import AddButton from '@/components/button/AddButton';
 import AlbumModal from '@/components/modal/AlbumModal';
 
