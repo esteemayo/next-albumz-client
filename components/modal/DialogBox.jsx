@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import styles from '@/styles/DialogBox.module.scss';
 
 const DialogBox = ({ isOpen, children }) => {
+  const [showModal, setShowModal] = useState(isOpen);
+
   const dialogClasses = useMemo(() => {
     return isOpen ?
       `${styles.dialog} ${styles.show}` :
