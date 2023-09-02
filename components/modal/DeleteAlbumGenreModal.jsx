@@ -25,7 +25,7 @@ const DeleteAlbumGenreModal = ({
 DeleteAlbumGenreModal.propTypes = {
   isOPen: PropTypes.bool,
   actionId: PropTypes.string.isRequired,
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
   onAction: PropTypes.func.isRequired,
 };
