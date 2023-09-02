@@ -118,16 +118,13 @@ const Genres = ({ genres }) => {
         onClose={genreModal.onClose}
         onAction={setGenreList}
       />
-      {!showModal && (
-        <DialogBox>
-          <DeleteAlbumGenre
-            actionId={genreId}
-            title='Discard genre?'
-            onClose={handleCloseModal}
-            onAction={handleDelete}
-          />
-        </DialogBox>
-      )}
+      <DeleteGenreModal
+        isOpen={dialogBox.isOpen}
+        actionId={genreId}
+        title='Discard genre?'
+        onClose={dialogBox.onClose}
+        onAction={handleDelete}
+      />
     </ClientOnly>
   );
 };
