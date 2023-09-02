@@ -30,7 +30,6 @@ const Dashboard = ({ albums, genres }) => {
   const [albumList, setAlbumList] = useState(albums);
   const [albumId, setAlbumId] = useState(null);
   const [showModal, setShowModal] = useState(true);
-  const [isOpen, setIsOpen] = useState(true);
 
   const handleOpenModal = useCallback((albumId) => {
     setShowModal(false);
