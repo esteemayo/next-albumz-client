@@ -22,6 +22,7 @@ const DialogBox = ({ isOpen, children }) => {
 };
 
 DialogBox.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
   children: PropTypes.any.isRequired,
 };
 
