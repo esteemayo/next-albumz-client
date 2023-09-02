@@ -12,9 +12,8 @@ import GenreModal from '@/components/modal/GenreModal';
 
 import AddButton from '@/components/button/AddButton';
 
-import ClientOnly from '@/components/ClientOnly';
 import Meta from '@/components/Meta';
-import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
+import ClientOnly from '@/components/ClientOnly';
 
 import { useDialogBox } from '@/hooks/useDialogBox';
 import { useGenreModal } from '@/hooks/useGenreModal';
