@@ -5,6 +5,8 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import { useRouter } from 'next/router';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 
+import MenuItem from './MenuItem';
+
 const MenuItems = ({ styles }) => {
   const { pathname } = useRouter();
 
@@ -13,24 +15,27 @@ const MenuItems = ({ styles }) => {
 
   return (
     <ul className={styles.list}>
-      <li className={pathname === '/auth/account' ? activeLink : inactiveLink}>
-        <HomeOutlinedIcon className={styles.itemIcon} />
-        <Link href='/auth/account' passHref>
-          <a className={styles.itemLink}>Account</a>
-        </Link>
-      </li>
-      <li className={pathname.includes('/password') ? activeLink : inactiveLink}>
-        <KeyOutlinedIcon className={styles.itemIcon} />
-        <Link href='/auth/account/password' passHref>
-          <a className={styles.itemLink}>Password</a>
-        </Link>
-      </li>
-      <li className={pathname.includes('/users/dashboard') ? activeLink : inactiveLink}>
-        <DashboardOutlinedIcon className={styles.itemIcon} />
-        <Link href='/users/dashboard' passHref>
-          <a className={styles.itemLink}>Dashboard</a>
-        </Link>
-      </li>
+      <MenuItem
+        url='/auth/account'
+        icon={HomeOutlinedIcon}
+        label='Account'
+        styles={styles}
+        className={pathname === '/auth/account' ? activeLink : inactiveLink}
+      />
+      <MenuItem
+        url='/auth/account/password'
+        icon={KeyOutlinedIcon}
+        label='Password'
+        styles={styles}
+        className={pathname.includes('/password') ? activeLink : inactiveLink}
+      />
+      <MenuItem
+        url='/users/dashboard'
+        icon={DashboardOutlinedIcon}
+        label='Dashboard'
+        styles={styles}
+        className={pathname.includes('/users/dashboard') ? activeLink : inactiveLink}
+      />
     </ul>
   );
 };
