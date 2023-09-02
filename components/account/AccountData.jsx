@@ -14,12 +14,7 @@ import FormButton from '@/components/form/FormButton';
 import styles from '@/styles/Account.module.scss';
 
 const AccountData = ({
-  name,
-  email,
-  username,
-  location,
-  favGenres,
-  favArtists,
+  values,
   currentUser,
   disabled,
   onChange,
@@ -30,6 +25,14 @@ const AccountData = ({
   onDeleteArtist,
   onDeleteGenre,
 }) => {
+  const {
+    name,
+    username,
+    email,
+    location,
+    favGenres,
+    favArtists,
+   } = values;
   return (
     <div className={styles.right}>
       <h2 className={styles.accountHeader}>Profile</h2>
@@ -104,12 +107,7 @@ const AccountData = ({
 };
 
 AccountData.propTypes = {
-  name: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  favGenres: PropTypes.array.isRequired,
-  favArtists: PropTypes.array.isRequired,
+  values: PropTypes.object.isRequired,
   currentUser: PropTypes.object.isRequired,
   disabled: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,

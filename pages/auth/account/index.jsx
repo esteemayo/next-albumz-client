@@ -144,12 +144,7 @@ const Account = () => {
             styles={styles}
           />
           <AccountData
-            name={name}
-            email={email}
-            username={username}
-            location={location}
-            favGenres={favGenres}
-            favArtists={favArtists}
+            values={formInputs}
             currentUser={currentUser}
             disabled={isLoading}
             onChange={handleChange}
