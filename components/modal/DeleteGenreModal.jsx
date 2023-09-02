@@ -23,7 +23,7 @@ const DeleteGenreModal = ({
 };
 
 DeleteGenreModal.propTypes = {
-  isOPen: PropTypes.bool.isRequired,
+  isOPen: PropTypes.bool,
   actionId: PropTypes.string.isRequired,
   title: PropTypes.string,
   onClose: PropTypes.func.isRequired,
