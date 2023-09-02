@@ -11,6 +11,7 @@ import AlbumModal from '@/components/modal/AlbumModal';
 
 import Meta from '@/components/Meta';
 import DeleteAlbumGenre from '@/components/DeleteAlbumGenre';
+import DeleteAlbumGenreModal from '@/components/modal/DeleteAlbumGenreModal';
 import ClientOnly from '@/components/ClientOnly';
 
 import { getAllGenres } from '@/services/genreService';
