@@ -76,6 +76,10 @@ const Account = () => {
     }));
   }, []);
 
+  const handleFile = useCallback((e) => {
+    setFile(e.target.files[0]);
+  }, []);
+
   const emptyFieldCheck = Object.values(formInputs).some((item) => item === '');
 
   const { 
