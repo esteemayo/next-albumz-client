@@ -14,6 +14,7 @@ import DeactivateAccount from '@/components/account/DeactivateAccount';
 import FormButton from '@/components/form/FormButton';
 import DeleteAccountModal from '@/components/modal/DeleteAccountModal';
 import Sidebar from '@/components/account/Sidebar';
+import AccountPassword from '@/components/account/AccountPassword';
 
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
@@ -25,6 +26,12 @@ import { reset, updateUserPassword } from '@/features/auth/authSlice';
 
 import styles from '@/styles/UpdatePassword.module.scss';
 
+const initialState = {
+  password: '',
+  confirmPassword: '',
+  currentPassword: '',
+};
+
 const UpdatePassword = () => {
   const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDialogBox();
@@ -35,6 +42,8 @@ const UpdatePassword = () => {
     message,
   } = useSelector((state) => ({ ...state.auth }));
 
+  const [values, setValues] = useState(initialState);
+
   const [confirmPassword, setConfirmPassword] = useState('');
   const [password, setPassword] = useState('');
   const [currentPassword, setCurrentPassword] = useState('');
@@ -43,6 +52,23 @@ const UpdatePassword = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
+
+  const handleChange = useCallback(({ target: input }) => {
+    const { name, value } = input;
+    setValues((prev) => ({ ...prev, [name]: value }));
+  }, []);
+
+  const togglePassword = useCallback(() => {
+    setShowPassword((value) => !value);
+  }, []);
+  
+  const toggleConfirmPassword = useCallback(() => {
+    setShowConfirmPassword((value) => !value);
+  }, []);
+
+  const toggleCurrentPassword = useCallback(() => {
+    setShowCurrentPassword((value) => !value);
+  }, []);
 
   const handleClear = useCallback(() => {
     setPassword('');
@@ -54,22 +80,12 @@ const UpdatePassword = () => {
     e.preventDefault();
 
     const userData = {
-      password,
-      confirmPassword,
-      currentPassword,
+      ...values,
     };
 
     dispatch(updateUserPassword({ userData, toast }));
     handleClear();
-  }, 
-    [
-      password,
-      confirmPassword,
-      currentPassword,
-      handleClear,
-      dispatch,
-    ]
-  );
+  }, [handleClear, dispatch]);
 
   const userAvatar = useMemo(() => {
     return currentUser?.avatar ?? '/img/user-default.jpg';
@@ -91,79 +107,20 @@ const UpdatePassword = () => {
             currentUser={currentUser}
             styles={styles}
           />
-          <div className={styles.right}>
-            {!currentUser?.fromGoogle && (
-              <>
-                <h2 className={styles.accountHeader}>Password</h2>
-                <div className={styles.formWrapper}>
-                  <form onSubmit={handleSubmit} className={styles.form}>
-                    <FormInput
-                      value={currentPassword}
-                      type={showCurrentPassword ? 'text' : 'password'}
-                      placeholder='Current Password'
-                      onChange={(e) => setCurrentPassword(e.target.value)}
-                    >
-                      {showCurrentPassword ? (
-                        <VisibilityOff
-                          onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                          className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                          />
-                      ) : (
-                        <Visibility
-                          onClick={() => setShowCurrentPassword(!showCurrentPassword)}
-                          className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                        />
-                      )}
-                    </FormInput>
-                    <FormInput
-                      value={password}
-                      type={showPassword ? 'text' : 'password'}
-                      placeholder='Password'
-                      onChange={(e) => setPassword(e.target.value)}
-                    >
-                      {showPassword ? (
-                        <VisibilityOff
-                          onClick={() => setShowPassword(!showPassword)}
-                          className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                          />
-                      ) : (
-                        <Visibility
-                          onClick={() => setShowPassword(!showPassword)}
-                          className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                        />
-                      )}
-                    </FormInput>
-                    <FormInput
-                      value={confirmPassword}
-                      type={showConfirmPassword ? 'text' : 'password'}
-                      placeholder='Confirm Password'
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                    >
-                      {showConfirmPassword ? (
-                        <VisibilityOff
-                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                          className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                          />
-                      ) : (
-                        <Visibility
-                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                          className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                        />
-                      )}
-                    </FormInput>
-                    <FormButton
-                      text='Update password'
-                      disabled={isLoading}
-                    />
-                  </form>
-                </div>
-              </>
-            )}
-            <DeactivateAccount
-              onOpen={onOpen}
-              disabled={isLoading}
-            />
-          </div>
+          <AccountPassword
+            values={values}
+            currentUser={currentUser}
+            isPassword={showPassword}
+            isConfirm={showConfirmPassword}
+            isCurrent={showCurrentPassword}
+            disabled={isLoading}
+            onOpen={onOpen}
+            onTogglePassword={togglePassword}
+            onToggleConfirmPassword={toggleConfirmPassword}
+            onToggleCurrentPassword={toggleCurrentPassword}
+            onChange={handleChange}
+            onSubmit={handleSubmit}
+          />
         </div>
       </section>
       <DeleteAccountModal
