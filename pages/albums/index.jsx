@@ -86,15 +86,11 @@ const Albums = ({
             onClick={handleOpen}
           />
         )}
-        {showModal && (
-          <Modal onClose={handleClose}>
-            <AlbumForm
-              genres={genres}
-              onClose={handleClose}
-              setAlbumList={setAlbumList}
-            />
-          </Modal>
-        )}
+        <AlbumModal
+          genres={genres}
+          isOpen={isOpen}
+          onClose={onClose}
+        />
       </main>
     </ClientOnly>
   );
