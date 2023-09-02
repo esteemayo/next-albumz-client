@@ -136,6 +136,7 @@ const Account = () => {
           <Sidebar
             avatar={userAvatar}
             currentUser={currentUser}
+            styles={styles}
           />
           <div className={styles.right}>
             <h2 className={styles.accountHeader}>Profile</h2>
