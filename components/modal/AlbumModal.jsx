@@ -6,6 +6,7 @@ const AlbumModal = ({ genres, isOpen, onClose }) => {
     <Modal onClose={onClose}>
       <AlbumForm
         genres={genres}
+        isOpen={isOpen}
         onClose={onClose}
       />
     </Modal>
