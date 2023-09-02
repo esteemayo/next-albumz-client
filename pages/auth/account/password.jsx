@@ -13,6 +13,7 @@ import DeleteAccount from '@/components/account/DeleteAccount';
 import FormInput from '@/components/form/FormInput';
 import DeactivateAccount from '@/components/account/DeactivateAccount';
 import DialogBox from '@/components/modal/DialogBox';
+import DeleteAccountModal from '@/components/modal/DeleteAccountModal';
 import FormButton from '@/components/form/FormButton';
 
 import Meta from '@/components/Meta';
