@@ -1,17 +1,14 @@
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import { toast } from 'react-toastify';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { useDispatch, useSelector } from 'react-redux';
-import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
-import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import Image from 'next/image';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
-import PianoOutlinedIcon from '@mui/icons-material/PianoOutlined';
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
+import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined';
 import PlaylistAddCheckCircleOutlinedIcon from '@mui/icons-material/PlaylistAddCheckCircleOutlined';
+import PianoOutlinedIcon from '@mui/icons-material/PianoOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
