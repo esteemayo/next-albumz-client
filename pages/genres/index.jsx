@@ -27,12 +27,12 @@ const Genres = ({ genres }) => {
   const [genreId, setGenreId] = useState(null);
   const [genreList, setGenreList] = useState(genres);
 
-  const handleOpen = useCallback(() => {
+  const handleOpen = useCallback((genreId) => {
     dialogBox.onOpen();
     setGenreId(genreId);
-  }, [dialogBox, genreId]);
+  }, [dialogBox]);
 
-  const handleDelete = useCallback(async (genreId) => {
+  const handleDelete = useCallback(async () => {
     try {
       await deleteGenre(genreId);
       setGenreList((prev) => prev.filter((item) => item._id !== genreId));
@@ -40,7 +40,7 @@ const Genres = ({ genres }) => {
     } catch (err) {
       console.log(err);
     }
-  }, []);
+  }, [genreId]);
   
   return (
     <ClientOnly>
