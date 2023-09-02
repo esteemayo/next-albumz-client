@@ -70,7 +70,7 @@ const Dashboard = ({ albums, genres }) => {
       <DeleteAlbumGenreModal
         isOpen={dialogBox.isOpen}
         actionId={albumId}
-        title='Discard genre?'
+        title='Discard album?'
         onClose={dialogBox.onClose}
         onAction={handleDelete}
       />
