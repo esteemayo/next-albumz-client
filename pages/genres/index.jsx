@@ -18,6 +18,7 @@ import ClientOnly from '@/components/ClientOnly';
 
 import { parseCookie } from '@/utils/index';
 import { getGenres, deleteGenre } from '@/services/genreService';
+import { useGenreModal } from '@/hooks/useGenreModal';
 
 import styles from '@/styles/Genres.module.scss';
 
