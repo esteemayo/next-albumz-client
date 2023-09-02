@@ -19,6 +19,7 @@ import ClientOnly from '@/components/ClientOnly';
 
 import FormInput from '@/components/form/FormInput';
 import FormChipInput from '@/components/form/FormChipInput';
+import Sidebar from '@/components/account/Sidebar';
 import FormButton from '@/components/form/FormButton';
 
 import { parseCookie } from '@/utils/index';
