@@ -15,6 +15,8 @@ import ClientOnly from '@/components/ClientOnly';
 import { getAlbums } from '@/services/albumService';
 import { getAllGenres } from '@/services/genreService';
 
+import { useAlbumModal } from '@/hooks/useAlbumModal';
+
 import styles from '@/styles/Albums.module.scss';
 
 const AlbumCard = dynamic(() => import('@/components/card/AlbumCard'), { ssr: false });
