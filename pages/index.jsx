@@ -41,12 +41,13 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
       {!!user && (
         <AddButton
           text='New album'
-          onClick={handleOpen}
+          onClick={onOpen}
         />
       )}
       <AlbumModal
+        isOpen={isOpen}
         genres={genres}
-        onClose={handleClose}
+        onClose={onClose}
       />
     </ClientOnly>
   );
