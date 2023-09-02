@@ -29,10 +29,6 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
     setShowModal(true);
   }, []);
 
-  const handleClose = useCallback(() => {
-    setShowModal(false);
-  }, []);
-
   return (
     <ClientOnly>
       <Hero />
