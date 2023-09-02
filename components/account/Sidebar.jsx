@@ -9,11 +9,6 @@ import { useRouter } from 'next/router';
 import MenuItems from './MenuItems';
 
 const Sidebar = ({ avatar, currentUser, styles }) => {
-  const { pathname } = useRouter();
-
-  const inactiveLink = styles.list__item;
-  const activeLink = `${inactiveLink} ${styles.active}`;
-
   return (
     <div className={styles.left}>
       <div className={styles.userContainer}>
