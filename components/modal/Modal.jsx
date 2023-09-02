@@ -35,7 +35,7 @@ const Modal = ({ isOpen, onClose, children }) => {
           <header className={styles.modal__header}>
             <div className={styles.modal__iconWrapper}>
               <CloseOutlinedIcon
-                onClick={onClose}
+                onClick={handleClose}
                 className={styles.modal__closeIcon}
               />
             </div>
