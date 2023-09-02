@@ -5,6 +5,9 @@ import Visibility from '@mui/icons-material/Visibility';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 
+import FormInput from '@/components/form/FormInput';
+import FormButton from '@/components/form/FormButton';
+
 import DeactivateAccount from './DeactivateAccount';
 
 import styles from '@/styles/UpdatePassword.module.scss';
