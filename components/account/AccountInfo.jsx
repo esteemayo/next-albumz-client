@@ -1,18 +1,16 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
+import Avatar from './Avatar';
+
 const AccountInfo = ({ src, currentUser, styles }) => {
   return (
     <div className={styles.userContainer}>
-      <div className={styles.imageContainer}>
-        <Image
-          src={src}
-          width={80}
-          height={80}
-          objectFit='cover'
-          alt={currentUser?.username}
-        />
-      </div>
+      <Avatar
+        src={src}
+        styles={styles}
+        alt={currentUser?.username}
+      />
       <h2 className={styles.userName}>{currentUser?.name}</h2>
     </div>
   );

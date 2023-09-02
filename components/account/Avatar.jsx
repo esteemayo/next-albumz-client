@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
-const Avatar = ({ src, styles, username }) => {
+const Avatar = ({ src, styles, alt }) => {
   return (
     <div className={styles.imageContainer}>
       <Image
@@ -9,7 +9,7 @@ const Avatar = ({ src, styles, username }) => {
         width={80}
         height={80}
         objectFit='cover'
-        alt={username}
+        alt={alt}
       />
     </div>
   );
@@ -18,7 +18,7 @@ const Avatar = ({ src, styles, username }) => {
 Avatar.propTypes = {
   src: PropTypes.string.isRequired,
   styles: PropTypes.object.isRequired,
-  username: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 export default Avatar;
