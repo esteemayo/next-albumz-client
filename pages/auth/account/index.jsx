@@ -29,16 +29,16 @@ import styles from '@/styles/Account.module.scss';
 
 const Account = () => {
   const dispatch = useDispatch();
-  const { user, isError, isLoading, message } = useSelector((state) => ({ ...state.auth }));
+  const { user: currentUser, isError, isLoading, message } = useSelector((state) => ({ ...state.auth }));
 
   const [file, setFile] = useState(null);
   const [formInputs, setFormInputs] = useState({
-    name: user?.name,
-    username: user?.username,
-    email: user?.email,
-    location: user?.location,
-    favGenres: user?.favGenres,
-    favArtists: user?.favArtists,
+    name: currentUser?.name,
+    username: currentUser?.username,
+    email: currentUser?.email,
+    location: currentUser?.location,
+    favGenres: currentUser?.favGenres,
+    favArtists: currentUser?.favArtists,
   });
 
   const handleChange = useCallback(({ target: input }) => {
@@ -116,9 +116,9 @@ const Account = () => {
   const userAvatar = useMemo(() => {
     return file ?
       URL.createObjectURL(file) :
-      user?.avatar ? user?.avatar :
-      !user?.avatar ? '/img/user-default.jpg' : '';
-  }, [file, user]);
+      currentUser?.avatar ? currentUser?.avatar :
+      !currentUser?.avatar ? '/img/user-default.jpg' : '';
+  }, [file, currentUser]);
 
   useEffect(() => {
     isError && toast.error(message);
