@@ -12,6 +12,10 @@ const DialogBox = ({ isOpen, children }) => {
       styles.dialog;
   }, [isOpen]);
 
+  useEffect(() => {
+    setShowModal(isOpen);
+  }, [isOpen]);
+
   return (
     <section className={dialogClasses}>
       <div className={styles.dialog__container}>
