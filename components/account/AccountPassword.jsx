@@ -5,6 +5,8 @@ import Visibility from '@mui/icons-material/Visibility';
 import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 
+import DeactivateAccount from './DeactivateAccount';
+
 import styles from '@/styles/UpdatePassword.module.scss';
 
 const AccountPassword = ({
@@ -14,6 +16,7 @@ const AccountPassword = ({
   isConfirm,
   isCurrent,
   disabled,
+  onOpen,
   onTogglePassword,
   onToggleConfirmPassword,
   onToggleCurrentPassword,
@@ -94,6 +97,10 @@ const AccountPassword = ({
           </div>
         </>
       )}
+      <DeactivateAccount
+        onOpen={onOpen}
+        disabled={disabled}
+      />
     </div>
   );
 };
@@ -105,6 +112,7 @@ AccountPassword.propTypes = {
   isConfirm: PropTypes.bool.isRequired,
   isCurrent: PropTypes.bool.isRequired,
   disabled: PropTypes.bool.isRequired,
+  onOpen: PropTypes.func.isRequired,
   onTogglePassword: PropTypes.func.isRequired,
   onToggleConfirmPassword: PropTypes.func.isRequired,
   onToggleCurrentPassword: PropTypes.func.isRequired,
