@@ -5,9 +5,7 @@ import Image from 'next/image';
 import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 import PropTypes from 'prop-types';
 
-import styles from '@/styles/Account.module.scss';
-
-const Sidebar = ({ avatar, currentUser }) => {
+const Sidebar = ({ avatar, currentUser, styles }) => {
   return (
     <div className={styles.left}>
       <div className={styles.userContainer}>
@@ -49,6 +47,7 @@ const Sidebar = ({ avatar, currentUser }) => {
 Sidebar.propTypes = {
   avatar: PropTypes.string.isRequired,
   currentUser: PropTypes.object.isRequired,
+  styles: PropTypes.any.isRequired,
 };
 
 export default Sidebar;

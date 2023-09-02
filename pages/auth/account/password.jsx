@@ -89,6 +89,7 @@ const UpdatePassword = () => {
           <Sidebar
             avatar={userAvatar}
             currentUser={currentUser}
+            styles={styles}
           />
           <div className={styles.right}>
             {!currentUser?.fromGoogle && (
