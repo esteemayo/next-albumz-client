@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import AddButton from '@/components/button/AddButton';
-import AlbumForm from '@/components/form/AlbumForm';
 import AlbumModal from '@/components/modal/AlbumModal';
 
 import Pagination from '@/components/Pagination';
