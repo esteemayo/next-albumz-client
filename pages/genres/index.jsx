@@ -7,8 +7,8 @@ import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 
 import GenreModal from '@/components/modal/GenreModal';
+import DeleteAlbumGenreModal from '@/components/modal/DeleteAlbumGenreModal';
 import AddButton from '@/components/button/AddButton';
-import DeleteGenreModal from '@/components/modal/DeleteGenreModal';
 
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
@@ -114,7 +114,7 @@ const Genres = ({ genres }) => {
         onClose={genreModal.onClose}
         onAction={setGenreList}
       />
-      <DeleteGenreModal
+      <DeleteAlbumGenreModal
         isOpen={dialogBox.isOpen}
         actionId={genreId}
         title='Discard genre?'
