@@ -12,10 +12,10 @@ const DeleteGenreModal = ({
   return (
     <DialogBox>
       <DeleteAlbumGenre
-        actionId={genreId}
-        title='Discard genre?'
-        onClose={handleCloseModal}
-        onAction={handleDelete}
+        actionId={actionId}
+        title={title}
+        onClose={onClose}
+        onAction={onAction}
       />
     </DialogBox>
   );
