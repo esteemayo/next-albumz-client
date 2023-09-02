@@ -122,7 +122,7 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
               />
               <FormSelectInput
                 name='genre'
-                text='Select genre'
+                text='Select a genre'
                 options={genres}
                 onChange={handleChange}
               />
