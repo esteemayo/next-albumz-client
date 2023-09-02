@@ -3,9 +3,8 @@ import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import AddButton from '@/components/button/AddButton';
-import AlbumForm from '@/components/form/AlbumForm';
-import AlbumModal from '@/components/modal/AlbumModal';
 import Hero from '@/components/hero/Hero';
+import AlbumModal from '@/components/modal/AlbumModal';
 
 import ClientOnly from '@/components/ClientOnly';
 import { useAlbumModal } from '@/hooks/useAlbumModal';
