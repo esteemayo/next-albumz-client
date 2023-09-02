@@ -87,7 +87,11 @@ const Genres = ({ genres }) => {
                       <Link href={`/genres/edit/${slug}`} passHref>
                         <a className={styles.btnUpdate}>Update</a>
                       </Link>
-                      <button className={styles.btnDelete} onClick={() => handleOpen(id)}>
+                      <button
+                        type='button'
+                        className={styles.btnDelete}
+                        onClick={() => handleOpen(id)}
+                       >
                         Delete
                       </button>
                     </td>
