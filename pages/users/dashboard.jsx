@@ -34,7 +34,7 @@ const Dashboard = ({ albums, genres }) => {
     setAlbumId(albumId);
   }, [dialogBox]);
 
-  const handleDelete = useCallback(async () => {
+  const handleDelete = useCallback(async (albumId) => {
     try {
       await deleteAlbum(albumId);
       setAlbumList((prev) => prev.filter((item) => item._id !== albumId));
@@ -42,7 +42,7 @@ const Dashboard = ({ albums, genres }) => {
     } catch (err) {
       console.log(err);
     }
-  }, [albumId]);
+  }, []);
   
   return (
     <ClientOnly>
