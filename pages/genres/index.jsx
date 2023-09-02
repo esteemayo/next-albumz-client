@@ -38,10 +38,6 @@ const Genres = ({ genres }) => {
     setGenreId(genreId);
   }, [dialogBox]);
 
-  const handleCloseModal = useCallback(() => {
-    setShowModal(true);
-  }, []);
-
   const handleDelete = useCallback(async (genreId) => {
     try {
       await deleteGenre(genreId);
