@@ -17,8 +17,10 @@ import ClientOnly from '@/components/ClientOnly';
 import { getAllGenres } from '@/services/genreService';
 import { deleteAlbum, getUserAlbums } from '@/services/albumService';
 
-import { parseCookie } from '@/utils/index';
+import { useDialogBox } from '@/hooks/useDialogBox';
 import { useAlbumModal } from '@/hooks/useAlbumModal';
+
+import { parseCookie } from '@/utils/index';
 
 import styles from '@/styles/Dashboard.module.scss';
 
