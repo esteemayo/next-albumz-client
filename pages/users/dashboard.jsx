@@ -42,7 +42,7 @@ const Dashboard = ({ albums, genres }) => {
     } catch (err) {
       console.log(err);
     }
-  }, [albumId]);
+  }, []);
   
   return (
     <ClientOnly>
