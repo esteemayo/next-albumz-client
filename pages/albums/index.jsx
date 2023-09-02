@@ -49,7 +49,9 @@ const Albums = ({
       <ClientOnly>
         <main className={styles.main}>
           <div className={styles.container}>
-            <h1 className={styles.errorMsg}>There are no albums in the database...</h1>
+            <h1 className={styles.errorMsg}>
+              There are no albums in the database...
+            </h1>
           </div>
         </main>
       </ClientOnly>
