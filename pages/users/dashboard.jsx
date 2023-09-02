@@ -10,11 +10,11 @@ import AlbumModal from '@/components/modal/AlbumModal';
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
 
-import { getAllGenres } from '@/services/genreService';
-import { deleteAlbum, getUserAlbums } from '@/services/albumService';
-
 import { useDialogBox } from '@/hooks/useDialogBox';
 import { useAlbumModal } from '@/hooks/useAlbumModal';
+
+import { getAllGenres } from '@/services/genreService';
+import { deleteAlbum, getUserAlbums } from '@/services/albumService';
 
 import { parseCookie } from '@/utils/index';
 
