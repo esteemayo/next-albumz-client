@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import DialogBox from './DialogBox';
 import DeleteAlbumGenre from '../DeleteAlbumGenre';
 
-const DeleteGenreModal = ({ actionId, title, onClose, onAction }) => {
+const DeleteGenreModal = ({
+  actionId,
+  title,
+  onClose,
+  onAction,
+}) => {
   return (
     <DialogBox>
       <DeleteAlbumGenre
