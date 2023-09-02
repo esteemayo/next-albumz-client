@@ -103,12 +103,10 @@ const Genres = ({ genres }) => {
           <h3 className={styles.notFound}>There are no genres available</h3>
         </section>
       )}
-      {!!user && (
-        <AddButton
-          text='New genre'
-          onClick={genreModal.onOpen}
-        />
-      )}
+      <AddButton
+        text='New genre'
+        onClick={genreModal.onOpen}
+      />
       <GenreModal
         isOpen={genreModal.isOpen}
         onClose={genreModal.onClose}
