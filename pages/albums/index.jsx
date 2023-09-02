@@ -28,7 +28,7 @@ const Albums = ({
   numberOfPages,
 }) => {
   const { isOpen, onOpen, onClose } = useAlbumModal();
-  const { user } = useSelector((state) => ({ ...state.auth }));
+  const { user: currentUser } = useSelector((state) => ({ ...state.auth }));
 
   const [albumList, setAlbumList] = useState(albums);
 
@@ -71,7 +71,7 @@ const Albums = ({
           setAlbumList={setAlbumList}
           numberOfPages={numberOfPages}
         />
-        {!!user && (
+        {!!currentUser && (
           <AddButton
             text='New album'
             onClick={onOpen}
