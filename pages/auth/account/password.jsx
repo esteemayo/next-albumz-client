@@ -42,10 +42,6 @@ const UpdatePassword = () => {
     setShowModal(false);
   }, []);
 
-  const handleCloseModal = useCallback(() => {
-    setShowModal(true);
-  }, []);
-
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
 
