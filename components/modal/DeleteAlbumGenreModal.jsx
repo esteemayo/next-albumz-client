@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import DialogBox from './DialogBox';
 import DeleteAlbumGenre from '../DeleteAlbumGenre';
 
-const DeleteGenreModal = ({
+const DeleteAlbumGenreModal = ({
   isOpen,
   actionId,
   title,
@@ -22,7 +22,7 @@ const DeleteGenreModal = ({
   );
 };
 
-DeleteGenreModal.propTypes = {
+DeleteAlbumGenreModal.propTypes = {
   isOPen: PropTypes.bool,
   actionId: PropTypes.string.isRequired,
   title: PropTypes.string,
@@ -30,4 +30,4 @@ DeleteGenreModal.propTypes = {
   onAction: PropTypes.func.isRequired,
 };
 
-export default DeleteGenreModal;
+export default DeleteAlbumGenreModal;
