@@ -18,6 +18,7 @@ import { getAllGenres } from '@/services/genreService';
 import { deleteAlbum, getUserAlbums } from '@/services/albumService';
 
 import { parseCookie } from '@/utils/index';
+import { useAlbumModal } from '@/hooks/useAlbumModal';
 
 import styles from '@/styles/Dashboard.module.scss';
 
