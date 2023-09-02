@@ -38,10 +38,6 @@ const Albums = ({
     setShowModal(true);
   }, []);
 
-  const handleClose = useCallback(() => {
-    setShowModal(false);
-  }, []);
-
   useEffect(() => {
     (async () => {
       try {
