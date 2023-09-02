@@ -45,8 +45,8 @@ const Home = ({ genres, reviews, featuredAlbums }) => {
         />
       )}
       <AlbumModal
-        isOpen={isOpen}
         genres={genres}
+        isOpen={isOpen}
         onClose={onClose}
       />
     </ClientOnly>
