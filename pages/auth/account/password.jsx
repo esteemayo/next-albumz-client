@@ -86,40 +86,10 @@ const UpdatePassword = () => {
       <section className={styles.account}>
         <h1 className={styles.account__heading}>Account settings</h1>
         <div className={styles.account__container}>
-          <div className={styles.left}>
-            <div className={styles.userContainer}>
-              <div className={styles.imageContainer}>
-                <Image
-                  src={userAvatar}
-                  width={80}
-                  height={80}
-                  objectFit='cover'
-                  alt={currentUser?.username}
-                />
-              </div>
-              <h2 className={styles.userName}>{currentUser?.name}</h2>
-            </div>
-            <ul className={styles.list}>
-              <li className={styles.list__item}>
-                <HomeOutlinedIcon className={styles.itemIcon} />
-                <Link href='/auth/account' passHref>
-                  <a className={styles.itemLink}>Account</a>
-                </Link>
-              </li>
-              <li className={`${styles.list__item} ${styles.active}`}>
-                <KeyOutlinedIcon className={styles.itemIcon} />
-                <Link href='/auth/account/password' passHref>
-                  <a className={styles.itemLink}>Password</a>
-                </Link>
-              </li>
-              <li className={styles.list__item}>
-                <DashboardOutlinedIcon className={styles.itemIcon} />
-                <Link href='/users/dashboard' passHref>
-                  <a className={styles.itemLink}>Dashboard</a>
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <Sidebar
+            avatar={userAvatar}
+            currentUser={currentUser}
+          />
           <div className={styles.right}>
             {!currentUser?.fromGoogle && (
               <>
