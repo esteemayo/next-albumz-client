@@ -23,6 +23,7 @@ import { useGenreModal } from '@/hooks/useGenreModal';
 import styles from '@/styles/Genres.module.scss';
 
 const Genres = ({ genres }) => {
+  const genreModal = useGenreModal();
   const { user } = useSelector((state) => ({ ...state.auth }));
 
   const [genreId, setGenreId] = useState(null);
