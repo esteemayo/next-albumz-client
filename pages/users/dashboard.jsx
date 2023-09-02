@@ -34,10 +34,10 @@ const Dashboard = ({ albums, genres }) => {
   const [albumId, setAlbumId] = useState(null);
   const [showModal, setShowModal] = useState(true);
 
-  const handleOpenModal = useCallback((albumId) => {
-    setShowModal(false);
+  const handleOpen = useCallback((albumId) => {
+    dialogBox.onOpen();
     setAlbumId(albumId);
-  }, []);
+  }, [dialogBox]);
 
   const handleCloseModal = useCallback((albumId) => {
     setShowModal(true);
@@ -63,7 +63,7 @@ const Dashboard = ({ albums, genres }) => {
         ): (
           <DashboardCard
             albums={albumList}
-            onOpen={handleOpenModal}
+            onOpen={handleOpen}
           />
         )}
       </section>
@@ -76,16 +76,13 @@ const Dashboard = ({ albums, genres }) => {
         isOpen={isOpen}
         onClose={onClose}
       />
-      {!showModal && (
-        <DialogBox>
-          <DeleteAlbumGenre
-            actionId={albumId}
-            title='Discard album?'
-            onClose={handleCloseModal}
-            onAction={handleDelete}
-          />
-        </DialogBox>
-      )}
+      <DeleteAlbumGenreModal
+        isOpen={dialogBox.isOpen}
+        actionId={albumId}
+        title='Discard genre?'
+        onClose={dialogBox.onClose}
+        onAction={handleDelete}
+      />
     </ClientOnly>
   );
 };
