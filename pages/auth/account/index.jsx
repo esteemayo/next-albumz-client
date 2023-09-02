@@ -156,8 +156,8 @@ const Account = () => {
             onUpload={handleFile}
             onSubmit={handleSubmit}
             onAddArtist={handleAddFavArtist}
-            onAddGenre={handleAddDeleteArtist}
-            onDeleteArtist={handleAddFavGenre}
+            onAddGenre={handleAddFavGenre}
+            onDeleteArtist={handleDeleteFavArtist}
             onDeleteGenre={handleDeleteFavGenre}
           />
         </div>
