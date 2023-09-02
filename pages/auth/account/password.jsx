@@ -189,17 +189,16 @@ const UpdatePassword = () => {
               </>
             )}
             <DeactivateAccount
+              onOpen={onOpen}
               disabled={isLoading}
-              onOpen={handleOpenModal}
             />
           </div>
         </div>
       </section>
-      {!showModal && (
-        <DialogBox>
-          <DeleteAccount onClose={handleCloseModal} />
-        </DialogBox>
-      )}
+      <DeleteAccountModal
+        isOpen={isOpen}
+        onClose={onClose}
+      />
     </ClientOnly>
   );
 };
