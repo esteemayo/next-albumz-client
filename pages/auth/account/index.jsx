@@ -177,7 +177,7 @@ const Account = () => {
                 >
                   <PersonOutlinedIcon className={styles.form__icon} />
                 </FormInput>
-                {!user?.fromGoogle && (
+                {!currentUser?.fromGoogle && (
                   <FormInput
                   name='email'
                   placeholder='Email Address'
