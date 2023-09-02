@@ -6,7 +6,7 @@ const AccountInfo = ({ src, currentUser, styles }) => {
     <div className={styles.userContainer}>
       <div className={styles.imageContainer}>
         <Image
-          src={avatar}
+          src={src}
           width={80}
           height={80}
           objectFit='cover'
