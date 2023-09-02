@@ -75,16 +75,13 @@ const Dashboard = ({ albums, genres }) => {
       </section>
       <AddButton
         text='New album'
-        onClick={handleOpen}
+        onClick={onOpen}
       />
-      {!isOpen && (
-        <Modal onClose={handleClose}>
-          <AlbumForm
-            genres={genres}
-            onClose={handleClose}
-          />
-        </Modal>
-      )}
+      <AlbumModal
+        genres={genres}
+        isOpen={isOpen}
+        onClose={onClose}
+      />
       {!showModal && (
         <DialogBox>
           <DeleteAlbumGenre
