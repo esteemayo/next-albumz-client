@@ -32,7 +32,7 @@ const Genres = ({ genres }) => {
   const [genreId, setGenreId] = useState(null);
   const [genreList, setGenreList] = useState(genres);
 
-  const handleOpenModal = useCallback((genreId) => {
+  const handleOpen = useCallback((genreId) => {
     dialogBox.onOpen();
     setGenreId(genreId);
   }, [dialogBox]);
@@ -87,7 +87,7 @@ const Genres = ({ genres }) => {
                       <Link href={`/genres/edit/${slug}`} passHref>
                         <a className={styles.btnUpdate}>Update</a>
                       </Link>
-                      <button className={styles.btnDelete} onClick={() => handleOpenModal(id)}>
+                      <button className={styles.btnDelete} onClick={() => handleOpen(id)}>
                         Delete
                       </button>
                     </td>
