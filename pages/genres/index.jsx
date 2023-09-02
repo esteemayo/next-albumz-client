@@ -31,10 +31,6 @@ const Genres = ({ genres }) => {
   const [genreList, setGenreList] = useState(genres);
   const [showModal, setShowModal] = useState(true);
 
-  const handleOpen = useCallback(() => {
-    setOpen(true);
-  }, []);
-
   const handleOpenModal = useCallback((genreId) => {
     setShowModal(false);
     setGenreId(genreId);
