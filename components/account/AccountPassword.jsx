@@ -80,7 +80,7 @@ const AccountPassword = ({
                 placeholder='Confirm Password'
                 onChange={onChange}
               >
-                {showConfirmPassword ? (
+                {isConfirm ? (
                   <VisibilityOff
                     onClick={onToggleConfirmPassword}
                     className={`${styles.form__icon} ${styles.form__iconPassword}`}
