@@ -10,12 +10,13 @@
   display: none;
   opacity: 0;
   visibility: hidden;
-  z-index: 3000;
-
+  z-index: -1;
+  
   &.show {
     display: block;
     opacity: 1;
     visibility: visible;
+    z-index: 3000;
   }
 
   .container {
