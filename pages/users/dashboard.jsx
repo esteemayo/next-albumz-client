@@ -30,9 +30,8 @@ const Dashboard = ({ albums, genres }) => {
   const dialogBox = useDialogBox();
   const { isOpen, onOpen, onClose } = useAlbumModal();
 
-  const [albumList, setAlbumList] = useState(albums);
   const [albumId, setAlbumId] = useState(null);
-  const [showModal, setShowModal] = useState(true);
+  const [albumList, setAlbumList] = useState(albums);
 
   const handleOpen = useCallback((albumId) => {
     dialogBox.onOpen();
