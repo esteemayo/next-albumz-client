@@ -39,10 +39,6 @@ const Dashboard = ({ albums, genres }) => {
     setAlbumId(albumId);
   }, [dialogBox]);
 
-  const handleCloseModal = useCallback((albumId) => {
-    setShowModal(true);
-  }, []);
-
   const handleDelete = useCallback(async (albumId) => {
     try {
       await deleteAlbum(albumId);
