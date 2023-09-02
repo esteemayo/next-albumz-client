@@ -7,6 +7,11 @@ import styles from '@/styles/Modal.module.scss';
 const Modal = ({ isOpen, onClose, children }) => {
   const [showModal, setShowModal] = useState(isOpen);
 
+  const handleClose = useCallback(() => {
+    setShowModal(false);
+    onClose();
+  }, [onClose]);
+
   const modalClasses = useMemo(() => {
     return children.props.type === 'genre' ?
       `${styles.modal} ${styles.modalGenre}` :
