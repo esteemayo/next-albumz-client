@@ -6,11 +6,9 @@ import TagOutlinedIcon from '@mui/icons-material/TagOutlined';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 
-import Modal from '@/components/modal/Modal';
-import DeleteGenreModal from '@/components/modal/DeleteGenreModal';
 import GenreModal from '@/components/modal/GenreModal';
-
 import AddButton from '@/components/button/AddButton';
+import DeleteGenreModal from '@/components/modal/DeleteGenreModal';
 
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
