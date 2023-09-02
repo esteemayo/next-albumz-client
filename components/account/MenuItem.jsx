@@ -6,7 +6,7 @@ const MenuItem = ({
   icon: Icon,
   label,
   styles,
-  ...rest,
+  ...rest
 }) => {
   return (
     <li {...rest}>
