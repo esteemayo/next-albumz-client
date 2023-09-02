@@ -24,7 +24,6 @@ import styles from '@/styles/Genres.module.scss';
 const Genres = ({ genres }) => {
   const dialogBox = useDialogBox();
   const genreModal = useGenreModal();
-  const { user } = useSelector((state) => ({ ...state.auth }));
 
   const [genreId, setGenreId] = useState(null);
   const [genreList, setGenreList] = useState(genres);
