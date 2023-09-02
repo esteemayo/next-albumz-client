@@ -15,4 +15,10 @@ const GenreModal = ({ isOpen, onClose, onAction }) => {
   );
 };
 
+GenreModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+  onAction: PropTypes.any.isRequired,
+};
+
 export default GenreModal;
