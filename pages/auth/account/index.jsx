@@ -29,7 +29,12 @@ import styles from '@/styles/Account.module.scss';
 
 const Account = () => {
   const dispatch = useDispatch();
-  const { user: currentUser, isError, isLoading, message } = useSelector((state) => ({ ...state.auth }));
+  const {
+    user: currentUser,
+    isError,
+    isLoading,
+    message,
+  } = useSelector((state) => ({ ...state.auth }));
 
   const [file, setFile] = useState(null);
   const [formInputs, setFormInputs] = useState({
