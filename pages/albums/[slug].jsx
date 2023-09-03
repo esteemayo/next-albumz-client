@@ -1,5 +1,5 @@
 import dynamic from 'next/dynamic';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { parseCookie } from '@/utils/index';
