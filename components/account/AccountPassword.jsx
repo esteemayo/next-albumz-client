@@ -103,7 +103,7 @@ const AccountPassword = ({
       )}
       <DeactivateAccount
         onOpen={onOpen}
-        disabled={disabled}
+        disabled={loading}
       />
     </div>
   );
