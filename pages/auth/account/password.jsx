@@ -5,9 +5,6 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useDispatch, useSelector } from 'react-redux';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import Image from 'next/image';
-import Visibility from '@mui/icons-material/Visibility';
-import DashboardOutlinedIcon from '@mui/icons-material/DashboardOutlined';
-import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 
 import DeactivateAccount from '@/components/account/DeactivateAccount';
 import DeleteAccountModal from '@/components/modal/DeleteAccountModal';
