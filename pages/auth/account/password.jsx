@@ -76,8 +76,13 @@ const UpdatePassword = () => {
   }, [currentUser]);
 
   const disabledBtn = useMemo(() => {
-    const { password, passwordConfirm, passwordCurrent} = values;
-    const disabled = !password || !passwordConfirm || !passwordCurrent || isLoading;
+    const { password, passwordConfirm, passwordCurrent } = values;
+    const disabled = (
+        password === '' ||
+        passwordConfirm === '' ||
+        passwordCurrent === '' ||
+        isLoading
+      );
     return !!disabled;
   }, [isLoading, values]);
 
@@ -85,8 +90,6 @@ const UpdatePassword = () => {
     isError && toast.error(message);
     dispatch(reset());
   }, [isError, message, dispatch]);
-
-  console.log(disabledBtn)
 
   return (
     <ClientOnly>
@@ -105,7 +108,7 @@ const UpdatePassword = () => {
             isPassword={showPassword}
             isConfirm={showConfirmPassword}
             isCurrent={showCurrentPassword}
-            disabled={isLoading}
+            disabled={disabledBtn}
             onOpen={onOpen}
             onTogglePassword={togglePassword}
             onToggleConfirmPassword={toggleConfirmPassword}
