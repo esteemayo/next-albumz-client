@@ -42,6 +42,7 @@ const SingleAlbum = ({ album, reviews }) => {
         />
         <ReviewForm
           albumId={album.id}
+          refetch={fetchReviews}
           setReviewList={setReviewList}
         />
         <Reviews
