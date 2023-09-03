@@ -68,10 +68,10 @@ const AccountPassword = ({
                     className={`${styles.form__icon} ${styles.form__iconPassword}`}
                   />
                 ) : (
-                   <Visibility
-                      onClick={onTogglePassword}
-                      className={`${styles.form__icon} ${styles.form__iconPassword}`}
-                    />
+                  <Visibility
+                    onClick={onTogglePassword}
+                    className={`${styles.form__icon} ${styles.form__iconPassword}`}
+                  />
                 )}
               </FormInput>
               <FormInput
