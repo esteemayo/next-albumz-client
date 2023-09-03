@@ -95,7 +95,10 @@ const UpdatePassword = () => {
     <ClientOnly>
       <Meta title='Account - Albumz Music Entertainment' />
       <section className={styles.account}>
-        <h1 className={styles.account__heading}>Account settings</h1>
+        <AccountHeading
+          styles={styles}
+          title='Account settings'
+        />
         <div className={styles.account__container}>
           <Sidebar
             avatar={userAvatar}
