@@ -5,8 +5,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
 
-import Sidebar from '@/components/account/Sidebar';
 import AccountData from '@/components/account/AccountData';
+import Sidebar from '@/components/account/Sidebar';
 import AccountHeading from '@/components/account/AccountHeading';
 
 import { parseCookie } from '@/utils/index';
