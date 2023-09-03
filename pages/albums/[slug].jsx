@@ -17,9 +17,13 @@ const AlbumDescription = dynamic(() => import ('@/components/albums/AlbumDescrip
 
 const SingleAlbum = ({ album, reviews }) => {
   const [singleAlbum, setSingleAlbum] = useState(album);
-  const [reviewList, setReviewList] = useState(reviews);
+  const [reviewList, setReviewList] = useState([]);
 
   const updateReviewOrder = useCallback((reviews) => {
+    setReviewList(reviews);
+  }, []);
+
+  useEffect(() => {
     setReviewList(reviews);
   }, []);
 
