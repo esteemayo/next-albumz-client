@@ -16,8 +16,8 @@ const AlbumHero = dynamic(() => import('@/components/hero/AlbumHero'));
 const AlbumDescription = dynamic(() => import ('@/components/albums/AlbumDescription'));
 
 const SingleAlbum = ({ album, reviews }) => {
-  const [singleAlbum, setSingleAlbum] = useState(album);
   const [reviewList, setReviewList] = useState([]);
+  const [singleAlbum, setSingleAlbum] = useState(album);
 
   const updateReviewOrder = useCallback((reviews) => {
     setReviewList(reviews);
