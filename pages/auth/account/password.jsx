@@ -11,7 +11,6 @@ import KeyOutlinedIcon from '@mui/icons-material/KeyOutlined';
 
 import FormInput from '@/components/form/FormInput';
 import DeactivateAccount from '@/components/account/DeactivateAccount';
-import FormButton from '@/components/form/FormButton';
 import DeleteAccountModal from '@/components/modal/DeleteAccountModal';
 import Sidebar from '@/components/account/Sidebar';
 import AccountPassword from '@/components/account/AccountPassword';
