@@ -57,9 +57,7 @@ const UpdatePassword = () => {
   }, []);
 
   const handleClear = useCallback(() => {
-    setPassword('');
-    setConfirmPassword('');
-    setCurrentPassword('');
+    setValues(initialState);
   }, []);
 
   const handleSubmit = useCallback((e) => {
@@ -87,6 +85,8 @@ const UpdatePassword = () => {
     isError && toast.error(message);
     dispatch(reset());
   }, [isError, message, dispatch]);
+
+  console.log(disabledBtn)
 
   return (
     <ClientOnly>
