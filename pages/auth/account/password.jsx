@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import DeleteAccountModal from '@/components/modal/DeleteAccountModal';
 import Sidebar from '@/components/account/Sidebar';
 import AccountPassword from '@/components/account/AccountPassword';
+import AccountHeading from '@/components/account/AccountHeading';
 
 import Meta from '@/components/Meta';
 import ClientOnly from '@/components/ClientOnly';
