@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { useDispatch, useSelector } from 'react-redux';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import Image from 'next/image';
 
 import DeactivateAccount from '@/components/account/DeactivateAccount';
 import DeleteAccountModal from '@/components/modal/DeleteAccountModal';
