@@ -8,7 +8,7 @@ import { createReview } from '@/services/albumService';
 
 import styles from '@/styles/ReviewForm.module.scss';
 
-const ReviewForm = ({ albumId, setReviewList }) => {
+const ReviewForm = ({ albumId, refetch, setReviewList }) => {
   const router = useRouter();
 
   const [rating, setRating] = useState(null);
