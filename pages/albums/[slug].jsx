@@ -50,32 +50,8 @@ const SingleAlbum = ({ album, reviews }) => {
 };
 
 SingleAlbum.propTypes = {
-  album: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    artist: PropTypes.string.isRequired,
-    info: PropTypes.string.isRequired,
-    year: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    tracks: PropTypes.number.isRequired,
-    ratingsAverage: PropTypes.number.isRequired,
-    ratingsQuantity: PropTypes.number.isRequired,
-    tags: PropTypes.array.isRequired,
-    featured: PropTypes.bool.isRequired,
-    user: PropTypes.object.isRequired,
-    likes: PropTypes.array.isRequired,
-    image: PropTypes.string.isRequired,
-    createdAt: PropTypes.string.isRequired,
-  }),
-  reviews: PropTypes.arrayOf(
-    PropTypes.shape({
-      rating: PropTypes.number.isRequired,
-      review: PropTypes.string.isRequired,
-      user: PropTypes.object.isRequired,
-      createdAt: PropTypes.string.isRequired,
-    }),
-  ),
+  album: PropTypes.object.isRequired,
+  reviews: PropTypes.array.isRequired,
 };
 
 export const getServerSideProps = async ({ req, params: { slug } }) => {
