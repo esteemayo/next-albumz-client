@@ -35,10 +35,6 @@ const UpdatePassword = () => {
 
   const [values, setValues] = useState(initialState);
 
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [password, setPassword] = useState('');
-  const [currentPassword, setCurrentPassword] = useState('');
-
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showCurrentPassword, setShowCurrentPassword] = useState(false);
