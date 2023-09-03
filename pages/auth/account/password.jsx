@@ -3,7 +3,6 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 
-import DeactivateAccount from '@/components/account/DeactivateAccount';
 import DeleteAccountModal from '@/components/modal/DeleteAccountModal';
 import Sidebar from '@/components/account/Sidebar';
 import AccountPassword from '@/components/account/AccountPassword';
