@@ -23,8 +23,12 @@ const SingleAlbum = ({ album, reviews }) => {
     setReviewList(reviews);
   }, []);
 
-  useEffect(() => {
+  const fetchReviews = useCallback(() => {
     setReviewList(reviews);
+  }, []);
+
+  useEffect(() => {
+    fetchReviews();
   }, []);
 
   return (
