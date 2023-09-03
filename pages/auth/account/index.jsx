@@ -10,6 +10,7 @@ import FormChipInput from '@/components/form/FormChipInput';
 import Sidebar from '@/components/account/Sidebar';
 import AccountData from '@/components/account/AccountData';
 import FormButton from '@/components/form/FormButton';
+import AccountHeading from '@/components/account/AccountHeading';
 
 import { parseCookie } from '@/utils/index';
 import { reset, updateUserData } from '@/features/auth/authSlice';
