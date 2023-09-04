@@ -18,6 +18,7 @@ const ReviewForm = ({
           <h3 className={styles.review__header}>Leave a review</h3>
           <div className={styles.form__group}>
             <textarea
+              value={review}
               onChange={(e) => onReview(e.target.value)}
               className={styles.form__control} 
               placeholder='Did you listen to this album? Have something to say? Leave a review...'
