@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import PropTypes from 'prop-types';
 
 import RelatedAlbumCard from '@/components/card/RelatedAlbumCard';
