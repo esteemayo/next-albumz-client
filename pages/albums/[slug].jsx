@@ -46,13 +46,12 @@ const SingleAlbum = ({ album, reviews }) => {
     try {
       const { data } = await albumAPI.createReview(albumId, { ...newReview });
       setReviewList((prev) => [data.review, ...prev]);
-      fetchReviews();
       // reload();
     } catch (err) {
       console.log(err);
       return toast.error(err.response.data.message);
     }
-  }, [album.id, fetchReviews, rating, review]);
+  }, [album.id, rating, review]);
 
   const disableButton = useMemo(() => {
     const disabled = (!rating || !review);
