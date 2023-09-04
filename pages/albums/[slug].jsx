@@ -5,10 +5,8 @@ import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
 
 import { parseCookie } from '@/utils/index';
-import * as albumAPI from '@/services/albumservice';
+import * as albumAPI from '@/services/albumService';
 import ClientOnly from '@/components/ClientOnly';
-
-import { createReview } from '@/services/albumService';
 
 import styles from '@/styles/SingleAlbum.module.scss';
 
@@ -45,7 +43,7 @@ const SingleAlbum = ({ album, reviews }) => {
     };
 
     try {
-      const { data } = await createReview(albumId, { ...newReview });
+      const { data } = await albumAPI.createReview(albumId, { ...newReview });
       setReviewList((prev) => [data.review, ...prev]);
       fetchReviews();
       // reload();
