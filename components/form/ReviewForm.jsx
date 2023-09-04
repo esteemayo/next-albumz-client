@@ -1,5 +1,5 @@
-import Rating from '@mui/material/Rating';
 import PropTypes from 'prop-types';
+import Rating from '@mui/material/Rating';
 
 import styles from '@/styles/ReviewForm.module.scss';
 
