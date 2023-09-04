@@ -48,12 +48,12 @@ const SingleAlbum = ({ album, reviews }) => {
       const { data } = await createReview(albumId, { ...newReview });
       setReviewList((prev) => [data.review, ...prev]);
       fetchReviews();
-      reload();
+      // reload();
     } catch (err) {
       console.log(err);
       return toast.error(err.response.data.message);
     }
-  }, [album.id, rating, review]);
+  }, [album.id, fetchReviews, rating, review]);
 
   const disableButton = useMemo(() => {
     const disabled = (!rating || !review);
