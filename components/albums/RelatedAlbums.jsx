@@ -6,12 +6,6 @@ import RelatedAlbumCard from '@/components/card/RelatedAlbumCard';
 import styles from '@/styles/RelatedAlbums.module.scss';
 
 const RelatedAlbums = ({ albumId, albums, relatedLabel }) => {
-  const relatedHeader = useMemo(() => {
-    return albums.length > 1 ?
-      'Related Albums' :
-      'Related Album';
-  }, [albums]);
-
   return (
     <>
       {!!albums && !!albums.length && (
