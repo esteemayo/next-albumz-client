@@ -7,8 +7,6 @@ import RelatedAlbumCard from '@/components/card/RelatedAlbumCard';
 import styles from '@/styles/RelatedAlbums.module.scss';
 
 const RelatedAlbums = ({ albumId, albums }) => {
-  const [relatedAlbums, setRelatedAlbums] = useState([]);
-
   const relatedHeader = useMemo(() => {
     return albums.length > 1 ?
       'Related Albums' :
