@@ -51,6 +51,7 @@ const SingleAlbum = ({ album, reviews }) => {
     try {
       const { data } = await albumAPI.createReview(albumId, { ...newReview });
       setReviewList((prev) => [data.review, ...prev]);
+      handleClear();
       // reload();
     } catch (err) {
       console.log(err);
