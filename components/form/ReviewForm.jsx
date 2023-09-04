@@ -4,8 +4,6 @@ import { useRouter } from 'next/router';
 import Rating from '@mui/material/Rating';
 import PropTypes from 'prop-types';
 
-import { createReview } from '@/services/albumService';
-
 import styles from '@/styles/ReviewForm.module.scss';
 
 const ReviewForm = ({
