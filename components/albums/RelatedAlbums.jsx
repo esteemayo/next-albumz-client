@@ -8,17 +8,6 @@ import styles from '@/styles/RelatedAlbums.module.scss';
 
 const RelatedAlbums = ({ albumId, albums }) => {
   const [relatedAlbums, setRelatedAlbums] = useState([]);
-  
-  // useEffect(() => {
-  //   tags && (async () => {
-  //     try {
-  //       const { data } = await getRelatedAlbums(tags);
-  //       setRelatedAlbums(data.albums);
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   })();
-  // }, [tags]);
 
   const relatedHeader = useMemo(() => {
     return albums.length > 1 ?
