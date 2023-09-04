@@ -23,8 +23,8 @@ const SingleAlbum = ({ album, reviews }) => {
   const { reload } = useRouter();
 
   const [reviewList, setReviewList] = useState([]);
-  const [singleAlbum, setSingleAlbum] = useState(album);
   const [rating, setRating] = useState(null);
+  const [singleAlbum, setSingleAlbum] = useState(album);
   const [review, setReview] = useState(null);
 
   const updateReviewOrder = useCallback((reviews) => {
