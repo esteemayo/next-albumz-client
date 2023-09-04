@@ -19,7 +19,6 @@ const AccountPassword = ({
   isConfirm,
   isCurrent,
   disabled,
-  loading,
   onOpen,
   onTogglePassword,
   onToggleConfirmPassword,
@@ -103,7 +102,7 @@ const AccountPassword = ({
       )}
       <DeactivateAccount
         onOpen={onOpen}
-        disabled={loading}
+        disabled={disabled}
       />
     </div>
   );
