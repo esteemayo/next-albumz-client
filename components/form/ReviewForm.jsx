@@ -1,6 +1,5 @@
 import { toast } from 'react-toastify';
 import { useCallback, useMemo, useState } from 'react';
-import { useRouter } from 'next/router';
 import Rating from '@mui/material/Rating';
 import PropTypes from 'prop-types';
 
