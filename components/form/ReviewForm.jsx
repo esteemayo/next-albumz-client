@@ -39,11 +39,6 @@ const ReviewForm = ({
   //   }
   // }, [rating, review]);
 
-  // const disableButton = useMemo(() => {
-  //   const disabled = (!rating || !review);
-  //   return !!disabled;
-  // }, [rating, review]);
-
   return (
     <section className={styles.review}>
       <div className={styles.review__wrapper}>
