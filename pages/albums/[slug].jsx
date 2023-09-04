@@ -20,6 +20,8 @@ const AlbumHero = dynamic(() => import('@/components/hero/AlbumHero'));
 const AlbumDescription = dynamic(() => import ('@/components/albums/AlbumDescription'));
 
 const SingleAlbum = ({ album, reviews }) => {
+  const { reload } = useRouter();
+
   const [reviewList, setReviewList] = useState([]);
   const [singleAlbum, setSingleAlbum] = useState(album);
   const [rating, setRating] = useState(null);
