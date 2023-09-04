@@ -48,6 +48,7 @@ const SingleAlbum = ({ album, reviews }) => {
       const { data } = await createReview(albumId, { ...newReview });
       setReviewList((prev) => [data.review, ...prev]);
       fetchReviews();
+      reload();
     } catch (err) {
       console.log(err);
       return toast.error(err.response.data.message);
