@@ -1,10 +1,13 @@
 import dynamic from 'next/dynamic';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 
 import { parseCookie } from '@/utils/index';
 import * as albumAPI from '@/services/albumservice';
 import ClientOnly from '@/components/ClientOnly';
+
+import { createReview } from '@/services/albumService';
 
 import styles from '@/styles/SingleAlbum.module.scss';
 
@@ -18,6 +21,8 @@ const AlbumDescription = dynamic(() => import ('@/components/albums/AlbumDescrip
 const SingleAlbum = ({ album, reviews }) => {
   const [reviewList, setReviewList] = useState([]);
   const [singleAlbum, setSingleAlbum] = useState(album);
+  const [rating, setRating] = useState(null);
+  const [review, setReview] = useState(null);
 
   const updateReviewOrder = useCallback((reviews) => {
     setReviewList(reviews);
@@ -26,6 +31,30 @@ const SingleAlbum = ({ album, reviews }) => {
   const fetchReviews = useCallback(() => {
     setReviewList(reviews);
   }, []);
+
+  const handleSubmit = useCallback(async (e) => {
+    e.preventDefault();
+    
+    const albumId = album.id;
+    const newReview = {
+      rating,
+      review,
+    };
+
+    try {
+      const { data } = await createReview(albumId, { ...newReview });
+      setReviewList((prev) => [data.review, ...prev]);
+      fetchReviews();
+    } catch (err) {
+      console.log(err);
+      return toast.error(err.response.data.message);
+    }
+  }, [album.id, rating, review]);
+
+  const disableButton = useMemo(() => {
+    const disabled = (!rating || !review);
+    return !!disabled;
+  }, [rating, review]);
 
   useEffect(() => {
     fetchReviews();
@@ -41,9 +70,15 @@ const SingleAlbum = ({ album, reviews }) => {
           setSingleAlbum={setSingleAlbum}
         />
         <ReviewForm
-          albumId={album.id}
-          refetch={fetchReviews}
-          setReviewList={setReviewList}
+          rating={rating}
+          review={review}
+          disabled={disableButton}
+          onRating={setRating}
+          onReview={setReview}
+          onSubmit={handleSubmit}
+          // albumId={album.id}
+          // refetch={fetchReviews}
+          // setReviewList={setReviewList}
         />
         <Reviews
           reviews={reviewList}

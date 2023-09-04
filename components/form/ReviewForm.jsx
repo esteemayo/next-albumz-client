@@ -8,43 +8,43 @@ import { createReview } from '@/services/albumService';
 
 import styles from '@/styles/ReviewForm.module.scss';
 
-const ReviewForm = ({ albumId, refetch, setReviewList }) => {
-  const router = useRouter();
+const ReviewForm = ({ rating, review, disabled, onRating, onReview, onSubmit }) => {
+  // const router = useRouter();
 
-  const [rating, setRating] = useState(null);
-  const [review, setReview] = useState(null);
+  // const [rating, setRating] = useState(null);
+  // const [review, setReview] = useState(null);
 
-  const handleSubmit = useCallback(async (e) => {
-    e.preventDefault();
+  // const handleSubmit = useCallback(async (e) => {
+  //   e.preventDefault();
 
-    try {
-      const newReview = {
-        rating,
-        review,
-      };
+  //   try {
+  //     const newReview = {
+  //       rating,
+  //       review,
+  //     };
 
-      const { data } = await createReview(albumId, { ...newReview });
-      setReviewList((prev) => [data.review, ...prev]);
-      router.reload();
-    } catch (err) {
-      console.log(err);
-      return toast.error(err.response.data.message);
-    }
-  }, [rating, review]);
+  //     const { data } = await createReview(albumId, { ...newReview });
+  //     setReviewList((prev) => [data.review, ...prev]);
+  //     router.reload();
+  //   } catch (err) {
+  //     console.log(err);
+  //     return toast.error(err.response.data.message);
+  //   }
+  // }, [rating, review]);
 
-  const disableButton = useMemo(() => {
-    const disabled = (!rating || !review);
-    return !!disabled;
-  }, [rating, review]);
+  // const disableButton = useMemo(() => {
+  //   const disabled = (!rating || !review);
+  //   return !!disabled;
+  // }, [rating, review]);
 
   return (
     <section className={styles.review}>
       <div className={styles.review__wrapper}>
-        <form onSubmit={handleSubmit} className={styles.form}>
+        <form onSubmit={onSubmit} className={styles.form}>
           <h3 className={styles.review__header}>Leave a review</h3>
           <div className={styles.form__group}>
             <textarea
-              onChange={(e) => setReview(e.target.value)}
+              onChange={(e) => onReview(e.target.value)}
               className={styles.form__control} 
               placeholder='Did you listen to this album? Have something to say? Leave a review...'
             >
@@ -58,14 +58,14 @@ const ReviewForm = ({ albumId, refetch, setReviewList }) => {
                 value={rating}
                 precision={0.5}
                 onChange={(e, newValue) => {
-                  setRating(newValue);
+                  onRating(newValue);
                 }}
               />
             </div>
             <div className={styles.right}>
               <button
                 type='submit'
-                disabled={disableButton}
+                disabled={disabled}
                 className={styles.form__btn}
               >
                 Submit review
@@ -79,8 +79,8 @@ const ReviewForm = ({ albumId, refetch, setReviewList }) => {
 };
 
 ReviewForm.propTypes = {
-  albumId: PropTypes.string.isRequired,
-  setReviewList: PropTypes.any.isRequired,
+  // albumId: PropTypes.string.isRequired,
+  // setReviewList: PropTypes.any.isRequired,
 };
 
 export default ReviewForm;
