@@ -19,7 +19,6 @@ const AlbumHero = dynamic(() => import('@/components/hero/AlbumHero'));
 const AlbumDescription = dynamic(() => import ('@/components/albums/AlbumDescription'));
 
 const SingleAlbum = ({ album, reviews }) => {
-  const { reload } = useRouter();
   const { user } = useSelector((state) => ({ ... state.auth }));
 
   const [reviewList, setReviewList] = useState([]);
@@ -52,11 +51,10 @@ const SingleAlbum = ({ album, reviews }) => {
 
     try {
       const { data } = await albumAPI.createReview(albumId, { ...newReview });
+
       const reviewData = { ...data.review, user: { ...user } };
-      console.log(reviewData)
       setReviewList((prev) => [reviewData, ...prev]);
       handleClear();
-      // reload();
     } catch (err) {
       console.log(err);
       return toast.error(err.response.data.message);
