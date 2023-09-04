@@ -24,6 +24,7 @@ const SingleAlbum = ({ album, reviews }) => {
   const [rating, setRating] = useState(null);
   const [singleAlbum, setSingleAlbum] = useState(album);
   const [review, setReview] = useState(null);
+  const [relatedAlbums, setRelatedAlbums] = useState([]);
 
   const updateReviewOrder = useCallback((reviews) => {
     setReviewList(reviews);
