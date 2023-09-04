@@ -33,7 +33,7 @@ const SingleAlbum = ({ album, reviews }) => {
 
   const fetchReviews = useCallback(() => {
     setReviewList(reviews);
-  }, []);
+  }, [reviews]);
 
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
