@@ -75,17 +75,6 @@ const UpdatePassword = () => {
     return currentUser?.avatar ?? '/img/user-default.jpg';
   }, [currentUser]);
 
-  const disabledBtn = useMemo(() => {
-    const { password, passwordConfirm, passwordCurrent } = values;
-    const disabled = (
-        password === '' ||
-        passwordConfirm === '' ||
-        passwordCurrent === '' ||
-        isLoading
-      );
-    return !!disabled;
-  }, [isLoading, values]);
-
   useEffect(() => {
     isError && toast.error(message);
     dispatch(reset());
