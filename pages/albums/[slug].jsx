@@ -23,7 +23,7 @@ const SingleAlbum = ({ album, reviews }) => {
   const [reviewList, setReviewList] = useState([]);
   const [rating, setRating] = useState(null);
   const [singleAlbum, setSingleAlbum] = useState(album);
-  const [review, setReview] = useState(null);
+  const [review, setReview] = useState('');
   const [relatedAlbums, setRelatedAlbums] = useState([]);
 
   const updateReviewOrder = useCallback((reviews) => {
@@ -32,7 +32,7 @@ const SingleAlbum = ({ album, reviews }) => {
 
   const handleClear = useCallback(() => {
     setRating(null);
-    setReview(null);
+    setReview('');
   }, []);
 
   const fetchReviews = useCallback(() => {
