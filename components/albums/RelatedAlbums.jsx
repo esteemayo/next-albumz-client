@@ -6,34 +6,34 @@ import RelatedAlbumCard from '@/components/card/RelatedAlbumCard';
 
 import styles from '@/styles/RelatedAlbums.module.scss';
 
-const RelatedAlbums = ({ albumId, tags }) => {
+const RelatedAlbums = ({ albumId, albums }) => {
   const [relatedAlbums, setRelatedAlbums] = useState([]);
   
-  useEffect(() => {
-    tags && (async () => {
-      try {
-        const { data } = await getRelatedAlbums(tags);
-        setRelatedAlbums(data.albums);
-      } catch (err) {
-        console.log(err);
-      }
-    })();
-  }, [tags]);
+  // useEffect(() => {
+  //   tags && (async () => {
+  //     try {
+  //       const { data } = await getRelatedAlbums(tags);
+  //       setRelatedAlbums(data.albums);
+  //     } catch (err) {
+  //       console.log(err);
+  //     }
+  //   })();
+  // }, [tags]);
 
   const relatedHeader = useMemo(() => {
-    return relatedAlbums.length > 1 ?
+    return albums.length > 1 ?
       'Related Albums' :
       'Related Album';
-  }, [relatedAlbums]);
+  }, [albums]);
 
   return (
     <>
-      {!!relatedAlbums && !!relatedAlbums.length && (
+      {!!albums && !!albums.length && (
         <section className={styles.related}>
           <div className={styles.related__wrapper}>
             <h6 className={styles.related__header}>{relatedHeader}</h6>
             <div className={styles.related__container}>
-              {relatedAlbums
+              {albums
                 .filter((item) => item._id !== albumId)
                 .slice(0, 3)
                 .map((item) => {

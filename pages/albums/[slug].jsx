@@ -64,7 +64,7 @@ const SingleAlbum = ({ album, reviews }) => {
 
     tags && (async () => {
       try {
-        const { data } = await getRelatedAlbums(tags);
+        const { data } = await albumAPI.getRelatedAlbums(tags);
         setRelatedAlbums(data.albums);
       } catch (err) {
         console.log(err);
