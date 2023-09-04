@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
+import { useSelector } from 'react-redux';
 
 import { parseCookie } from '@/utils/index';
 import * as albumAPI from '@/services/albumService';
@@ -19,6 +20,7 @@ const AlbumDescription = dynamic(() => import ('@/components/albums/AlbumDescrip
 
 const SingleAlbum = ({ album, reviews }) => {
   const { reload } = useRouter();
+  const { user } = useSelector((state) => ({ ... state.auth }));
 
   const [reviewList, setReviewList] = useState([]);
   const [rating, setRating] = useState(null);
@@ -50,7 +52,9 @@ const SingleAlbum = ({ album, reviews }) => {
 
     try {
       const { data } = await albumAPI.createReview(albumId, { ...newReview });
-      setReviewList((prev) => [data.review, ...prev]);
+      const reviewData = { ...data.review, user: { ...user } };
+      console.log(reviewData)
+      setReviewList((prev) => [reviewData, ...prev]);
       handleClear();
       // reload();
     } catch (err) {
