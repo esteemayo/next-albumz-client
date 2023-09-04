@@ -30,6 +30,7 @@ const RelatedAlbums = ({ albumId, albums, relatedLabel }) => {
 RelatedAlbums.propTypes = {
   albumId: PropTypes.string.isRequired,
   albums: PropTypes.array.isRequired,
+  relatedLabel: PropTypes.string.isRequired,
 };
 
 export default RelatedAlbums;
