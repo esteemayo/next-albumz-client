@@ -76,9 +76,6 @@ const SingleAlbum = ({ album, reviews }) => {
           onRating={setRating}
           onReview={setReview}
           onSubmit={handleSubmit}
-          // albumId={album.id}
-          // refetch={fetchReviews}
-          // setReviewList={setReviewList}
         />
         <Reviews
           reviews={reviewList}
