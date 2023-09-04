@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import RelatedAlbumCard from '@/components/card/RelatedAlbumCard';
 
 import styles from '@/styles/RelatedAlbums.module.scss';
