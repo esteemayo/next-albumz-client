@@ -59,6 +59,12 @@ const SingleAlbum = ({ album, reviews }) => {
     return !!disabled;
   }, [rating, review]);
 
+  const relatedLabel = useMemo(() => {
+    return relatedAlbums.length > 1 ?
+      'Related Albums' :
+      'Related Album';
+  }, [relatedAlbums]);
+
   useEffect(() => {
     const tags = singleAlbum.tags;
 
@@ -100,6 +106,7 @@ const SingleAlbum = ({ album, reviews }) => {
         <RelatedAlbums
           albumId={singleAlbum.id}
           albums={relatedAlbums}
+          relatedLabel={relatedLabel}
         />
       </section>
     </ClientOnly>
