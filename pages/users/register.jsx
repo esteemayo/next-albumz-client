@@ -115,15 +115,21 @@ const Register = () => {
       ...formInputs,
     };
 
-    const form = new FormData();
-    form.append('file', file);
-    form.append('upload_preset', 'albumz');
-    
-    try {
-      const { data } = await uploadImage(form);
-      const { url } = data;
-      userData.avatar = url;
+    if (file) {
+      const form = new FormData();
+      form.append('file', file);
+      form.append('upload_preset', 'albumz');
 
+      try {
+        const { data } = await uploadImage(form);
+        const { url } = data;
+        userData.avatar = url;
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    try {
       dispatch(registerUser({ userData, toast }));
     } catch (err) {
       console.log(err);
