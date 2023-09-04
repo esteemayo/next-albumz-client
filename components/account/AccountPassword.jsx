@@ -115,7 +115,6 @@ AccountPassword.propTypes = {
   isConfirm: PropTypes.bool.isRequired,
   isCurrent: PropTypes.bool.isRequired,
   disabled: PropTypes.bool.isRequired,
-  loading: PropTypes.bool.isRequired,
   onOpen: PropTypes.func.isRequired,
   onTogglePassword: PropTypes.func.isRequired,
   onToggleConfirmPassword: PropTypes.func.isRequired,
