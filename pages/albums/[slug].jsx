@@ -94,11 +94,6 @@ const SingleAlbum = ({ album, reviews }) => {
   );
 };
 
-SingleAlbum.propTypes = {
-  album: PropTypes.object.isRequired,
-  reviews: PropTypes.array.isRequired,
-};
-
 export const getServerSideProps = async ({ req, params: { slug } }) => {
   const { token } = parseCookie(req);
 
@@ -120,6 +115,11 @@ export const getServerSideProps = async ({ req, params: { slug } }) => {
       album: data.album,
     },
   };
+};
+
+SingleAlbum.propTypes = {
+  album: PropTypes.object.isRequired,
+  reviews: PropTypes.array.isRequired,
 };
 
 export default SingleAlbum;
