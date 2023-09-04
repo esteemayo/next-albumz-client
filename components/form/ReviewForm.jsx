@@ -1,4 +1,3 @@
-import { toast } from 'react-toastify';
 import Rating from '@mui/material/Rating';
 import PropTypes from 'prop-types';
 
