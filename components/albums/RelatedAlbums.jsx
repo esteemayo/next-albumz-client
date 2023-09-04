@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import RelatedAlbumCard from '@/components/card/RelatedAlbumCard';
 
