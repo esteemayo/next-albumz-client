@@ -30,6 +30,11 @@ const SingleAlbum = ({ album, reviews }) => {
     setReviewList(reviews);
   }, []);
 
+  const handleClear = useCallback(() => {
+    setRating(null);
+    setReview(null);
+  }, []);
+
   const fetchReviews = useCallback(() => {
     setReviewList(reviews);
   }, [reviews]);
