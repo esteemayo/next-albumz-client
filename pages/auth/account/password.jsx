@@ -72,7 +72,7 @@ const UpdatePassword = () => {
   }, [handleClear, dispatch]);
 
   const userAvatar = useMemo(() => {
-    return currentUser?.avatar ?? '/img/user-default.jpg';
+    return currentUser?.avatar || '/img/user-default.jpg';
   }, [currentUser]);
 
   useEffect(() => {
