@@ -62,7 +62,7 @@ const SingleAlbum = ({ album, reviews }) => {
 
   useEffect(() => {
     fetchReviews();
-  }, []);
+  }, [fetchReviews]);
 
   return (
     <ClientOnly>
