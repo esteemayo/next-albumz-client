@@ -111,7 +111,7 @@ const UpdatePassword = () => {
             isPassword={showPassword}
             isConfirm={showConfirmPassword}
             isCurrent={showCurrentPassword}
-            disabled={disabledBtn}
+            disabled={isLoading}
             loading={isLoading}
             onOpen={onOpen}
             onTogglePassword={togglePassword}
