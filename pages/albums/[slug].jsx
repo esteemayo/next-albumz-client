@@ -97,7 +97,10 @@ const SingleAlbum = ({ album, reviews }) => {
           reviews={reviewList}
           onSort={updateReviewOrder}
         />
-        <RelatedAlbums albums={relatedAlbums} />
+        <RelatedAlbums
+          albumId={singleAlbum.id}
+          albums={relatedAlbums}
+        />
       </section>
     </ClientOnly>
   );
