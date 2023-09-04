@@ -5,7 +5,7 @@ import RelatedAlbumCard from '@/components/card/RelatedAlbumCard';
 
 import styles from '@/styles/RelatedAlbums.module.scss';
 
-const RelatedAlbums = ({ albumId, albums }) => {
+const RelatedAlbums = ({ albumId, albums, relatedLabel }) => {
   const relatedHeader = useMemo(() => {
     return albums.length > 1 ?
       'Related Albums' :
@@ -17,7 +17,7 @@ const RelatedAlbums = ({ albumId, albums }) => {
       {!!albums && !!albums.length && (
         <section className={styles.related}>
           <div className={styles.related__wrapper}>
-            <h6 className={styles.related__header}>{relatedHeader}</h6>
+            <h6 className={styles.related__header}>{relatedLabel}</h6>
             <div className={styles.related__container}>
               {albums
                 .filter((item) => item._id !== albumId)
