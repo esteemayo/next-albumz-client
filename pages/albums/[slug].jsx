@@ -20,9 +20,9 @@ const AlbumDescription = dynamic(() => import ('@/components/albums/AlbumDescrip
 const SingleAlbum = ({ album, reviews }) => {
   const { user } = useSelector((state) => ({ ... state.auth }));
 
-  const [reviewList, setReviewList] = useState([]);
-  const [rating, setRating] = useState(null);
   const [singleAlbum, setSingleAlbum] = useState(album);
+  const [rating, setRating] = useState(null);
+  const [reviewList, setReviewList] = useState(reviews);
   const [review, setReview] = useState('');
   const [relatedAlbums, setRelatedAlbums] = useState([]);
 
@@ -34,10 +34,6 @@ const SingleAlbum = ({ album, reviews }) => {
     setReview('');
     setRating(null);
   }, []);
-
-  const fetchReviews = useCallback(() => {
-    setReviewList(reviews);
-  }, [reviews]);
 
   const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
@@ -83,10 +79,6 @@ const SingleAlbum = ({ album, reviews }) => {
       }
     })();
   }, [singleAlbum.tags]);
-
-  useEffect(() => {
-    fetchReviews();
-  }, [fetchReviews]);
 
   return (
     <ClientOnly>
