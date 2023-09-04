@@ -18,9 +18,6 @@ const ReviewForm = ({
 }) => {
   // const router = useRouter();
 
-  // const [rating, setRating] = useState(null);
-  // const [review, setReview] = useState(null);
-
   return (
     <section className={styles.review}>
       <div className={styles.review__wrapper}>
