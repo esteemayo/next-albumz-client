@@ -60,6 +60,19 @@ const SingleAlbum = ({ album, reviews }) => {
   }, [rating, review]);
 
   useEffect(() => {
+    const tags = singleAlbum.tags;
+
+    tags && (async () => {
+      try {
+        const { data } = await getRelatedAlbums(tags);
+        setRelatedAlbums(data.albums);
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, [singleAlbum.tags]);
+
+  useEffect(() => {
     fetchReviews();
   }, [fetchReviews]);
 
@@ -84,10 +97,7 @@ const SingleAlbum = ({ album, reviews }) => {
           reviews={reviewList}
           onSort={updateReviewOrder}
         />
-        <RelatedAlbums
-          albumId={album.id}
-          tags={singleAlbum.tags}
-        />
+        <RelatedAlbums albums={relatedAlbums} />
       </section>
     </ClientOnly>
   );
