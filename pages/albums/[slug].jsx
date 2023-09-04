@@ -1,9 +1,8 @@
 import dynamic from 'next/dynamic';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useRouter } from 'next/router';
-import { toast } from 'react-toastify';
 import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 import { parseCookie } from '@/utils/index';
 import * as albumAPI from '@/services/albumService';
