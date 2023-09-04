@@ -21,24 +21,6 @@ const ReviewForm = ({
   // const [rating, setRating] = useState(null);
   // const [review, setReview] = useState(null);
 
-  // const handleSubmit = useCallback(async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     const newReview = {
-  //       rating,
-  //       review,
-  //     };
-
-  //     const { data } = await createReview(albumId, { ...newReview });
-  //     setReviewList((prev) => [data.review, ...prev]);
-  //     router.reload();
-  //   } catch (err) {
-  //     console.log(err);
-  //     return toast.error(err.response.data.message);
-  //   }
-  // }, [rating, review]);
-
   return (
     <section className={styles.review}>
       <div className={styles.review__wrapper}>
