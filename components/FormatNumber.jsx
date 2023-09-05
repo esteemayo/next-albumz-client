@@ -7,7 +7,6 @@ const FormatNumber = ({ value }) => {
       value={value}
       displayType={'text'}
       thousandSeparator={true}
-      prefix={'$'}
     />
   );
 };
