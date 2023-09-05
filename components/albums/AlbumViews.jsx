@@ -15,7 +15,7 @@ const AlbumViews = ({ views }) => {
     <div className={styles.view__container}>
       <VisibilityOutlinedIcon className={styles.action__icon} />
       <span className={styles.views}>
-        {views?.length} {viewsLabel}
+        <FormatNumber value={views?.length} /> {viewsLabel}
       </span>
     </div>
   );
