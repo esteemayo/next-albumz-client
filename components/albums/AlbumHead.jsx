@@ -42,8 +42,10 @@ const AlbumHead = ({
           );
         })}
         <StarRating
-          className={styles.rating}
+          readOnly
           value={album.ratingsAverage}
+          name='read-only'
+          className={styles.rating}
         />
         <div className={styles.action}>
           <span className={styles.action__wrapper}>
