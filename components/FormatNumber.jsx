@@ -16,4 +16,4 @@ FormatNumber.propTypes = {
   value: PropTypes.number.isRequired,
 };
 
-exprot default FormatNumber;
+export default FormatNumber;
