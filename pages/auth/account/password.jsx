@@ -69,7 +69,7 @@ const UpdatePassword = () => {
 
     dispatch(updateUserPassword({ userData, toast }));
     handleClear();
-  }, [handleClear, dispatch]);
+  }, [values, handleClear, dispatch]);
 
   const userAvatar = useMemo(() => {
     return currentUser?.avatar || '/img/user-default.jpg';
