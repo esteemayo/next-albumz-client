@@ -54,7 +54,7 @@ const SingleAlbum = ({ album, reviews }) => {
       console.log(err);
       return toast.error(err.response.data.message);
     }
-  }, [album.id, rating, review]);
+  }, [album.id, rating, review, user, handleClear]);
 
   const disableButton = useMemo(() => {
     const disabled = (!rating || !review);
