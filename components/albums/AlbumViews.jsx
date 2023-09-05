@@ -2,6 +2,8 @@ import { useMemo } from 'react';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import PropTypes from 'prop-types';
 
+import FormatNumber from '@/components/FormatNumber';
+
 import styles from '@/styles/AlbumDescription.module.scss';
 
 const AlbumViews = ({ views }) => {
