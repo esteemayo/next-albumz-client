@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import Rating from '@mui/material/Rating';
 
 import StarRating from '../StarRating';
 import styles from '@/styles/ReviewForm.module.scss';
