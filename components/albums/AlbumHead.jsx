@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useCallback } from 'react';
 
 import LikeButton from '@/components/button/LikeButton';
+import FormatNumber from '@/components/FormatNumber';
 import BookmarkButton from '@/components/button/BookmarkButton';
 
 import StarRating from '../StarRating';
