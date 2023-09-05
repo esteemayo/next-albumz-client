@@ -28,11 +28,9 @@ const ReviewForm = ({
           </div>
           <div className={styles.form__wrapper}>
             <div className={styles.left}>
-              <Rating
-                size='large'
+              <StarRating
                 name='size-large'
                 value={rating}
-                precision={0.5}
                 onChange={(e, newValue) => {
                   onRating(newValue);
                 }}
