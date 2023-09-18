@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Search from '@/components/sidebar/Search';
 import MenuItems from '@/components/sidebar/MenuItems';
 
+import { useLogout } from '@/hooks/useLogout';
 import { useMenu } from '@/hooks/useMenu';
 import { useSearch } from '@/hooks/useSearch';
 
@@ -20,6 +21,7 @@ const Sidebar = () => {
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
   
   const { closeMenuHandler } = useMenu();
+  const { logout } = useLogout();
   const { query, handleChange, handleSearch } = useSearch(closeMenuHandler);
 
   const handleLogout = useCallback(() => {
@@ -39,7 +41,7 @@ const Sidebar = () => {
         <MenuItems
           currentUser={user}
           onClose={closeMenuHandler}
-          onAction={handleLogout}
+          onAction={logout}
         />
         {menuOpen && (
           <Search
