@@ -22,6 +22,11 @@ const Sidebar = () => {
   const { closeMenuHandler } = useMenu();
   const { query, handleChange, handleSearch } = useSearch();
 
+  const handleSubmit = useCallback(() => {
+    handleSearch();
+    closeMenuHandler();
+  }, [closeMenuHandler, handleSearch]);
+
   const handleLogout = useCallback(() => {
     dispatch(logoutUser());
     router.push('/');
