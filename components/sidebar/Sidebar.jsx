@@ -9,7 +9,6 @@ import { useMenu } from '@/hooks/useMenu';
 import { useSearch } from '@/hooks/useSearch';
 
 import { logoutUser } from '@/features/auth/authSlice';
-import { closeMenu } from '@/features/toggle/toggleSlice';
 
 import styles from '@/styles/Sidebar.module.scss';
 
