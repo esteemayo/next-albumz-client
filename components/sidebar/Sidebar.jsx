@@ -30,16 +30,6 @@ const Sidebar = () => {
     router.push('/');
   }, [router, dispatch]);
 
-  // const handleSearch = useCallback((e) => {
-  //   e.preventDefault();
-
-  //   if (query) {
-  //     router.push(`/albums/search?q=${query}`);
-  //     setQuery('');
-  //     dispatch(closeMenu());
-  //   }
-  // }, [query, router, dispatch]);
-
   const toggleClasses = useMemo(() => {
     return menuOpen ?
       `${styles.sidebar} ${styles.active}` :
