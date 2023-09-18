@@ -10,7 +10,6 @@ import Hamburger from '@/components/navbar/Hamburger';
 
 import { useMenu } from '@/hooks/useMenu';
 import { logoutUser } from '@/features/auth/authSlice';
-import { toggleMenu } from '@/features/toggle/toggleSlice';
 
 import styles from '@/styles/Navbar.module.scss';
 
