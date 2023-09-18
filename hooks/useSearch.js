@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
 
-export const useSearch = () => {
+export const useSearch = (onClose) => {
   const router = useRouter();
   const [query, setQuery] = useState('');
 
@@ -15,6 +15,7 @@ export const useSearch = () => {
     if (query) {
       router.push(`/albums/search?q=${query}`);
       setQuery('');
+      onClose?.();
     }
   }, [query, router]);
 
