@@ -16,9 +16,6 @@ import { logoutUser } from '@/features/auth/authSlice';
 import styles from '@/styles/Navbar.module.scss';
 
 const Navbar = () => {
-  const router = useRouter();
-  const dispatch = useDispatch();
-
   const { user } = useSelector((state) => ({ ...state.auth }));
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
   
