@@ -2,20 +2,24 @@ import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 import SearchIcon from '@mui/icons-material/Search';
 
+import { useSearch } from '@/hooks/useSearch';
+
 import styles from '@/styles/Search.module.scss';
 
 const Search = () => {
   const router = useRouter();
-  const [query, setQuery] = useState('');
+  const { query, handleChange, handleSearch } = useSearch();
 
-  const handleSearch = useCallback((e) => {
-    e.preventDefault();
+  // const [query, setQuery] = useState('');
 
-    if (query) {
-      router.push(`/albums/search?q=${query}`);
-      setQuery('');
-    }
-  }, [query, router]);
+  // const handleSearch = useCallback((e) => {
+  //   e.preventDefault();
+
+  //   if (query) {
+  //     router.push(`/albums/search?q=${query}`);
+  //     setQuery('');
+  //   }
+  // }, [query, router]);
 
   return (
     <form onSubmit={handleSearch} className={styles.search}>
@@ -24,7 +28,7 @@ const Search = () => {
         value={query}
         placeholder='Search Albums'
         className={styles.search__input}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={handleChange}
       />
       <SearchIcon className={styles.search__icon} />
     </form>
