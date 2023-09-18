@@ -27,13 +27,6 @@ const Navbar = () => {
 
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const handleLogout = useCallback((e) => {
-    e.stopPropagation();
-
-    dispatch(logoutUser());
-    router.push('/');
-  }, [router, dispatch]);
-
   const toggleScroll = useCallback(() => {
     setIsScrolled(window.scrollY === 0 ? false : true);
   }, []);
