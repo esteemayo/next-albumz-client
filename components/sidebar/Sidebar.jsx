@@ -24,11 +24,6 @@ const Sidebar = () => {
   const { logout } = useLogout();
   const { query, handleChange, handleSearch } = useSearch(closeMenuHandler);
 
-  const handleLogout = useCallback(() => {
-    dispatch(logoutUser());
-    router.push('/');
-  }, [router, dispatch]);
-
   const toggleClasses = useMemo(() => {
     return menuOpen ?
       `${styles.sidebar} ${styles.active}` :
