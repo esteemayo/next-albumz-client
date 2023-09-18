@@ -11,8 +11,6 @@ import Hamburger from '@/components/navbar/Hamburger';
 import { useMenu } from '@/hooks/useMenu';
 import { useLogout } from '@/hooks/useLogout';
 
-import { logoutUser } from '@/features/auth/authSlice';
-
 import styles from '@/styles/Navbar.module.scss';
 
 const Navbar = () => {
