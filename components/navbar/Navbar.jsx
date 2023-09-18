@@ -8,6 +8,7 @@ import DarkModeToggle from '@/components/darkmode/DarkModeToggle';
 import Search from '@/components/Search';
 import Hamburger from '@/components/navbar/Hamburger';
 
+import { useMenu } from '@/hooks/useMenu';
 import { logoutUser } from '@/features/auth/authSlice';
 import { toggleMenu } from '@/features/toggle/toggleSlice';
 
@@ -18,6 +19,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const { user } = useSelector((state) => ({ ...state.auth }));
+  const { openMenuHandler } = useMenu();
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -68,7 +70,7 @@ const Navbar = () => {
             <DarkModeToggle />
             <Hamburger 
               isOpen={menuOpen}
-              onClick={handleToggleMenu}
+              onClick={openMenuHandler}
             />
           </div>
         </div>
