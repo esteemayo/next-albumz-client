@@ -17,6 +17,7 @@ const Sidebar = () => {
 
   const { user } = useSelector((state) => ({ ...state.auth }));
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
+
   const { query, handleChange, handleSearch } = useSearch();
 
   const handleClose = useCallback(() => {
