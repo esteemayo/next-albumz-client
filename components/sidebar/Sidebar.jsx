@@ -8,8 +8,6 @@ import { useLogout } from '@/hooks/useLogout';
 import { useMenu } from '@/hooks/useMenu';
 import { useSearch } from '@/hooks/useSearch';
 
-import { logoutUser } from '@/features/auth/authSlice';
-
 import styles from '@/styles/Sidebar.module.scss';
 
 const Sidebar = () => {
