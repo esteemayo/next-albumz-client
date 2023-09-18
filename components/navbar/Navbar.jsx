@@ -9,6 +9,8 @@ import Search from '@/components/Search';
 import Hamburger from '@/components/navbar/Hamburger';
 
 import { useMenu } from '@/hooks/useMenu';
+import { useLogout } from '@/hooks/useLogout';
+
 import { logoutUser } from '@/features/auth/authSlice';
 
 import styles from '@/styles/Navbar.module.scss';
@@ -18,8 +20,10 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const { user } = useSelector((state) => ({ ...state.auth }));
-  const { openMenuHandler } = useMenu();
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
+  
+  const { logout } = useLogout();
+  const { openMenuHandler } = useMenu();
 
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -56,7 +60,7 @@ const Navbar = () => {
           <Logo />
           <NavItems
             currentUser={user}
-            onClick={handleLogout}
+            onClick={logout}
           />
         </div>
         <div className={styles.navbar__right}>
