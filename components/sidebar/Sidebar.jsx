@@ -18,14 +18,10 @@ const Sidebar = () => {
   const dispatch = useDispatch();
 
   const { user } = useSelector((state) => ({ ...state.auth }));
-  const { closeMenuHandler } = useMenu();
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
-
+  
+  const { closeMenuHandler } = useMenu();
   const { query, handleChange, handleSearch } = useSearch();
-
-  const handleClose = useCallback(() => {
-    dispatch(closeMenu());
-  }, [dispatch]);
 
   const handleLogout = useCallback(() => {
     dispatch(logoutUser());
