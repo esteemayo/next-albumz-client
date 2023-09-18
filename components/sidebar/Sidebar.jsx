@@ -6,6 +6,7 @@ import Search from '@/components/sidebar/Search';
 import MenuItems from '@/components/sidebar/MenuItems';
 
 import { logoutUser } from '@/features/auth/authSlice';
+import { useMenu } from '@/hooks/useMenu';
 import { useSearch } from '@/hooks/useSearch';
 import { closeMenu } from '@/features/toggle/toggleSlice';
 
@@ -16,6 +17,7 @@ const Sidebar = () => {
   const dispatch = useDispatch();
 
   const { user } = useSelector((state) => ({ ...state.auth }));
+  const { closeMenuHandler } = useMenu();
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
 
   const { query, handleChange, handleSearch } = useSearch();
@@ -40,7 +42,7 @@ const Sidebar = () => {
       <>
         <MenuItems
           currentUser={user}
-          onClose={handleClose}
+          onClose={closeMenuHandler}
           onAction={handleLogout}
         />
         {menuOpen && (
