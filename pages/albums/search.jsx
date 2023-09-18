@@ -9,7 +9,7 @@ import { searchAlbums } from '@/services/albumService';
 
 import styles from '@/styles/Albums.module.scss';
 
-const AlbumCard = lazy(() => import('@/components/albums/AlbumCard'));
+const AlbumCard = lazy(() => import('@/components/card/AlbumCard'));
 
 const SearchPage = ({ albums }) => {
   const { query } = useRouter();
