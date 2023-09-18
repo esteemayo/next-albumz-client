@@ -14,9 +14,6 @@ import { logoutUser } from '@/features/auth/authSlice';
 import styles from '@/styles/Sidebar.module.scss';
 
 const Sidebar = () => {
-  const router = useRouter();
-  const dispatch = useDispatch();
-
   const { user } = useSelector((state) => ({ ...state.auth }));
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
   
