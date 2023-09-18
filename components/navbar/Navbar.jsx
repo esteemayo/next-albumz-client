@@ -35,10 +35,6 @@ const Navbar = () => {
     setIsScrolled(window.scrollY === 0 ? false : true);
   }, []);
 
-  const handleToggleMenu = useCallback(() => {
-    dispatch(toggleMenu());
-  }, [dispatch]);
-
   const navClasses = useMemo(() => {
     return isScrolled
       ? `${styles.navbar} ${styles.scrolled}`
