@@ -1,5 +1,5 @@
+import { useSelector } from 'react-redux';
 import { useCallback, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 import Search from '@/components/sidebar/Search';
 import MenuItems from '@/components/sidebar/MenuItems';
