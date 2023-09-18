@@ -1,6 +1,5 @@
+import { useSelector } from 'react-redux';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useRouter } from 'next/router';
-import { useDispatch, useSelector } from 'react-redux';
 
 import NavItems from '@/components/navbar/NavItems';
 import Logo from '@/components/navbar/Logo';
