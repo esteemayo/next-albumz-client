@@ -19,8 +19,6 @@ const Sidebar = () => {
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
   const { query, handleChange, handleSearch } = useSearch();
 
-  // const [query, setQuery] = useState('');
-
   const handleClose = useCallback(() => {
     dispatch(closeMenu());
   }, [dispatch]);
