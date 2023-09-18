@@ -50,7 +50,7 @@ const Sidebar = () => {
           <Search
             value={query}
             onChange={handleChange}
-            onSubmit={handleSearch}
+            onSubmit={handleSubmit}
           />
         )}
       </>
