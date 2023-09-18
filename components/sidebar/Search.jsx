@@ -12,7 +12,7 @@ const Search = ({ value, onChange, onSubmit }) => {
           value={value}
           placeholder='Search albums...'
           className={styles.search__input}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={onChange}
         />
         <SearchIcon className={styles.search__icon} />
       </form>

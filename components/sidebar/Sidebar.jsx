@@ -6,6 +6,7 @@ import Search from '@/components/sidebar/Search';
 import MenuItems from '@/components/sidebar/MenuItems';
 
 import { logoutUser } from '@/features/auth/authSlice';
+import { useSearch } from '@/hooks/useSearch';
 import { closeMenu } from '@/features/toggle/toggleSlice';
 
 import styles from '@/styles/Sidebar.module.scss';
@@ -16,8 +17,9 @@ const Sidebar = () => {
 
   const { user } = useSelector((state) => ({ ...state.auth }));
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
+  const { query, handleChange, handleSearch } = useSearch();
 
-  const [query, setQuery] = useState('');
+  // const [query, setQuery] = useState('');
 
   const handleClose = useCallback(() => {
     dispatch(closeMenu());
@@ -28,15 +30,15 @@ const Sidebar = () => {
     router.push('/');
   }, [router, dispatch]);
 
-  const handleSearch = useCallback((e) => {
-    e.preventDefault();
+  // const handleSearch = useCallback((e) => {
+  //   e.preventDefault();
 
-    if (query) {
-      router.push(`/albums/search?q=${query}`);
-      setQuery('');
-      dispatch(closeMenu());
-    }
-  }, [query, router, dispatch]);
+  //   if (query) {
+  //     router.push(`/albums/search?q=${query}`);
+  //     setQuery('');
+  //     dispatch(closeMenu());
+  //   }
+  // }, [query, router, dispatch]);
 
   const toggleClasses = useMemo(() => {
     return menuOpen ?
@@ -55,7 +57,7 @@ const Sidebar = () => {
         {menuOpen && (
           <Search
             value={query}
-            onChange={(value) => setQuery(value)}
+            onChange={handleChange}
             onSubmit={handleSearch}
           />
         )}
