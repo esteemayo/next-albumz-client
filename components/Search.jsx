@@ -10,17 +10,6 @@ const Search = () => {
   const router = useRouter();
   const { query, handleChange, handleSearch } = useSearch();
 
-  // const [query, setQuery] = useState('');
-
-  // const handleSearch = useCallback((e) => {
-  //   e.preventDefault();
-
-  //   if (query) {
-  //     router.push(`/albums/search?q=${query}`);
-  //     setQuery('');
-  //   }
-  // }, [query, router]);
-
   return (
     <form onSubmit={handleSearch} className={styles.search}>
       <input
