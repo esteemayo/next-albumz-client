@@ -7,7 +7,6 @@ import { useSearch } from '@/hooks/useSearch';
 import styles from '@/styles/Search.module.scss';
 
 const Search = () => {
-  const router = useRouter();
   const { query, handleChange, handleSearch } = useSearch();
 
   return (
