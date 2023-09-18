@@ -8,9 +8,7 @@ export const useLogout = () => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const logout = useCallback((e) => {
-    e.stopPropagation();
-
+  const logout = useCallback(() => {
     dispatch(logoutUser());
     router.push('/');
   }, [router, dispatch]);
