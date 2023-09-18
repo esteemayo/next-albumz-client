@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { closeMenu, toggleMenu } from '@/features/toggle/toggleSlice';
 
-export const useToggle = () => {
+export const useMenu = () => {
   const dispatch = useDispatch();
 
   const openMenuHandler = useCallback(() => {
