@@ -20,12 +20,7 @@ const Sidebar = () => {
   const { menuOpen } = useSelector((state) => ({ ...state.toggle }));
   
   const { closeMenuHandler } = useMenu();
-  const { query, handleChange, handleSearch } = useSearch();
-
-  const handleSubmit = useCallback(() => {
-    handleSearch();
-    closeMenuHandler();
-  }, [closeMenuHandler, handleSearch]);
+  const { query, handleChange, handleSearch } = useSearch(closeMenuHandler);
 
   const handleLogout = useCallback(() => {
     dispatch(logoutUser());
@@ -50,7 +45,7 @@ const Sidebar = () => {
           <Search
             value={query}
             onChange={handleChange}
-            onSubmit={handleSubmit}
+            onSubmit={handleSearch}
           />
         )}
       </>
