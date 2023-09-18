@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import Search from '@/components/sidebar/Search';
 import MenuItems from '@/components/sidebar/MenuItems';
 
-import { logoutUser } from '@/features/auth/authSlice';
 import { useMenu } from '@/hooks/useMenu';
 import { useSearch } from '@/hooks/useSearch';
+
+import { logoutUser } from '@/features/auth/authSlice';
 import { closeMenu } from '@/features/toggle/toggleSlice';
 
 import styles from '@/styles/Sidebar.module.scss';
