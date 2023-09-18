@@ -1,4 +1,3 @@
-import { useCallback, useState } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 
 import { useSearch } from '@/hooks/useSearch';
