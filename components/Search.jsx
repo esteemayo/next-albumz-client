@@ -1,5 +1,4 @@
 import { useCallback, useState } from 'react';
-import { useRouter } from 'next/router';
 import SearchIcon from '@mui/icons-material/Search';
 
 import { useSearch } from '@/hooks/useSearch';
