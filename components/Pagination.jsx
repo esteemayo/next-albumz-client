@@ -19,7 +19,7 @@ const Pagination = ({ page, total, numberOfPages, setAlbumList }) => {
     } catch (err) {
       console.log(err);
     }
-  }, [page, limit]);
+  }, [limit, page, setAlbumList]);
 
   const renderPagination = () => {
     if (page === 1 && page === numberOfPages) return null;
@@ -60,8 +60,8 @@ const Pagination = ({ page, total, numberOfPages, setAlbumList }) => {
               <ArrowBackIosNewOutlinedIcon className={styles.prevPage} />
             </a>
           </Link>
-        <span className={styles.currentPage}>{page}</span>
-        <p className={styles.pageInfo}>Page {page} of {total} total results</p>
+          <span className={styles.currentPage}>{page}</span>
+          <p className={styles.pageInfo}>Page {page} of {total} total results</p>
         </div>
       );
     }
