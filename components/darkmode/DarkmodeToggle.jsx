@@ -14,7 +14,7 @@ const DarkModeToggle = () => {
     return mode === 'dark' ?
       dispatch(light('light')) :
       dispatch(dark('dark'));
-  }, [mode, dark, light, dispatch]);
+  }, [dispatch, mode]);
 
   const ballClasses = useMemo(() => {
     return mode === 'dark' ?

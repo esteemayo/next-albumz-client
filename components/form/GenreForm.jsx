@@ -39,7 +39,7 @@ const GenreForm = ({ onClose, onAction }) => {
     } finally {
       setIsLoading(false);
     }
-  }, [name, onClose]);
+  }, [name, onAction, onClose]);
 
   return (
     <div className={styles.container}>
