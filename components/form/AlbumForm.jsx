@@ -42,21 +42,27 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
 
   const handleChange = useCallback(({ target: input }) => {
     const { name, value } = input;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => {
+      return { ...prev, [name]: value };
+    });
   }, []);
 
   const handleAddTag = useCallback((tag) => {
-    setFormData((prev) => ({
-      ...prev,
-      tags: [...prev.tags, tag] },
-    ));
+    setFormData((prev) => {
+      return {
+        ...prev,
+        tags: [...prev.tags, tag],
+      };
+    });
   }, []);
 
   const handleDeleteTag = useCallback((tag) => {
-    setFormData((prev) => ({
-      ...prev,
-      tags: prev.tags.filter((item) => item !== tag)
-    }));
+    setFormData((prev) => {
+      return {
+        ...prev,
+        tags: prev.tags.filter((item) => item !== tag),
+      };
+    });
   }, []);
 
   const emptyFieldCheck = Object.values(formData).some((item) => item === '');
@@ -98,7 +104,7 @@ const AlbumForm = ({ genres, onClose, setAlbumList }) => {
     } finally {
       setIsLoading(false);
     }
-  }, [tags, file, onClose, formData, emptyFieldCheck]);
+  }, [emptyFieldCheck, formData, file, onClose, tags]);
 
   return (
     <div className={styles.container}>
