@@ -14,7 +14,7 @@ const DeleteGenreAlbum = ({
 
     onAction?.(actionId);
     onClose();
-  }, [onClose]);
+  }, [actionId, onAction, onClose]);
 
   return (
     <div className={styles.container}>

@@ -13,7 +13,7 @@ const DarkMode = () => {
 
   const toggleDarkmode = useCallback(() => {
     return dispatch(mode === 'dark' ? light('light') : dark('dark'));
-  }, [dark, light, mode, dispatch]);
+  }, [dispatch, mode]);
 
   return (
     <div className={styles.darkmode} onClick={toggleDarkmode}>
